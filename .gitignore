@@ -1,0 +1,58 @@
+#godot junk files
+*.import
+*.uid
+*.tmp
+/.godot
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+/dist
+/node_modules
+/.env
+/.env.local
+/.env.*.local
+
+# Cache directories
+/.vscode
+/.idea
+/.cache
+/.svelte-kit
+/.vite
+/.next
+/.nuxt
+/.output
+
+# OS/Editor files
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+._*
+
+# Vite/Electron/Build artifacts
+/dist
+/out
+/build
+/release
+/.forge_temp
+*.exe
+*.dmg
+*.deb
+*.app
+*.msi
+*.zip
+
+# Debug files
+*.pdb
+*.idb
+*.ilk
+
+# Testing
+/coverage
+/.nyc_output

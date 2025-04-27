@@ -1,0 +1,89 @@
+extends Control
+
+@onready var scenery := $Rooms
+
+func _ready():
+	# Initialize UI
+	update_ui()
+	connect_buttons()	
+	# Load initial room
+	change_room("Home")
+
+func change_room(room_name: String):
+	if GameManager.can_access_location(room_name):
+		# Hide all rooms first
+		for room in $Rooms.get_children():
+			room.visible = false
+		
+		# Show target room and update UI
+		$Rooms.get_node(room_name).visible = true
+		$TopBar/Scene.text = GameManager.rooms[room_name].display
+		GameManager.current_room = room_name
+		AudioManager.play_music(GameManager.rooms[room_name].music)
+		
+		# Special cases (e.g., transit pass)
+		#if room_name == "Transit":
+		#	$Rooms/Transit/PoliceBtn.visible = GameManager.has_transit_pass
+		#	$Rooms/Transit/LibraryBtn.visible = GameManager.has_transit_pass
+
+func update_ui():
+	Global.theme_changed.connect(_update_theme)
+	_update_theme(Global.dark_mode)  # Apply current theme on load
+	# Update NavBar button states based on location
+	# $UI/NavBar/Buttons/Nav.disabled = !GameManager.has_transit_pass
+
+func connect_buttons():
+	$NavBar/Buttons/Inv.pressed.connect(_on_inventory_pressed)
+	$NavBar/Buttons/Nav.pressed.connect(_on_navigation_pressed)
+	$NavBar/Buttons/Inf.pressed.connect(_on_info_pressed)
+	$NavBar/Buttons/Set.pressed.connect(_on_settings_pressed)
+
+func _on_navigation_pressed():
+	if GameManager.current_room == "Transit":
+		change_room("Home")
+	else:
+		change_room("Transit")
+
+func _on_inventory_pressed():
+	print("Inventory opened!")
+	var node = get_parent().get_node("Inventory")  # Relative path
+	if node:
+		node.visible = !node.visible  # Toggle visibility
+
+func _on_info_pressed():
+	print("Info opened!")
+	var node = get_parent().get_node("Info")  # Relative path
+	if node:
+		node.visible = !node.visible  # Toggle visibility
+
+func _on_settings_pressed():
+	var node = get_parent().get_node("Settings")  # Relative path
+	if node:
+		node.visible = !node.visible  # Toggle visibility
+
+func _update_theme(is_dark_mode: bool):
+	var loc = "res://assets/UI"
+	var theme_folder = "Rect-Dark-" if is_dark_mode else "Rect-Light-"
+	var button_textures := {
+		"Inv": ["Backpack"],
+		"Nav": ["Nav"],
+		"Inf": ["Info"],
+		"Set": ["Gear"],
+	}
+
+	print("Updating home screen to:", "Dark" if is_dark_mode else "Light")
+	if is_dark_mode:
+		$TopBar.color = Color(0,0,0)
+		$NavBar.color = Color(0,0,0)
+		$TopBar/Scene.add_theme_color_override("font_color", Color(1, 1, 1))
+	else:
+		$TopBar.color = Color(1,1,1)
+		$NavBar.color = Color(1,1,1)
+		$TopBar/Scene.add_theme_color_override("font_color", Color(0,0,0))
+	for button_name in button_textures:
+		var button = $NavBar/Buttons.get_node(button_name)
+		if button:
+			var textures = button_textures[button_name]
+			button.texture_normal = load("%s/%sDefault/%s@4x.png" % [loc, theme_folder, textures[0]])
+			button.texture_hover = load("%s/%sHover/%s@4x.png" % [loc, theme_folder, textures[0]])
+			button.texture_pressed = button.texture_hover

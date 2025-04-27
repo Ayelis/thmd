@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://by043omwqjgg1"]
+
+[ext_resource type="Script" uid="uid://deu0arlrpdsi3" path="res://title_screen.gd" id="1_1xr1c"]
+[ext_resource type="Texture2D" uid="uid://20ubffatx1hv" path="res://assets/THMD_title_cropped.png" id="1_fnlyl"]
+[ext_resource type="Texture2D" uid="uid://drrbpwbaejbbj" path="res://assets/THMD_title_cropped2.png" id="2_pkhjh"]
+[ext_resource type="Texture2D" uid="uid://cvfiif3yrha5e" path="res://assets/UI/DialogRed/Panel_Name.png" id="4_2k3je"]
+[ext_resource type="AudioStream" uid="uid://cviilnnqrg48m" path="res://assets/audio/359_Skull_Island.mp3" id="4_tu0on"]
+
+[sub_resource type="Animation" id="Animation_tu0on"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Start:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1xr1c"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Start:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2k3je"]
+_data = {
+&"RESET": SubResource("Animation_tu0on"),
+&"fade": SubResource("Animation_1xr1c")
+}
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_1xr1c")
+metadata/_edit_vertical_guides_ = [360.0, 180.0]
+metadata/_edit_horizontal_guides_ = [620.0, 310.0, 155.0, 465.0]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 360.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fnlyl")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 360.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pkhjh")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+libraries = {
+&"": SubResource("AnimationLibrary_2k3je")
+}
+
+[node name="Start" type="TextureButton" parent="."]
+visible = false
+offset_left = 116.0
+offset_top = 401.0
+offset_right = 246.0
+offset_bottom = 452.0
+texture_normal = ExtResource("4_2k3je")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Start"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 13.0
+offset_right = 85.0
+offset_bottom = 36.0
+text = "Start!"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tu0on")
+volume_db = 1.0
+autoplay = true
