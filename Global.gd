@@ -7,10 +7,12 @@ var dark_mode := true  # Default: Dark Mode
 
 func toggle_music():
 	silenced = !silenced
+	AudioManager.toggle_music_mute(silenced)  # Mute music
 	emit_signal("music_changed", silenced)
 
 func toggle_sound():
 	muted = !muted
+	AudioManager.toggle_sfx_mute(muted)   # Mute SFX
 	emit_signal("sound_changed", muted)
 
 func toggle_theme():

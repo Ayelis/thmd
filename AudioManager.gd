@@ -1,25 +1,39 @@
-# AudioManager.gd (autoload)
 extends Node
 
-var current_track : AudioStreamPlayer
-var fade_tween : Tween
+# Music
+var music_player : AudioStreamPlayer
+var music_muted := false
+var music_tween : Tween
 
-func play_music(track: AudioStream, loop: bool = true):
-	if current_track and current_track.stream == track:
-		return  # Already playing
+# SFX
+var sfx_muted := false
+var SFX_BUS_ID := AudioServer.get_bus_index("SFX")
+
+func play_music(track: AudioStream):
+	if music_player and music_player.stream == track:
+		return
 	
 	# Fade out old track
-	if current_track:
-		fade_tween = create_tween()
-		fade_tween.tween_property(current_track, "volume_db", -80.0, 1.0)
-		fade_tween.tween_callback(current_track.stop)
+	if music_player:
+		music_tween = create_tween()
+		music_tween.tween_property(music_player, "volume_db", -80.0, 1.0)
+		music_tween.tween_callback(music_player.queue_free)
 	
-	# Play new track
-	current_track = AudioStreamPlayer.new()
-	add_child(current_track)
-	current_track.stream = track
-	current_track.volume_db = 0.0
-	current_track.bus = "Music"
-	current_track.play()
-	if loop:
-		current_track.finished.connect(current_track.play)
+	# Start new track
+	music_player = AudioStreamPlayer.new()
+	add_child(music_player)
+	music_player.stream = track
+	music_player.bus = "Music"
+	music_player.volume_db = 0.0 if !music_muted else -80.0
+	music_player.play()
+	music_player.finished.connect(music_player.play)
+
+# Toggle Functions
+func toggle_music_mute(mute: bool):
+	music_muted = mute
+	if music_player:
+		music_player.volume_db = -80.0 if mute else 0.0
+
+func toggle_sfx_mute(mute: bool):
+	sfx_muted = mute
+	AudioServer.set_bus_mute(SFX_BUS_ID, mute)

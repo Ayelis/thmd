@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=44 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://b1raw20dmr2vc" path="res://Global.gd" id="1_qjyg3"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://game.gd" id="2_elkpi"]
@@ -7,33 +7,41 @@
 [ext_resource type="Texture2D" uid="uid://w31ulajpty6n" path="res://assets/UI/Rect-Dark-Default/Backpack@4x.png" id="4_yhmtn"]
 [ext_resource type="Texture2D" uid="uid://dnh62onpqcf0u" path="res://assets/Scenes/1b attic rope.jpg" id="5_202ut"]
 [ext_resource type="Texture2D" uid="uid://ck6ks6iivnptb" path="res://assets/UI/Rect-Dark-Hover/Backpack@4x.png" id="5_gwjdr"]
-[ext_resource type="Texture2D" uid="uid://ch53bx5geqcx4" path="res://assets/Scenes/2a transit.jpg" id="5_jsoai"]
+[ext_resource type="Script" uid="uid://bbqagb5n7hjsi" path="res://scenery/Attic.gd" id="6_68r7h"]
 [ext_resource type="Script" uid="uid://61pdonpxeyak" path="res://scenery/Transit.gd" id="6_bisgb"]
 [ext_resource type="Texture2D" uid="uid://u33grilafkwq" path="res://assets/UI/Rect-Dark-Default/Nav@4x.png" id="6_lvtmh"]
+[ext_resource type="Texture2D" uid="uid://ch53bx5geqcx4" path="res://assets/Scenes/2a transit.jpg" id="7_7vltt"]
 [ext_resource type="Texture2D" uid="uid://cu6aisc2l5ill" path="res://assets/UI/Rect-Dark-Hover/Nav@4x.png" id="7_yyih5"]
 [ext_resource type="Texture2D" uid="uid://dsc6jualbba8g" path="res://assets/Scenes/2b library.jpg" id="8_5he1h"]
 [ext_resource type="Texture2D" uid="uid://dljulm18ayjd0" path="res://assets/UI/Rect-Dark-Default/Info@4x.png" id="8_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://bl3prlik4w2re" path="res://assets/UI/Rect-Dark-Hover/Info@4x.png" id="9_elkpi"]
 [ext_resource type="Texture2D" uid="uid://i2pdex2jjslp" path="res://assets/Scenes/3a police.jpg" id="9_xwkxq"]
 [ext_resource type="Texture2D" uid="uid://dnkf5jys8xmul" path="res://assets/UI/Rect-Dark-Default/Gear@4x.png" id="10_0yprl"]
+[ext_resource type="Script" uid="uid://csi0ky2wa7c2o" path="res://scenery/Library.gd" id="10_7vltt"]
 [ext_resource type="Texture2D" uid="uid://dtk0trwh51gs6" path="res://assets/Scenes/3b evidence.jpg" id="10_wdm1y"]
 [ext_resource type="Texture2D" uid="uid://clq1bovwma0vp" path="res://assets/Scenes/4a beach.jpg" id="11_hxy8k"]
 [ext_resource type="Texture2D" uid="uid://b0bjsdtriguck" path="res://assets/UI/Rect-Dark-Hover/Gear@4x.png" id="11_wuoie"]
 [ext_resource type="Script" uid="uid://oena04t70885" path="res://inventory.gd" id="12_0mevm"]
-[ext_resource type="Texture2D" uid="uid://7d24qxkuy7fa" path="res://assets/Scenes/4b shack2.jpg" id="12_2t1a5"]
+[ext_resource type="Texture2D" uid="uid://0t3b0m8bfqwo" path="res://assets/Scenes/4b shack.jpg" id="12_2t1a5"]
 [ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://info.gd" id="12_7ged1"]
+[ext_resource type="Script" uid="uid://0wp0w7of40iv" path="res://scenery/Police.gd" id="12_fj2yu"]
 [ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://settings.gd" id="12_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://mvq1vxuc8n00" path="res://assets/Scenes/5a mansion.jpg" id="13_8576b"]
 [ext_resource type="Texture2D" uid="uid://ocxwo7hsgywc" path="res://assets/UI/dark_paper.png" id="13_elkpi"]
 [ext_resource type="Texture2D" uid="uid://dpbct0ve0a23k" path="res://assets/UI/Rect-Dark-Default/Exit@4x.png" id="14_0yprl"]
-[ext_resource type="Texture2D" uid="uid://bj1ejvi8l4bfx" path="res://assets/Scenes/5b altar.jpg" id="14_68r7h"]
+[ext_resource type="Texture2D" uid="uid://c5c4ef2srbar7" path="res://assets/Scenes/5b rotunda.jpg" id="14_68r7h"]
+[ext_resource type="Script" uid="uid://bmnanlabkikua" path="res://scenery/Evidence.gd" id="14_iueff"]
 [ext_resource type="Texture2D" uid="uid://qwqp6g1fl3hs" path="res://assets/UI/Rect-Dark-Hover/Exit@4x.png" id="15_wuoie"]
 [ext_resource type="Texture2D" uid="uid://6dgl0yv4neuv" path="res://assets/UI/Square-Dark-Default/Music-On@4x.png" id="16_hmewc"]
+[ext_resource type="Script" uid="uid://2xv2jndwhv2n" path="res://scenery/Beach.gd" id="16_n7324"]
 [ext_resource type="Texture2D" uid="uid://cev27fiir48p5" path="res://assets/UI/Square-Dark-Hover/Music-On@4x.png" id="17_7ged1"]
 [ext_resource type="Texture2D" uid="uid://cm81sllilu3ba" path="res://assets/UI/Square-Dark-Default/Sound-3@4x.png" id="18_0mevm"]
+[ext_resource type="Script" uid="uid://dsqmf4rjlumov" path="res://scenery/Shack.gd" id="18_o6tbt"]
 [ext_resource type="Texture2D" uid="uid://dpr8ohoste50v" path="res://assets/UI/Square-Dark-Hover/Sound-3@4x.png" id="19_w2501"]
 [ext_resource type="Texture2D" uid="uid://c07ry08ve3xd5" path="res://assets/UI/Square-Dark-Default/Star@4x.png" id="20_jsoai"]
+[ext_resource type="Script" uid="uid://dwvl3vbmqwx3k" path="res://scenery/Mansion.gd" id="20_v5dxo"]
 [ext_resource type="Texture2D" uid="uid://t0yx7f7nsa4w" path="res://assets/UI/Square-Dark-Hover/Star@4x.png" id="21_bisgb"]
+[ext_resource type="Script" uid="uid://b1w3hmrykfrfj" path="res://scenery/Rotunda.gd" id="22_7vltt"]
 [ext_resource type="Texture2D" uid="uid://djq4rvi5yvdsl" path="res://assets/Scenes/5c credits.jpg" id="35_7vltt"]
 
 [node name="GameManager" type="Control"]
@@ -90,6 +98,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Home" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -107,85 +116,133 @@ offset_bottom = 475.0
 flat = true
 
 [node name="Attic" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("5_202ut")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("6_68r7h")
 
 [node name="Transit" type="TextureRect" parent="UI/Rooms"]
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
-texture = ExtResource("5_jsoai")
+texture = ExtResource("7_7vltt")
 expand_mode = 1
 script = ExtResource("6_bisgb")
 
+[node name="Home" type="Button" parent="UI/Rooms/Transit"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 251.0
+offset_right = 119.0
+offset_bottom = 282.0
+text = "Home"
+
+[node name="Library" type="Button" parent="UI/Rooms/Transit"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 355.0
+offset_right = 207.0
+offset_bottom = 386.0
+text = "Library"
+
+[node name="Police" type="Button" parent="UI/Rooms/Transit"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 235.0
+offset_right = 254.0
+offset_bottom = 266.0
+text = "Police"
+
+[node name="Beach" type="Button" parent="UI/Rooms/Transit"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 155.0
+offset_right = 236.0
+offset_bottom = 186.0
+text = "Beach"
+
+[node name="Mansion" type="Button" parent="UI/Rooms/Transit"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 123.0
+offset_right = 131.0
+offset_bottom = 154.0
+text = "Mansion"
+
 [node name="Library" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("8_5he1h")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("10_7vltt")
 
 [node name="Police" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("9_xwkxq")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("12_fj2yu")
 
 [node name="Evidence" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("10_wdm1y")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("14_iueff")
 
 [node name="Beach" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("11_hxy8k")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("16_n7324")
 
 [node name="Shack" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("12_2t1a5")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("18_o6tbt")
 
 [node name="Mansion" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("13_8576b")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("20_v5dxo")
 
-[node name="Altar" type="TextureRect" parent="UI/Rooms"]
+[node name="Rotunda" type="TextureRect" parent="UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 560.0
 texture = ExtResource("14_68r7h")
 expand_mode = 1
-script = ExtResource("6_bisgb")
+script = ExtResource("22_7vltt")
 
 [node name="NavBar" type="ColorRect" parent="UI"]
 layout_mode = 1
@@ -381,6 +438,7 @@ offset_bottom = 45.0997
 text = "Music: [On] / Off"
 
 [node name="Sound" type="TextureButton" parent="Settings/Panel"]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
@@ -429,7 +487,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Library" type="TextureRect" parent="Credits"]
+[node name="Creds" type="TextureRect" parent="Credits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -438,7 +496,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("35_7vltt")
 expand_mode = 1
-script = ExtResource("6_bisgb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 

@@ -1,26 +1,26 @@
 extends Control
 
 @onready var scenery := $Rooms
+@onready var rooms = $Rooms  # Your actual path to rooms container
 
 func _ready():
+	GameManager.room_change_requested.connect(change_room)
 	# Initialize UI
 	update_ui()
 	connect_buttons()	
 	# Load initial room
-	change_room("Home")
+	GameManager.request_room_change("Home")
 
 func change_room(room_name: String):
 	if GameManager.can_access_location(room_name):
 		# Hide all rooms first
 		for room in $Rooms.get_children():
 			room.visible = false
-		
 		# Show target room and update UI
 		$Rooms.get_node(room_name).visible = true
 		$TopBar/Scene.text = GameManager.rooms[room_name].display
 		GameManager.current_room = room_name
 		AudioManager.play_music(GameManager.rooms[room_name].music)
-		
 		# Special cases (e.g., transit pass)
 		#if room_name == "Transit":
 		#	$Rooms/Transit/PoliceBtn.visible = GameManager.has_transit_pass
@@ -40,9 +40,9 @@ func connect_buttons():
 
 func _on_navigation_pressed():
 	if GameManager.current_room == "Transit":
-		change_room("Home")
+		GameManager.request_room_change("Home")
 	else:
-		change_room("Transit")
+		GameManager.request_room_change("Transit")
 
 func _on_inventory_pressed():
 	print("Inventory opened!")

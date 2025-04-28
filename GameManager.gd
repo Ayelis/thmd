@@ -11,8 +11,66 @@ var sanity := 100
 signal room_changed(room_name, display_name)  # Emit both internal ID and display name
 var current_room := "home"
 var has_transit_pass := false
+var has_gun := false
+var has_knife := false
+var has_robe := false
+var has_rope := false
+var has_dagger := false
+var has_key := false
+var has_flyer := false
+var has_bullhorn := false
+var has_library_card := false
+var has_blueprints := false
+var has_combination := false
+var has_metal_detector := false
+var has_appointment := false
+var knows_shack := false
+var knows_mansion := false
+var pail_placed := false
+var rope_placed := false
+var detective_gone := false
+var cultist_gone := false
+var cultist_unconscious := false
 var inventory := []
 var discovered_info := {}
+signal room_change_requested(room_name)  # Instead of direct node access
+
+func request_room_change(new_room: String):
+	if can_access_room(new_room):
+		current_room = new_room
+		room_change_requested.emit(new_room)
+	else:
+		print("Access denied to ", new_room)
+
+func can_access_room(room: String) -> bool:
+	match room:
+		"Library": return has_transit_pass
+		"Police": return has_appointment
+		"Beach": return knows_shack
+		"Mansion": return knows_mansion
+		_: return true
+
+# Add/remove items
+func add_item(item_name: String) -> void:
+	if not inventory.has(item_name):
+		inventory.append(item_name)
+		print("Added ", item_name, ". Inventory: ", inventory)
+
+func remove_item(item_name: String) -> bool:
+	var index = inventory.find(item_name)
+	if index >= 0:
+		inventory.remove_at(index)
+		return true
+	return false
+
+# Set/get discovery flags
+func learn_info(info_key: String, value = true) -> void:
+	discovered_info[info_key] = value
+	print("Learned: ", info_key, " = ", value)
+
+func knows_info(info_key: String) -> bool:
+	print("Recalling: ", info_key)
+	return discovered_info.get(info_key, false)
 
 # Room configurations
 var rooms := {
