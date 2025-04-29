@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://clq1bovwma0vp" path="res://assets/Scenes/4a beach.jpg" id="11_hxy8k"]
 [ext_resource type="Texture2D" uid="uid://b0bjsdtriguck" path="res://assets/UI/Rect-Dark-Hover/Gear@4x.png" id="11_wuoie"]
 [ext_resource type="Script" uid="uid://oena04t70885" path="res://inventory.gd" id="12_0mevm"]
-[ext_resource type="Texture2D" uid="uid://0t3b0m8bfqwo" path="res://assets/Scenes/4b shack.jpg" id="12_2t1a5"]
+[ext_resource type="Texture2D" uid="uid://dxfw2gisabblh" path="res://assets/Scenes/4b shack.jpg" id="12_2t1a5"]
 [ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://info.gd" id="12_7ged1"]
 [ext_resource type="Script" uid="uid://0wp0w7of40iv" path="res://scenery/Police.gd" id="12_fj2yu"]
 [ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://settings.gd" id="12_qjyg3"]
