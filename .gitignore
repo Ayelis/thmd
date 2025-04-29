@@ -2,6 +2,7 @@
 *.import
 *.uid
 *.tmp
+*.cfg
 /.godot
 
 # Logs
