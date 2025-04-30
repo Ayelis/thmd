@@ -78,6 +78,7 @@
 	"events": {
 		"letter": "Somehow, it was beneath a stack of unpaid bills... The paper is torn at the edges, as if ripped from a larger page. The letters are cut from magazines, glued in jagged lines:\n\n'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN FOR THIS FATE. GO FOLLOW THE TIDE.'\n\nThe glue smells faintly of saltwater.",
 		"police": "The receptionist doesn’t look up from her computer. 'Missing persons? Fill out a form. Detective’s booked out till Thursday.' Her nails tap against the keys. 'Unless it’s an emergency?'\n\nI hesitate. She smirks. 'Thought so.'"
+		"library": "Spent the afternoon buried in the library's local history section—dusty tomes, microfiche that smelled like burnt toast, obituaries with more secrets than the dead deserved. Turns out the 'chemical spill' that closed the north beach in '86 was a cover-up. The caption called it a 'public hazard' and a faded news photo showed the sheriff padlocking that blue shack north of the pier. Funny how the hazard's still there, decades later, just waiting for someone to turn those rusted dials. Scrawled on the margin of the article in faded pencil marks is a message. '6-2-9, high tide on the solstice'."
 	},
 	"rooms": {
 		"HOME": {
@@ -134,41 +135,97 @@
 		"ceiling": "The ceiling isn’t gone.\nIt’s just… farther now.\n\nA black so deep it drinks the light from your flashlight beam, swallowing it whole without a glimmer in return. You crane your neck, expecting rafters, cobwebs, the underside of the roof—but there’s nothing. No. Not nothing. Worse.\n\nThe darkness pulses.\nLike a throat swallowing.\nLike something up there is breathing.\n\nA drop of cold water lands on your cheek. You wipe it away. Your fingers come back red.",
 		"blood": "The blood isn’t dry.\n\nIt squirms.\n\nThin, glossy tendrils spider outward from the edges of each splash, creeping like liquid veins across the concrete. The thicker pools ripple, as if stirred by an invisible finger. You crouch, reaching—\n\n—and the blood flinches away from your shadow.\n\nIt’s not red anymore.\n\nIt’s the same purple-black as the altar’s seal. The same purple-black as the sky in the shack’s impossible ceiling. The same purple-black as the inside of your eyelids when you wake gasping at 3 AM.\n\nYou straighten up.\n\nThe blood goes still.\n\nNow it’s just red blood again.\n\nProbably."
 	},
+	"dialogs": {
+		"LibraryComputer": {
+			"root": {
+				"prompt": "Select an action:",
+				"options": [
+					{
+						"text": "Email Police",
+						"tooltip": "Request an interview about my missing persons case.",
+						"next": "email_police"
+					},
+					{
+						"text": "FBI Tip Line",
+						"tooltip": "Upload my evidence anonymously for federal review.",
+						"next": "fbi_upload",
+						"condition": "has_scanned_flyer"
+					},
+					{
+						"text": "ThePier Forum",
+						"tooltip": "Post flyer/images to rally townsfolk.",
+						"next": "forum_post",
+						"condition": "has_scanned_flyer"
+					},
+					{
+						"text": "Search for Cult",
+						"tooltip": "Scan through old news articles and photos...",
+						"next": "search_results"
+					},
+					{
+						"text": "View Cameras",
+						"tooltip": "Log into the Home Camera online portal.",
+						"next": "view_cams"
+					},
+					{
+						"text": "Log Out",
+						"tooltip": "The screen flickers. A reflection? Your face looks... older.",
+						"next": "close_computer"
+					}
+				]
+			},
+			"email_police": {
+				"result": "Detective Rook replies: 'Meet me tomorrow. 3 PM. Don’t bring attention.'",
+				"action": "unlock_detective_meeting"
+			},
+			"fbi_upload": {
+				"result": "A confirmation appears: 'Case #KT-118.29 opened. Agents dispatched.'",
+				"action": "unlock_fbi_swat"
+			},
+			"forum_post": {
+				"result": "You upload your pics and plea in a local forum and quickly see reactions.",
+				"action": "public"
+			},
+			"search_results": {
+				"result": "An article appears about a '1986 Beach Accident' with info about a shack",
+				"action": "shack"
+			},
+			"view_cams": {
+				"result": "Last footage: 2:47 AM. A shadow moving through her room.",
+				"action": "abductor"
+			}
+		},
+		"DetectiveRook": {
+
+		}
+	},
 	"endings": {
-		"000": "You vanish beneath the fog, unheard and unseen. Her small hand grips yours tightly. The Tide never even knew you were there.",
-		"001": "You ghost through the facility, rescuing her while the ritual crumbles behind you. No one believes what you saw. You disappear before anyone can ask.",
-		"002": "The sirens never sound. The cult falls, but so does something inside you. You walk out with her, white-eyed and trembling, the salt still clinging to her skin.",
-
-		"010": "You bend with the current but never break. She survives. You are both changed, but the world stays dry—for now.",
-		"011": "Through whispered warnings and double lives, you lead her out. The cult fractures in your wake. You fade back into the city like a rumor.",
-		"012": "Cameras catch your face. News anchors say your name. But she’s safe, and that’s enough. The rest is noise.",
-
-		"020": "You speak their language, then rewrite it. The cult thinks you one of their own—until it’s too late. You walk free, carrying only her.",
-		"021": "You shout above the waves, revealing everything. The building collapses. In the dust and panic, only you walk out with the girl.",
-		"022": "The sky opens, and the ritual completes. She is returned to you—not rescued, but transformed. You embrace her anyway. She smiles with too many teeth.",
-
 		"100": "You linger in shadows, trading loyalty for time. She is extracted with surgical precision. The others remain unaware until long after you’re gone.",
 		"101": "You’re the whisper in the wires. The building catches fire from within. She meets you at the rendezvous, wrapped in smoke and silence.",
 		"102": "They call it an inside job. You leave no fingerprints. She thinks you’re a hero. You don’t correct her.",
-
 		"110": "You offer no allegiance, only calculated mercy. She is your only anchor. The cult is wounded but not destroyed.",
 		"111": "They ask what side you were on. You answer with a name: hers. In the end, that’s all that mattered.",
 		"112": "Her footsteps echo behind you. You didn’t stop them, not really. But you did enough. You hope that’s true.",
-
 		"120": "You stand in the spotlight, ash coating your shoulders. She walks beside you, stunned but alive. The reporters ask who you are. You lie.",
 		"121": "You turned the world’s attention on them. The cult breaks, screaming. She clings to you as the cameras flash.",
 		"122": "The flood begins with a smile. Yours. Her hand slips into yours like it was always meant to. The crowd parts for you both.",
-
 		"200": "You silence the guards and whisper old rites. The ritual proceeds. She walks willingly—eyes glazed, heart emptied.",
 		"201": "You hide in plain sight, rising through their ranks. The ritual goes smoothly. She thanks you. You nod.",
 		"202": "You bow with the others as the tide swallows the moon. She is reborn in salt and shadow. You accept the crown.",
-
 		"210": "The doctrine is yours now. You rewrite it to include her. The others chant. She just watches you.",
 		"211": "You stand above the altar, preaching futures no one wants. The crowd applauds. She weeps, unseen.",
 		"212": "You offer her to the tide and it smiles back. The storm begins. The crowd chants your name.",
-
 		"220": "The sky splits. The water answers. You are both consumed—and satisfied.",
 		"221": "She laughs beside you, radiant and awful. Together, you welcome the end.",
-		"222": "The old gods rise, and she rises with them. You kneel. It is done."
+		"222": "The old gods rise, and she rises with them. You kneel. It is done.",
+		"000": "You vanish beneath the fog, unheard and unseen. Her small hand grips yours tightly. The Tide never even knew you were there.",
+		"001": "You ghost through the facility, rescuing her while the ritual crumbles behind you. No one believes what you saw. You disappear before anyone can ask.",
+		"002": "The sirens never sound. The cult falls, but so does something inside you. You walk out with her, white-eyed and trembling, the salt still clinging to her skin.",
+		"010": "You bend with the current but never break. She survives. You are both changed, but the world stays dry—for now.",
+		"011": "Through whispered warnings and double lives, you lead her out. The cult fractures in your wake. You fade back into the city like a rumor.",
+		"012": "Cameras catch your face. News anchors say your name. But she’s safe, and that’s enough. The rest is noise.",
+		"020": "You speak their language, then rewrite it. The cult thinks you one of their own—until it’s too late. You walk free, carrying only her.",
+		"021": "You shout above the waves, revealing everything. The building collapses. In the dust and panic, only you walk out with the girl.",
+		"022": "The sky opens, and the ritual completes. She is returned to you—not rescued, but transformed. You embrace her anyway. She smiles with too many teeth."
 	}
 }
