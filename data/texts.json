@@ -2,82 +2,100 @@
 	"items": {
 		"TRANSPASS": {
 			"name": "Transit Pass",
-			"description": "The plastic is warm, as if recently held by someone else. The expiration date is smudged—either by rain or something stickier."
+			"description": "The plastic is warm, as if recently held by\nsomeone else. The expiration date is\nsmudged, either by rain or something\nstickier."
 		},
 		"LIBCARD": {
 			"name": "Library Card",
-			"description": "The edges are frayed, like it’s been chewed on. The librarian’s stamped approval is faded, except for the word ‘RENEWED’ in unnervingly fresh ink."
+			"description": "The edges are frayed, like it’s been chewed\non. The barcode is faded, but it still seems\nto work for now."
 		},
 		"LETTER": {
 			"name": "Letter",
-			"description": "The letters are cut from magazines, glued in jagged lines:\n\n'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN FOR THIS FATE. GO FOLLOW THE TIDE.'\n\nThe glue smells faintly of saltwater."
+			"description": "The letters are cut from magazines, glue\nin jagged lines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN FOR THIS FATE.\nGO FOLLOW THE TIDE.'\n\nThe wax smells faintly of saltwater."
 		},
 		"DAGGER": {
 			"name": "Ritual Dagger",
-			"description": "The blade is etched with symbols that shift under direct light. The hilt is wrapped in hair—too coarse to be your daughter’s."
+			"description": "The blade is etched with symbols that shift
+							under direct light. The hilt is wrapped in hair
+							too coarse to be your daughter’s."
 		},
 		"ROBE": {
 			"name": "Fancy Robes",
-			"description": "The fabric is heavier than it should be, like it’s woven with something besides thread. The gold embroidery glints like knife-edges in the dark, forming patterns that hurt to focus on. This robe seems fit for a king—or a sacrifice."
+			"description": "The fabric is heavier than it should be, like
+							it’s woven with something besides thread.
+							The gold embroidery glints like knife-edges
+							in the dark, forming patterns that hurt
+							to focus on. This robe seems fit for a king—
+							or a sacrifice."
 		},
 		"ROPE": {
 			"name": "Length of Rope",
-			"description": "The fibers are stained in uneven patches. It smells of salt and wet earth, though it hasn't left the attic in years."
+			"description": "The fibers are stained in uneven patches. It
+							smells of salt and wet earth, though it hasn't 
+							left the attic in years."
 		},
 		"PAIL": {
 			"name": "Metal Pail",
-			"description": "The metal is pocked with rust, except for the handle, which is polished smooth from use. The bottom is caked in a dried, flaking residue."
+			"description": "The metal is pocked with rust, except for the
+							handle, which is polished smooth from use.
+							The bottom is caked in a dried, flaking
+							residue."
 		},
 		"BULLHORN": {
 			"name": "Megaphone Bullhorn",
-			"description": "The speaker grille is dented, as if gripped too tightly. When you turn it over, a single word is scratched into the plastic: ‘DON’T.’"
+			"description": "The speaker grille is dented, as if gripped
+							too tightly. When you turn it over, a single
+							word is scratched into the plastic: ‘DON’T.’"
 		},
 		"KEY": {
 			"name": "Steel Key",
-			"description": "It’s cold, even in your pocket. The teeth are jagged, like they were filed to fit a lock that shouldn’t exist."
+			"description": "It’s cold, even in your pocket. The teeth are
+							jagged, like they were filed to fit a lock that
+							shouldn’t exist."
 		},
 		"FLYER": {
 			"name": "Recruitment Flyer",
-			"description": "The paper crackles in your hand. An open eye gazes from a circle of waves, printed in deep navy. Beneath it, bold words: 'The Tide is rising. Be cleansed. Be claimed.' No contact info. Just coordinates."
+			"description": "The paper crackles in your hand. An open eye
+							gazes from a circle of waves, printed in deep
+							navy blue. Beneath it, bold words:
+							'The Tide is rising. Be cleansed. Be claimed.'
+							No contact info. Just coordinates."
 		},
 		"DETECTOR": {
 			"name": "Metal Detector",
-			"description": "The needle twitches even when the device is off. The casing is cracked, revealing wires that pulse faintly, like veins."
-		},
-		"COMBINATION": {
-			"name": "Combination",
-			"description": "The numbers are written in a shaky hand. Below them, someone added: ‘THEY CHANGE IT WHEN THE TIDE DOES.’"
-		},
-		"BLUEPRINTS": {
-			"name": "Mansion Blueprints",
-			"description": "The paper is brittle, the lines warped as if soaked and dried repeatedly. The architect’s signature is a single symbol: an eye inside a triangle."
+			"description": "The LCD pulses, even when the device is
+							turned off. The casing is cracked, revealing
+							wires that also seem to pulse faintly, like veins."
 		},
 		"GUN": {
 			"name": "Revolver",
-			"description": "The grip is sticky. The serial number has been scraped away oddly, as if by metallic fingernails..."
+			"description": "The grip is sticky. The serial number has been
+							scraped away oddly, as if by metallic
+							fingernails..."
 		}
 	},
 	"info": {
 		"APPOINTMENT": {
-			"title": "Appointment",
 			"description": "I have an appointment to speak with one Detective Rook."
 		},
 		"SHACK": {
-			"title": "Beach Shack",
 			"description": "The cult owns a shack on a private beach north of the pier."
 		},
 		"MANSION": {
-			"title": "Mansion Owner",
 			"description": "I know the location of a mansion that belongs to the cult."
 		},
 		"CULTISTS": {
-			"title": "Cultist Appearance",
-			"description": "I know what these cultists look like."
-		}
+			"description": "I know what these cultists wear."
+		},
+		"POLICE": {
+			"description": "I can enter the station without an appointment."
+		},
+		"TUNNEL": {
+			"description": "I know how to sneak into the mansion."
+		},
 	},
 	"events": {
 		"letter": "Somehow, it was beneath a stack of unpaid bills... The paper is torn at the edges, as if ripped from a larger page. The letters are cut from magazines, glued in jagged lines:\n\n'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN FOR THIS FATE. GO FOLLOW THE TIDE.'\n\nThe glue smells faintly of saltwater.",
-		"police": "The receptionist doesn’t look up from her computer. 'Missing persons? Fill out a form. Detective’s booked out till Thursday.' Her nails tap against the keys. 'Unless it’s an emergency?'\n\nI hesitate. She smirks. 'Thought so.'"
+		"police": "The receptionist doesn’t look up from her computer. 'Missing persons? Fill out a form. Detective’s booked out till Thursday.' Her nails tap against the keys. 'Unless it’s an emergency?'\n\nI hesitate. She smirks. 'Thought so.'",
 		"library": "Spent the afternoon buried in the library's local history section—dusty tomes, microfiche that smelled like burnt toast, obituaries with more secrets than the dead deserved. Turns out the 'chemical spill' that closed the north beach in '86 was a cover-up. The caption called it a 'public hazard' and a faded news photo showed the sheriff padlocking that blue shack north of the pier. Funny how the hazard's still there, decades later, just waiting for someone to turn those rusted dials. Scrawled on the margin of the article in faded pencil marks is a message. '6-2-9, high tide on the solstice'."
 	},
 	"rooms": {

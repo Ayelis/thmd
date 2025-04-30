@@ -21,11 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://dtk0trwh51gs6" path="res://assets/Scenes/3b evidence.jpg" id="10_wdm1y"]
 [ext_resource type="Texture2D" uid="uid://clq1bovwma0vp" path="res://assets/Scenes/4a beach.jpg" id="11_hxy8k"]
 [ext_resource type="Texture2D" uid="uid://b0bjsdtriguck" path="res://assets/UI/Rect-Dark-Hover/Gear@4x.png" id="11_wuoie"]
-[ext_resource type="Script" uid="uid://oena04t70885" path="res://scripts/inventory.gd" id="12_0mevm"]
+[ext_resource type="Script" uid="uid://oena04t70885" path="res://scripts/Inventory.gd" id="12_0mevm"]
 [ext_resource type="Texture2D" uid="uid://dxfw2gisabblh" path="res://assets/Scenes/4b shack.jpg" id="12_2t1a5"]
-[ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://scripts/info.gd" id="12_7ged1"]
+[ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://scripts/Info.gd" id="12_7ged1"]
 [ext_resource type="Script" uid="uid://0wp0w7of40iv" path="res://scenery/Police.gd" id="12_fj2yu"]
-[ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://scripts/settings.gd" id="12_qjyg3"]
+[ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://scripts/Settings.gd" id="12_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://mvq1vxuc8n00" path="res://assets/Scenes/5a mansion.jpg" id="13_8576b"]
 [ext_resource type="Texture2D" uid="uid://ocxwo7hsgywc" path="res://assets/UI/dark_paper.png" id="13_elkpi"]
 [ext_resource type="Texture2D" uid="uid://dpbct0ve0a23k" path="res://assets/UI/Rect-Dark-Default/Exit@4x.png" id="14_0yprl"]
@@ -177,12 +177,20 @@ offset_right = 192.0
 offset_bottom = 363.0
 flat = true
 
+[node name="Vines" type="Button" parent="UI/Rooms/Attic"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 11.0
+offset_right = 232.0
+offset_bottom = 144.0
+flat = true
+
 [node name="Window" type="Button" parent="UI/Rooms/Attic"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 83.0
-offset_right = 192.0
-offset_bottom = 195.0
+offset_top = 99.0
+offset_right = 180.0
+offset_bottom = 211.0
 flat = true
 
 [node name="Transit" type="TextureRect" parent="UI/Rooms"]
@@ -675,6 +683,22 @@ texture_hover = ExtResource("15_wuoie")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="GridContainer" type="GridContainer" parent="Inventory/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 352.0
+offset_bottom = 553.0
+columns = 3
+
+[node name="Label" type="RichTextLabel" parent="Inventory/Panel"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 352.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[font_size=32][center][i][b]Inventory[/b][/i][/center][/font_size]"
+
 [node name="Info" type="Control" parent="."]
 visible = false
 layout_mode = 1
@@ -711,6 +735,28 @@ texture_pressed = ExtResource("15_wuoie")
 texture_hover = ExtResource("15_wuoie")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Info/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 352.0
+offset_bottom = 552.0
+horizontal_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="RichTextLabel" parent="Info/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 352.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[font_size=32][center][i][b]Information[/b][/i][/center][/font_size]"
 
 [node name="Settings" type="Control" parent="."]
 visible = false
@@ -841,6 +887,7 @@ expand_mode = 1
 [connection signal="pressed" from="UI/Rooms/Home/Fan" to="UI/Rooms/Home/Fan" method="_on_pressed"]
 [connection signal="pressed" from="UI/Rooms/Attic/Rope" to="UI/Rooms/Attic/Rope" method="_on_pressed"]
 [connection signal="pressed" from="UI/Rooms/Attic/Drawers" to="UI/Rooms/Attic/Drawers" method="_on_pressed"]
+[connection signal="pressed" from="UI/Rooms/Attic/Vines" to="UI/Rooms/Attic/Vines" method="_on_pressed"]
 [connection signal="pressed" from="UI/Rooms/Attic/Window" to="UI/Rooms/Attic/Window" method="_on_pressed"]
 [connection signal="pressed" from="UI/Rooms/Transit/Tracks" to="UI/Rooms/Transit/Tracks" method="_on_pressed"]
 [connection signal="pressed" from="UI/Rooms/Library/Shelves" to="UI/Rooms/Library/Shelves" method="_on_pressed"]

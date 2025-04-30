@@ -28,6 +28,7 @@ window/size/viewport_width=360
 window/size/viewport_height=620
 window/size/resizable=false
 window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [editor]
 
