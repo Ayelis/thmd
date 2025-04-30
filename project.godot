@@ -17,16 +17,17 @@ config/icon="uid://cqsi50xiea7wk"
 
 [autoload]
 
-Global="*res://Global.gd"
-GameManager="*res://GameManager.gd"
-AudioManager="*res://AudioManager.gd"
-DialogueManager="*res://DialogueManager.gd"
+Global="*res://scripts/Global.gd"
+GameManager="*res://scripts/GameManager.gd"
+AudioManager="*res://scripts/AudioManager.gd"
+DialogueManager="*res://scripts/DialogueManager.gd"
 
 [display]
 
 window/size/viewport_width=360
 window/size/viewport_height=620
 window/size/resizable=false
+window/stretch/mode="viewport"
 
 [editor]
 
@@ -45,6 +46,7 @@ ui_accept={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 gl_compatibility/driver.windows="opengl3_angle"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

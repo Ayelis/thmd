@@ -4,33 +4,27 @@ extends Control
 @onready var rooms = $Rooms  # Your actual path to rooms container
 
 func _ready():
-	GameManager.room_change_requested.connect(change_room)
+	GameManager.room_changed.connect(_on_room_changed)
+
 	# Initialize UI
 	update_ui()
 	connect_buttons()	
 	# Load initial room
-	GameManager.request_room_change("Home")
+	GameManager.change_room("Home")
 
-func change_room(room_name: String):
-	if GameManager.can_access_location(room_name):
-		# Hide all rooms first
-		for room in $Rooms.get_children():
-			room.visible = false
-		# Show target room and update UI
-		$Rooms.get_node(room_name).visible = true
-		$TopBar/Scene.text = GameManager.rooms[room_name].display
-		GameManager.current_room = room_name
-		AudioManager.play_music(GameManager.rooms[room_name].music)
-		# Special cases (e.g., transit pass)
-		#if room_name == "Transit":
-		#	$Rooms/Transit/PoliceBtn.visible = GameManager.has_transit_pass
-		#	$Rooms/Transit/LibraryBtn.visible = GameManager.has_transit_pass
+func _on_room_changed(room_name: String):
+	# Hide all rooms first
+	for room in $Rooms.get_children():
+		room.visible = false
+	# Show target room and update UI
+	$Rooms.get_node(room_name).visible = true
+	$TopBar/Scene.text = GameManager.rooms[room_name].display
+	GameManager.current_room = room_name
+	AudioManager.play_music(GameManager.rooms[room_name].music)
 
 func update_ui():
 	Global.theme_changed.connect(_update_theme)
 	_update_theme(Global.dark_mode)  # Apply current theme on load
-	# Update NavBar button states based on location
-	# $UI/NavBar/Buttons/Nav.disabled = !GameManager.has_transit_pass
 
 func connect_buttons():
 	$NavBar/Buttons/Inv.pressed.connect(_on_inventory_pressed)
@@ -40,9 +34,9 @@ func connect_buttons():
 
 func _on_navigation_pressed():
 	if GameManager.current_room == "Transit":
-		GameManager.request_room_change("Home")
+		GameManager.change_room("Home")
 	else:
-		GameManager.request_room_change("Transit")
+		GameManager.change_room("Transit")
 
 func _on_inventory_pressed():
 	print("Inventory opened!")
