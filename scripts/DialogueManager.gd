@@ -3,37 +3,29 @@ extends Node
 
 signal dialogue_closed
 
-var current_room_dialogue := {
-	"home": {
-		"text": "This is your safe space. The door leads to the transit station.",
-		"options": []
-	},
-	"transit": {
-		"text": "A busy station. Where to next?",
-		"options": [
-			{"text": "Police Station", "action": "_go_to_police"},
-			{"text": "Library", "action": "_go_to_library"}
-		]
-	}
-}
+func ready():
+	Global.theme_changed.connect(_update_theme)
+	_update_theme(Global.dark_mode)	
+	GameManager.dialogue_updated.connect(_on_dial_updated)
+	$Panel/Exit.pressed.connect(_on_exit_pressed)
+
+func _update_theme(is_dark_mode: bool):
+	var tex_path = "res://assets/UI/%s_paper.png" % ["dark" if is_dark_mode else "light"]
+	$Panel.texture = load(tex_path)
+
+func _on_exit_pressed():
+	$DialogueManager.visible = false
+	print("Inventory closed!")
+
+func _on_dial_updated(text: String):
+	$DialogueManager/Panel/Text.text = "Hi!"  #dialogue.get("text", "")
 
 func show_room_dialogue(room_key: String):
-	var dialogue = current_room_dialogue.get(room_key, {})
-	
 	# Update UI
-	$DialogueManager/DialogBox/Text.text = dialogue.get("text", "")
-	
+	$DialogueManager/Panel/Text.text = GameManager.rooms[room_key].description
 	# Clear old options
 	for child in $DialogueManager/DialogBox/Options.get_children():
 		child.queue_free()
-	
-	# Add new options
-	for opt in dialogue.get("options", []):
-		var btn = Button.new()
-		btn.text = opt["text"]
-		btn.pressed.connect(Callable(self, opt["action"]))
-		$DialogueManager/DialogBox/Options.add_child(btn)
-	
 	# Show the box
 	$DialogueManager/DialogBox.show()
 

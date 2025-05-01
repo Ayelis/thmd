@@ -15,11 +15,19 @@ func _ready():
 	$HomButton.pressed.connect(_on_home_pressed)
 	$LibButton.pressed.connect(_on_lib_pressed)
 	$PolButton.pressed.connect(_on_police_pressed)
+	$PolButton2.pressed.connect(_on_police2_pressed)
 	$BeaButton.pressed.connect(_on_beach_pressed)
 	$ManButton.pressed.connect(_on_mansion_pressed)
+	$Tracks.pressed.connect(_on_tracks_pressed)
 	# Initial update
 	_update_button_visibility()
 	print("Transit area ready!")
+
+func _on_tracks_pressed():
+	print("Tracks pondered!")
+	GameManager.display_dialog(GameManager.insanity["tracks"])
+	GameManager.increase_insanity()
+	$Tracks.disabled = true
 
 func _on_inventory_updated(item_id):
 	if item_id == GameManager.ItemIDs.TRANSPASS:
@@ -46,6 +54,9 @@ func _on_lib_pressed():
 	GameManager.change_room("Library")
 
 func _on_police_pressed():
+	GameManager.display_dialog(GameManager.events["police"])
+
+func _on_police2_pressed():
 	GameManager.change_room("Police")
 
 func _on_beach_pressed():

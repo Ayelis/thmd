@@ -3,25 +3,20 @@ extends TextureRect
 
 func _ready():
 	print("Library area ready!")
+	$Shelves.pressed.connect(_on_shelves_pressed)
+	$Chair.pressed.connect(_on_chair_pressed)
+	$Computers.pressed.connect(_on_computer_pressed)
 
-func _on_door_pressed():
-	print("Door opened!")
+func _on_chair_pressed():
+	print("Left chair!")
 	GameManager.change_room("Transit")
 
-func _on_dresser_pressed():
-	print("Dresser accessed!")
+func _on_shelves_pressed():
+	print("Shelves perused!")
 	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
-		GameManager.obtain_item(GameManager.ItemIDs.DAGGER)
-		GameManager.obtain_item(GameManager.ItemIDs.ROBE)
-		GameManager.obtain_item(GameManager.ItemIDs.ROPE)
-		GameManager.obtain_item(GameManager.ItemIDs.GUN)
-		GameManager.obtain_item(GameManager.ItemIDs.PAIL)
-		GameManager.obtain_item(GameManager.ItemIDs.BULLHORN)
-		GameManager.obtain_item(GameManager.ItemIDs.KEY)
-		GameManager.obtain_item(GameManager.ItemIDs.FLYER)
-		GameManager.learn_info(GameManager.InfoIDs.APPOINTMENT)
 		GameManager.learn_info(GameManager.InfoIDs.SHACK)
-		GameManager.learn_info(GameManager.InfoIDs.MANSION)
 		GameManager.learn_info(GameManager.InfoIDs.CULTISTS)
-		GameManager.learn_info(GameManager.InfoIDs.POLICE)
-		GameManager.learn_info(GameManager.InfoIDs.TUNNEL)
+
+func _on_computer_pressed():
+	print("Computer accessed!")
+	GameManager.learn_info(GameManager.InfoIDs.APPOINTMENT)

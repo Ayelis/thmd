@@ -14,6 +14,7 @@ signal inventory_updated(item_id)
 signal inventory_full_refresh()
 signal knowledge_updated(info_id)
 signal info_full_refresh()
+signal dialogue_updated(text)
 
 # Game state
 var current_room := "home"
@@ -46,7 +47,7 @@ var inventory := {
 }
 
 # Knowledge
-enum InfoIDs { APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL }
+enum InfoIDs { APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO }
 var INFORMATION := {}
 var discovered_info := {}
 
@@ -54,51 +55,61 @@ var discovered_info := {}
 var rooms := {
 	"Home": {
 		"display": texts["rooms"]["HOME"]["name"],
+		"description1": texts["rooms"]["HOME"]["description1"],
 		"music": preload("res://assets/audio/267_Court_of_the_Count.ogg"),
 		"texture": "res://assets/Scenes/1a_home.jpg",
 	},
 	"Transit": {
 		"display": texts["rooms"]["TRANSIT"]["name"],
+		"description1": texts["rooms"]["TRANSIT"]["description1"],
 		"music":preload("res://assets/audio/330_Mega_City_Slums.ogg"),
 		"texture": "res://assets/Scenes/2a_transit.jpg",
 	},
 	"Police": {
 		"display": texts["rooms"]["POLICE"]["name"],
+		"description1": texts["rooms"]["POLICE"]["description1"],
 		"music":preload("res://assets/audio/229_Interrogation_Room.ogg"),
 		"texture": "res://assets/Scenes/3a_police.jpg",
 	},
 	"Beach": {
 		"display": texts["rooms"]["BEACH"]["name"],
+		"description1": texts["rooms"]["BEACH"]["description1"],
 		"music":preload("res://assets/audio/166_Quiet_Cove.ogg"),
 		"texture": "res://assets/Scenes/4a_police.jpg",
 	},
 	"Mansion": {
 		"display": texts["rooms"]["MANSION"]["name"],
+		"description1": texts["rooms"]["MANSION"]["description1"],
 		"music":preload("res://assets/audio/359_Skull_Island.ogg"),
 		"texture": "res://assets/Scenes/5a_police.jpg",
 	},
 	"Attic": {
 		"display": texts["rooms"]["ATTIC"]["name"],
+		"description1": texts["rooms"]["ATTIC"]["description1"],
 		"music":preload("res://assets/audio/413_Collegium_Magica.ogg"),
 		"texture": "res://assets/Scenes/1b_attic.jpg",
 	},
 	"Library": {
 		"display": texts["rooms"]["LIBRARY"]["name"],
+		"description1": texts["rooms"]["LIBRARY"]["description1"],
 		"music":preload("res://assets/audio/333_Arcane_Athenaeum.ogg"),
 		"texture": "res://assets/Scenes/2b_library.jpg",
 	},
 	"Evidence": {
 		"display": texts["rooms"]["EVIDENCE"]["name"],
+		"description1": texts["rooms"]["EVIDENCE"]["description1"],
 		"music":preload("res://assets/audio/289_Ancient_Artifact.ogg"),
 		"texture": "res://assets/Scenes/3b_evidence.jpg",
 	},
 	"Shack": {
 		"display": texts["rooms"]["SHACK"]["name"],
+		"description1": texts["rooms"]["SHACK"]["description1"],
 		"music":preload("res://assets/audio/297_Survivors_Bivouac.ogg"),
 		"texture": "res://assets/Scenes/4b_shack.jpg",
 	},
 	"Rotunda": {
 		"display": texts["rooms"]["ROTUNDA"]["name"],
+		"description1": texts["rooms"]["ROTUNDA"]["description1"],
 		"music":preload("res://assets/audio/320_Cultists_Cavern.ogg"),
 		"texture": "res://assets/Scenes/5b_altar.jpg",
 	}
@@ -132,7 +143,8 @@ func _get_item_texture(item_id: int) -> Texture2D:
 func load_json(path: String) -> Dictionary:
 	return JSON.parse_string(FileAccess.get_file_as_string(path))
 
-func display_dialog():
+func display_dialog(text):
+	dialogue_updated.emit(text)
 	return "void"
 
 func change_room(new_room: String):
@@ -166,3 +178,11 @@ func lose_item(item_id: ItemIDs) -> void:
 func has_item(item_id: ItemIDs) -> bool:
 	print("Checking: ", ITEMS[item_id].name)
 	return inventory.get(item_id, false)
+
+func hard_reset():
+	# Clear all persistent state
+	get_tree().paused = false
+	Global.reset_all_variables()  # You'd need to implement this
+	# Full engine restart
+	get_tree().quit()
+	OS.execute(OS.get_executable_path(), [])  # Restart executable
