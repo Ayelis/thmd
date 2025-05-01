@@ -4,8 +4,6 @@ extends Control
 var empty_slot_texture = preload("res://assets/Items/blank.png")
 
 func _ready():
-	print("[Inventory] Initializing")
-	
 	Global.theme_changed.connect(_update_theme)
 	_update_theme(Global.dark_mode)
 	
@@ -32,8 +30,6 @@ func _on_item_updated(_item_id):
 	update_inventory()
 
 func update_inventory():
-	print("\n[Inventory] Updating")
-	
 	var owned_items = []
 	for item_id in GameManager.inventory:
 		if GameManager.inventory[item_id]:

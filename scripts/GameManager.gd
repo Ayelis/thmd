@@ -47,10 +47,10 @@ var inventory := {
 }
 
 # Knowledge
-enum InfoIDs { APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO }
+enum InfoIDs { DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY }
 var INFORMATION := {}
 var discovered_info := {}
-
+var events := {}
 # Rooms
 var rooms := {
 	"Home": {
@@ -135,6 +135,7 @@ func _ready():
 		INFORMATION[info_id] = {
 			"description": texts["info"][InfoIDs.keys()[info_id]]["description"],
 		}
+	events = texts["events"]  # Auto-connect your JSON events
 
 func _get_item_texture(item_id: int) -> Texture2D:
 	var path := "res://assets/icons/%s.png" % ItemIDs.keys()[item_id].to_lower()
@@ -178,6 +179,9 @@ func lose_item(item_id: ItemIDs) -> void:
 func has_item(item_id: ItemIDs) -> bool:
 	print("Checking: ", ITEMS[item_id].name)
 	return inventory.get(item_id, false)
+
+func get_room_description(room_key: String) -> String:
+	return rooms.get(room_key, {}).get("description1", "No description available")
 
 func hard_reset():
 	# Clear all persistent state

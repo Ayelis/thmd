@@ -74,8 +74,11 @@
 		}
 	},
 	"info": {
+		"DAUGHTER": {
+			"description": "They Have My Daughter!"
+		},
 		"APPOINTMENT": {
-			"description": "I have an appointment to speak with one Detective Rook."
+			"description": "I got an appointment to speak with one Detective Rook."
 		},
 		"SHACK": {
 			"description": "The cult owns a shack on a private beach north of the pier."
@@ -94,6 +97,9 @@
 		},
 		"COMBO": {
 			"description": "The combination for the shack is 16-2-18."
+		},
+		"FAMILY": {
+			"description": "My family history may be... darker... than I thought..."
 		},
 	},
 	"events": {

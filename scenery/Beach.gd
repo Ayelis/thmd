@@ -7,6 +7,7 @@ func _ready():
 	$FlyingBirds.pressed.connect(_on_birds_pressed)
 	$Sand.pressed.connect(_on_sand_pressed)
 	$Sky.pressed.connect(_on_sky_pressed)
+	$Dog.pressed.connect(_on_dog_pressed)
 	$Ocean.pressed.connect(_on_ocean_pressed)
 	$Shack.pressed.connect(_on_door_pressed)
 	$Door.pressed.connect(_on_door_pressed)
@@ -18,6 +19,7 @@ func _on_birds_pressed():
 	GameManager.increase_insanity()
 	$CloseBird.disabled = true
 	$GroundBirds.disabled = true
+	$FlyingBirds.disabled = true
 func _on_sand_pressed():
 	print("Sand examined!")
 	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
@@ -30,8 +32,13 @@ func _on_sky_pressed():
 	$Sky.disabled = true
 func _on_ocean_pressed():
 	print("Ocean desired!")
+	GameManager.increase_insanity()
 	GameManager.display_dialog(GameManager.insanity["ocean"])
 	$Ocean.disabled = true
+func _on_dog_pressed():
+	print("Dog patted!")
+	GameManager.decrease_insanity()
+	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
 func _on_shack_pressed():
 	print("Shack examined!")
 	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
