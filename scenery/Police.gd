@@ -4,21 +4,28 @@ extends TextureRect
 func _ready():
 	print("Police area ready!")
 	$Detective.pressed.connect(_on_detective_pressed)
-	$Computer.pressed.connect(_on_computer_pressed)
-	$Papers.pressed.connect(_on_papers_pressed)
-	$Drawers.pressed.connect(_on_drawers_pressed)
+
 func _on_computer_pressed():
+	GameManager.display_dialog(GameManager.events["police-computer"])
 	print("Computer!")
-	GameManager.display_dialog(GameManager.get_room_description("POLICE"))
 func _on_drawers_pressed():
-	print("Drawers!")
+	GameManager.display_dialog(GameManager.events["police-drawer"])
 	GameManager.obtain_item(GameManager.ItemIDs.BULLHORN)
-	GameManager.display_dialog(GameManager.get_room_description("POLICE"))
+	print("Drawers!")
 func _on_papers_pressed():
+	GameManager.display_dialog(GameManager.events["papers"])
+	GameManager.obtain_item(GameManager.ItemIDs.KEY)
 	print("Papers!")
-	GameManager.display_dialog(GameManager.get_room_description("POLICE"))
 func _on_detective_pressed():
+	if(GameManager.knows_info(GameManager.InfoIDs.POLICE)):
+		texture = load("res://assets/Scenes/3a policeb.jpg")
+		GameManager.learn_info(GameManager.InfoIDs.POLICE)
+		$Computer.pressed.connect(_on_computer_pressed)
+		$Papers.pressed.connect(_on_papers_pressed)
+		$Drawers.pressed.connect(_on_drawers_pressed)
+	elif(GameManager.inventory[GameManager.ItemIDs.KEY]):
+		GameManager.display_dialog(GameManager.events["evidence"])
+		GameManager.change_room("Evidence")
+	else:
+		GameManager.change_room("Transit")
 	print("Detective!")
-	GameManager.display_dialog(GameManager.get_room_description("POLICE"))
-	texture = load("res://assets/Scenes/3a policeb.jpg")
-	GameManager.learn_info(GameManager.InfoIDs.POLICE)

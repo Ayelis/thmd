@@ -15,37 +15,39 @@ func _ready():
 
 func _on_birds_pressed():
 	print("Tracks pondered!")
-	GameManager.display_dialog(GameManager.insanity["birds"])
+	GameManager.insane(GameManager.insanity["birds"])
 	GameManager.increase_insanity()
-	$CloseBird.disabled = true
-	$GroundBirds.disabled = true
-	$FlyingBirds.disabled = true
+	$CloseBird.hide()
+	$GroundBirds.hide()
+	$FlyingBirds.hide()
 func _on_sand_pressed():
+	if(!GameManager.inventory[GameManager.ItemIDs.DETECTOR]):
+		GameManager.display_dialog(GameManager.events["dagger"])
+		GameManager.obtain_item(GameManager.ItemIDs.DAGGER)
+		$Sand.hide()
+	else:
+		GameManager.display_dialog(GameManager.events["sand"])
 	print("Sand examined!")
-	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
-	GameManager.obtain_item(GameManager.ItemIDs.DAGGER)
-	GameManager.obtain_item(GameManager.ItemIDs.KEY)
-	$Sand.disabled = true
 func _on_sky_pressed():
 	print("Sky gazed!")
-	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
-	$Sky.disabled = true
+	GameManager.display_dialog(GameManager.events["sky"])
+	$Sky.hide()
 func _on_ocean_pressed():
 	print("Ocean desired!")
 	GameManager.increase_insanity()
-	GameManager.display_dialog(GameManager.insanity["ocean"])
-	$Ocean.disabled = true
+	GameManager.insane(GameManager.insanity["ocean"])
+	$Ocean.hide()
 func _on_dog_pressed():
+	GameManager.restore_sanity()
+	GameManager.display_dialog(GameManager.events["dog"])
 	print("Dog patted!")
-	GameManager.decrease_insanity()
-	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
 func _on_shack_pressed():
 	print("Shack examined!")
-	GameManager.display_dialog(GameManager.get_room_description("BEACH"))
+	GameManager.display_dialog(GameManager.events["shack"])
 func _on_door_pressed():
 	print("Door toggled!")
 	if(GameManager.knows_info(GameManager.InfoIDs.COMBO)):
 		GameManager.change_room("Shack")
-		GameManager.display_dialog(GameManager.get_room_description("BEACH"))
+		GameManager.display_dialog(GameManager.events["shack1"])
 	else:
-		GameManager.display_dialog(GameManager.get_room_description("BEACH"))
+		GameManager.display_dialog(GameManager.events["door"])

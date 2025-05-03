@@ -11,16 +11,21 @@ func _ready():
 	$Door2.pressed.connect(_on_door_pressed)
 	$Daughter.pressed.connect(_on_daughter_pressed)
 func _on_blood_pressed():
+	GameManager.insane(GameManager.insanity["blood"])
 	print("Blood!")
 func _on_circle_pressed():
+	GameManager.display_dialog(GameManager.events["magic"])
 	print("Circle!")
 func _on_altar_pressed():
+	GameManager.display_dialog(GameManager.events["altar"])
 	print("Altar!")
 func _on_skylights_pressed():
+	GameManager.display_dialog(GameManager.events["skylight"])
 	print("Skylights!")
 func _on_door_pressed():
+	GameManager.display_dialog(GameManager.events["leave"])
 	print("Door!")
 func _on_daughter_pressed():
 	print("Daughter!")
-	GameManager.display_dialog(GameManager.insanity["blood"])
+	GameManager.display_dialog(GameManager.dialogue["daughter"])
 	GameManager.hard_reset()

@@ -25,9 +25,8 @@ func _ready():
 
 func _on_tracks_pressed():
 	print("Tracks pondered!")
-	GameManager.display_dialog(GameManager.insanity["tracks"])
-	GameManager.increase_insanity()
-	$Tracks.disabled = true
+	GameManager.insane(GameManager.insanity["tracks"])
+	$Tracks.hide()
 
 func _on_inventory_updated(item_id):
 	if item_id == GameManager.ItemIDs.TRANSPASS:
@@ -49,18 +48,27 @@ func _update_button_visibility():
 
 func _on_home_pressed():
 	GameManager.change_room("Home")
+	GameManager.display_dialog(GameManager.events["home2"])
 
 func _on_lib_pressed():
+	if(!GameManager.inventory[GameManager.ItemIDs.LIBCARD]):
+		GameManager.obtain_item(GameManager.ItemIDs.LIBCARD)
 	GameManager.change_room("Library")
+	GameManager.display_dialog(GameManager.events["library"])
 
 func _on_police_pressed():
 	GameManager.display_dialog(GameManager.events["police"])
 
 func _on_police2_pressed():
 	GameManager.change_room("Police")
+	GameManager.display_dialog(GameManager.events["police2"])
 
 func _on_beach_pressed():
 	GameManager.change_room("Beach")
+	GameManager.display_dialog(GameManager.events["beach"])
 
 func _on_mansion_pressed():
 	GameManager.change_room("Mansion")
+	if(!GameManager.inventory[GameManager.ItemIDs.FLYER]):
+		GameManager.obtain_item(GameManager.ItemIDs.FLYER)
+		GameManager.display_dialog(GameManager.events["mansion"])

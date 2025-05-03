@@ -9,30 +9,26 @@ func _ready():
 	$Door.pressed.connect(_on_door_pressed)
 	$Cultist.pressed.connect(_on_cultist_pressed)
 func _on_tunnel_pressed():
+	if(GameManager.knows_info(GameManager.InfoIDs.TUNNEL)):
+		GameManager.display_dialog(GameManager.events["tunnels"])
+		GameManager.change_room("Rotunda")
 	print("Tunnels checked!")
-	if(!GameManager.knows_info(GameManager.InfoIDs.TUNNEL)):
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
-	else:
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
-		GameManager.change_room("Rotunda")
 func _on_door_pressed():
+	if(GameManager.inventory[GameManager.ItemIDs.DAGGER]):
+		GameManager.display_dialog(GameManager.events["knife"])
+		GameManager.change_room("Rotunda")
+	elif(GameManager.inventory[GameManager.ItemIDs.ROBE]):
+		GameManager.display_dialog(GameManager.events["has-robe"])
+	else:
+		GameManager.display_dialog(GameManager.events["need-key"])
 	print("Door!")
-	if(GameManager.inventory[GameManager.ItemIDs.KEY]):
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
-		GameManager.change_room("Rotunda")
-	else:
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
 func _on_balcony_pressed():
-	print("Balcony!")
 	if(GameManager.inventory[GameManager.ItemIDs.ROPE]):
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
+		GameManager.display_dialog(GameManager.events["rope"])
 		GameManager.change_room("Rotunda")
 	else:
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
+		GameManager.display_dialog(GameManager.events["balcony"])
+	print("Balcony!")
 func _on_cultist_pressed():
 	print("Cultist speaks!")
-	if(!GameManager.inventory[GameManager.ItemIDs.FLYER]):
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
-		GameManager.obtain_item(GameManager.ItemIDs.FLYER)
-	else:
-		GameManager.display_dialog(GameManager.get_room_description("MANSION"))
+	GameManager.display_dialog(GameManager.events["cultist"])
