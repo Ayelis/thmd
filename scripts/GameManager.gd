@@ -7,6 +7,7 @@ var morality := 0
 var tact := 0
 var ideology := 0
 var sanity := 3
+var returned_home := false
 
 # Signals
 signal room_changed(room_name)
@@ -18,11 +19,6 @@ signal dialogue_updated(text)
 
 # Game state
 var current_room := "home"
-var pail_placed := false
-var rope_placed := false
-var detective_gone := false
-var cultist_gone := false
-var cultist_unconscious := false
 
 # Items
 enum ItemIDs { 
@@ -51,6 +47,8 @@ var INFORMATION := {}
 var discovered_info := {}
 var events := {}
 var insanity := {}
+var endings := {}
+var dialogs := {}
 
 # Rooms
 var rooms := {
@@ -128,6 +126,8 @@ func _ready():
 		}
 	events = texts["events"]  # Auto-connect your JSON events
 	insanity = texts["insanity"]  # Auto-connect your JSON insanity
+	endings = texts["endings"]  # Auto-connect your JSON endings
+	dialogs = texts["dialogs"]  # Auto-connect your JSON dialogs
 
 func _get_item_texture(item_id: int) -> Texture2D:
 	var path := "res://assets/icons/%s.png" % ItemIDs.keys()[item_id].to_lower()
@@ -138,6 +138,31 @@ func load_json(path: String) -> Dictionary:
 
 func display_dialog(text):
 	dialogue_updated.emit(text)
+
+var ending_screen: TextureRect = null
+
+func ending(text):
+	# Create fullscreen TextureRect if it doesn't exist
+	if ending_screen == null:
+		ending_screen = TextureRect.new()
+		ending_screen.set_anchors_preset(Control.PRESET_FULL_RECT)
+		ending_screen.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		ending_screen.stretch_mode = TextureRect.STRETCH_SCALE
+		
+	# Load and display the image
+	var ending_texture = load("res://assets/Scenes/padded.png")
+	if ending_texture:
+		ending_screen.texture = ending_texture
+		# Add to scene tree
+		get_tree().root.add_child(ending_screen)
+		display_dialog(text)
+	else:
+		printerr("Failed to load ending image!")
+
+func clear_ending():
+	if ending_screen and ending_screen.is_inside_tree():
+		ending_screen.queue_free()
+		ending_screen = null
 
 func change_room(new_room: String):
 	current_room = new_room
@@ -180,6 +205,9 @@ func insane(sanity_key: String):
 
 func increase_insanity():
 	sanity=sanity-1
+	if(sanity < 0):
+		ending(endings["sanity"])
+		hard_reset()
 
 func restore_sanity():
 	sanity=3
@@ -187,7 +215,11 @@ func restore_sanity():
 func hard_reset():
 	# Clear all persistent state
 	get_tree().paused = false
-	Global.reset_all_variables()  # You'd need to implement this
 	# Full engine restart
-	get_tree().quit()
-	OS.execute(OS.get_executable_path(), [])  # Restart executable
+	# 1. Delete everything
+	get_tree().root.propagate_call("queue_free")
+	# 2. Reload main scene (adjust path)
+	var err = get_tree().change_scene_to_file("res://TitleScreen.tscn")
+	if err != OK:
+		printerr("RESET FAILED! Error code:", err)
+		get_tree().quit()

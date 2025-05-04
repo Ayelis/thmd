@@ -35,3 +35,7 @@ func _show():
 func _hide():
 	visible = false
 	print("Dialogue closed!")
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):  # Enter/Return/Space key
+		_hide()

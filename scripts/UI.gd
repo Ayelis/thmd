@@ -81,3 +81,14 @@ func _update_theme(is_dark_mode: bool):
 			button.texture_normal = load("%s/%sDefault/%s@4x.png" % [loc, theme_folder, textures[0]])
 			button.texture_hover = load("%s/%sHover/%s@4x.png" % [loc, theme_folder, textures[0]])
 			button.texture_pressed = button.texture_hover
+func resetUI():
+	$UI/Rooms/Home.texture = load("res://assets/Scenes/1a home.jpg")
+	$UI/Rooms/Transit.texture = load("res://assets/Scenes/2a transit.jpg")
+	$UI/Rooms/Police.texture = load("res://assets/Scenes/3a police.jpg")
+	$UI/Rooms/Beach.texture = load("res://assets/Scenes/4a beach.jpg")
+	$UI/Rooms/Mansion.texture = load("res://assets/Scenes/5a mansion.jpg")
+	$UI/Rooms/Attic.texture = load("res://assets/Scenes/1b attic.jpg")
+	$UI/Rooms/Library.texture = load("res://assets/Scenes/2b library.jpg")
+	$UI/Rooms/Evidence.texture = load("res://assets/Scenes/3b evidence.jpg")
+	$UI/Rooms/Shack.texture = load("res://assets/Scenes/4b shack.jpg")
+	$UI/Rooms/Rotunda.texture = load("res://assets/Scenes/5b rotunda.jpg")

@@ -1,6 +1,5 @@
-[gd_scene load_steps=49 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=48 format=3 uid="uid://c6cp1fno8pcy3"]
 
-[ext_resource type="Script" uid="uid://b1raw20dmr2vc" path="res://scripts/Global.gd" id="1_qjyg3"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
 [ext_resource type="Texture2D" uid="uid://1y3mcvyprnmt" path="res://assets/Scenes/1a home.jpg" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://doj3ucwm7gavp" path="res://scenery/Home.gd" id="4_w2501"]
@@ -56,7 +55,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qjyg3")
 metadata/_edit_vertical_guides_ = [360.0]
 metadata/_edit_horizontal_guides_ = [620.0]
 

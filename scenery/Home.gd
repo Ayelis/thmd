@@ -9,7 +9,6 @@ func _ready():
 	$Hatch.pressed.connect(_on_hatch_pressed)
 	$Window.pressed.connect(_on_window_pressed)
 	$Fan.pressed.connect(_on_fan_pressed)
-	GameManager.display_dialog(GameManager.events["home2"])
 
 func _on_door_pressed():
 	print("Door opened!")

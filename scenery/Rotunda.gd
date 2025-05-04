@@ -27,5 +27,5 @@ func _on_door_pressed():
 	print("Door!")
 func _on_daughter_pressed():
 	print("Daughter!")
-	GameManager.display_dialog(GameManager.dialogue["daughter"])
+	GameManager.display_dialog(GameManager.dialogs["daughter"])
 	GameManager.hard_reset()

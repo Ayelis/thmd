@@ -14,12 +14,13 @@ func _ready():
 	print("Beach area ready!")
 
 func _on_birds_pressed():
-	print("Tracks pondered!")
 	GameManager.insane(GameManager.insanity["birds"])
 	GameManager.increase_insanity()
+	texture = load("res://assets/Scenes/4a beachb.jpg")
 	$CloseBird.hide()
 	$GroundBirds.hide()
 	$FlyingBirds.hide()
+	print("Birds pondered!")
 func _on_sand_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.DETECTOR]):
 		GameManager.display_dialog(GameManager.events["dagger"])
@@ -39,11 +40,12 @@ func _on_ocean_pressed():
 	$Ocean.hide()
 func _on_dog_pressed():
 	GameManager.restore_sanity()
-	GameManager.display_dialog(GameManager.events["dog"])
+	GameManager.display_dialog(GameManager.events["pet-dog"])
 	print("Dog patted!")
 func _on_shack_pressed():
-	print("Shack examined!")
 	GameManager.display_dialog(GameManager.events["shack"])
+	$Shack.hide()
+	print("Shack examined!")
 func _on_door_pressed():
 	print("Door toggled!")
 	if(GameManager.knows_info(GameManager.InfoIDs.COMBO)):

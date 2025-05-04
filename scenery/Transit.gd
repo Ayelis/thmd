@@ -48,7 +48,9 @@ func _update_button_visibility():
 
 func _on_home_pressed():
 	GameManager.change_room("Home")
-	GameManager.display_dialog(GameManager.events["home2"])
+	if(!GameManager.returned_home):
+		GameManager.returned_home = true
+		GameManager.display_dialog(GameManager.events["home2"])
 
 func _on_lib_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.LIBCARD]):

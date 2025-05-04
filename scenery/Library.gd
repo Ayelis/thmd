@@ -23,5 +23,5 @@ func _on_shelves_pressed():
 
 func _on_computer_pressed():
 	print("Computer accessed!")
-	GameManager.display_dialog(GameManager.events["computer"])
+	GameManager.display_dialog(GameManager.dialogs["computer"])
 	GameManager.learn_info(GameManager.InfoIDs.APPOINTMENT)

@@ -17,7 +17,8 @@ func _on_papers_pressed():
 	GameManager.obtain_item(GameManager.ItemIDs.KEY)
 	print("Papers!")
 func _on_detective_pressed():
-	if(GameManager.knows_info(GameManager.InfoIDs.POLICE)):
+	if(!GameManager.knows_info(GameManager.InfoIDs.POLICE)):
+		GameManager.display_dialog(GameManager.dialogs["detective"])
 		texture = load("res://assets/Scenes/3a policeb.jpg")
 		GameManager.learn_info(GameManager.InfoIDs.POLICE)
 		$Computer.pressed.connect(_on_computer_pressed)
