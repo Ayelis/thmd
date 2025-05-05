@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore("UNUSED_SIGNAL")
 var texts = load_json("res://data/texts.json")
 
 # Player stats
@@ -16,6 +17,8 @@ signal inventory_full_refresh()
 signal knowledge_updated(info_id)
 signal info_full_refresh()
 signal dialogue_updated(text)
+signal ending_updated(texture_path, text_key)
+signal dialogue_closed
 
 # Game state
 var current_room := "home"
@@ -139,30 +142,9 @@ func load_json(path: String) -> Dictionary:
 func display_dialog(text):
 	dialogue_updated.emit(text)
 
-var ending_screen: TextureRect = null
-
-func ending(text):
+func ending(text_key: String, texture_path: String = ""):
+	ending_updated.emit(text_key, texture_path)
 	# Create fullscreen TextureRect if it doesn't exist
-	if ending_screen == null:
-		ending_screen = TextureRect.new()
-		ending_screen.set_anchors_preset(Control.PRESET_FULL_RECT)
-		ending_screen.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		ending_screen.stretch_mode = TextureRect.STRETCH_SCALE
-		
-	# Load and display the image
-	var ending_texture = load("res://assets/Scenes/padded.png")
-	if ending_texture:
-		ending_screen.texture = ending_texture
-		# Add to scene tree
-		get_tree().root.add_child(ending_screen)
-		display_dialog(text)
-	else:
-		printerr("Failed to load ending image!")
-
-func clear_ending():
-	if ending_screen and ending_screen.is_inside_tree():
-		ending_screen.queue_free()
-		ending_screen = null
 
 func change_room(new_room: String):
 	current_room = new_room
@@ -206,8 +188,7 @@ func insane(sanity_key: String):
 func increase_insanity():
 	sanity=sanity-1
 	if(sanity < 0):
-		ending(endings["sanity"])
-		hard_reset()
+		ending("sanity")
 
 func restore_sanity():
 	sanity=3

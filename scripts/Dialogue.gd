@@ -1,5 +1,7 @@
 extends Control
 
+signal dialogue_closed
+
 func _ready():
 	# Connect signals
 	GameManager.dialogue_updated.connect(_on_dialogue_updated)
@@ -34,6 +36,7 @@ func _show():
 
 func _hide():
 	visible = false
+	GameManager.emit_signal("dialogue_closed")  # Notify GameManager
 	print("Dialogue closed!")
 
 func _input(event):

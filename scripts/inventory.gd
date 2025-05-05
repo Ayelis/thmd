@@ -1,17 +1,14 @@
 extends Control
 
 @onready var grid = $Panel/GridContainer
-var empty_slot_texture = preload("res://assets/Items/blank.png")
+var empty_slot_texture = preload("res://assets/Items/blank.jpg")
 
 func _ready():
 	Global.theme_changed.connect(_update_theme)
 	_update_theme(Global.dark_mode)
-	
 	GameManager.inventory_updated.connect(_on_item_updated)
 	GameManager.inventory_full_refresh.connect(update_inventory)
-	
 	$Panel/Exit.pressed.connect(_on_exit_pressed)
-	
 	# Create slots
 	for i in range(12):
 		var slot = TextureButton.new()
@@ -22,9 +19,9 @@ func _ready():
 		slot.mouse_entered.connect(_on_slot_hover.bind(i))
 		slot.mouse_exited.connect(_on_slot_exit)
 		grid.add_child(slot)
-	
 	update_inventory()
 	print("Inventory ready")
+	GameManager.display_dialog(GameManager.events["home1"])
 
 func _on_item_updated(_item_id):
 	update_inventory()
@@ -40,7 +37,7 @@ func update_inventory():
 		if i < owned_items.size():
 			var item_id = owned_items[i]
 			var item_data = GameManager.ITEMS[item_id]
-			slot.texture_normal = load("res://assets/Items/item_%s.png" % GameManager.ItemIDs.keys()[item_id].to_lower())
+			slot.texture_normal = load("res://assets/Items/item_%s.jpg" % GameManager.ItemIDs.keys()[item_id].to_lower())
 			slot.tooltip_text = "%s\n\n%s" % [item_data.name, item_data.description]
 		else:
 			slot.texture_normal = empty_slot_texture

@@ -21,13 +21,14 @@ Global="*res://scripts/Global.gd"
 GameManager="*res://scripts/GameManager.gd"
 AudioManager="*res://scripts/AudioManager.gd"
 DialogueManager="*res://scripts/DialogueManager.gd"
+Aspect="*res://scripts/Aspect.gd"
 
 [display]
 
 window/size/viewport_width=360
 window/size/viewport_height=620
-window/size/resizable=false
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
 window/handheld/orientation=1
 
 [editor]
@@ -47,8 +48,8 @@ ui_accept={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 gl_compatibility/driver.windows="opengl3_angle"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+textures/default_filters/use_nearest_mipmap_filter=true

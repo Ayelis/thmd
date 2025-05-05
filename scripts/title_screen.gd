@@ -8,7 +8,6 @@ func _ready():
 
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Game.tscn")
-	GameManager.display_dialog(GameManager.events["home2"])
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):  # Enter/Return/Space key

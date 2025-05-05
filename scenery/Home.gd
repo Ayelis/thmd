@@ -48,4 +48,6 @@ func _on_fan_pressed():
 	print("Fan gazed!")
 	GameManager.insane(GameManager.insanity["ceiling-fan"])
 	GameManager.increase_insanity()
+	GameManager.increase_insanity()
+	GameManager.increase_insanity()
 	$Fan.hide()
