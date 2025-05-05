@@ -11,6 +11,7 @@ func _ready():
 	$Ocean.pressed.connect(_on_ocean_pressed)
 	$Shack.pressed.connect(_on_door_pressed)
 	$Door.pressed.connect(_on_door_pressed)
+	$Leave.pressed.connect(_on_leave_pressed)
 	print("Beach area ready!")
 
 func _on_birds_pressed():
@@ -40,6 +41,7 @@ func _on_ocean_pressed():
 	$Ocean.hide()
 func _on_dog_pressed():
 	GameManager.restore_sanity()
+	GameManager.learn_info(GameManager.InfoIDs.DOGGO)
 	GameManager.display_dialog(GameManager.events["pet-dog"])
 	print("Dog patted!")
 func _on_shack_pressed():
@@ -53,3 +55,6 @@ func _on_door_pressed():
 		GameManager.display_dialog(GameManager.events["shack1"])
 	else:
 		GameManager.display_dialog(GameManager.events["door"])
+func _on_leave_pressed():
+	GameManager.change_room("Transit")
+	print("Leave!")

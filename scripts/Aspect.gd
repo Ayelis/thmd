@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore("UNUSED_VARIABLE")
 # Configuration
 const BASE_SIZE := Vector2(360, 620)
 const TARGET_ASPECT := float(BASE_SIZE.x) / float(BASE_SIZE.y)
@@ -8,6 +9,7 @@ const TARGET_ASPECT := float(BASE_SIZE.x) / float(BASE_SIZE.y)
 var _resize_timer := Timer.new()
 var _is_resizing := false
 var _last_direction := 0 # 0=neutral, 1=horizontal, 2=vertical
+var previous_mode = DisplayServer.window_get_mode()
 
 func _ready():
 	# Setup timer for smooth resizing
@@ -15,27 +17,33 @@ func _ready():
 	_resize_timer.wait_time = 0.1
 	_resize_timer.one_shot = true
 	_resize_timer.timeout.connect(_finalize_resize)
-	
 	# Connect signals
 	var window := get_window()
 	window.size_changed.connect(_on_resize)
-	window.connect("window_mode_changed", Callable(self, "_on_mode_changed"))
-	
 	# Initial size (200% scale)
-	# window.size = BASE_SIZE * 2.0
+	await get_tree().process_frame  # Wait one frame
+	window.size = BASE_SIZE * 2
+	_finalize_resize()
 	window.size = Vector2(BASE_SIZE.x * 2.0, BASE_SIZE.y * 2.0 - 200)
+
+func _process(_delta):
+	var current_mode = DisplayServer.window_get_mode()
+	if current_mode != previous_mode:
+		previous_mode = current_mode
+		_on_mode_changed()
 
 func _on_mode_changed():
 	if get_window().mode != Window.MODE_FULLSCREEN:
 		_on_resize()
+	print("Window mode changed to: ", previous_mode)
 
 func _on_resize():
 	if _is_resizing:
 		return
 	
 	var window := get_window()
-	var current_size := window.size
-	var last_size := window.size
+	# var current_size := window.size
+	# var last_size := window.size
 	
 	# Detect resize direction
 	var mouse_pos := DisplayServer.mouse_get_position()

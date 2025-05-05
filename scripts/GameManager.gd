@@ -1,7 +1,6 @@
 extends Node
 
-@warning_ignore("UNUSED_SIGNAL")
-var texts = load_json("res://data/texts.json")
+@warning_ignore("unused_signal")
 
 # Player stats
 var morality := 0
@@ -16,7 +15,7 @@ signal inventory_updated(item_id)
 signal inventory_full_refresh()
 signal knowledge_updated(info_id)
 signal info_full_refresh()
-signal dialogue_updated(text)
+signal dialog_updated(text)
 signal ending_updated(texture_path, text_key)
 signal dialogue_closed
 
@@ -28,6 +27,7 @@ enum ItemIDs {
 	TRANSPASS, LIBCARD, LETTER, DAGGER, ROBE, ROPE, PAIL, 
 	BULLHORN, KEY, FLYER, DETECTOR, GUN 
 }
+var texts := {}
 var ITEMS := {}
 var inventory := {
 	ItemIDs.TRANSPASS: false,
@@ -45,71 +45,20 @@ var inventory := {
 }
 
 # Knowledge
-enum InfoIDs { DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY }
+enum InfoIDs { DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY, DOGGO, ABDUCTOR }
 var INFORMATION := {}
 var discovered_info := {}
 var events := {}
 var insanity := {}
 var endings := {}
 var dialogs := {}
-
-# Rooms
-var rooms := {
-	"Home": {
-		"display": texts["rooms"]["HOME"]["name"],
-		"music": preload("res://assets/audio/267_Court_of_the_Count.ogg"),
-		"texture": "res://assets/Scenes/1a_home.jpg",
-	},
-	"Transit": {
-		"display": texts["rooms"]["TRANSIT"]["name"],
-		"music":preload("res://assets/audio/330_Mega_City_Slums.ogg"),
-		"texture": "res://assets/Scenes/2a_transit.jpg",
-	},
-	"Police": {
-		"display": texts["rooms"]["POLICE"]["name"],
-		"music":preload("res://assets/audio/229_Interrogation_Room.ogg"),
-		"texture": "res://assets/Scenes/3a_police.jpg",
-	},
-	"Beach": {
-		"display": texts["rooms"]["BEACH"]["name"],
-		"music":preload("res://assets/audio/166_Quiet_Cove.ogg"),
-		"texture": "res://assets/Scenes/4a_police.jpg",
-	},
-	"Mansion": {
-		"display": texts["rooms"]["MANSION"]["name"],
-		"music":preload("res://assets/audio/359_Skull_Island.ogg"),
-		"texture": "res://assets/Scenes/5a_police.jpg",
-	},
-	"Attic": {
-		"display": texts["rooms"]["ATTIC"]["name"],
-		"music":preload("res://assets/audio/413_Collegium_Magica.ogg"),
-		"texture": "res://assets/Scenes/1b_attic.jpg",
-	},
-	"Library": {
-		"display": texts["rooms"]["LIBRARY"]["name"],
-		"music":preload("res://assets/audio/333_Arcane_Athenaeum.ogg"),
-		"texture": "res://assets/Scenes/2b_library.jpg",
-	},
-	"Evidence": {
-		"display": texts["rooms"]["EVIDENCE"]["name"],
-		"music":preload("res://assets/audio/289_Ancient_Artifact.ogg"),
-		"texture": "res://assets/Scenes/3b_evidence.jpg",
-	},
-	"Shack": {
-		"display": texts["rooms"]["SHACK"]["name"],
-		"music":preload("res://assets/audio/297_Survivors_Bivouac.ogg"),
-		"texture": "res://assets/Scenes/4b_shack.jpg",
-	},
-	"Rotunda": {
-		"display": texts["rooms"]["ROTUNDA"]["name"],
-		"music":preload("res://assets/audio/320_Cultists_Cavern.ogg"),
-		"texture": "res://assets/Scenes/5b_altar.jpg",
-	}
-}
+var rooms := {}
 
 func _ready():
 	print("GameManager loaded!")
-	
+	texts = load_json("res://data/texts.json")
+	rooms = load_json("res://data/rooms.json")
+	DialogueManager.load_dialogs(texts)  # Pass to DialogueManager
 	# Load items
 	for item_name in texts["items"].keys():
 		var item_id = ItemIDs.get(item_name)
@@ -139,8 +88,11 @@ func _get_item_texture(item_id: int) -> Texture2D:
 func load_json(path: String) -> Dictionary:
 	return JSON.parse_string(FileAccess.get_file_as_string(path))
 
-func display_dialog(text):
-	dialogue_updated.emit(text)
+func display_dialog(text: String):
+	dialog_updated.emit(text) #Simple Messages
+
+func initiate_dialogue(dialog_id: String, on_complete: Callable = Callable()):
+	DialogueManager.start_structured(dialog_id, on_complete) #Structured Dialogues
 
 func ending(text_key: String, texture_path: String = ""):
 	ending_updated.emit(text_key, texture_path)

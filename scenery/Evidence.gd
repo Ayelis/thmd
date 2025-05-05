@@ -7,6 +7,7 @@ func _ready():
 	$Drawers.pressed.connect(_on_drawer_pressed)
 	$Chair.pressed.connect(_on_chair_pressed)
 	$Window.pressed.connect(_on_window_pressed)
+	$Leave.pressed.connect(_on_leave_pressed)
 func _on_papers_pressed():
 	print("Papers checked!")
 	GameManager.learn_info(GameManager.InfoIDs.MANSION)
@@ -25,3 +26,6 @@ func _on_window_pressed():
 func _on_chair_pressed():
 	print("Chair Left!")
 	GameManager.change_room("Transit")
+func _on_leave_pressed():
+	GameManager.change_room("Transit")
+	print("Leave!")

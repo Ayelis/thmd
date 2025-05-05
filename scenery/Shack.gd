@@ -43,5 +43,6 @@ func _on_door_pressed():
 	beach.get_node("FlyingBirds").hide()
 	beach.texture = load("res://assets/Scenes/4a beachc.jpg")
 	GameManager.change_room("Beach")
-	GameManager.display_dialog(GameManager.events["dog"])
+	if(!GameManager.knows_info(GameManager.InfoIDs.COMBO)):
+		GameManager.display_dialog(GameManager.events["dog"])
 	print("Door left!")

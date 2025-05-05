@@ -16,19 +16,17 @@ func _on_door_pressed():
 
 func _on_dresser_pressed():
 	print("Dresser accessed!")
-	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS] && !GameManager.inventory[GameManager.ItemIDs.LETTER]):
+	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
 		GameManager.obtain_item(GameManager.ItemIDs.LETTER)
 		GameManager.learn_info(GameManager.InfoIDs.DAUGHTER)
-		GameManager.display_dialog(GameManager.events["get-letter"])
-	elif(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
 		GameManager.obtain_item(GameManager.ItemIDs.TRANSPASS)
 		GameManager.display_dialog(GameManager.events["dresser"])
 		$Dressers.hide()
 
 func _on_hall_pressed():
 	print("Hall explored!")
-	GameManager.obtain_item(GameManager.ItemIDs.DETECTOR)
-	GameManager.display_dialog(GameManager.events["hall"])
+	#GameManager.obtain_item(GameManager.ItemIDs.DETECTOR)
+	#GameManager.display_dialog(GameManager.events["hall"])
 	$Hall.hide()
 
 func _on_hatch_pressed():
@@ -47,7 +45,5 @@ func _on_window_pressed():
 func _on_fan_pressed():
 	print("Fan gazed!")
 	GameManager.insane(GameManager.insanity["ceiling-fan"])
-	GameManager.increase_insanity()
-	GameManager.increase_insanity()
 	GameManager.increase_insanity()
 	$Fan.hide()

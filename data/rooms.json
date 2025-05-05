@@ -1,0 +1,62 @@
+{
+	"Home": {
+		"display": "HOME.name",
+		"music": "267_Court_of_the_Count",
+		"texture": "1a_home"
+	},
+	"Transit": {
+		"display": "TRANSIT.name",
+		"music": "330_Mega_City_Slums",
+		"texture": "2a_transit"
+	},
+	"Police": {
+		"display": "POLICE.name",
+		"music": "229_Interrogation_Room",
+		"texture": "3a_police"
+	},
+	"Police1": {
+		"display": "POLICE.name",
+		"music": "229_Interrogation_Room",
+		"texture": "3a_police"
+	},
+	"Police2": {
+		"display": "POLICE.name",
+		"music": "229_Interrogation_Room",
+		"texture": "3a_policea"
+	},
+	"Beach": {
+		"display": "BEACH.name",
+		"music": "166_Quiet_Cove",
+		"texture": "4a_police"
+	},
+	"Mansion": {
+		"display": "MANSION.name",
+		"music": "359_Skull_Island",
+		"texture": "5a_police"
+	},
+	"Attic": {
+		"display": "ATTIC.name",
+		"music": "413_Collegium_Magica",
+		"texture": "1b_attic"
+	},
+	"Library": {
+		"display": "LIBRARY.name",
+		"music": "333_Arcane_Athenaeum",
+		"texture": "2b_library"
+	},
+	"Evidence": {
+		"display": "EVIDENCE.name",
+		"music": "289_Ancient_Artifact",
+		"texture": "3b_evidence"
+	},
+	"Shack": {
+		"display": "SHACK.name",
+		"music": "297_Survivors_Bivouac",
+		"texture": "4b_shack"
+	},
+	"Rotunda": {
+		"display": "ROTUNDA.name",
+		"music": "320_Cultists_Cavern",
+		"texture": "5b_altar"
+	}
+}

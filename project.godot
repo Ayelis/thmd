@@ -27,6 +27,7 @@ Aspect="*res://scripts/Aspect.gd"
 
 window/size/viewport_width=360
 window/size/viewport_height=620
+window/size/initial_position_type=0
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 window/handheld/orientation=1

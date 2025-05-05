@@ -53,17 +53,31 @@ func _on_home_pressed():
 		GameManager.display_dialog(GameManager.events["home2"])
 
 func _on_lib_pressed():
+	GameManager.change_room("Library")
 	if(!GameManager.inventory[GameManager.ItemIDs.LIBCARD]):
 		GameManager.obtain_item(GameManager.ItemIDs.LIBCARD)
-	GameManager.change_room("Library")
-	GameManager.display_dialog(GameManager.events["library"])
+		GameManager.display_dialog(GameManager.events["library"])
+	else:
+		GameManager.display_dialog(GameManager.events["library2"])
 
 func _on_police_pressed():
+	GameManager.change_room("Police")
+	GameManager.connect("dialogue_closed", self._on_police_dialog_finished, CONNECT_ONE_SHOT)
 	GameManager.display_dialog(GameManager.events["police"])
+func _on_police_dialog_finished():
+	GameManager.change_room("Transit")
 
 func _on_police2_pressed():
-	GameManager.change_room("Police")
-	GameManager.display_dialog(GameManager.events["police2"])
+	if GameManager.knows_info(GameManager.InfoIDs.POLICE):
+		GameManager.change_room("Police2")
+		var police = get_parent().get_node("Police2")
+		police.texture = load("res://assets/Scenes/3a policeb.jpg")
+		police.get_node("Papers").pressed.connect(police._on_papers_pressed)
+		police.get_node("Drawers").pressed.connect(police._on_drawers_pressed)
+		GameManager.display_dialog(GameManager.events["police3"])
+	else:
+		GameManager.change_room("Police2")
+		GameManager.display_dialog(GameManager.events["police2"])
 
 func _on_beach_pressed():
 	GameManager.change_room("Beach")

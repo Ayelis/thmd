@@ -8,6 +8,7 @@ func _ready():
 	$Balcony.pressed.connect(_on_balcony_pressed)
 	$Door.pressed.connect(_on_door_pressed)
 	$Cultist.pressed.connect(_on_cultist_pressed)
+	$Leave.pressed.connect(_on_leave_pressed)
 func _on_tunnel_pressed():
 	if(GameManager.knows_info(GameManager.InfoIDs.TUNNEL)):
 		GameManager.display_dialog(GameManager.events["tunnels"])
@@ -30,5 +31,9 @@ func _on_balcony_pressed():
 		GameManager.display_dialog(GameManager.events["balcony"])
 	print("Balcony!")
 func _on_cultist_pressed():
-	print("Cultist speaks!")
 	GameManager.display_dialog(GameManager.events["cultist"])
+	GameManager.learn_info(GameManager.InfoIDs.CULTISTS)
+	print("Cultist speaks!")
+func _on_leave_pressed():
+	GameManager.change_room("Transit")
+	print("Leave!")

@@ -10,18 +10,17 @@ func _ready():
 func _on_chair_pressed():
 	print("Left chair!")
 	GameManager.change_room("Transit")
-	GameManager.display_dialog(GameManager.events["left-library"])
+	# GameManager.display_dialog(GameManager.events["left-library"])
 
 func _on_shelves_pressed():
 	print("Shelves perused!")
 	if(!GameManager.knows_info(GameManager.InfoIDs.SHACK)):
 		GameManager.learn_info(GameManager.InfoIDs.SHACK)
-		GameManager.learn_info(GameManager.InfoIDs.CULTISTS)
 		GameManager.learn_info(GameManager.InfoIDs.COMBO)
 		GameManager.display_dialog(GameManager.events["stacks"])
 		$Shelves.hide()
 
 func _on_computer_pressed():
 	print("Computer accessed!")
-	GameManager.display_dialog(GameManager.dialogs["computer"])
+	GameManager.initiate_dialogue("computer")
 	GameManager.learn_info(GameManager.InfoIDs.APPOINTMENT)

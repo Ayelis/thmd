@@ -7,6 +7,7 @@ func _ready():
 	$Drawers.pressed.connect(_on_drawers_pressed)
 	$Window.pressed.connect(_on_window_pressed)
 	$Vines.pressed.connect(_on_vines_pressed)
+	$Leave.pressed.connect(_on_leave_pressed)
 
 func _on_rope_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.ROPE]):
@@ -33,3 +34,7 @@ func _on_vines_pressed():
 	GameManager.increase_insanity()
 	$Vines.hide()
 	print("Vines explored!")
+
+func _on_leave_pressed():
+	GameManager.change_room("Home")
+	print("Leave!")

@@ -42,7 +42,7 @@
 		},
 		"DETECTOR": {
 			"name": "Metal Detector",
-			"description": "The LCD pulses, even when the device is\nturned off. The casing is cracked, revealing\nwires that also seem to pulse faintly, like veins."
+			"description": "The LCD pulses, even when the device is\nturned off. The casing is cracked,\nrevealing wires that also seem to pulse faintly,\nlike veins."
 		},
 		"GUN": {
 			"name": "Revolver",
@@ -77,35 +77,41 @@
 		"FAMILY": {
 			"description": "My family history may be... darker... than I thought..."
 		},
+		"ABDUCTOR": {
+			"description": "I have video footage showing the cultist taking my daughter."
+		},
+		"DOGGO": {
+			"description": "A very friendly doggo met you on the beach today..."
+		}
 	},
 	"events": {
-		"home1": "The alarm clock's silence is the first thing that feels wrong. The house is too still—no breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the fridge.\n\n'Hey, kiddo?'\n\nNo answer. Her door hangs open, revealing a made bed and an untouched backpack. My phone shows no messages. The air feels thick with waiting.",
-		"home2": "The lock resists before yielding. Inside, the air tastes stale with absence. Her room remains frozen—the same made bed, the same uneaten lunch. I almost believe she's just forgotten to text. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
-		"dresser": "The drawer creaks open. My transit pass winks up at me. 'Well, at least you didn't vanish,' I mutter, pocketing the little plastic lifeline.",
-		"get-letter": "Beneath unpaid bills, the wax-sealed letter waits. Torn edges. Words cut from magazines: 'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN. FOLLOW THE TIDE.' The glue reeks of saltwater and something faintly metallic.",
-		"hall": "The closet yields a collapsible metal detector—odd, but potentially useful. I stash it in my bag, wondering who bought this and why.",
-		"hatch": "A square of wood in the ceiling—how'd I forget the attic? The pull-down ladder's been broken since childhood. Getting up there won't be easy.",
+		"home1": "The alarm clock's silence is the first thing that feels wrong. The house is too still—no breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the fridge.\n\n'Hey, kiddo?'\n\nNo answer. Her door hangs open, revealing an already-made bed and an untouched backpack. My phone shows no messages. The air feels thick with waiting.",
+		"home2": "The lock resists before yielding. Inside, the air tastes stale with absence. Her room remains frozen—the same already-made bed, the same uneaten lunch.\n\nI tell myself she's just forgotten to text. I almost believe it. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
+		"dresser": "Beneath unpaid bills, the wax-sealed letter waits. Torn edges. Words cut from magazines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN.\nFOLLOW THE TIDE.'\n\nThe glue reeks of saltwater and something faintly metallic.\n\nOh, and my pass! The dresser drawer creaks open. My transit pass winks up at me.\n'Well, at least you didn't vanish,' I mutter, pocketing the little plastic lifeline.",
+		"hall": "The hall closet yields a collapsible metal detector... It's odd, but potentially useful. I stash it in my bag, wondering who even bought this, and why.",
+		"hatch": "A square hatch of wood graces the ceiling. How'd I forget about the attic? The pull-down ladder's been broken since childhood. Getting up there won't be easy.",
 		"street": "Streetlights flicker like dying thoughts. A shadow by the telephone pole stands too tall, too still. The security cam would probably show only static. I should check the feed... if I can get online.",
 		"attic": "Damp wood and something metallic—copper or dried glue? A dresser slouches in the corner, its surface littered with useless trinkets and a single photograph placed face-down.",
 		"get-robe": "The drawer reveals a blood-red robe with gold trim, nestled between mothballs. Why did Grandpa own this ceremonial-looking thing? The fabric smells of camphor and something earthier, but it might prove useful.",
 		"windowgaze": "The window's grime distorts the world like a funhouse mirror. Vines slither through cracks, their stems unnaturally thick and glistening like oil-slicked flesh.",
 		"get-rope": "Rope coils in heaps—some strands knotted into crude symbols. A few twitch when the wind rattles the pane. I gather them quickly, my skin prickling as the knots brush my palms.",
-		"transit1": "The turnstile light blares red. My pass is still on the kitchen counter. A train whips past, its wind tugging at my hair. The clerk eyes me through smudged glass. 'Last train leaves at sunset,' he says. 'You don't wanna miss it.'",
-		"transit2": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh crackles into static over the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
-		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome. 'Card?' she drones. When I shake my head, she slides a form across the desk. 'Terminal three. One hour.' Her tone suggests books aren't why people come here anymore.",
+		"transit1": "The turnstile light blares red. My transit pass is still at home in the dresser. A train whips past, its wind tugging at my hair. The clerk eyes me through smudged glass. 'Last train leaves at sunset,' he says. 'You don't wanna miss it.'",
+		"transit2": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
+		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
 		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: police blotters, tide charts, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
-		"left-library": "Fluorescents buzz like dying flies as I step outside. Across the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
-		"stacks": "Dusty tomes reveal the truth—the '86 'chemical spill' was a cover-up. A faded photo shows the sheriff padlocking that blue shack. Scribbled in the margin: '16-2-18, high tide on the solstice.' The numbers itch at my brain.",
-		"police": "The receptionist's nails click against her keyboard. 'Missing persons? Fill out a form. Detective's booked till Thursday.' She smirks without looking up. 'Unless it's an emergency?' My hesitation answers for me. 'Thought so.'",
-		"police2": "The detective's desk is a graveyard of files. His left hand bears the ghost of a wedding ring—pale skin where gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Him, before. He snatches it back before I can look too close.",
-		"papers": "Rifling through paperwork, my fingers brush cold metal—a key marked 'Evidence' hidden beneath incident reports. The teeth look oddly ceremonial.",
+		"left-library": "Fluorescents buzz like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
+		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 'chemical spill' was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '16-2-18, high tide on the solstice.' The numbers itch at my brain.",
+		"police": "The receptionist's nails click against her keyboard.\n\n'Missing persons? Fill out a form. Detective's booked till Thursday.'\n\nShe smirks without looking up.\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nAll I know is I can't wait until next Thursday.",
+		"police2": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.",
+		"police3": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But you're here by invite. You get yourself a coffee.",
+		"papers": "Rifling through paperwork, my fingers brush cold metal. A key marked 'Evidence' hidden beneath incident reports. The teeth look oddly ceremonial.",
 		"police-drawer": "A quick glance at the door. The drawer squeaks as I extract a small megaphone. Not standard issue, but potentially useful. Into the backpack it goes.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
 		"evidence": "A red vinyl chair screams against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
 		"paperwork": "Blueprints reveal a network of tunnels beneath the hilltop mansion. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the property.",
 		"drawers": "The revolver's grip sticks—sweat or old blood? Six chambers. One empty. The others click when tilted, as if something inside shifts restlessly. The serial number's been filed away.",
-		"window": "Through wire-reinforced glass, the precinct buzzes with muted activity. A file on the detective's desk catches my eye: 'TIDE INCIDENT – EYES ONLY'. The plant beside it rustles though there's no draft.",
-		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new. A weathered notice flaps: 'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'—the rest scribbled into illegibility.",
+		"window": "Through wire-reinforced glass, the precinct buzzes with muted activity. A file on the detective's desk catches my eye:\n\n'TIDE INCIDENT – CONFIDENTIAL'.\n\nThe plant beside it rustles though there's no draft.",
+		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new. A weathered notice flaps:\n\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest scribbled into illegibility.",
 		"dagger": "The metal detector shrieks. Buried in wet sand: a ritual knife with a serrated edge. I nearly slice my finger digging it up. The blade smells like low tide.",
 		"sand": "Hot grit slips through my fingers. Each handful feels heavier than it should. There's probably nothing here. Probably.",
 		"sky": "The clouds hang like damp gauze—translucent and stubborn. They don’t move so much as peel, slow and grudging, as if the sky can’t decide whether to heal or scar. The sun bleeds through in patches, hot and uneven, like a fever pressing against glass.",
@@ -118,7 +124,7 @@
 		"get-pail": "A galvanized metal pail lurks in the corner, sturdy enough to hold... something. No idea what yet, but into the backpack it goes.",
 		"shack-desk": "The drawer reveals a map—recruitment targets circled in red ink. The hilltop mansion dominates the center. Recent coffee stains suggest this is still an active plan.",
 		"shack-drawers": "Rope loops tangle in the drawer. Not a single length but dozens of pre-made nooses. They stack neatly despite their grim purpose.",
-		"mansion1": "A robed figure materializes from the shadows, pressing a flyer into my palm. His fingers stretch too long, nails ridged with old blood. 'The Tide doesn't need you yet,' he rasps. Behind him, the mansion's windows pulse—not with light, but with movement.",
+		"mansion": "A robed figure materializes from the shadows, pressing a flyer into my palm. His fingers stretch too long, nails ridged with old blood. 'The Tide doesn't need you yet,' he rasps. Behind him, the mansion's windows pulse—not with light, but with movement.",
 		"cultist": "The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
 		"balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
 		"tunnels": "Hours of stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
@@ -148,6 +154,9 @@
 		"POLICE": {
 			"name": "Police Station"
 		},
+		"POLICE2": {
+			"name": "Police Station"
+		},
 		"EVIDENCE": {
 			"name": "Evidence Lockup"
 		},
@@ -165,14 +174,14 @@
 		}
 	},
 	"insanity": {
-		"ceiling-fan": "The fan’s blades carve slow circles into the air, each rotation a little louder than it should be. Click. Whir. Click. Like a metronome counting down to nothing.\n\nI’m reminded of my daughter’s favorite track — Victim, from that Dead Inside album she played too loud. 'Swinging dead in summer wind…' She’d mouth the words while braiding her hair, grinning like it was just some dumb lyric. But now the fan’s rhythm syncs with it. Click. Swinging. Whir. Dead.\n\nThe shadows between the blades stretch longer each pass. For a second, I see shapes—not dust, but strands, like hair tangled in the mechanism. The fan stutters. A high, thin noise rises under the motor’s grind. A giggle? A whimper? The screws holding it to the ceiling are crusted with something dark. Rust. Or dried glue. Or—\n\nI blink. The fan’s clean again. Click. Whir.\nThe track’s still in my head. 'My parents will go crazy, slowly…'\nI should get up. But the couch holds me like a hand.\n[SANITY REDUCED]",
+		"ceiling-fan": "The fan’s blades carve slow circles into the air, a little louder than it should be. Click. Whir. Click. Like a metronome.\n\nI’m reminded of my daughter’s favorite track — Victim, from that Dead Inside album she played too loud. 'Swinging dead in summer wind…' She’d mouth the words while braiding her hair, grinning like it was just some dumb lyric. But now the fan’s rhythm syncs with it. Click. Swinging. Whir. Dead.\n\n'My parents will go crazy, slowly…'\nI should get up. But the couch holds me like a hand.\n[SANITY REDUCED]",
 		"vines": "At first, they’re just vines. Normal. Overgrown. The kind of thing I keep meaning to trim but never do. Thin, fibrous tendrils creep along the ceiling, curling like lazy fingers. They don’t move when I look at them. But when I turn away, in the corner of my vision, they twitch.\n\nI reach up. The moment before my fingers touch one, the vine tightens. A shudder runs through the whole mass, like a muscle flexing.\n\nOutside, the wind blows.\nThe vines go still.\nBut now I can’t stop seeing them.\nEvery time I walk past the window, they’ve gotten just a little closer to the floor.\n[SANITY REDUCED]",
-		"birds": "The birds in the air hang too still, wings frozen mid-beat, as if the sky’s a pinned photograph. The ones on the sand tilt their heads in unison, black eyes locking onto me.\n\nThen there’s the close one—close enough to touch. Its beak parts. Not a screech. A whisper.\n\n'She’s right where you left her.'\n\nI reach out. My fingers graze feathers—cold and stiff, like wet paper. The gull collapses into a tangle of string and seaweed. The others take flight, finally moving, their wings beating in perfect time.\n\nClick. Whir. Click.\nJust like the ceiling fan at home.\n[SANITY REDUCED]",
-		"ocean": "The waves don’t crash—they breathe. In. Out. Like the tide is some great, slumbering beast beneath the sand. The water isn’t blue. Not really. It’s the color of a fading bruise. Purple. Yellow at the edges.\n\nA shape floats just beneath the surface. Too big to be a fish. Too still to be driftwood. It doesn’t move with the waves. It watches.\n\nI count the seconds between the waves. Ten. Twenty. Thirty. The rhythm is wrong. The pauses stretch too long. The ocean is holding its breath.\n\nAnd then—a sound. Not a gull, not the wind. A voice, half-drowned, calling from where the water meets the horizon.\n'You’re already too late.'\n[SANITY REDUCED]",
-		"tracks": "The rails hum even when no train is coming. A low, metallic vibration, like the tracks are singing to themselves. A tune without a melody. A warning without words.\n\nI press my palm to the steel. It’s warm. Too warm. As if something heavy and hungry just passed through, seconds ago, unseen.\n\nThe air smells like ozone and burnt sugar. The timetable board flickers—departure times melting into gibberish, then into symbols I almost recognize.\nA shadow moves in the nearby train tunnel. Not a train. Something longer.\n\nSomething that sways. The rails go silent.\nThe shadow is gone.\nBut the taste of copper lingers on my tongue.\n[SANITY REDUCED]",
+		"birds": "The birds in the air hang too still, hovering in the wind. The ones on the sand tilt their heads in unison, black eyes locking onto me.\n\nThen there’s the close one—close enough to touch. Its beak opens. Not a screech. A whisper.\n\n'She’s right where you left her.'\n\nI reach out. My fingers graze feathers—cold and stiff, like wet paper. The gull collapses into a tangle of evaporating seaweed. The others take flight, finally moving, their wings beating in perfect time.\n\nClick. Whir. Click. Just like the ceiling fan at home.\n[SANITY REDUCED]",
+		"ocean": "The waves don’t crash—they breathe. In. Out. Like the tide is some great, slumbering beast beneath the sand. The water isn’t blue. Not really. It’s the color of a fading bruise. Purple. Yellow at the edges.\n\nI count the seconds between the waves. Ten. Twenty. Thirty. The rhythm is wrong. The pauses stretch too long. The ocean is holding its breath.\n\nAnd then—a sound. Not a gull, not the wind. A voice, half-drowned, calling from where the water meets the horizon.\n'You’re already too late.'\n[SANITY REDUCED]",
+		"tracks": "The rails seem to hum even when no train is coming. A low, metallic vibration, like the tracks are singing to themselves. A tune without a melody. A warning without words.\n\nI walk to the track crossing and bend down, pressing my palm to the steel. It’s warm. Too warm. As if something heavy and hungry just passed through, seconds ago, unseen.\n\nThe air smells like ozone and burnt sugar. The timetable board flickers—departure times melting into gibberish, then into symbols I almost recognize.\nA shadow moves in the nearby train tunnel. Not a train. Something longer.\n\nSomething that sways. The rails go silent.\nThe shadow is gone.\nBut the taste of copper lingers on my tongue.\n[SANITY REDUCED]",
 		"ceiling": "The ceiling isn’t gone.\nIt’s just… farther now.\n\nA black so deep it drinks the light from my flashlight beam, swallowing it whole without a glimmer in return. I crane my neck, expecting rafters, cobwebs, the underside of the roof—but there’s nothing. No. Not nothing. Worse.\n\nThe darkness pulses.\nLike a throat swallowing.\nLike something up there is breathing.\n\nA drop of cold water lands on my cheek. I wipe it away. My fingers come back red.\n[SANITY REDUCED]",
 		"blood": "The blood isn’t dry.\n\nIt squirms.\n\nThin, glossy tendrils spider outward from the edges of each splash, creeping like liquid veins across the concrete. The thicker pools ripple, as if stirred by an invisible finger. I crouch, reaching—\n\n—and the blood flinches away from my shadow.\n\nIt’s not red anymore.\n\nIt’s the same purple-black as the altar’s seal. The same purple-black as the sky in the shack’s impossible ceiling. The same purple-black as the inside of my eyelids when I wake gasping at 3 AM.\n\nI straighten up.\n\nThe blood goes still.\n\nNow it’s just red blood again.\n\nProbably.\n[SANITY REDUCED]",
-		"magic": "The circle isn’t just glowing—it’s breathing.\n\nEach carved line pulses like a vein, the violet light throbbing in time with some distant, depthless heartbeat. The symbols twist if you stare too long, their edges writhing like worms in wet soil.\n\nYou step closer. The air tastes of ozone and rotting honey. The light doesn’t cast shadows—it eats them, leaving only stark, fever-bright outlines: your daughter’s silhouette, the cultists’ hollow-eyed masks, the altar’s jagged teeth.\n\nOne rune flickers. For a second, it’s not a symbol at all. It’s a word.\n\nYOURS.\n\nThen it’s just a rune again.\n\nThe light hums. It’s not a sound. It’s the vibration of a throat before it screams.\n[SANITY REDUCED]"
+		"magic": "The circle isn’t just glowing—it’s breathing.\n\nEach carved line pulses like a vein, the violet light throbbing in time with some distant, depthless heartbeat. The symbols twist if I stare too long, their edges writhing like worms in wet soil.\n\nI step closer. The air tastes of ozone and rotting honey. The light doesn’t cast shadows—it eats them, leaving only stark, fever-bright outlines: my daughter’s silhouette, the cultists’ hollow-eyed masks, the altar’s jagged teeth.\n\nOne rune flickers. For a second, it’s not a symbol at all. It’s a word.\n\nMINE.\n\nThen it’s just a rune again.\n\nThe light hums. It’s not a sound. It’s the vibration of a throat before it screams.\n[SANITY REDUCED]"
 	},
 	"dialogs": {
 		"computer": {
@@ -181,24 +190,24 @@
 				"options": [
 					{
 						"text": "Email Police",
-						"tooltip": "Request an interview about my missing persons case.",
+						"tooltip": "Request an interview about\nmy missing persons case.",
 						"next": "email_police"
 					},
 					{
 						"text": "FBI Tip Line",
-						"tooltip": "Upload my evidence anonymously for federal review.",
+						"tooltip": "Upload my evidence anonymously\nfor federal review.",
 						"next": "fbi_upload",
-						"condition": "has_scanned_flyer"
+						"condition": "FLYER"
 					},
 					{
 						"text": "ThePier Forum",
-						"tooltip": "Post flyer/images to rally townsfolk.",
+						"tooltip": "Post flyer & images to rally townsfolk.",
 						"next": "forum_post",
-						"condition": "has_scanned_flyer"
+						"condition": "FLYER"
 					},
 					{
 						"text": "Search for Cult",
-						"tooltip": "Scan through old news articles and photos...",
+						"tooltip": "Scan through old articles and photos.",
 						"next": "search_results"
 					},
 					{
@@ -208,13 +217,13 @@
 					},
 					{
 						"text": "Log Out",
-						"tooltip": "The screen flickers. A reflection? My face looks... older.",
+						"tooltip": "The screen flickers. A reflection?\nMy face looks... older.",
 						"next": "close_computer"
 					}
 				]
 			},
 			"email_police": {
-				"result": "Detective Rook replies: 'Meet me tomorrow. 3 PM. Don’t bring attention.'",
+				"result": "Detective Rook replies:\n\n'Come in today. ASAP.\nMake sure you aren't followed.'",
 				"action": "unlock_detective_meeting"
 			},
 			"fbi_upload": {
@@ -222,25 +231,133 @@
 				"action": "unlock_fbi_swat"
 			},
 			"forum_post": {
-				"result": "I upload my pics and plea in a local forum and quickly see reactions.",
+				"result": "I upload my pics and plea in a local forum and quickly see reactions. Local protestors are starting to gather even now.",
 				"action": "public"
 			},
 			"search_results": {
-				"result": "An article appears about a '1986 Beach Accident' with info about a shack",
+				"result": "An article appears about a '1986 Beach Accident' but scanning the fine print shows this headline to be misleading.\nTownmembers were abducted by cultists who left similar letters. The article also shows info about a related shack on the north beach owned by this same cult.",
 				"action": "shack"
 			},
 			"view_cams": {
-				"result": "Last footage: 2:47 AM. A shadow moving through her room.",
+				"result": "Last footage: 11:47 AM. A shadow moving through her room. She's been gone since last night!",
 				"action": "abductor"
+			},
+			"close_computer": {
+				"result": "You sign out of the computer with plenty of time to spare on your account. The screen flickers and glitches, and returns to the login screen.",
 			}
 		},
 		"detective": {
+			"root": {
+				"prompt": "Where’d you last see her?",
+				"options": [
+					{
+						"text": "Tell him everything",
+						"tooltip": "Honest. Truthful. Why wouldn't you be? She's your daughter!",
+						"next": "be_open"
+					}
+				]
+			},
+			"be_open": {
+				"result": "You tell the detective everything you know. You played Scrabble until 9, tucked her in—she’s too old for bedtime stories. You ramble about the strange note, the argument over scrabble, the sets of footprints in the sand.",
+				"reselect": "detective_response"
+			},
+			"detective_response": {
+				"result": "He leans back, jaw tight. “You’re the fifth parent this month,” he mutters, voice sandpapered by cigarettes and something darker. “Funny how it’s always the same beach. Same patterns.” The fan creaks overhead. He flicks to a battered photo in the planter—her eyes scratched out.\n\nHe steels himself. “There’s a shack down by the north shore—cult’s been using it. And a clifftop mansion to the west. Both empty at high tide. I can take you there, but it gets… unwelcoming after dark.”",
+				"next": "offer_help"
+			},
+			"offer_help": {
+				"prompt": "He sighs. “Look, you want in—come by anytime. Station’s open. Hell, I find the place comforting. You’ll have free reign. Just—be careful out there.”",
+				"options": [
+					{
+						"text": "Thank him",
+						"tooltip": "You appreciate the reprieve.",
+						"next": "end"
+					}
+				]
+			},
+			"end": {
+				"result": "You nod. For the first time since the note arrived, you feel a sliver of hope. The detective’s office feels less like an interrogation room and more like an ally’s living room.",
+				"next": null
+			}
 		},
 		"daughter": {
+			"root": {
+				"prompt": "You rush into the dim cell where your daughter sits on a cold stone bench. She looks up—eyes red, arms crossed.",
+				"options": [
+					{
+						"text": "I’m so sorry I took so long",
+						"tooltip": "Apologize and explain.",
+						"next": "apology"
+					},
+					{
+						"text": "Come with me now",
+						"tooltip": "Insist she leave immediately.",
+						"next": "insist"
+					}
+				]
+			},
+			"apology": {
+				"result": "Her lip trembles. “You promised we’d finish Scrabble. You left me alone. I was scared.” She pulls the torn tile from her pocket. “I kept this safe. But it’s not enough.”",
+				"next": "ask_fight"
+			},
+			"ask_fight": {
+				"prompt": "She glares. “Don’t change the subject. Last night you chose work over me.”",
+				"options": [
+					{
+						"text": "I was protecting you",
+						"tooltip": "Explain your duty.",
+						"next": "protecting"
+					},
+					{
+						"text": "Can we just go?",
+						"tooltip": "Push to leave now.",
+						"next": "insist"
+					}
+				]
+			},
+			"protecting": {
+				"result": "She softens briefly. “Protecting? I found this note…” She shows the cult’s symbol carved in wood. “They said you’d come back for me. But what if they want you?”",
+				"next": "reveal_cult"
+			},
+			"insist": {
+				"result": "She stands, but shakes her head. “No. I don’t trust you. Not yet.”",
+				"next": "daughter_decides"
+			},
+			"reveal_cult": {
+				"result": "Her eyes go distant. “They chose me. I… I’m one of them now.” Her voice echoes strangely. “You should join me—or be next.”",
+				"next": "daughter_decides"
+			},
+			"daughter_decides": {
+				"prompt": "She steps away from the bars. Will she come with you, or stay as the cult’s heir?",
+				"options": [
+					{
+						"text": "Take her hand",
+						"tooltip": "Reach out emotionally.",
+						"next": "rescue_attempt"
+					},
+					{
+						"text": "Let her decide",
+						"tooltip": "Give her space.",
+						"next": "end_alone"
+					}
+				]
+			},
+			"rescue_attempt": {
+				"result": "She hesitates, then squeezes your hand. The cell door clanks open. “Fine,” she whispers. “But if you fail…”",
+				"next": "end_escape"
+			},
+			"end_alone": {
+				"result": "She watches you go, tears glistening. The door stays shut. You walk away with a broken heart—and the chilling knowledge she leads the cult.",
+				"next": null
+			},
+			"end_escape": {
+				"result": "Together you slip into the night. Behind you, the cult’s chanting fades—and you know they’ll come for both of you.",
+				"next": null
+			}
 		}
 	},
 	"endings": {
-		"sanity": "Reality fractures into static—a television left screaming in an empty room. I blink up at a fluorescent sun, its sterile light peeling back the delusion: no missing daughter, no tide cult, just these four stained walls. The horror isn’t that it wasn’t real. The horror is that I clawed my way back anyway. The shack’s salt-stained door still whispers. The attic hatch yawns above me. Sanity is the cruelest prison. I close my eyes. Let the tide pull me under again.",
+		"sanity": "Reality fractures into static—\na television left screaming in an empty room.\n\nI blink up at a fluorescent sun, its sterile light peeling back the delusion: no missing daughter, no tide cult, just these four stained walls.\nThe horror isn’t that it wasn’t real. The horror is that I clawed my way back anyway.\n\nThe attic hatch still yawns above me. The abduction letter still whispers. Sanity is the cruelest prison. I close my eyes. Let the tide pull me under again.",
 		"100": "I linger in shadows, trading loyalty for time. She is extracted with surgical precision. The others remain unaware until long after I’m gone.",
 		"101": "I’m the whisper in the wires. The building catches fire from within. She meets me at the rendezvous, wrapped in smoke and silence.",
 		"102": "They call it an inside job. I leave no fingerprints. She thinks I’m a hero. I don’t correct her.",

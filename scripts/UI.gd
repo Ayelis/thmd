@@ -18,9 +18,26 @@ func _on_room_changed(room_name: String):
 		room.visible = false
 	# Show target room and update UI
 	$Rooms.get_node(room_name).visible = true
-	$TopBar/Scene.text = GameManager.rooms[room_name].display
+	$TopBar/Scene.text = resolve_text_reference(GameManager.rooms[room_name].display)
 	GameManager.current_room = room_name
-	AudioManager.play_music(GameManager.rooms[room_name].music)
+	AudioManager.play_music(load("res://assets/audio/"+GameManager.rooms[room_name].music+".ogg"))
+
+func resolve_text_reference(ref: String) -> String:
+	var path = ref.split(".")
+	var current = GameManager.texts
+	current = current["rooms"]
+	#path.remove_at(0)  # Remove "rooms" from path
+	# Now navigate the remaining path
+	for key in path:
+		print(key)
+		if current is Dictionary and current.has(key):
+			current = current[key]
+			print("CURRENT!!")
+			print(current)
+		else:
+			push_error("Missing text reference: %s at key %s" % [ref, key])
+			return "MISSING_TEXT"
+	return str(current)  # Ensure we return a String
 
 func update_ui():
 	Global.theme_changed.connect(_update_theme)
