@@ -25,8 +25,8 @@ func _on_dresser_pressed():
 
 func _on_hall_pressed():
 	print("Hall explored!")
-	#GameManager.obtain_item(GameManager.ItemIDs.DETECTOR)
-	#GameManager.display_dialog(GameManager.events["hall"])
+	GameManager.obtain_item(GameManager.ItemIDs.DETECTOR)
+	GameManager.display_dialog(GameManager.events["hall"])
 	$Hall.hide()
 
 func _on_hatch_pressed():

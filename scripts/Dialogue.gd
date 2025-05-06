@@ -1,7 +1,5 @@
 extends Control
 
-signal dialogue_closed
-
 func _ready():
 	DialogueManager.set_dialogue_node(self)
 	
@@ -20,6 +18,7 @@ func _ready():
 	print("Dialogue ready")
 	
 func _on_dialogue_updated(text: String):
+	print("Dialogue:"+text)
 	$Panel/Text.text = text
 	_show()
 
@@ -39,9 +38,21 @@ func _hide():
 	GameManager.emit_signal("dialogue_closed")  # Notify GameManager
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):  # Enter/Return/Space key
-		var opts = get_node("Panel/Options")
-		# don’t close if options are up
-		if opts.visible and opts.get_child_count() > 0:
+	# only care about key events
+	if event is InputEventKey and event.is_action_pressed("ui_accept"):
+		# 1) if choice‐options are up, do nothing
+		if DialogueManager.options_container.visible and DialogueManager.options_container.get_child_count() > 0:
 			return
-		hide()
+
+		# 2) if Continue button is visible, treat Enter as “continue”
+		if DialogueManager.continue_button.visible:
+			DialogueManager._on_continue()
+			# consume so default hide() won’t run
+			#get_tree().set_input_as_handled()
+			return
+
+		# 3) otherwise if Exit button is visible, treat Enter as “exit”
+		if DialogueManager.exit_button.visible:
+			DialogueManager._on_exit()
+			#get_tree().set_input_as_handled()
+			return

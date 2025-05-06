@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=52 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://d3fh1j87vlq0p" path="res://Canvas.gd" id="1_w250u"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://2p5ltt3hhgmn" path="res://assets/Scenes/2b library.jpg" id="8_5he1h"]
 [ext_resource type="Texture2D" uid="uid://dljulm18ayjd0" path="res://assets/UI/Rect-Dark-Default/Info@4x.png" id="8_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://bl3prlik4w2re" path="res://assets/UI/Rect-Dark-Hover/Info@4x.png" id="9_elkpi"]
-[ext_resource type="Texture2D" uid="uid://3xirp7xa0el0" path="res://assets/Scenes/3a police.jpg" id="9_xwkxq"]
 [ext_resource type="Texture2D" uid="uid://dnkf5jys8xmul" path="res://assets/UI/Rect-Dark-Default/Gear@4x.png" id="10_0yprl"]
 [ext_resource type="Script" uid="uid://csi0ky2wa7c2o" path="res://scenery/Library.gd" id="10_7vltt"]
 [ext_resource type="Texture2D" uid="uid://cd7r6b8noe4n5" path="res://assets/Scenes/3b evidence.jpg" id="10_wdm1y"]
@@ -25,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://ccjtsj522r0mt" path="res://assets/Scenes/4b shack.jpg" id="12_2t1a5"]
 [ext_resource type="Texture2D" uid="uid://brxjb3ix2u1mq" path="res://assets/Scenes/3a policea.jpg" id="12_3h3yf"]
 [ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://scripts/Info.gd" id="12_7ged1"]
-[ext_resource type="Script" uid="uid://0wp0w7of40iv" path="res://scenery/Police.gd" id="12_fj2yu"]
 [ext_resource type="Script" uid="uid://cldgf68acf0e1" path="res://scenery/Police2.gd" id="12_nyc7o"]
 [ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://scripts/Settings.gd" id="12_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://dmhl27txb0r03" path="res://assets/Scenes/5a mansion.jpg" id="13_8576b"]
@@ -45,12 +43,12 @@
 [ext_resource type="Texture2D" uid="uid://t0yx7f7nsa4w" path="res://assets/UI/Square-Dark-Hover/Star@4x.png" id="21_bisgb"]
 [ext_resource type="Script" uid="uid://b1w3hmrykfrfj" path="res://scenery/Rotunda.gd" id="22_7vltt"]
 [ext_resource type="Script" uid="uid://clr6nc18m684u" path="res://scripts/Insanity.gd" id="30_v5dxo"]
-[ext_resource type="Texture2D" uid="uid://cexpaiwgcnw2d" path="res://assets/Scenes/padded.png" id="31_dyvha"]
 [ext_resource type="Script" uid="uid://ca2o5e26c0u05" path="res://scripts/Dialogue.gd" id="31_v5dxo"]
 [ext_resource type="Texture2D" uid="uid://bg075ryqqa1oe" path="res://assets/UI/dark_panel.png" id="32_dyvha"]
 [ext_resource type="Texture2D" uid="uid://rau58h4h7lcr" path="res://assets/UI/DialogYel/Button_ContinueHL.png" id="32_v5dxo"]
 [ext_resource type="FontFile" uid="uid://dpr1br3krx4c2" path="res://assets/UI/EHP.ttf" id="32_xc54d"]
 [ext_resource type="Texture2D" uid="uid://bbhs5onwyfgro" path="res://assets/UI/DialogRed/Button_ContinueHL.png" id="33_dyvha"]
+[ext_resource type="Texture2D" uid="uid://sethpxxg6isc" path="res://assets/Scenes/padded.jpg" id="34_nyc7o"]
 [ext_resource type="Texture2D" uid="uid://ct3e28ghw3tyh" path="res://assets/UI/DialogBlu/Button_ContinueHL.png" id="34_xc54d"]
 [ext_resource type="Texture2D" uid="uid://dkr36luuo2fuf" path="res://assets/Scenes/5c credits.jpg" id="35_7vltt"]
 
@@ -337,24 +335,6 @@ offset_bottom = 443.0
 focus_mode = 0
 flat = true
 
-[node name="Police" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
-layout_mode = 0
-offset_top = 45.0
-offset_right = 360.0
-offset_bottom = 560.0
-texture = ExtResource("9_xwkxq")
-expand_mode = 1
-script = ExtResource("12_fj2yu")
-
-[node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Police"]
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 170.0
-offset_bottom = 1140.0
-scale = Vector2(2.12088, 0.452698)
-focus_mode = 0
-flat = true
-
 [node name="Police2" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
 visible = false
 layout_mode = 0
@@ -466,7 +446,6 @@ focus_mode = 0
 flat = true
 
 [node name="Beach" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
-visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -544,10 +523,10 @@ flat = true
 
 [node name="GroundBirds" type="Button" parent="CanvasLayer/UI/Rooms/Beach"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 363.0
-offset_right = 144.0
-offset_bottom = 411.0
+offset_left = 62.0
+offset_top = 359.0
+offset_right = 153.0
+offset_bottom = 413.0
 focus_mode = 0
 flat = true
 
@@ -555,8 +534,8 @@ flat = true
 layout_mode = 0
 offset_left = 248.0
 offset_top = 411.0
-offset_right = 304.0
-offset_bottom = 467.0
+offset_right = 317.0
+offset_bottom = 473.0
 focus_mode = 0
 flat = true
 
@@ -746,10 +725,10 @@ flat = true
 
 [node name="Daughter" type="Button" parent="CanvasLayer/UI/Rooms/Rotunda"]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 254.0
-offset_right = 293.0
-offset_bottom = 340.0
+offset_left = 175.0
+offset_top = 292.0
+offset_right = 340.0
+offset_bottom = 516.0
 focus_mode = 0
 flat = true
 
@@ -823,7 +802,7 @@ layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
 offset_bottom = 620.0
-texture = ExtResource("31_dyvha")
+texture = ExtResource("34_nyc7o")
 expand_mode = 1
 
 [node name="TheEndLabel" type="Label" parent="CanvasLayer/Insanity"]
@@ -888,23 +867,24 @@ offset_bottom = 566.0
 scale = Vector2(2.88, 3)
 alignment = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/Dialogue/Panel/Options"]
-layout_mode = 2
-
-[node name="Button2" type="Button" parent="CanvasLayer/Dialogue/Panel/Options"]
-layout_mode = 2
-
-[node name="Button3" type="Button" parent="CanvasLayer/Dialogue/Panel/Options"]
-layout_mode = 2
-
-[node name="Button4" type="Button" parent="CanvasLayer/Dialogue/Panel/Options"]
-layout_mode = 2
-
-[node name="Button5" type="Button" parent="CanvasLayer/Dialogue/Panel/Options"]
-layout_mode = 2
-
-[node name="Button6" type="Button" parent="CanvasLayer/Dialogue/Panel/Options"]
-layout_mode = 2
+[node name="Continue" type="TextureButton" parent="CanvasLayer/Dialogue/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -240.0
+offset_right = -140.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("32_v5dxo")
+texture_pressed = ExtResource("33_dyvha")
+texture_hover = ExtResource("34_xc54d")
+stretch_mode = 4
 
 [node name="Exit" type="TextureButton" parent="CanvasLayer/Dialogue/Panel"]
 layout_mode = 1
@@ -1202,7 +1182,6 @@ stretch_mode = 0
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Shelves" to="CanvasLayer/UI/Rooms/Library/Shelves" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Chair" to="CanvasLayer/UI/Rooms/Library/Chair" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Computers" to="CanvasLayer/UI/Rooms/Library/Computers" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police/Leave" to="CanvasLayer/UI/Rooms/Police/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Leave" to="CanvasLayer/UI/Rooms/Police2/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Computer" to="CanvasLayer/UI/Rooms/Police2/Computer" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Detective" to="CanvasLayer/UI/Rooms/Police2/Detective" method="_on_pressed"]

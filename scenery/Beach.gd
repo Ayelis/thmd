@@ -9,7 +9,7 @@ func _ready():
 	$Sky.pressed.connect(_on_sky_pressed)
 	$Dog.pressed.connect(_on_dog_pressed)
 	$Ocean.pressed.connect(_on_ocean_pressed)
-	$Shack.pressed.connect(_on_door_pressed)
+	$Shack.pressed.connect(_on_shack_pressed)
 	$Door.pressed.connect(_on_door_pressed)
 	$Leave.pressed.connect(_on_leave_pressed)
 	print("Beach area ready!")
@@ -23,7 +23,7 @@ func _on_birds_pressed():
 	$FlyingBirds.hide()
 	print("Birds pondered!")
 func _on_sand_pressed():
-	if(!GameManager.inventory[GameManager.ItemIDs.DETECTOR]):
+	if(GameManager.inventory[GameManager.ItemIDs.DETECTOR]):
 		GameManager.display_dialog(GameManager.events["dagger"])
 		GameManager.obtain_item(GameManager.ItemIDs.DAGGER)
 		$Sand.hide()

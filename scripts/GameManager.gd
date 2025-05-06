@@ -2,6 +2,8 @@ extends Node
 
 @warning_ignore("unused_signal")
 
+@onready var scene_root = self
+
 # Player stats
 var morality := 0
 var tact := 0
@@ -45,7 +47,7 @@ var inventory := {
 }
 
 # Knowledge
-enum InfoIDs { DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY, DOGGO, ABDUCTOR }
+enum InfoIDs { DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY, ABDUCTOR, DOGGO }
 var INFORMATION := {}
 var discovered_info := {}
 var events := {}
@@ -94,8 +96,8 @@ func display_dialog(text: String):
 func initiate_dialogue(dialog_id: String, on_complete: Callable = Callable()):
 	DialogueManager.start_structured(dialog_id, on_complete) #Structured Dialogues
 
-func ending(text_key: String, texture_path: String = ""):
-	ending_updated.emit(text_key, texture_path)
+func ending(text_key: String, title_name: String = "Insanity", texture_path: String = "Padded", timbre: String = "67_Asylum"):
+	ending_updated.emit(text_key, title_name, texture_path, timbre)
 	# Create fullscreen TextureRect if it doesn't exist
 
 func change_room(new_room: String):
@@ -145,14 +147,14 @@ func increase_insanity():
 func restore_sanity():
 	sanity=3
 
-func hard_reset():
-	# Clear all persistent state
-	get_tree().paused = false
-	# Full engine restart
-	# 1. Delete everything
-	get_tree().root.propagate_call("queue_free")
-	# 2. Reload main scene (adjust path)
-	var err = get_tree().change_scene_to_file("res://TitleScreen.tscn")
-	if err != OK:
-		printerr("RESET FAILED! Error code:", err)
-		get_tree().quit()
+#func hard_reset():
+	## Clear all persistent state
+	#get_tree().paused = false
+	## Full engine restart
+	## 1. Delete everything
+	#get_tree().root.propagate_call("queue_free")
+	## 2. Reload main scene (adjust path)
+	#var err = get_tree().change_scene_to_file("res://TitleScreen.tscn")
+	#if err != OK:
+		#printerr("RESET FAILED! Error code:", err)
+		#get_tree().quit()

@@ -32,8 +32,6 @@ func resolve_text_reference(ref: String) -> String:
 		print(key)
 		if current is Dictionary and current.has(key):
 			current = current[key]
-			print("CURRENT!!")
-			print(current)
 		else:
 			push_error("Missing text reference: %s at key %s" % [ref, key])
 			return "MISSING_TEXT"

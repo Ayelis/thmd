@@ -5,7 +5,10 @@ const BASE_HEIGHT = 620.0
 
 var previous_size = Vector2.ZERO
 
+@onready var dlg = $CanvasLayer/Dialogue
+
 func _ready():
+	DialogueManager.set_dialogue_node(dlg)     # inject the actual Control
 	_update_scale()
 
 func _process(_delta):

@@ -3,10 +3,6 @@ extends TextureRect
 
 func _ready():
 	print("Mansion area ready!")
-	$Tunnel.pressed.connect(_on_tunnel_pressed)
-	$Tunnels.pressed.connect(_on_tunnel_pressed)
-	$Balcony.pressed.connect(_on_balcony_pressed)
-	$Door.pressed.connect(_on_door_pressed)
 	$Cultist.pressed.connect(_on_cultist_pressed)
 	$Leave.pressed.connect(_on_leave_pressed)
 func _on_tunnel_pressed():
@@ -25,7 +21,7 @@ func _on_door_pressed():
 	print("Door!")
 func _on_balcony_pressed():
 	if(GameManager.inventory[GameManager.ItemIDs.ROPE]):
-		GameManager.display_dialog(GameManager.events["rope"])
+		GameManager.display_dialog(GameManager.events["has-rope"])
 		GameManager.change_room("Rotunda")
 	else:
 		GameManager.display_dialog(GameManager.events["balcony"])
