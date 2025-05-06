@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=54 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://d3fh1j87vlq0p" path="res://Canvas.gd" id="1_w250u"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://2p5ltt3hhgmn" path="res://assets/Scenes/2b library.jpg" id="8_5he1h"]
 [ext_resource type="Texture2D" uid="uid://dljulm18ayjd0" path="res://assets/UI/Rect-Dark-Default/Info@4x.png" id="8_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://bl3prlik4w2re" path="res://assets/UI/Rect-Dark-Hover/Info@4x.png" id="9_elkpi"]
+[ext_resource type="Texture2D" uid="uid://3xirp7xa0el0" path="res://assets/Scenes/3a police.jpg" id="9_xwkxq"]
 [ext_resource type="Texture2D" uid="uid://dnkf5jys8xmul" path="res://assets/UI/Rect-Dark-Default/Gear@4x.png" id="10_0yprl"]
 [ext_resource type="Script" uid="uid://csi0ky2wa7c2o" path="res://scenery/Library.gd" id="10_7vltt"]
 [ext_resource type="Texture2D" uid="uid://cd7r6b8noe4n5" path="res://assets/Scenes/3b evidence.jpg" id="10_wdm1y"]
@@ -24,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ccjtsj522r0mt" path="res://assets/Scenes/4b shack.jpg" id="12_2t1a5"]
 [ext_resource type="Texture2D" uid="uid://brxjb3ix2u1mq" path="res://assets/Scenes/3a policea.jpg" id="12_3h3yf"]
 [ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://scripts/Info.gd" id="12_7ged1"]
+[ext_resource type="Script" uid="uid://0wp0w7of40iv" path="res://scenery/Police.gd" id="12_fj2yu"]
 [ext_resource type="Script" uid="uid://cldgf68acf0e1" path="res://scenery/Police2.gd" id="12_nyc7o"]
 [ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://scripts/Settings.gd" id="12_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://dmhl27txb0r03" path="res://assets/Scenes/5a mansion.jpg" id="13_8576b"]
@@ -223,7 +225,6 @@ focus_mode = 0
 flat = true
 
 [node name="Transit" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
-visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -231,6 +232,22 @@ offset_bottom = 560.0
 texture = ExtResource("7_7vltt")
 expand_mode = 1
 script = ExtResource("6_bisgb")
+
+[node name="Tracks" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+layout_mode = 0
+offset_top = 459.0
+offset_right = 357.0
+offset_bottom = 512.0
+focus_mode = 0
+flat = true
+
+[node name="Board" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+offset_left = 37.0
+offset_top = 6.0
+offset_right = 313.0
+offset_bottom = 487.0
+focus_mode = 0
+flat = true
 
 [node name="HomButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
 layout_mode = 0
@@ -291,14 +308,6 @@ offset_bottom = 154.0
 focus_mode = 0
 text = "Mansion"
 
-[node name="Tracks" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
-layout_mode = 0
-offset_top = 459.0
-offset_right = 357.0
-offset_bottom = 507.0
-focus_mode = 0
-flat = true
-
 [node name="Library" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
 visible = false
 layout_mode = 0
@@ -332,6 +341,25 @@ offset_left = 16.0
 offset_top = 266.0
 offset_right = 224.0
 offset_bottom = 443.0
+focus_mode = 0
+flat = true
+
+[node name="Police" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
+visible = false
+offset_top = 90.0
+offset_right = 360.0
+offset_bottom = 605.0
+texture = ExtResource("9_xwkxq")
+expand_mode = 1
+script = ExtResource("12_fj2yu")
+
+[node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Police"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 437.0
+offset_right = 170.0
+offset_bottom = 609.0
+scale = Vector2(2.12088, 0.452698)
 focus_mode = 0
 flat = true
 
@@ -1180,9 +1208,11 @@ stretch_mode = 0
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Attic/Vines" to="CanvasLayer/UI/Rooms/Attic/Vines" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Attic/Window" to="CanvasLayer/UI/Rooms/Attic/Window" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Transit/Tracks" to="CanvasLayer/UI/Rooms/Transit/Tracks" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Transit/Board" to="CanvasLayer/UI/Rooms/Transit/Board" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Shelves" to="CanvasLayer/UI/Rooms/Library/Shelves" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Chair" to="CanvasLayer/UI/Rooms/Library/Chair" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Computers" to="CanvasLayer/UI/Rooms/Library/Computers" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police/Leave" to="CanvasLayer/UI/Rooms/Police/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Leave" to="CanvasLayer/UI/Rooms/Police2/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Computer" to="CanvasLayer/UI/Rooms/Police2/Computer" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Detective" to="CanvasLayer/UI/Rooms/Police2/Detective" method="_on_pressed"]

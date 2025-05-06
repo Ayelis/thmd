@@ -6,6 +6,7 @@ extends TextureRect
 @onready var Police2: Button = $PolButton2
 @onready var Beach: Button = $BeaButton
 @onready var Mansion: Button = $ManButton
+@onready var Board: Button = $Board
 
 func _ready():
 	# Check signals
@@ -19,6 +20,7 @@ func _ready():
 	$BeaButton.pressed.connect(_on_beach_pressed)
 	$ManButton.pressed.connect(_on_mansion_pressed)
 	$Tracks.pressed.connect(_on_tracks_pressed)
+	$Board.pressed.connect(_on_board_pressed)
 	# Initial update
 	_update_button_visibility()
 	print("Transit area ready!")
@@ -82,6 +84,10 @@ func _on_police2_pressed():
 func _on_beach_pressed():
 	GameManager.change_room("Beach")
 	GameManager.display_dialog(GameManager.events["beach"])
+
+func _on_board_pressed():
+	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
+		GameManager.display_dialog(GameManager.events["nopass"])
 
 func _on_mansion_pressed():
 	GameManager.change_room("Mansion")
