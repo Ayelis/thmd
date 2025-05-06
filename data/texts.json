@@ -81,7 +81,7 @@
 			"description": "I have video footage showing the cultist taking my daughter."
 		},
 		"DOGGO": {
-			"description": "A very friendly doggo met you on the beach today..."
+			"description": "A very friendly doggo met me on the beach today..."
 		}
 	},
 	"events": {
@@ -103,7 +103,7 @@
 		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 'chemical spill' was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '16-2-18, high tide on the solstice.' The numbers itch at my brain.",
 		"police": "The receptionist's nails click against her keyboard.\n\n'Missing persons? Fill out a form. Detective's booked till Thursday.'\n\nShe smirks without looking up.\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nAll I know is I can't wait until next Thursday.",
 		"police2": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.",
-		"police3": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But you're here by invite. You get yourself a coffee.",
+		"police3": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
 		"papers": "Rifling through paperwork, my fingers brush cold metal. A key marked 'Evidence' hidden beneath incident reports. The teeth look oddly ceremonial.",
 		"police-drawer": "A quick glance at the door. The drawer squeaks as I extract a small megaphone. Not standard issue, but potentially useful. Into the backpack it goes.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
@@ -267,7 +267,7 @@
 				]
 			},
 			"be_open": {
-				"result": "I tell the detective everything I know. I played Scrabble until 9, tucked her in—she’s too old for bedtime stories. You ramble about the strange note, the argument over scrabble, the sets of footprints in the sand.",
+				"result": "I tell the detective everything I know. I played Scrabble until 9, tucked her in—she’s too old for bedtime stories. I ramble about the strange note, the argument over scrabble, the sets of footprints in the sand.",
 				"next": "detective_response"
 			},
 			"detective_response": {
@@ -300,7 +300,7 @@
 				"prompt": "She sits in shadows, arms crossed, uncertainty in her eyes.",
 				"options": [
 					{ "text": "Take her hand", "tooltip": "Reach out gently.", "next": "rescue" },
-					{ "text": "I won’t leave without you", "tooltip": "Plead your case.", "next": "cult_master" }
+					{ "text": "I won’t leave without you", "tooltip": "Plead my case.", "next": "cult_master" }
 				]
 			},
 			"rescue": {
@@ -311,7 +311,7 @@
 				"prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you...”",
 				"options": [
 					{ "text": "If this is what you want", "tooltip": "Step back and let her choose.", "next": "run" },
-					{ "text": "Volunteer as Tribute", "tooltip": "Offer yourself instead.", "next": "sacrifice" }
+					{ "text": "Volunteer as Tribute", "tooltip": "Offer myself instead.", "next": "sacrifice" }
 				]
 			},
 			"run": {
@@ -326,7 +326,7 @@
 		},
 		"daughter2": {
 			"root": {
-				"prompt": "You rush into the dim cell where your daughter sits on a cold stone bench. She looks up—eyes red, arms crossed.",
+				"prompt": "I rush into the dim cell where my daughter sits on a cold stone bench. She looks up—eyes red, arms crossed.",
 				"options": [
 					{
 						"text": "I’m so sorry I took so long",
@@ -349,7 +349,7 @@
 				"options": [
 					{
 						"text": "I was protecting you",
-						"tooltip": "Explain your duty.",
+						"tooltip": "Explain my duty.",
 						"next": "protecting"
 					},
 					{
@@ -372,7 +372,7 @@
 				"next": "daughter_decides"
 			},
 			"daughter_decides": {
-				"prompt": "She steps away from the bars. Will she come with you, or stay as the cult’s heir?",
+				"prompt": "She steps away from the bars. Will she come with me, or stay as the cult’s heir?",
 				"options": [
 					{
 						"text": "Take her hand",
@@ -387,15 +387,15 @@
 				]
 			},
 			"rescue_attempt": {
-				"result": "She hesitates, then squeezes your hand. The cell door clanks open. “Fine,” she whispers. “But if you fail…”",
+				"result": "She hesitates, then squeezes my hand. The cell door clanks open. “Fine,” she whispers. “But if you fail…”",
 				"next": "end_escape"
 			},
 			"end_alone": {
-				"result": "She watches you go, tears glistening. The door stays shut. You walk away with a broken heart—and the chilling knowledge she leads the cult.",
+				"result": "She watches me go, tears glistening. The door stays shut. I walk away with a broken heart—and the chilling knowledge she leads the cult.",
 				"next": null
 			},
 			"end_escape": {
-				"result": "Together you slip into the night. Behind you, the cult’s chanting fades—and you know they’ll come for both of you.",
+				"result": "Together we slip into the night. Behind us, the cult’s chanting fades—and we know they’ll come for both of us.",
 				"next": null
 			}
 		}
