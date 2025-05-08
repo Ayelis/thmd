@@ -18,7 +18,11 @@ pnpm-debug.log*
 /.env
 /.env.local
 /.env.*.local
-debug.keystore
+
+# Android keystores
+*.keystore
+*.jks
+.android/
 
 # Cache directories
 /.vscode
