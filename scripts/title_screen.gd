@@ -1,5 +1,5 @@
 #title_screen.gd
-extends Node2D
+extends Control
 
 func _ready():
 	$BG/Title.modulate.a = 0

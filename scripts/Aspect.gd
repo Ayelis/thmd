@@ -1,98 +1,34 @@
+# Aspect.gd (Global Autoload)
 extends Node
 
-@warning_ignore("UNUSED_VARIABLE")
-# Configuration
-const BASE_SIZE := Vector2(360, 620)
-const TARGET_ASPECT := float(BASE_SIZE.x) / float(BASE_SIZE.y)
+const BASE_WIDTH := 360.0
+const BASE_HEIGHT := 620.0
+var scale_factor := 1.0
+var safe_area_insets := Rect2()  # For mobile devices with notches
 
-# State
-var _resize_timer := Timer.new()
-var _is_resizing := false
-var _last_direction := 0 # 0=neutral, 1=horizontal, 2=vertical
-var previous_mode = DisplayServer.window_get_mode()
+signal scale_updated(scale_factor, viewport_size)
 
 func _ready():
-	# Setup timer for smooth resizing
-	add_child(_resize_timer)
-	_resize_timer.wait_time = 0.1
-	_resize_timer.one_shot = true
-	_resize_timer.timeout.connect(_finalize_resize)
-	# Connect signals
-	var window := get_window()
-	window.size_changed.connect(_on_resize)
-	# Initial size (200% scale)
-	await get_tree().process_frame  # Wait one frame
-	window.size = BASE_SIZE * 2
-	_finalize_resize()
-	window.size = Vector2(BASE_SIZE.x * 2.0, BASE_SIZE.y * 2.0 - 200)
+	# Set initial window size for desktop platforms
+	if OS.get_name() in ["Windows", "macOS", "Linux", "HTML5"]:
+		get_window().size = Vector2i(BASE_WIDTH, BASE_HEIGHT)
+	
+	_update_scale()
+	get_viewport().size_changed.connect(_update_scale)
 
-func _process(_delta):
-	var current_mode = DisplayServer.window_get_mode()
-	if current_mode != previous_mode:
-		previous_mode = current_mode
-		_on_mode_changed()
-
-func _on_mode_changed():
-	if get_window().mode != Window.MODE_FULLSCREEN:
-		_on_resize()
-	print("Window mode changed to: ", previous_mode)
-
-func _on_resize():
-	if _is_resizing:
-		return
+func _update_scale():
+	var viewport_size := get_viewport().get_visible_rect().size
+	scale_factor = min(viewport_size.x / BASE_WIDTH, viewport_size.y / BASE_HEIGHT)
 	
-	var window := get_window()
-	# var current_size := window.size
-	# var last_size := window.size
+	# Handle mobile safe areas
+	if OS.get_name() in ["Android", "iOS"]:
+		var display_size := DisplayServer.screen_get_size()
+		var usable_rect := DisplayServer.get_display_safe_area()
+		safe_area_insets = Rect2(
+			usable_rect.position.x / display_size.x,
+			usable_rect.position.y / display_size.y,
+			(display_size.x - usable_rect.end.x) / display_size.x,
+			(display_size.y - usable_rect.end.y) / display_size.y
+		)
 	
-	# Detect resize direction
-	var mouse_pos := DisplayServer.mouse_get_position()
-	var window_rect := Rect2i(window.position, window.size)
-	
-	if mouse_pos.x >= window_rect.end.x - 2:
-		_last_direction = 1 # Horizontal
-	elif mouse_pos.y >= window_rect.end.y - 2:
-		_last_direction = 2 # Vertical
-	
-	_is_resizing = true
-	_resize_timer.start()
-
-func _finalize_resize():
-	var window := get_window()
-	
-	# Skip in fullscreen
-	if window.mode == Window.MODE_FULLSCREEN:
-		_apply_fullscreen_scaling()
-		_is_resizing = false
-		return
-	
-	var new_size := window.size
-	
-	# Calculate based on resize direction
-	match _last_direction:
-		1: # Horizontal resize
-			new_size.y = round(new_size.x / TARGET_ASPECT)
-		2: # Vertical resize
-			new_size.x = round(new_size.y * TARGET_ASPECT)
-		_: # Default (corner or programmatic resize)
-			var current_aspect := float(new_size.x) / float(new_size.y)
-			if current_aspect > TARGET_ASPECT:
-				new_size.x = round(new_size.y * TARGET_ASPECT)
-			else:
-				new_size.y = round(new_size.x / TARGET_ASPECT)
-	
-	# Apply new size
-	if new_size != window.size:
-		window.size = new_size
-	
-	_is_resizing = false
-	_last_direction = 0
-
-func _apply_fullscreen_scaling() -> void:
-	var screen_size := DisplayServer.screen_get_size()
-	var scale_x := floorf(screen_size.x / float(BASE_SIZE.x))
-	var scale_y := floorf(screen_size.y / float(BASE_SIZE.y))
-	var scale_factor := minf(scale_x, scale_y)
-
-	scale_factor = maxf(scale_factor, 1.0)
-	get_tree().root.content_scale_factor = scale_factor
+	emit_signal("scale_updated", scale_factor, viewport_size)

@@ -1,24 +1,13 @@
+# Canvas.gd (Attached to Root control node)
 extends Control
-
-const BASE_WIDTH = 360.0
-const BASE_HEIGHT = 620.0
-
-var previous_size = Vector2.ZERO
 
 @onready var dlg = $CanvasLayer/Dialogue
 
 func _ready():
-	DialogueManager.set_dialogue_node(dlg)     # inject the actual Control
-	_update_scale()
+	DialogueManager.set_dialogue_node(dlg)
+	Aspect.scale_updated.connect(_on_scale_updated)
+	_on_scale_updated(Aspect.scale_factor, get_viewport().get_visible_rect().size)
 
-func _process(_delta):
-	var current_size = get_viewport().get_visible_rect().size
-	if current_size != previous_size:
-		previous_size = current_size
-		_update_scale()
-
-func _update_scale():
-	var viewport_size = get_viewport().get_visible_rect().size
-	var scale_factor = min(viewport_size.x / BASE_WIDTH, viewport_size.y / BASE_HEIGHT)
-	$CanvasLayer/UI.scale = Vector2(scale_factor, scale_factor)
-	$CanvasLayer/UI.position = (viewport_size - ($CanvasLayer/UI.size * scale_factor)) / 2
+func _on_scale_updated(size: float, viewport_size: Vector2):
+	$CanvasLayer/UI.scale = Vector2(size, size)
+	$CanvasLayer/UI.position = (viewport_size - ($CanvasLayer/UI.size * scale)) / 2

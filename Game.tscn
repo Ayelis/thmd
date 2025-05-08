@@ -225,6 +225,7 @@ focus_mode = 0
 flat = true
 
 [node name="Transit" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -242,6 +243,7 @@ focus_mode = 0
 flat = true
 
 [node name="Board" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 6.0
 offset_right = 313.0
@@ -346,6 +348,7 @@ flat = true
 
 [node name="Police" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
 visible = false
+layout_mode = 0
 offset_top = 90.0
 offset_right = 360.0
 offset_bottom = 605.0
@@ -430,6 +433,7 @@ expand_mode = 1
 script = ExtResource("14_iueff")
 
 [node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Evidence"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 437.0
 offset_right = 170.0
@@ -639,6 +643,7 @@ expand_mode = 1
 script = ExtResource("20_v5dxo")
 
 [node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Mansion"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 437.0
 offset_right = 170.0
@@ -853,11 +858,12 @@ theme_override_font_sizes/font_size = 72
 text = "The End"
 
 [node name="Dialogue" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("31_v5dxo")
@@ -867,10 +873,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 45.0
-offset_right = 365.0
-offset_bottom = 465.0
+offset_left = -174.0
+offset_top = -266.0
+offset_right = 532.0
+offset_bottom = 770.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -880,10 +886,10 @@ stretch_mode = 4
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/Dialogue/Panel"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 30.0
-offset_right = 342.0
-offset_bottom = 430.0
+offset_left = 38.0
+offset_top = 64.0
+offset_right = 353.0
+offset_bottom = 462.0
 scale = Vector2(2, 2)
 
 [node name="Options" type="VBoxContainer" parent="CanvasLayer/Dialogue/Panel"]
@@ -996,9 +1002,17 @@ text = "[color=#999999][font_size=32][center][i][b]Inventory[/b][/i][/center][/f
 [node name="Info" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 360.0
-offset_bottom = 620.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -310.0
+offset_right = 180.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("12_7ged1")
 
 [node name="Panel" type="TextureRect" parent="CanvasLayer/Info"]
@@ -1053,9 +1067,15 @@ text = "[color=#999999][font_size=32][center][i][b]Information[/b][/i][/center][
 [node name="Settings" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 360.0
-offset_bottom = 620.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -310.0
+offset_right = 180.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("12_qjyg3")
@@ -1160,9 +1180,15 @@ text = "Mode: [Dark] / Light"
 [node name="Credits" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 360.0
-offset_bottom = 620.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -310.0
+offset_right = 180.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
 

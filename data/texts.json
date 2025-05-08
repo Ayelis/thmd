@@ -85,7 +85,7 @@
 		}
 	},
 	"events": {
-		"home1": "The alarm clock's silence is the first thing that feels wrong. The house is too still—no breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the refridgerator.\n\n'Hey, kiddo?'\n\nNo answer. Her door sits open, revealing an already-made bed and an untouched backpack. My phone shows no messages. The air feels thick with waiting.",
+		"home1": "The silence of my alarm clock is the first thing that feels wrong. That wrongness quickly extends to the silence of the house. The house is too still, in fact—no breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the refridgerator.\n\n'Hey, kiddo?'\n\nNo answer. Her door sits open, revealing an already-made bed and an untouched backpack. No messages on my phone. The air feels thick with waiting.",
 		"home2": "The lock resists before yielding. Inside, the air tastes stale with absence. Her room remains frozen—the same already-made bed, the same uneaten lunch.\n\nI tell myself she's just forgotten to text. I almost believe it. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
 		"dresser": "Beneath unpaid bills, the wax-sealed letter waits. Torn edges. Words cut from magazines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN.\nFOLLOW THE TIDE.'\n\nThe glue reeks of saltwater and something faintly metallic.\n\nOh, and my pass! The dresser drawer creaks open. My transit pass stares up at me.\n'At least you didn't vanish,' I mutter, pocketing the little plastic lifeline.",
 		"hall": "The hall closet yields a collapsible metal detector... It's odd, but potentially useful. I stash it in my bag, wondering who even bought this, and why.",
@@ -281,7 +281,7 @@
 				"next": "offer_help"
 			},
 			"offer_help": {
-				"prompt": "He sighs. “Look, you want in—come by anytime. Station’s open. Hell, I find the place comforting. You’ll have free reign. Just—be careful out there.”",
+				"prompt": "He sighs, stands up, and shows you around the station.\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. Hell, I find the place comforting. You’ll have free reign. Just—be careful out there.”",
 				"options": [
 					{
 						"text": "Thank him",

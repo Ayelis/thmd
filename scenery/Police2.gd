@@ -11,12 +11,14 @@ func _on_computer_pressed():
 	GameManager.display_dialog(GameManager.events["police-computer"])
 	print("Computer!")
 func _on_drawers_pressed():
-	GameManager.display_dialog(GameManager.events["police-drawer"])
-	GameManager.obtain_item(GameManager.ItemIDs.BULLHORN)
+	if(!GameManager.has_item(GameManager.ItemIDs.BULLHORN)):
+		GameManager.display_dialog(GameManager.events["police-drawer"])
+		GameManager.obtain_item(GameManager.ItemIDs.BULLHORN)
 	print("Drawers!")
 func _on_papers_pressed():
-	GameManager.display_dialog(GameManager.events["papers"])
-	GameManager.obtain_item(GameManager.ItemIDs.KEY)
+	if(!GameManager.has_item(GameManager.ItemIDs.KEY)):
+		GameManager.display_dialog(GameManager.events["papers"])
+		GameManager.obtain_item(GameManager.ItemIDs.KEY)
 	print("Papers!")
 func _on_detective_pressed():
 	if(!GameManager.knows_info(GameManager.InfoIDs.POLICE)):
