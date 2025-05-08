@@ -17,7 +17,7 @@ func _on_ending_updated(text: String, title: String, texture: String = "", timbr
 	if scene_label and scene_label is Label:
 		scene_label.text = title
 	if(texture != ""):
-		$Padded.texture = load("res://assets/Scenes/"+texture+".jpg")
+		$Padding.texture = load("res://assets/Scenes/"+texture+".jpg")
 	GameManager.display_dialog(GameManager.endings[text])
 	await get_tree().process_frame
 	AudioManager.play_music(load("res://assets/audio/"+timbre+".ogg"))

@@ -44,7 +44,7 @@
 [ext_resource type="Script" uid="uid://dwvl3vbmqwx3k" path="res://scenery/Mansion.gd" id="20_v5dxo"]
 [ext_resource type="Texture2D" uid="uid://t0yx7f7nsa4w" path="res://assets/UI/Square-Dark-Hover/Star@4x.png" id="21_bisgb"]
 [ext_resource type="Script" uid="uid://b1w3hmrykfrfj" path="res://scenery/Rotunda.gd" id="22_7vltt"]
-[ext_resource type="Script" uid="uid://clr6nc18m684u" path="res://scripts/Insanity.gd" id="30_v5dxo"]
+[ext_resource type="Script" uid="uid://clr6nc18m684u" path="res://scripts/Endgame.gd" id="30_v5dxo"]
 [ext_resource type="Script" uid="uid://ca2o5e26c0u05" path="res://scripts/Dialogue.gd" id="31_v5dxo"]
 [ext_resource type="Texture2D" uid="uid://bg075ryqqa1oe" path="res://assets/UI/dark_panel.png" id="32_dyvha"]
 [ext_resource type="Texture2D" uid="uid://rau58h4h7lcr" path="res://assets/UI/DialogYel/Button_ContinueHL.png" id="32_v5dxo"]
@@ -823,19 +823,26 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Insanity" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_right = 361.0
-offset_bottom = 575.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("30_v5dxo")
 
-[node name="Padded" type="TextureRect" parent="CanvasLayer/Insanity"]
-layout_mode = 0
-offset_top = 45.0
-offset_right = 360.0
-offset_bottom = 620.0
+[node name="Padding" type="TextureRect" parent="CanvasLayer/Insanity"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -575.0
+offset_right = 180.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("34_nyc7o")
 expand_mode = 1
 
@@ -858,6 +865,7 @@ theme_override_font_sizes/font_size = 72
 text = "The End"
 
 [node name="Dialogue" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
