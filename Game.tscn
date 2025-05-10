@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=55 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://d3fh1j87vlq0p" path="res://Canvas.gd" id="1_w250u"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cu6aisc2l5ill" path="res://assets/UI/Rect-Dark-Hover/Nav@4x.png" id="7_yyih5"]
 [ext_resource type="Texture2D" uid="uid://2p5ltt3hhgmn" path="res://assets/Scenes/2b library.jpg" id="8_5he1h"]
 [ext_resource type="Texture2D" uid="uid://dljulm18ayjd0" path="res://assets/UI/Rect-Dark-Default/Info@4x.png" id="8_qjyg3"]
+[ext_resource type="Theme" uid="uid://k153uibafdf7" path="res://scenery/lite_theme.tres" id="9_ds8mp"]
 [ext_resource type="Texture2D" uid="uid://bl3prlik4w2re" path="res://assets/UI/Rect-Dark-Hover/Info@4x.png" id="9_elkpi"]
 [ext_resource type="Texture2D" uid="uid://3xirp7xa0el0" path="res://assets/Scenes/3a police.jpg" id="9_xwkxq"]
 [ext_resource type="Texture2D" uid="uid://dnkf5jys8xmul" path="res://assets/UI/Rect-Dark-Default/Gear@4x.png" id="10_0yprl"]
@@ -251,16 +252,17 @@ offset_bottom = 487.0
 focus_mode = 0
 flat = true
 
-[node name="HomButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+[node name="HomButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 251.0
 offset_right = 119.0
 offset_bottom = 282.0
 focus_mode = 0
+theme = ExtResource("9_ds8mp")
 text = "Home"
 
-[node name="LibButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+[node name="LibButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 visible = false
 layout_mode = 0
 offset_left = 144.0
@@ -268,9 +270,10 @@ offset_top = 355.0
 offset_right = 207.0
 offset_bottom = 386.0
 focus_mode = 0
+theme = ExtResource("9_ds8mp")
 text = "Library"
 
-[node name="PolButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+[node name="PolButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 visible = false
 layout_mode = 0
 offset_left = 200.0
@@ -278,9 +281,10 @@ offset_top = 235.0
 offset_right = 254.0
 offset_bottom = 266.0
 focus_mode = 0
+theme = ExtResource("9_ds8mp")
 text = "Police"
 
-[node name="PolButton2" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+[node name="PolButton2" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 visible = false
 layout_mode = 0
 offset_left = 200.0
@@ -288,9 +292,10 @@ offset_top = 235.0
 offset_right = 254.0
 offset_bottom = 266.0
 focus_mode = 0
+theme = ExtResource("9_ds8mp")
 text = "Police"
 
-[node name="BeaButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+[node name="BeaButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 visible = false
 layout_mode = 0
 offset_left = 180.0
@@ -298,9 +303,10 @@ offset_top = 155.0
 offset_right = 236.0
 offset_bottom = 186.0
 focus_mode = 0
+theme = ExtResource("9_ds8mp")
 text = "Beach"
 
-[node name="ManButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit"]
+[node name="ManButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 visible = false
 layout_mode = 0
 offset_left = 56.0
@@ -308,6 +314,7 @@ offset_top = 123.0
 offset_right = 131.0
 offset_bottom = 154.0
 focus_mode = 0
+theme = ExtResource("9_ds8mp")
 text = "Mansion"
 
 [node name="Library" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
@@ -775,7 +782,6 @@ anchor_bottom = 1.0
 offset_top = -60.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0, 0, 0, 1)
 
 [node name="Buttons" type="HBoxContainer" parent="CanvasLayer/UI/NavBar"]
 layout_mode = 1
@@ -796,6 +802,17 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Nav" type="TextureButton" parent="CanvasLayer/UI/NavBar/Buttons"]
+custom_minimum_size = Vector2(90, 60)
+layout_mode = 2
+texture_normal = ExtResource("6_lvtmh")
+texture_pressed = ExtResource("7_yyih5")
+texture_hover = ExtResource("7_yyih5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NavDisable" type="TextureButton" parent="CanvasLayer/UI/NavBar/Buttons"]
+visible = false
+modulate = Color(1, 1, 1, 0.498039)
 custom_minimum_size = Vector2(90, 60)
 layout_mode = 2
 texture_normal = ExtResource("6_lvtmh")
@@ -863,6 +880,22 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("32_xc54d")
 theme_override_font_sizes/font_size = 72
 text = "The End"
+
+[node name="Button" type="Button" parent="CanvasLayer/Insanity"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.5
+offset_top = -122.315
+offset_right = 47.5
+offset_bottom = -91.315
+grow_horizontal = 2
+grow_vertical = 0
+text = "Play Again?"
 
 [node name="Dialogue" type="Control" parent="CanvasLayer"]
 visible = false
@@ -1185,6 +1218,10 @@ offset_right = 129.0
 offset_bottom = 45.0997
 text = "Mode: [Dark] / Light"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/Settings"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Settings/AudioStreamPlayer2D"]
+
 [node name="Credits" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
@@ -1226,10 +1263,6 @@ texture_pressed = ExtResource("15_wuoie")
 texture_hover = ExtResource("15_wuoie")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer2D"]
 
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Home/Dressers" to="CanvasLayer/UI/Rooms/Home/Dressers" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Home/Hall" to="CanvasLayer/UI/Rooms/Home/Hall" method="_on_pressed"]

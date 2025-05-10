@@ -30,8 +30,7 @@ func _on_window_pressed():
 	print("Window pondered!")
 
 func _on_vines_pressed():
-	GameManager.display_dialog(GameManager.insanity["vines"])
-	GameManager.increase_insanity()
+	GameManager.insane(GameManager.insanity["vines"])
 	$Vines.hide()
 	print("Vines explored!")
 

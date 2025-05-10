@@ -22,6 +22,7 @@ GameManager="*res://scripts/GameManager.gd"
 AudioManager="*res://scripts/AudioManager.gd"
 DialogueManager="*res://scripts/DialogueManager.gd"
 Aspect="*res://scripts/Aspect.gd"
+ThemeManager="*res://scripts/ThemeManager.gd"
 
 [debug]
 
@@ -40,6 +41,10 @@ window/handheld/orientation=1
 [editor]
 
 version_control/autoload_on_startup=true
+
+[global_group]
+
+ui_button=""
 
 [input]
 

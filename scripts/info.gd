@@ -16,8 +16,14 @@ func _update_theme(is_dark_mode: bool):
 	var loc = "res://assets/UI"
 	if is_dark_mode:
 		$Panel.texture = load("%s/dark_paper.png" % [loc])
+		$Panel/Exit.texture_normal = load("%s/Rect-Dark-Default/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_hover = load("%s/Rect-Dark-Hover/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_pressed = $Panel/Exit.texture_hover
 	else:
 		$Panel.texture = load("%s/light_paper.png" % [loc])
+		$Panel/Exit.texture_normal = load("%s/Rect-Light-Default/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_hover = load("%s/Rect-Light-Hover/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_pressed = $Panel/Exit.texture_hover
 
 func _on_exit_pressed():
 	self.visible = false
@@ -33,7 +39,7 @@ func _update_info_display():
 	for info_id in GameManager.InfoIDs.values():
 		if GameManager.knows_info(info_id):
 			var desc_label = Label.new()
-			desc_label.text = GameManager.INFORMATION[info_id]["description"]
+			desc_label.text = "- "+GameManager.INFORMATION[info_id]["description"]
 			desc_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			desc_label.add_theme_color_override("font_color", Color(0.8, 0.8, 0.8))
 			info_container.add_child(desc_label)

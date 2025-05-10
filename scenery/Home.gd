@@ -12,6 +12,8 @@ func _ready():
 
 func _on_door_pressed():
 	print("Door opened!")
+	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
+		GameManager.display_dialog(GameManager.events["nopass"])
 	GameManager.change_room("Transit")
 
 func _on_dresser_pressed():
@@ -45,5 +47,4 @@ func _on_window_pressed():
 func _on_fan_pressed():
 	print("Fan gazed!")
 	GameManager.insane(GameManager.insanity["ceiling-fan"])
-	GameManager.increase_insanity()
-	$Fan.hide()
+	#$Fan.hide()

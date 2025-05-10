@@ -55,6 +55,11 @@ var insanity := {}
 var endings := {}
 var dialogs := {}
 var rooms := {}
+func apply_theme_to_buttons(theme: Theme):
+	print("Button count: ", get_tree().get_nodes_in_group("ui_button").size())
+	for button in get_tree().get_nodes_in_group("ui_button"):
+		button.theme = theme
+		button.theme_type_variation = "StyledButton"  # If using variations
 
 func _ready():
 	print("GameManager loaded!")
@@ -96,7 +101,10 @@ func display_dialog(text: String):
 func initiate_dialogue(dialog_id: String, on_complete: Callable = Callable()):
 	DialogueManager.start_structured(dialog_id, on_complete) #Structured Dialogues
 
-func ending(text_key: String, title_name: String = "Insanity", texture_path: String = "Padded", timbre: String = "67_Asylum"):
+func on_theme_ready(new_theme):
+	$CanvasLayer.theme = new_theme
+
+func ending(text_key: String, title_name: String = "Insanity", texture_path: String = "padded", timbre: String = "67_Asylum"):
 	ending_updated.emit(text_key, title_name, texture_path, timbre)
 	# Create fullscreen TextureRect if it doesn't exist
 
@@ -111,6 +119,11 @@ func learn_info(info_id: InfoIDs) -> void:
 
 func knows_info(info_id: InfoIDs) -> bool:
 	return discovered_info.get(info_id, false)
+
+func forget_info(info_id: InfoIDs) -> void:
+	discovered_info[info_id] = false
+	knowledge_updated.emit(info_id)
+	info_full_refresh.emit()
 
 func get_info_details(info_id: InfoIDs) -> Dictionary:
 	var info = INFORMATION.get(info_id, {}).duplicate()
@@ -138,11 +151,12 @@ func get_room_description(room_key: String) -> String:
 func insane(sanity_key: String):
 	GameManager.display_dialog(sanity_key)
 	GameManager.increase_insanity()
+	await self.dialogue_closed
+	if(sanity < 1):
+		ending("sanity")
 
 func increase_insanity():
 	sanity=sanity-1
-	if(sanity < 0):
-		ending("sanity")
 
 func restore_sanity():
 	sanity=3

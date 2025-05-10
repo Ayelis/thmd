@@ -8,7 +8,12 @@ var button_textures := {
 	"Exit": ["Exit", "Exit"],
 }
 
+# Settings.gd
 func _ready():
+	GameManager.connect("theme_ready", _update_theme)
+
+	Global.audio_player = $AudioStreamPlayer2D
+	print("Player assigned: ", Global.audio_player != null)  # Must print TRUE
 	Global.music_changed.connect(_update_music_ui)
 	Global.sound_changed.connect(_update_sfx_ui)
 	Global.theme_changed.connect(_update_theme)
@@ -32,18 +37,22 @@ func _update_sfx_ui(is_muted: bool):
 
 func _update_theme(is_dark_mode: bool):
 	var loc = "res://assets/UI"
+	var new_theme
 	if is_dark_mode:
+		new_theme = "res://scenery/dark_theme.tres"
 		$Panel.texture = load("%s/dark_paper.png" % [loc])
 		$Panel/Music/Label.add_theme_color_override("font_color", Color(1, 1, 1))
 		$Panel/Sound/Label.add_theme_color_override("font_color", Color(1, 1, 1))
 		$Panel/Light/Label.add_theme_color_override("font_color", Color(1, 1, 1))
 		$Panel/Light/Label.text = "Mode: [Dark] / Light"
 	else:
+		new_theme = "res://scenery/lite_theme.tres"
 		$Panel.texture = load("%s/light_paper.png" % [loc])
 		$Panel/Music/Label.add_theme_color_override("font_color", Color(0, 0, 0))
 		$Panel/Sound/Label.add_theme_color_override("font_color", Color(0, 0, 0))
 		$Panel/Light/Label.add_theme_color_override("font_color", Color(0, 0, 0))
 		$Panel/Light/Label.text = "Mode: Dark / [Light]"
+	ThemeManager.apply_theme(new_theme)
 	update_buttons(is_dark_mode)
 
 func update_buttons(is_dark_mode):

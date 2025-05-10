@@ -16,7 +16,6 @@ func _ready():
 
 func _on_birds_pressed():
 	GameManager.insane(GameManager.insanity["birds"])
-	GameManager.increase_insanity()
 	texture = load("res://assets/Scenes/4a beachb.jpg")
 	$CloseBird.hide()
 	$GroundBirds.hide()
@@ -36,7 +35,6 @@ func _on_sky_pressed():
 	$Sky.hide()
 func _on_ocean_pressed():
 	print("Ocean desired!")
-	GameManager.increase_insanity()
 	GameManager.insane(GameManager.insanity["ocean"])
 	$Ocean.hide()
 func _on_dog_pressed():

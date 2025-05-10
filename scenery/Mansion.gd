@@ -32,4 +32,5 @@ func _on_cultist_pressed():
 	print("Cultist speaks!")
 func _on_leave_pressed():
 	GameManager.change_room("Transit")
+	$Cultist.hide()
 	print("Leave!")

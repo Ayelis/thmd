@@ -1,13 +1,6 @@
 # Transit.gd
 extends TextureRect
 
-@onready var Library: Button = $LibButton
-@onready var Police: Button = $PolButton
-@onready var Police2: Button = $PolButton2
-@onready var Beach: Button = $BeaButton
-@onready var Mansion: Button = $ManButton
-@onready var Board: Button = $Board
-
 func _ready():
 	# Check signals
 	GameManager.inventory_updated.connect(_on_inventory_updated)
@@ -42,11 +35,11 @@ func _on_knowledge_updated(info_id: GameManager.InfoIDs):
 			_update_button_visibility()
 
 func _update_button_visibility():
-	Library.visible = GameManager.has_item(GameManager.ItemIDs.TRANSPASS)
-	Police.visible = GameManager.has_item(GameManager.ItemIDs.TRANSPASS) && !GameManager.knows_info(GameManager.InfoIDs.APPOINTMENT)
-	Police2.visible = GameManager.knows_info(GameManager.InfoIDs.APPOINTMENT)
-	Beach.visible = GameManager.knows_info(GameManager.InfoIDs.SHACK)
-	Mansion.visible = GameManager.knows_info(GameManager.InfoIDs.MANSION)
+	$LibButton.visible = GameManager.has_item(GameManager.ItemIDs.TRANSPASS)
+	$PolButton.visible = GameManager.has_item(GameManager.ItemIDs.TRANSPASS) && !GameManager.knows_info(GameManager.InfoIDs.APPOINTMENT)
+	$PolButton2.visible = GameManager.knows_info(GameManager.InfoIDs.APPOINTMENT)
+	$BeaButton.visible = GameManager.knows_info(GameManager.InfoIDs.SHACK)
+	$ManButton.visible = GameManager.knows_info(GameManager.InfoIDs.MANSION)
 
 func _on_home_pressed():
 	GameManager.change_room("Home")

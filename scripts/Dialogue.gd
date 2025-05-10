@@ -15,10 +15,11 @@ func _ready():
 	
 	# Start hidden
 	visible = false
+	#GameManager.NavBar.NavDisable.visible = false
+	#GameManager.NavBar.Nav.visible = true
 	print("Dialogue ready")
 	
 func _on_dialogue_updated(text: String):
-	print("Dialogue:"+text)
 	$Panel/Text.text = text
 	_show()
 
@@ -31,9 +32,13 @@ func _update_theme(is_dark_mode: bool):
 		$Panel/Text.add_theme_color_override("default_color", Color(0, 0, 0))
 
 func _show():
+	#GameManager.NavBar.NavDisable.visible = true
+	#GameManager.NavBar.Nav.visible = false
 	visible = true
 
 func _hide():
+	#GameManager.NavBar.NavDisable.visible = false
+	#GameManager.NavBar.Nav.visible = true
 	visible = false
 	GameManager.emit_signal("dialogue_closed")  # Notify GameManager
 

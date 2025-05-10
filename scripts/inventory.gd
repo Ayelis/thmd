@@ -51,8 +51,17 @@ func _on_slot_exit():
 		slot.modulate = Color.WHITE
 
 func _update_theme(is_dark_mode: bool):
-	var tex_path = "res://assets/UI/%s_paper.png" % ["dark" if is_dark_mode else "light"]
-	$Panel.texture = load(tex_path)
+	var loc = "res://assets/UI"
+	if is_dark_mode:
+		$Panel.texture = load("%s/dark_paper.png" % [loc])
+		$Panel/Exit.texture_normal = load("%s/Rect-Dark-Default/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_hover = load("%s/Rect-Dark-Hover/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_pressed = $Panel/Exit.texture_hover
+	else:
+		$Panel.texture = load("%s/light_paper.png" % [loc])
+		$Panel/Exit.texture_normal = load("%s/Rect-Light-Default/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_hover = load("%s/Rect-Light-Hover/Exit@4x.png" % [loc])
+		$Panel/Exit.texture_pressed = $Panel/Exit.texture_hover
 
 func _on_exit_pressed():
 	visible = false
