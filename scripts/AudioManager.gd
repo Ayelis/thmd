@@ -9,6 +9,12 @@ var music_tween : Tween
 var sfx_muted := false
 var SFX_BUS_ID := AudioServer.get_bus_index("SFX")
 
+# Add to AudioManager.gd
+func _ready():
+	# Initialize with default values matching Global
+	music_muted = Global.silenced
+	sfx_muted = Global.muted
+
 func play_music(track: AudioStream):
 	if music_player and music_player.stream == track:
 		return

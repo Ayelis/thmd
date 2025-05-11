@@ -11,9 +11,6 @@ var button_textures := {
 # Settings.gd
 func _ready():
 	GameManager.connect("theme_ready", _update_theme)
-
-	Global.audio_player = $AudioStreamPlayer2D
-	print("Player assigned: ", Global.audio_player != null)  # Must print TRUE
 	Global.music_changed.connect(_update_music_ui)
 	Global.sound_changed.connect(_update_sfx_ui)
 	Global.theme_changed.connect(_update_theme)
@@ -28,7 +25,20 @@ func _ready():
 	$Panel/Light.pressed.connect(_on_light_pressed)
 
 func _update_music_ui(is_silenced: bool):
-	$Panel/Music/Label.text = "Music: %s" % ("On / [Off]" if is_silenced else "[On] / Off")
+	var volume_text := ""
+	var current_volume = Global.current_volume_index
+	
+	# Create the volume string with highlighted current level
+	for i in range(4):
+		var volume_level = ["Off", "Low", "Med", "Full"][i]
+		if i == current_volume:
+			volume_text += "[%s]" % volume_level
+		else:
+			volume_text += volume_level
+		if i < 3:  # Add separators between items
+			volume_text += " / "
+	
+	$Panel/Music/Label.text = "Music: %s" % volume_text
 	update_buttons(Global.dark_mode)
 
 func _update_sfx_ui(is_muted: bool):

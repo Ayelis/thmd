@@ -840,6 +840,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Insanity" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1106,7 +1107,6 @@ bbcode_enabled = true
 text = "[color=#999999][font_size=32][center][i][b]Information[/b][/i][/center][/font_size][/color]"
 
 [node name="Settings" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1159,9 +1159,9 @@ stretch_mode = 0
 
 [node name="Music" type="TextureButton" parent="CanvasLayer/Settings/Panel"]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 32.0
 offset_top = 64.0
-offset_right = 124.0
+offset_right = 92.0
 offset_bottom = 124.0
 texture_normal = ExtResource("16_hmewc")
 texture_pressed = ExtResource("17_7ged1")
@@ -1171,18 +1171,17 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/Music"]
 layout_mode = 0
-offset_left = 89.0
+offset_left = 73.0
 offset_top = 22.0997
-offset_right = 129.0
+offset_right = 310.0
 offset_bottom = 45.0997
-text = "Music: [On] / Off"
+text = "Music: Off / Low / Med / [Full]"
 
 [node name="Sound" type="TextureButton" parent="CanvasLayer/Settings/Panel"]
-visible = false
 layout_mode = 0
-offset_left = 64.0
+offset_left = 32.0
 offset_top = 192.0
-offset_right = 124.0
+offset_right = 92.0
 offset_bottom = 252.0
 texture_normal = ExtResource("18_0mevm")
 texture_pressed = ExtResource("19_w2501")
@@ -1192,17 +1191,17 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/Sound"]
 layout_mode = 0
-offset_left = 89.0
+offset_left = 73.0
 offset_top = 22.0997
-offset_right = 129.0
+offset_right = 203.0
 offset_bottom = 45.0997
 text = "Sound: [On] / Off"
 
 [node name="Light" type="TextureButton" parent="CanvasLayer/Settings/Panel"]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 32.0
 offset_top = 320.0
-offset_right = 124.0
+offset_right = 92.0
 offset_bottom = 380.0
 texture_normal = ExtResource("20_jsoai")
 texture_pressed = ExtResource("21_bisgb")
@@ -1212,9 +1211,9 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="CanvasLayer/Settings/Panel/Light"]
 layout_mode = 0
-offset_left = 89.0
+offset_left = 73.0
 offset_top = 22.0997
-offset_right = 129.0
+offset_right = 227.0
 offset_bottom = 45.0997
 text = "Mode: [Dark] / Light"
 
