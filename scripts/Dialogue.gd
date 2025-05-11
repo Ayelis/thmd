@@ -1,5 +1,8 @@
 extends Control
 
+signal dialogue_opened
+signal dialogue_closed
+
 func _ready():
 	DialogueManager.set_dialogue_node(self)
 	
@@ -15,8 +18,6 @@ func _ready():
 	
 	# Start hidden
 	visible = false
-	#GameManager.NavBar.NavDisable.visible = false
-	#GameManager.NavBar.Nav.visible = true
 	print("Dialogue ready")
 	
 func _on_dialogue_updated(text: String):
@@ -32,14 +33,12 @@ func _update_theme(is_dark_mode: bool):
 		$Panel/Text.add_theme_color_override("default_color", Color(0, 0, 0))
 
 func _show():
-	#GameManager.NavBar.NavDisable.visible = true
-	#GameManager.NavBar.Nav.visible = false
 	visible = true
+	emit_signal("dialogue_opened")
 
 func _hide():
-	#GameManager.NavBar.NavDisable.visible = false
-	#GameManager.NavBar.Nav.visible = true
 	visible = false
+	emit_signal("dialogue_closed")
 	GameManager.emit_signal("dialogue_closed")  # Notify GameManager
 
 func _input(event):

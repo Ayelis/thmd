@@ -55,6 +55,7 @@ var insanity := {}
 var endings := {}
 var dialogs := {}
 var rooms := {}
+
 func apply_theme_to_buttons(theme: Theme):
 	print("Button count: ", get_tree().get_nodes_in_group("ui_button").size())
 	for button in get_tree().get_nodes_in_group("ui_button"):

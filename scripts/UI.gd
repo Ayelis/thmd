@@ -4,13 +4,23 @@ extends Control
 @onready var rooms = $Rooms  # Your actual path to rooms container
 
 func _ready():
+	var dialogue = get_node("../Dialogue") # Adjust path as needed
+	dialogue.connect("dialogue_opened", Callable(self, "_on_dialogue_opened"))
+	dialogue.connect("dialogue_closed", Callable(self, "_on_dialogue_closed"))
 	GameManager.room_changed.connect(_on_room_changed)
-
 	# Initialize UI
 	update_ui()
-	connect_buttons()	
+	connect_buttons()
 	# Load initial room
 	GameManager.change_room("Home")
+
+func _on_dialogue_opened():
+	$NavBar/Buttons/Nav.visible = false
+	$NavBar/Buttons/NavDisable.visible = true
+
+func _on_dialogue_closed():
+	$NavBar/Buttons/Nav.visible = true
+	$NavBar/Buttons/NavDisable.visible = false
 
 func _on_room_changed(room_name: String):
 	# Hide all rooms first

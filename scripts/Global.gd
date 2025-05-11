@@ -6,11 +6,13 @@ signal reset_game
 
 var music_volume_levels := [-80.0, -10.0, -5.0, 0.0]  # Mute, 33%, 66%, 100%
 var current_volume_index := 3  # Start at 100% volume
+var sound_volume_levels := [-80.0, -10.0, -5.0, 0.0]  # Mute, 33%, 66%, 100%
+var current_sound_index := 3  # Start at 100% volume
 var silenced := false  # Default: Music stopped
 var muted := false  # Default: Sound stopped
 
-signal music_changed(is_silenced: bool)
-signal sound_changed(is_muted: bool)
+signal music_changed()
+signal sound_changed()
 signal theme_changed(is_dark_mode: bool)
 
 func toggle_music():
@@ -27,13 +29,26 @@ func toggle_music():
 			# If we reached mute level, set silenced flag
 			silenced = true
 		AudioManager.music_player.volume_db = music_volume_levels[current_volume_index]
-	music_changed.emit(silenced)
+	music_changed.emit()
 	print("Music volume: ", music_volume_levels[current_volume_index], " dB (Silenced: ", silenced, ")")
 
 func toggle_sound():
-	muted = !muted
-	AudioManager.toggle_sfx_mute(muted)
-	sound_changed.emit(muted)
+	if muted:
+		# If currently muted, unmute at last volume level
+		muted = false
+		AudioServer.set_bus_mute(AudioManager.SFX_BUS_ID, false)
+		current_sound_index = (current_sound_index + 1) % sound_volume_levels.size()
+		AudioServer.set_bus_volume_db(AudioManager.SFX_BUS_ID, sound_volume_levels[current_sound_index])
+	else:
+		# Cycle through volume levels
+		current_sound_index = (current_sound_index + 1) % sound_volume_levels.size()
+		if current_sound_index == 0:
+			# If we reached mute level, set muted flag
+			muted = true
+			AudioServer.set_bus_mute(AudioManager.SFX_BUS_ID, true)
+		else:
+			AudioServer.set_bus_volume_db(AudioManager.SFX_BUS_ID, sound_volume_levels[current_sound_index])
+	sound_changed.emit()
 	print("SFX muted: ", muted)
 
 func toggle_theme():
