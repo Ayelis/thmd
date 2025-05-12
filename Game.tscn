@@ -1107,6 +1107,7 @@ bbcode_enabled = true
 text = "[color=#999999][font_size=32][center][i][b]Information[/b][/i][/center][/font_size][/color]"
 
 [node name="Settings" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

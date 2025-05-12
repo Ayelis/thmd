@@ -10,7 +10,7 @@ var button_textures := {
 
 # Settings.gd
 func _ready():
-	GameManager.connect("theme_ready", _update_theme)
+	#GameManager.connect("theme_ready", _update_theme)
 	Global.music_changed.connect(_update_music_ui)
 	Global.sound_changed.connect(_update_sfx_ui)
 	Global.theme_changed.connect(_update_theme)

@@ -25,10 +25,10 @@ func _update_scale():
 		var display_size := DisplayServer.screen_get_size()
 		var usable_rect := DisplayServer.get_display_safe_area()
 		safe_area_insets = Rect2(
-			usable_rect.position.x / display_size.x,
-			usable_rect.position.y / display_size.y,
-			(display_size.x - usable_rect.end.x) / display_size.x,
-			(display_size.y - usable_rect.end.y) / display_size.y
+			(1.0*usable_rect.position.x / display_size.x),
+			(1.0*usable_rect.position.y / display_size.y),
+			(1.0*(display_size.x - usable_rect.end.x) / display_size.x),
+			(1.0*(display_size.y - usable_rect.end.y) / display_size.y)
 		)
 	
 	emit_signal("scale_updated", scale_factor, viewport_size)
