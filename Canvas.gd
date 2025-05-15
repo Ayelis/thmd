@@ -67,4 +67,3 @@ func _on_game_reset():
 	GameManager.change_room("Home")
 	GameManager.display_dialog(GameManager.events["home1"])
 	$CanvasLayer/Insanity.hide()
-	print("Canvas images reset")

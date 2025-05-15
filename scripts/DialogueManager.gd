@@ -44,7 +44,6 @@ func set_dialogue_node(panel:Control) -> void:
 		GameManager.dialog_updated.connect(_on_simple_message)  # Godot 4 style :contentReference[oaicite:3]{index=3}
 
 func _on_simple_message(text:String) -> void:
-	print("DISPLAY SIMPLE:", text)            # debug
 	dialogue_node.show()                      # reveal panel
 	emit_signal("line_ready", text)           # pump into UI
 	exit_button.show()                        # let player close
@@ -142,7 +141,6 @@ func _on_continue() -> void:
 		_post_result_next = ""
 		start_structured(current_topic, _on_complete, nid)
 	else:
-		print("No continuation node found. Showing exit.")
 		exit_button.show()
 		continue_button.hide()
 

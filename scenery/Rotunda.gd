@@ -2,7 +2,6 @@
 extends TextureRect
 
 func _ready():
-	print("Rotunda area ready!")
 	$Blood.pressed.connect(_on_blood_pressed)
 	$Circle.pressed.connect(_on_circle_pressed)
 	$Altar.pressed.connect(_on_altar_pressed)
@@ -13,19 +12,13 @@ func _ready():
 func _on_blood_pressed():
 	GameManager.insane(GameManager.insanity["blood"])
 	$Blood.hide()
-	print("Blood!")
 func _on_circle_pressed():
 	GameManager.insane(GameManager.events["magic"])
-	print("Circle!")
 func _on_altar_pressed():
 	GameManager.display_dialog(GameManager.events["altar"])
-	print("Altar!")
 func _on_skylights_pressed():
 	GameManager.display_dialog(GameManager.events["skylight"])
-	print("Skylights!")
 func _on_door_pressed():
 	GameManager.display_dialog(GameManager.events["leave"])
-	print("Door!")
 func _on_daughter_pressed():
 	GameManager.initiate_dialogue("daughter")
-	print("Daughter!")

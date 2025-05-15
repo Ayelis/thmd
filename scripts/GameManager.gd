@@ -8,7 +8,7 @@ extends Node
 var morality := 0
 var tact := 0
 var ideology := 0
-var sanity := 3
+var sanity := 5
 var returned_home := false
 
 # Signals
@@ -57,13 +57,11 @@ var dialogs := {}
 var rooms := {}
 
 func apply_theme_to_buttons(theme: Theme):
-	print("Button count: ", get_tree().get_nodes_in_group("ui_button").size())
 	for button in get_tree().get_nodes_in_group("ui_button"):
 		button.theme = theme
 		button.theme_type_variation = "StyledButton"  # If using variations
 
 func _ready():
-	print("GameManager loaded!")
 	texts = load_json("res://data/texts.json")
 	rooms = load_json("res://data/rooms.json")
 	DialogueManager.load_dialogs(texts)  # Pass to DialogueManager
@@ -135,15 +133,12 @@ func obtain_item(item_id: ItemIDs) -> void:
 	inventory[item_id] = true
 	inventory_updated.emit(item_id)
 	inventory_full_refresh.emit()
-	print("Got: ", ITEMS[item_id].name)
 
 func lose_item(item_id: ItemIDs) -> void:
 	inventory[item_id] = false
 	inventory_full_refresh.emit()
-	print("Lost: ", ITEMS[item_id].name)
 
 func has_item(item_id: ItemIDs) -> bool:
-	print("Checking: ", ITEMS[item_id].name)
 	return inventory.get(item_id, false)
 
 func get_room_description(room_key: String) -> String:
@@ -160,7 +155,7 @@ func increase_insanity():
 	sanity=sanity-1
 
 func restore_sanity():
-	sanity=3
+	sanity=5
 
 #func hard_reset():
 	## Clear all persistent state
@@ -171,5 +166,4 @@ func restore_sanity():
 	## 2. Reload main scene (adjust path)
 	#var err = get_tree().change_scene_to_file("res://TitleScreen.tscn")
 	#if err != OK:
-		#printerr("RESET FAILED! Error code:", err)
 		#get_tree().quit()

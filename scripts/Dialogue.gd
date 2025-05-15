@@ -18,8 +18,7 @@ func _ready():
 	
 	# Start hidden
 	visible = false
-	print("Dialogue ready")
-	
+
 func _on_dialogue_updated(text: String):
 	$Panel/Text.text = text
 	_show()
@@ -58,5 +57,6 @@ func _input(event):
 		# 3) otherwise if Exit button is visible, treat Enter as “exit”
 		if DialogueManager.exit_button.visible:
 			DialogueManager._on_exit()
+			_hide()
 			#get_tree().set_input_as_handled()
 			return

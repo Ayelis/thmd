@@ -20,7 +20,6 @@ func _ready():
 		slot.mouse_exited.connect(_on_slot_exit)
 		grid.add_child(slot)
 	update_inventory()
-	print("Inventory ready")
 	GameManager.display_dialog(GameManager.events["home1"])
 
 func _on_item_updated(_item_id):
@@ -65,4 +64,3 @@ func _update_theme(is_dark_mode: bool):
 
 func _on_exit_pressed():
 	visible = false
-	print("Inventory closed!")

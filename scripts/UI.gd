@@ -2,6 +2,7 @@ extends Control
 
 @onready var scenery := $Rooms
 @onready var rooms = $Rooms  # Your actual path to rooms container
+@onready var sfx_ui = $SFX_UI
 
 func _ready():
 	var dialogue = get_node("../Dialogue") # Adjust path as needed
@@ -39,7 +40,6 @@ func resolve_text_reference(ref: String) -> String:
 	#path.remove_at(0)  # Remove "rooms" from path
 	# Now navigate the remaining path
 	for key in path:
-		print(key)
 		if current is Dictionary and current.has(key):
 			current = current[key]
 		else:
@@ -64,18 +64,19 @@ func _on_navigation_pressed():
 		GameManager.change_room("Transit")
 
 func _on_inventory_pressed():
-	print("Inventory opened!")
+	sfx_ui.play()
 	var node = get_parent().get_node("Inventory")  # Relative path
 	if node:
 		node.visible = !node.visible  # Toggle visibility
 
 func _on_info_pressed():
-	print("Info opened!")
+	sfx_ui.play()
 	var node = get_parent().get_node("Info")  # Relative path
 	if node:
 		node.visible = !node.visible  # Toggle visibility
 
 func _on_settings_pressed():
+	sfx_ui.play()
 	var node = get_parent().get_node("Settings")  # Relative path
 	if node:
 		node.visible = !node.visible  # Toggle visibility
@@ -90,7 +91,6 @@ func _update_theme(is_dark_mode: bool):
 		"Set": ["Gear"],
 	}
 
-	print("Updating home screen to:", "Dark" if is_dark_mode else "Light")
 	if is_dark_mode:
 		$TopBar.color = Color(0,0,0)
 		$NavBar.color = Color(0,0,0)

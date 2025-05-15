@@ -16,10 +16,8 @@ func _ready():
 	$Board.pressed.connect(_on_board_pressed)
 	# Initial update
 	_update_button_visibility()
-	print("Transit area ready!")
 
 func _on_tracks_pressed():
-	print("Tracks pondered!")
 	GameManager.insane(GameManager.insanity["tracks"])
 	$Tracks.hide()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=57 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://d3fh1j87vlq0p" path="res://Canvas.gd" id="1_w250u"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
@@ -51,9 +51,11 @@
 [ext_resource type="Texture2D" uid="uid://rau58h4h7lcr" path="res://assets/UI/DialogYel/Button_ContinueHL.png" id="32_v5dxo"]
 [ext_resource type="FontFile" uid="uid://dpr1br3krx4c2" path="res://assets/UI/EHP.ttf" id="32_xc54d"]
 [ext_resource type="Texture2D" uid="uid://bbhs5onwyfgro" path="res://assets/UI/DialogRed/Button_ContinueHL.png" id="33_dyvha"]
+[ext_resource type="AudioStream" uid="uid://46r6g0s7qiby" path="res://assets/audio/cymbal.ogg" id="34_ndmee"]
 [ext_resource type="Texture2D" uid="uid://sethpxxg6isc" path="res://assets/Scenes/padded.jpg" id="34_nyc7o"]
 [ext_resource type="Texture2D" uid="uid://ct3e28ghw3tyh" path="res://assets/UI/DialogBlu/Button_ContinueHL.png" id="34_xc54d"]
 [ext_resource type="Texture2D" uid="uid://dkr36luuo2fuf" path="res://assets/Scenes/5c credits.jpg" id="35_7vltt"]
+[ext_resource type="AudioStream" uid="uid://2eneoer2lm2s" path="res://assets/audio/switch.ogg" id="55_lua15"]
 
 [node name="GameManager" type="Control"]
 layout_mode = 3
@@ -839,6 +841,10 @@ texture_hover = ExtResource("11_wuoie")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="SFX_UI" type="AudioStreamPlayer" parent="CanvasLayer/UI"]
+stream = ExtResource("34_ndmee")
+bus = &"SFX"
+
 [node name="Insanity" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
@@ -882,7 +888,7 @@ theme_override_fonts/font = ExtResource("32_xc54d")
 theme_override_font_sizes/font_size = 72
 text = "The End"
 
-[node name="Button" type="Button" parent="CanvasLayer/Insanity"]
+[node name="Button" type="Button" parent="CanvasLayer/Insanity" groups=["ui_button"]]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1221,6 +1227,10 @@ text = "Mode: [Dark] / Light"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/Settings"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Settings/AudioStreamPlayer2D"]
+
+[node name="SFX_Buttons" type="AudioStreamPlayer" parent="CanvasLayer/Settings"]
+stream = ExtResource("55_lua15")
+bus = &"SFX"
 
 [node name="Credits" type="Control" parent="CanvasLayer"]
 visible = false

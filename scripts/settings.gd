@@ -8,6 +8,8 @@ var button_textures := {
 	"Exit": ["Exit", "Exit"],
 }
 
+@onready var sfx_buttons = $SFX_Buttons
+
 # Settings.gd
 func _ready():
 	#GameManager.connect("theme_ready", _update_theme)
@@ -96,10 +98,13 @@ func _on_exit_pressed():
 	self.visible = false
 
 func _on_music_pressed():
+	sfx_buttons.play()
 	Global.toggle_music()  # Let Global handle the logic and emit signals
 
 func _on_sound_pressed():
+	sfx_buttons.play()
 	Global.toggle_sound()  # Let Global handle the logic and emit signals
 
 func _on_light_pressed():
+	sfx_buttons.play()
 	Global.toggle_theme()  # Let Global handle the logic and emit signals
