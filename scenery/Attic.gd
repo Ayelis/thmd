@@ -13,6 +13,9 @@ func _on_rope_pressed():
 		GameManager.obtain_item(GameManager.ItemIDs.ROPE)
 		GameManager.display_dialog(GameManager.events["get-rope"])
 		$Rope.hide()
+		var shack = get_parent().get_node("Shack")
+		shack.get_node("Drawers").hide()
+		shack.get_node("EmptyDrawers").show()
 		texture = load("res://assets/Scenes/1b atticb.jpg")
 
 func _on_drawers_pressed():

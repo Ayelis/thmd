@@ -5,6 +5,7 @@ func _ready():
 	$Pail.pressed.connect(_on_pail_pressed)
 	$Door.pressed.connect(_on_door_pressed)
 	$Drawers.pressed.connect(_on_drawers_pressed)
+	$EmptyDrawers.pressed.connect(_on_emptydrawers_pressed)
 	$Desk.pressed.connect(_on_desk_pressed)
 	$Walls.pressed.connect(_on_walls_pressed)
 	$Ceiling.pressed.connect(_on_ceiling_pressed)
@@ -22,6 +23,9 @@ func _on_drawers_pressed():
 	attic.get_node("Rope").hide()
 	attic.texture = load("res://assets/Scenes/1b atticb.jpg")
 	$Drawers.hide()
+func _on_emptydrawers_pressed():
+	GameManager.display_dialog(GameManager.events["shack-empty"])
+	$EmptyDrawers.hide()
 func _on_ceiling_pressed():
 	GameManager.insane(GameManager.insanity["ceiling"])
 	$Ceiling.hide()
