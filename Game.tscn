@@ -584,6 +584,7 @@ focus_mode = 0
 flat = true
 
 [node name="Shack" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
