@@ -584,7 +584,6 @@ focus_mode = 0
 flat = true
 
 [node name="Shack" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
-visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -592,14 +591,6 @@ offset_bottom = 560.0
 texture = ExtResource("12_2t1a5")
 expand_mode = 1
 script = ExtResource("18_o6tbt")
-
-[node name="Pail" type="Button" parent="CanvasLayer/UI/Rooms/Shack"]
-layout_mode = 0
-offset_top = 427.0
-offset_right = 72.0
-offset_bottom = 507.0
-focus_mode = 0
-flat = true
 
 [node name="Walls" type="Button" parent="CanvasLayer/UI/Rooms/Shack"]
 layout_mode = 0
@@ -641,7 +632,17 @@ flat = true
 layout_mode = 0
 offset_top = 355.0
 offset_right = 153.0
-offset_bottom = 417.0
+offset_bottom = 467.0
+focus_mode = 0
+flat = true
+
+[node name="Ladder" type="Button" parent="CanvasLayer/UI/Rooms/Shack"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 225.0
+offset_right = 20.0
+offset_bottom = 539.0
+rotation = -0.270526
 focus_mode = 0
 flat = true
 
@@ -1323,12 +1324,12 @@ stretch_mode = 0
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Beach/FlyingBirds" to="CanvasLayer/UI/Rooms/Beach/FlyingBirds" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Beach/GroundBirds" to="CanvasLayer/UI/Rooms/Beach/GroundBirds" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Beach/CloseBird" to="CanvasLayer/UI/Rooms/Beach/CloseBird" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Pail" to="CanvasLayer/UI/Rooms/Shack/Pail" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Walls" to="CanvasLayer/UI/Rooms/Shack/Walls" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Door" to="CanvasLayer/UI/Rooms/Shack/Door" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Drawers" to="CanvasLayer/UI/Rooms/Shack/Drawers" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/EmptyDrawers" to="CanvasLayer/UI/Rooms/Shack/EmptyDrawers" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Desk" to="CanvasLayer/UI/Rooms/Shack/Desk" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Ladder" to="CanvasLayer/UI/Rooms/Shack/Ladder" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Shack/Ceiling" to="CanvasLayer/UI/Rooms/Shack/Ceiling" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Mansion/Leave" to="CanvasLayer/UI/Rooms/Mansion/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Mansion/Tunnel" to="CanvasLayer/UI/Rooms/Mansion/Tunnel" method="_on_pressed"]

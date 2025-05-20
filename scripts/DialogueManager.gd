@@ -110,6 +110,9 @@ func _process_block(block: Dictionary) -> void:
 	if block.has("learn"):
 		GameManager.learn_info(GameManager.InfoIDs[block.learn])
 
+	if block.has("give"):
+		GameManager.obtain_item(GameManager.ItemIDs[block.give])
+
 	if block.has("options"):
 		for opt in block.options:
 			if opt.has("condition") and not _check_condition(opt.condition):

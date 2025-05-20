@@ -24,10 +24,6 @@ func _on_sand_pressed():
 		GameManager.display_dialog(GameManager.events["dagger"])
 		GameManager.obtain_item(GameManager.ItemIDs.DAGGER)
 		$Sand.hide()
-	elif(GameManager.inventory[GameManager.ItemIDs.PAIL]):
-		GameManager.display_dialog(GameManager.events["digging"])
-		GameManager.obtain_item(GameManager.ItemIDs.DAGGER)
-		$Sand.hide()
 	else:
 		GameManager.display_dialog(GameManager.events["sand"])
 func _on_sky_pressed():

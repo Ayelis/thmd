@@ -28,7 +28,7 @@ func _on_hall_pressed():
 	$Hall.hide()
 
 func _on_hatch_pressed():
-	if(!GameManager.inventory[GameManager.ItemIDs.PAIL]):
+	if(!GameManager.inventory[GameManager.ItemIDs.LADDER]):
 		GameManager.display_dialog(GameManager.events["hatch"])
 	else:
 		GameManager.change_room("Attic")

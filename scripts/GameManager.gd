@@ -26,7 +26,7 @@ var current_room := "home"
 
 # Items
 enum ItemIDs { 
-	TRANSPASS, LIBCARD, LETTER, DAGGER, ROBE, ROPE, PAIL, 
+	TRANSPASS, LIBCARD, LETTER, DAGGER, ROBE, ROPE, LADDER, 
 	BULLHORN, KEY, FLYER, DETECTOR, GUN 
 }
 var texts := {}
@@ -38,7 +38,7 @@ var inventory := {
 	ItemIDs.DAGGER: false, 
 	ItemIDs.ROBE: false,
 	ItemIDs.ROPE: false,
-	ItemIDs.PAIL: false,
+	ItemIDs.LADDER: false,
 	ItemIDs.BULLHORN: false,
 	ItemIDs.KEY: false,
 	ItemIDs.FLYER: false,

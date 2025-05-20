@@ -2,7 +2,7 @@
 extends TextureRect
 
 func _ready():
-	$Pail.pressed.connect(_on_pail_pressed)
+	$Ladder.pressed.connect(_on_ladder_pressed)
 	$Door.pressed.connect(_on_door_pressed)
 	$Drawers.pressed.connect(_on_drawers_pressed)
 	$EmptyDrawers.pressed.connect(_on_emptydrawers_pressed)
@@ -29,11 +29,11 @@ func _on_emptydrawers_pressed():
 func _on_ceiling_pressed():
 	GameManager.insane(GameManager.insanity["ceiling"])
 	$Ceiling.hide()
-func _on_pail_pressed():
-	GameManager.obtain_item(GameManager.ItemIDs.PAIL)
-	GameManager.display_dialog(GameManager.events["get-pail"])
+func _on_ladder_pressed():
+	GameManager.obtain_item(GameManager.ItemIDs.LADDER)
+	GameManager.display_dialog(GameManager.events["get-ladder"])
 	texture = load("res://assets/Scenes/4b shackb.jpg")
-	$Pail.hide()
+	$Ladder.hide()
 func _on_door_pressed():
 	var beach = get_parent().get_node("Beach")
 	beach.get_node("CloseBird").hide()
