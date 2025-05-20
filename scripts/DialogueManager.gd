@@ -15,6 +15,7 @@ var text_label:RichTextLabel
 var exit_button:TextureButton
 var continue_button:TextureButton
 
+var finish_prompt = false
 var current_topic = ""
 var current_node = ""
 var current_callback = ""
@@ -87,7 +88,6 @@ func _process_block(block: Dictionary) -> void:
 	# Reset button visibility
 	continue_button.hide()
 	exit_button.hide()
-
 	if block.has("prompt"):
 		emit_signal("line_ready", block.prompt)
 
@@ -100,18 +100,21 @@ func _process_block(block: Dictionary) -> void:
 		elif block.has("ending"):
 			var e = block.ending
 			GameManager.ending(e.text, e.title if e.has("title") else "", e.texture, e.timbre if e.has("timbre") else "")
-			_finish()
-			return
+			finish_prompt = true
 		else:
 			exit_button.show()
-			_finish()
-			return
+			finish_prompt = true
 
 	if block.has("learn"):
 		GameManager.learn_info(GameManager.InfoIDs[block.learn])
 
 	if block.has("give"):
 		GameManager.obtain_item(GameManager.ItemIDs[block.give])
+
+	if finish_prompt:
+		finish_prompt = false
+		_finish()
+		return
 
 	if block.has("options"):
 		for opt in block.options:

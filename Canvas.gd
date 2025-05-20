@@ -59,7 +59,7 @@ func _on_game_reset():
 	$CanvasLayer/UI/Rooms/Shack/Walls.show()
 	$CanvasLayer/UI/Rooms/Shack/Drawers.show()
 	$CanvasLayer/UI/Rooms/Shack/Ceiling.show()
-	$CanvasLayer/UI/Rooms/Shack/Pail.show()
+	$CanvasLayer/UI/Rooms/Shack/Ladder.show()
 	$CanvasLayer/UI/Rooms/Mansion/Cultist.show()
 	$CanvasLayer/UI/Rooms/Rotunda/Blood.show()
 	$CanvasLayer/UI/Rooms/Rotunda/Circle.show()

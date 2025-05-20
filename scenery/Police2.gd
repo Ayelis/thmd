@@ -10,8 +10,7 @@ func _on_computer_pressed():
 	GameManager.display_dialog(GameManager.events["police-computer"])
 func _on_drawers_pressed():
 	if(!GameManager.has_item(GameManager.ItemIDs.BULLHORN)):
-		GameManager.initiate_dialog(GameManager.events["police-drawer"])
-		GameManager.obtain_item(GameManager.ItemIDs.BULLHORN)
+		GameManager.initiate_dialogue("police-drawer")
 		$Drawers.hide()
 func _on_papers_pressed():
 	if(!GameManager.has_item(GameManager.ItemIDs.KEY)):
