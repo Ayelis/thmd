@@ -13,7 +13,7 @@ func _on_blood_pressed():
 	GameManager.insane(GameManager.insanity["blood"])
 	$Blood.hide()
 func _on_circle_pressed():
-	GameManager.insane(GameManager.events["magic"])
+	GameManager.insane(GameManager.insanity["magic"])
 func _on_altar_pressed():
 	GameManager.display_dialog(GameManager.events["altar"])
 func _on_skylights_pressed():

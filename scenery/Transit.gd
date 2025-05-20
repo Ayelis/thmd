@@ -88,8 +88,9 @@ func _on_mansion_pressed():
 	else:
 		var cult = get_parent().get_node("Mansion")
 		cult.texture = load("res://assets/Scenes/5a mansionb.jpg")
-		cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)
-		cult.get_node("Tunnels").pressed.connect(cult._on_tunnel_pressed)
-		cult.get_node("Balcony").pressed.connect(cult._on_balcony_pressed)
-		cult.get_node("Door").pressed.connect(cult._on_door_pressed)
+		if !cult.get_node("Tunnel").is_connected("pressed", cult._on_tunnel_pressed):
+			cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)
+			cult.get_node("Tunnels").pressed.connect(cult._on_tunnel_pressed)
+			cult.get_node("Balcony").pressed.connect(cult._on_balcony_pressed)
+			cult.get_node("Door").pressed.connect(cult._on_door_pressed)
 		cult.get_node("Cultist").hide()

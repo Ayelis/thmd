@@ -14,7 +14,7 @@ func _on_papers_pressed():
 	$Paperwork.hide()
 func _on_drawer_pressed():
 	GameManager.obtain_item(GameManager.ItemIDs.GUN)
-	GameManager.display_dialog(GameManager.events["drawers"])
+	GameManager.initiate_dialogue("evidence-drawers")
 	$Drawers.hide()
 func _on_window_pressed():
 	GameManager.display_dialog(GameManager.events["window"])

@@ -14,7 +14,7 @@ func _on_drawers_pressed():
 		$Drawers.hide()
 func _on_papers_pressed():
 	if(!GameManager.has_item(GameManager.ItemIDs.KEY)):
-		GameManager.display_dialog(GameManager.events["papers"])
+		GameManager.initiate_dialogue("police-papers")
 		GameManager.obtain_item(GameManager.ItemIDs.KEY)
 		$Papers.hide()
 func _on_detective_pressed():

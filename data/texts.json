@@ -105,11 +105,9 @@
 		"police": "The receptionist's nails click against her keyboard.\n\n'Missing persons? Fill out a form. Detective's booked till Thursday.'\n\nShe smirks without looking up.\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nAll I know is I can't wait that long.",
 		"police2": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.",
 		"police3": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
-		"papers": "Rifling through paperwork, my fingers brush cold metal. A key marked 'Evidence' hidden beneath incident reports. The teeth look oddly ceremonial.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
 		"evidence": "A red vinyl chair stands out against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
 		"paperwork": "Blueprints reveal a network of tunnels beneath the hilltop mansion. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the property.",
-		"drawers": "Maybe I shouldn't be digging through drawers, looting through evidence bags, but I don't know what might come in handy.\n\nThe revolver's grip sticks—sweat or old blood? Six chambers. One empty. The others click when tilted, as if something inside shifts restlessly. The serial number's been filed away.\n\nBetter to have it and not need it...",
 		"window": "Through wire-reinforced glass, the precinct buzzes with muted activity. I notice the receptionist looking at me looking out, and close the shutters again.",
 		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new.\n\nA weathered notice flaps:\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest is scribbled into illegibility.",
 		"dagger": "The metal detector shrieks after I wave it around here a few times. Buried deep: a ritual knife with a serrated edge. I nearly slice my finger digging it up.",
@@ -425,6 +423,58 @@
 			},
 			"leave_megaphone": {
 				"result": "I carefully close the drawer again.",
+				"next": null
+			}
+		},
+		"police-papers": {
+			"root": {
+				"prompt": "Rifling through paperwork, my fingers brush cold metal. A key marked 'Evidence' hidden beneath incident reports.",
+				"options": [
+					{
+						"text": "Take the key",
+						"tooltip": "This will probably get me into the evidence room...",
+						"next": "take_key",
+					},
+					{
+						"text": "Leave it be",
+						"tooltip": "Too risky. Let's leave it where it is.",
+						"next": "leave_key",
+					}
+				]
+			},
+			"take_key": {
+				"result": "The teeth look oddly ceremonial.",
+				"give": "KEY",
+				"next": null
+			},
+			"leave_key": {
+				"result": "I put the papers back on top of the key, where they belong.",
+				"next": null
+			}
+		},
+		"evidence-drawers": {
+			"root": {
+				"prompt": "Maybe I shouldn't be digging through drawers, looting through evidence bags, but I don't know what might come in handy.",
+				"options": [
+					{
+						"text": "Take the firearm",
+						"tooltip": "Better to have it and not need it...",
+						"next": "take_gun",
+					},
+					{
+						"text": "Leave it be",
+						"tooltip": "No way. Is this a felony?",
+						"next": "leave_gun",
+					}
+				]
+			},
+			"take_gun": {
+				"result": "The revolver's grip sticks—sweat or old blood? Six chambers. One empty. The serial number's been filed away. I conceal the weapon on my person.",
+				"give": "GUN",
+				"next": null
+			},
+			"leave_gun": {
+				"result": "I carefully close the evidence drawer, leaving the chain of evidence intact.",
 				"next": null
 			}
 		}
