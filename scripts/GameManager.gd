@@ -47,7 +47,8 @@ var inventory := {
 }
 
 # Knowledge
-enum InfoIDs { DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY, ABDUCTOR, DOGGO }
+enum InfoIDs { NOINFO, DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY,
+				ABDUCTOR, DOGGO, FBI, PUBLIC }
 var INFORMATION := {}
 var discovered_info := {}
 var events := {}
@@ -75,13 +76,13 @@ func _ready():
 				"texture": _get_item_texture(item_id),
 				"obtained": false
 			}
-
 	# Initialize all info as undiscovered
 	for info_id in InfoIDs.values():
 		discovered_info[info_id] = false
 		INFORMATION[info_id] = {
 			"description": texts["info"][InfoIDs.keys()[info_id]]["description"],
 		}
+	learn_info(InfoIDs["NOINFO"])
 	events = texts["events"]  # Auto-connect your JSON events
 	insanity = texts["insanity"]  # Auto-connect your JSON insanity
 	endings = texts["endings"]  # Auto-connect your JSON endings
@@ -112,6 +113,8 @@ func change_room(new_room: String):
 	room_changed.emit(new_room)
 
 func learn_info(info_id: InfoIDs) -> void:
+	if(knows_info(InfoIDs["NOINFO"])):
+		forget_info(InfoIDs["NOINFO"])
 	discovered_info[info_id] = true
 	knowledge_updated.emit(info_id)
 	info_full_refresh.emit()

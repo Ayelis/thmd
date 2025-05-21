@@ -18,7 +18,10 @@ func _on_door_pressed():
 	else:
 		GameManager.display_dialog(GameManager.events["need-key"])
 func _on_balcony_pressed():
-	if(GameManager.inventory[GameManager.ItemIDs.ROPE]):
+	if(GameManager.inventory[GameManager.ItemIDs.LADDER]):
+		GameManager.display_dialog(GameManager.events["has-ladder"])
+		GameManager.change_room("Rotunda")
+	elif(GameManager.inventory[GameManager.ItemIDs.ROPE]):
 		GameManager.display_dialog(GameManager.events["has-rope"])
 		GameManager.change_room("Rotunda")
 	else:

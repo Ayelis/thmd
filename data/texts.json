@@ -50,6 +50,9 @@
 		}
 	},
 	"info": {
+		"NOINFO": {
+			"description": "I haven't discovered anything yet..."			
+		},
 		"DAUGHTER": {
 			"description": "They Have My Daughter!"
 		},
@@ -82,7 +85,13 @@
 		},
 		"DOGGO": {
 			"description": "A very friendly doggo met me on the beach today..."
-		}
+		},
+		"FBI": {
+			"description": "I've notified the FBI of the situation in town..."
+		},
+		"PUBLIC": {
+			"description": "I've stirred up public opinion regarding the cult activity..."
+		},
 	},
 	"events": {
 		"home1": "I wake up at home. The silence of the house is first thing that feels wrong. No breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the refrigerator.\n\n'Hey, kiddo?'\n\nNo answer. Her door sits open, revealing an already-made bed and an untouched backpack. The house is too still. No messages on my phone. The air feels thick with waiting.",
@@ -128,6 +137,7 @@
 		"balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
 		"tunnels": "Hours of stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
 		"has-rope": "The rope snakes around the balcony post. One tug to test it, then I haul myself up, muscles screaming.",
+		"has-ladder": "I set my ladder down against the balcony and easily climb over the rail. An empty room awaits me inside the mansion. I find my way to the altar...",
 		"need-key": "The ornate lock stares back. No picking this—I'll need to find another way in.",
 		"knife": "I knock, flashing the ritual blade. 'Lost my robe,' I lie. The cultists exchange glances before bowing me inside.",
 		"has-robe": "The crimson robe earns me deep bows. They murmur titles—'High Priest'—as I stride past. The charade works better than expected.",
