@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=59 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://d3fh1j87vlq0p" path="res://Canvas.gd" id="1_w250u"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
@@ -55,9 +55,11 @@
 [ext_resource type="Texture2D" uid="uid://sethpxxg6isc" path="res://assets/Scenes/padded.jpg" id="34_nyc7o"]
 [ext_resource type="Texture2D" uid="uid://ct3e28ghw3tyh" path="res://assets/UI/DialogBlu/Button_ContinueHL.png" id="34_xc54d"]
 [ext_resource type="Texture2D" uid="uid://dkr36luuo2fuf" path="res://assets/Scenes/5c credits.jpg" id="35_7vltt"]
+[ext_resource type="PackedScene" uid="uid://dr5ou1wcoeb7r" path="res://assets/UI/ItemDetailsPanel.tscn" id="47_qirsl"]
+[ext_resource type="Script" uid="uid://dh2vrvuskdoxt" path="res://assets/UI/Item_details_panel.gd" id="48_pnh27"]
 [ext_resource type="AudioStream" uid="uid://2eneoer2lm2s" path="res://assets/audio/switch.ogg" id="55_lua15"]
 
-[node name="GameManager" type="Control"]
+[node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1067,6 +1069,10 @@ offset_right = 352.0
 offset_bottom = 56.0
 bbcode_enabled = true
 text = "[color=#999999][font_size=32][center][i][b]Inventory[/b][/i][/center][/font_size][/color]"
+
+[node name="ItemDetailsPanel" parent="CanvasLayer/Inventory" instance=ExtResource("47_qirsl")]
+layout_mode = 1
+script = ExtResource("48_pnh27")
 
 [node name="Info" type="Control" parent="CanvasLayer"]
 visible = false

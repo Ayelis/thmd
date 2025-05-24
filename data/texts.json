@@ -2,51 +2,51 @@
 	"items": {
 		"TRANSPASS": {
 			"name": "Transit Pass",
-			"description": "The plastic is warm, as if recently held by\nsomeone else. The expiration date is\nsmudged, either by rain or something\nstickier."
+			"description": "The plastic is warm, as if recently held by someone else. The expiration date is smudged, either by rain or something stickier."
 		},
 		"LIBCARD": {
 			"name": "Library Card",
-			"description": "The edges are frayed, like it’s been chewed\non. The barcode is faded, but it still seems\nto work for now."
+			"description": "The edges are frayed, like it’s been chewed on. The barcode is faded, but it still seems to work for now."
 		},
 		"LETTER": {
 			"name": "Letter",
-			"description": "The letters are cut from magazines, glue\nin jagged lines:\n\n'WE HAVE MY DAUGHTER.\nSHE WAS CHOSEN FOR THIS FATE.\nGO FOLLOW THE TIDE.'\n\nThe wax smells faintly of saltwater."
+			"description": "The words are cut from magazines: 'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN FOR THIS FATE. GO FOLLOW THE TIDE' ...A haiku? Really?"
 		},
 		"DAGGER": {
 			"name": "Ritual Dagger",
-			"description": "The blade is etched with symbols that shift\nunder direct light. The hilt is wrapped in hair\ntoo coarse to be my daughter’s."
+			"description": "The blade is etched with symbols that shift under direct light. The hilt is wrapped in hair too coarse to be my daughter’s."
 		},
 		"ROBE": {
 			"name": "Fancy Robes",
-			"description": "The fabric is heavier than it should be, like\nit’s woven with something besides thread.\nThe gold embroidery glints like knife-edges\nin the dark, forming patterns that hurt\nto focus on. This robe seems fit for a king—\nor a sacrifice."
+			"description": "The gold embroidery glints like knife-edges in the dark, forming patterns that hurt to focus on. This robe seems fit for a king — or a sacrifice."
 		},
 		"ROPE": {
 			"name": "Length of Rope",
-			"description": "The fibers are stained in uneven patches. It\nsmells of salt and wet earth, though it hasn't \nleft the attic in years."
+			"description": "The fibers are stained in uneven patches. It smells of salt and wet earth, though it hasn't left the attic in years."
 		},
 		"LADDER": {
 			"name": "Steel Stepladder",
-			"description": "The metal is pocked with rust, except for the\nsteps, which are polished smooth from use.\nThe bottom is caked in a dried, flaking\nresidue."
+			"description": "The metal is pocked with rust, except for the steps, which are polished smooth from use. The bottom is caked in a dried, flaking residue."
 		},
 		"BULLHORN": {
 			"name": "Megaphone Bullhorn",
-			"description": "The speaker grille is dented, as if gripped\ntoo tightly. When I turn it over, a single\nword is scratched into the plastic: ‘DON’T.’"
+			"description": "The speaker grille is dented, as if gripped too tightly. When I turn it over, a single word is scratched into the plastic: ‘DON’T.’"
 		},
 		"KEY": {
 			"name": "Steel Key",
-			"description": "It’s cold, even in my pocket. The teeth are\njagged, like they were filed to fit a lock that\nshouldn’t exist."
+			"description": "It’s cold, even in my pocket. The teeth are jagged, like they were filed to fit a lock that shouldn’t exist."
 		},
 		"FLYER": {
 			"name": "Recruitment Flyer",
-			"description": "The paper crackles in my hand. An open eye\ngazes from a circle of waves, printed in deep\nnavy blue. Beneath it, bold words:\n'The Tide is rising. Be cleansed. Be claimed.'\nNo contact info. Just coordinates."
+			"description": "The paper crackles in my hand. An open eye gazes from a circle of waves, printed in deep navy blue. Beneath it, bold words: 'The Tide is rising. Be cleansed. Be claimed.' No contact info. Just coordinates."
 		},
 		"DETECTOR": {
 			"name": "Metal Detector",
-			"description": "The LCD pulses, even when the device is\nturned off. The casing is cracked,\nrevealing wires that also seem to pulse faintly,\nlike veins."
+			"description": "The LCD pulses, even when the device is turned off. The casing is cracked, revealing wires that also seem to pulse faintly, like veins."
 		},
 		"GUN": {
 			"name": "Revolver",
-			"description": "The grip is sticky. The serial number has been\nscraped away oddly, as if by metallic\nfingernails..."
+			"description": "The grip is sticky. The serial number has been scraped away oddly, as if by metallic fingernails..."
 		}
 	},
 	"info": {

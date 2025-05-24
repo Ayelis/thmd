@@ -21,7 +21,7 @@ func _on_game_reset():
 	for i in GameManager.inventory:
 		GameManager.lose_item(i)
 	#Reset stats
-	GameManager.sanity = 3
+	GameManager.sanity = GameManager.baseSanity
 	#Reset Rooms
 	$CanvasLayer/UI/Rooms/Police.texture = load("res://assets/Scenes/3a police.jpg")
 	$CanvasLayer/UI/Rooms/Beach.texture = load("res://assets/Scenes/4a beach.jpg")

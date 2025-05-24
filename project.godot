@@ -14,7 +14,7 @@ config/name="theyhavemydaughter"
 config/version="0.7"
 run/main_scene="uid://by043omwqjgg1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="uid://cqsi50xiea7wk"
+config/icon="uid://c78x2govd5r7f"
 
 [autoload]
 
