@@ -339,7 +339,6 @@ focus_mode = 0
 flat = true
 
 [node name="Police" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
-visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -347,6 +346,16 @@ offset_bottom = 560.0
 texture = ExtResource("9_xwkxq")
 expand_mode = 1
 script = ExtResource("12_fj2yu")
+
+[node name="Assistant" type="Button" parent="CanvasLayer/UI/Rooms/Police"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 58.0
+offset_right = 234.0
+offset_bottom = 230.0
+scale = Vector2(1.23467, 1.92993)
+focus_mode = 0
+flat = true
 
 [node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Police"]
 layout_mode = 0
@@ -962,6 +971,7 @@ offset_top = 64.0
 offset_right = 353.0
 offset_bottom = 462.0
 scale = Vector2(2, 2)
+bbcode_enabled = true
 
 [node name="Options" type="VBoxContainer" parent="CanvasLayer/Dialogue/Panel"]
 visible = false
@@ -981,10 +991,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -280.0
-offset_top = -240.0
-offset_right = -140.0
-offset_bottom = -112.0
+offset_left = -210.0
+offset_top = -184.0
+offset_right = -70.0
+offset_bottom = -56.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("32_v5dxo")
@@ -1317,6 +1327,7 @@ stretch_mode = 0
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Shelves" to="CanvasLayer/UI/Rooms/Library/Shelves" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Chair" to="CanvasLayer/UI/Rooms/Library/Chair" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Computers" to="CanvasLayer/UI/Rooms/Library/Computers" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police/Assistant" to="CanvasLayer/UI/Rooms/Police/Assistant" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police/Leave" to="CanvasLayer/UI/Rooms/Police/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Leave" to="CanvasLayer/UI/Rooms/Police2/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Detective" to="CanvasLayer/UI/Rooms/Police2/Detective" method="_on_pressed"]

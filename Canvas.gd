@@ -17,7 +17,7 @@ func _on_game_reset():
 	#Reset inventory and knowledge
 	for i in GameManager.discovered_info:
 		GameManager.forget_info(i)
-	GameManager.learn_info(GameManager.InfoIDs["NOINFO"])
+	GameManager.learn_info(GameManager.InfoIDs.NOINFO)
 	for i in GameManager.inventory:
 		GameManager.lose_item(i)
 	#Reset stats

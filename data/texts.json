@@ -29,8 +29,8 @@
 			"description": "The metal is pocked with rust, except for the steps, which are polished smooth from use. The bottom is caked in a dried, flaking residue."
 		},
 		"BULLHORN": {
-			"name": "Megaphone Bullhorn",
-			"description": "The speaker grille is dented, as if gripped too tightly. When I turn it over, a single word is scratched into the plastic: ‘DON’T.’"
+			"name": "Bullhorn",
+			"description": "The megaphone's speaker grille is dented, as if gripped too tightly. When I turn the bullhorn over, a single word is scratched into the plastic: ‘DON’T.’"
 		},
 		"KEY": {
 			"name": "Steel Key",
@@ -105,13 +105,13 @@
 		"windowgaze": "The window's grime distorts the world like a funhouse mirror. Vines slither through cracks, their stems unnaturally thick and glistening like oil-slicked flesh.",
 		"get-rope": "Rope coils in heaps—some strands knotted into crude symbols. A few twitch when the wind rattles the pane. I gather them quickly, my skin prickling as the knots brush my palms.",
 		"nopass": "The turnstile light blares red. My transit pass is still at home in the dresser.",
+		"transit": "I leave the police station and head back to the transit center...",
 		"transit2": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
 		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones, nasally.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
 		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: police blotters, tide charts, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
 		"left-library": "Fluorescents buzz weakly like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
 		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 chemical spill was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '16-2-18, high tide on the solstice.' The numbers itch at my brain.",
 		"stacks2": "I go over what I've found. In old microfiche articles, there are headlines about local disappearances.\n\nIn '86, a cult called 'The Tide' was found responsible for numerous abductions. Faded photos relate the shack on the beach to this cult.\n\nThere are also numbers scrawled in the margins that seem important somehow: '16-2-18'.",
-		"police": "The receptionist's nails click against her keyboard.\n\n'Missing persons? Fill out a form. Detective's booked till Thursday.'\n\nShe smirks without looking up.\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nAll I know is I can't wait that long.",
 		"police2": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.",
 		"police3": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
@@ -134,6 +134,7 @@
 		"shack-empty": "The drawers are mysteriously empty. Not counting the cobwebs...",
 		"mansion": "A robed figure materializes from the shadows, pressing a flyer into my palm. His fingers stretch too long, his nails ridged with old blood. 'The Tide doesn't need you yet,' he rasps. Behind him, the mansion's windows pulse—not with light, but with movement.",
 		"cultist": "The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
+		"cultist-scared": "The robed figure looms closer. I wave my new gun in his face and he scampers off back into the mansion...",
 		"balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
 		"tunnels": "Hours of stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
 		"has-rope": "The rope snakes around the balcony post. One tug to test it, then I haul myself up, muscles screaming.",
@@ -185,8 +186,8 @@
 	"insanity": {
 		"ceiling-fan": "The fan’s blades carve slow circles into the air, a little louder than it should be. Click. Whir. Click. Like a metronome.\n\nI’m reminded of my daughter’s favorite track — Victim, from that Dead Inside album she played too loud. 'Swinging dead in summer wind…' She’d mouth the words while braiding her hair, grinning like it was just some dumb lyric. But now the fan’s rhythm syncs with it. Click. Swinging. Whir. Dead.\n\n'My parents will go crazy, slowly…'\nI should get up. But the couch holds me like a hand.\n[SANITY REDUCED]",
 		"vines": "Just vines. Normal. Overgrown. Thin, fibrous tendrils creep down from the windowframe, curling like lazy fingers. They don’t move when I look at them. But when I turn away, in the corner of my vision, they twitch.\n\nI reach up. The moment before my fingers touch one, the vine tightens. A shudder runs through the whole mass, like a muscle flexing.\n\nOutside, the wind blows, and the vines go still. But now I can’t stop looking.\nEvery time I glance, they’ve gotten just a little closer to the floor.\n[SANITY REDUCED]",
-		"birds": "The birds hover in the wind. The ones on the sand tilt their heads in unison, black eyes locking onto me.\n\nThen there’s the close one—close enough to touch. Its beak opens. Not a screech. A whisper.\n\"She’s right where you left her.\"\n\nI reach out. My fingers graze feathers. The gull collapses into a tangle of evaporating seaweed. The others take flight, their wings beating in unison.\n\nClick. Whir. Click.\nJust like the ceiling fan at home.\n[SANITY REDUCED]",
-		"ocean": "The waves don’t crash—they breathe. In. Out. Like the tide is a great, snoozing beast beneath the sand. The water isn’t blue anymore. It’s the color of a fading bruise. Purple. Yellow at the edges.\n\nI count the waves. Their rhythm sings a song. Their shape seems square and digital. The ocean is holding its breath.\n\nAnd then—a sound. Not a gull, not the wind. A voice, half-drowned, calling from the water on the horizon.\n\n\"You’re already too late.\"\n[SANITY REDUCED]",
+		"birds": "The birds hover in the wind. The ones on the sand tilt their heads in unison, black eyes locking onto me.\n\nThen there’s the close one—close enough to touch. Its beak opens. Not a screech. A whisper.\n“She’s right where you left her.”\n\nI reach out. My fingers graze feathers. The gull collapses into a tangle of evaporating seaweed. The others take flight, their wings beating in unison.\n\nClick. Whir. Click.\nJust like the ceiling fan at home.\n[SANITY REDUCED]",
+		"ocean": "The waves don’t crash—they breathe. In. Out. Like the tide is a great, snoozing beast beneath the sand. The water isn’t blue anymore. It’s the color of a fading bruise. Purple. Yellow at the edges.\n\nI count the waves. Their rhythm sings a song. Their shape seems square and digital. The ocean is holding its breath.\n\nAnd then—a sound. Not a gull, not the wind. A voice, half-drowned, calling from the water on the horizon.\n\n“You’re already too late.”\n[SANITY REDUCED]",
 		"tracks": "The rails seem to hum even when no train is coming. A low, metallic vibration, like the tracks are singing to themselves. A tune without a melody. A warning without words.\n\nThe timetable board flickers—departure times melting into gibberish, then into symbols I almost recognize.\nA shadow moves in the nearby train tunnel. Not a train. Something longer. Something that sways.\n\nThe rails go silent. The shadow is gone. But the taste of copper lingers on my tongue.\n[SANITY REDUCED]",
 		"ceiling": "The ceiling isn’t gone.\nIt’s just... farther now.\n\nI crane my neck, expecting rafters, cobwebs, the underside of the roof—but there’s nothing. No. Not nothing. Worse.\n\nThe darkness pulses.\nLike a throat swallowing.\nLike something up there is breathing.\n\nA drop of cold water lands on my cheek. I wipe it away. My fingers come back red.\n[SANITY REDUCED]",
 		"blood": "The blood isn’t dry. It squirms. Thin, glossy tendrils spider outward from the edges of each splash, creeping like liquid veins. The thicker pools ripple, as if stirred by an invisible finger.\n\nI crouch, reaching—and the blood flinches away from me. It doesn't seem red anymore. It’s the same purple-black as the inside of my eyelids when I wake gasping at 3 AM.\n\nI straighten up. The blood goes still. Now it’s just red blood again.\n\nProbably.\n[SANITY REDUCED]",
@@ -266,6 +267,64 @@
 				"next": null
 			}
 		},
+		"assistant": {
+			"root": {
+				"prompt": "The assistant's nails click against her keyboard.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nI just know I can't wait that long.",
+				"options": [
+					{
+						"text": "Leave",
+						"tooltip": "I guess I need an appointment...",
+						"newscene": "Transit",
+						"room": "transit"
+					},
+				]
+			}
+		},
+		"assistant2": {
+			"root": {
+				"prompt": "The assistant sips her coffee.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'",
+				"options": [
+					{
+						"text": "See Detective",
+						"tooltip": "I do, in fact, have an appointment...",
+						"newscene": "Police2",
+						"chain": "detective"
+					},
+					{
+						"text": "Leave",
+						"tooltip": "Not much else to do here...",
+						"newscene": "Transit",
+						"room": "transit"
+					},
+				]
+			}
+		},
+		"assistant3": {
+			"root": {
+				"prompt": "The assistant eyes you wearily.\n\n“Detective Rook says you've been deputized.” She sighs. “Look, I’m sorry about your kid. But if you start waving a gun around, I [i][b]will[/b][/i] tase you.”",
+				"options": [
+					{
+						"text": "Detective's Office",
+						"tooltip": "Revisit Rook's Office...",
+						"newscene": "Police2",
+						"room": "police3"
+					},
+					{
+						"text": "Evidence Lockup",
+						"tooltip": "Sneak into the evidence room...",
+						"condition": "KEY",
+						"newscene": "Evidence",
+						"room": "evidence"
+					},
+					{
+						"text": "Leave",
+						"tooltip": "Not much else to do here...",
+						"newscene": "Transit",
+						"room": "transit"
+					},
+				]
+			}
+		},
 		"detective": {
 			"root": {
 				"prompt": "Where’d you last see her?",
@@ -303,6 +362,7 @@
 			},
 			"end": {
 				"result": "I nod. For the first time since the note arrived, I feel a sliver of hope. The detective’s office feels less like an interrogation room and more like an ally’s living room.",
+				"learn": "POLICE",
 				"next": null
 			}
 		},
@@ -315,7 +375,7 @@
 				]
 			},
 			"rescue": {
-				"result": "Her hand trembles in mine. The cell door swings open. \"Alright, let’s get out of here together.\"",
+				"result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
 				"ending": { "text": "rescue", "title": "Congratulations!", "texture": "daughter", "timbre": "42_Rise_of_the_Ancients" }
 			},
 			"cult_master": {

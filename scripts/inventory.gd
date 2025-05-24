@@ -79,7 +79,7 @@ func update_inventory():
 		var slot = grid.get_child(i)
 		if i < owned_items.size():
 			var item_id = owned_items[i]
-			var item_data = GameManager.ITEMS[item_id]
+			#var item_data = GameManager.ITEMS[item_id]
 			slot.texture_normal = load("res://assets/Items/item_%s.jpg" % GameManager.ItemIDs.keys()[item_id].to_lower())
 			#slot.tooltip_text = "%s\n\n%s" % [item_data.name, item_data.description]
 		else:

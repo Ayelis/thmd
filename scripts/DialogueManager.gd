@@ -130,7 +130,20 @@ func _process_block(block: Dictionary) -> void:
 		options_container.show()
 		return
 
-	if block.has("next"):
+	if block.has("newscene") and block.has("chain"):
+		GameManager.change_room(block.newscene)
+		_on_exit()
+		GameManager.initiate_dialogue(block.chain)
+	elif block.has("newscene") and block.has("room"):
+		GameManager.change_room(block.newscene)
+		_on_exit()
+		GameManager.display_dialog(GameManager.events[block.room])
+	elif block.has("newscene"):
+		GameManager.change_room(block.newscene)
+		_on_exit()
+	elif block.has("next") and block.get("next") == null:
+		_on_exit()
+	elif block.has("next"):
 		start_structured(current_topic, _on_complete, block.get("next"))
 	else:
 		exit_button.show()
@@ -151,9 +164,12 @@ func _on_continue() -> void:
 		continue_button.hide()
 
 func _on_exit() -> void:
-		dialogue_node.hide()
-		emit_signal("dialogue_closed")
-		_finish()
+	continue_button.hide()
+	exit_button.show()
+	dialogue_node.hide()
+	emit_signal("dialogue_closed")
+	GameManager.emit_signal("dialogue_closed")
+	_finish()
 
 func _update_text(t:String) -> void:
 	text_label.text = t

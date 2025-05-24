@@ -20,11 +20,9 @@ func _on_papers_pressed():
 func _on_detective_pressed():
 	if(!GameManager.knows_info(GameManager.InfoIDs.POLICE)):
 		GameManager.initiate_dialogue("detective")
-		GameManager.learn_info(GameManager.InfoIDs.POLICE)
 	elif(GameManager.inventory[GameManager.ItemIDs.KEY]):
-		GameManager.display_dialog(GameManager.events["evidence"])
-		GameManager.change_room("Evidence")
+		GameManager.change_room("Police")
 	else:
-		GameManager.change_room("Transit")
+		GameManager.change_room("Police")
 func _on_leave_pressed():
-	GameManager.change_room("Transit")
+	GameManager.change_room("Police")

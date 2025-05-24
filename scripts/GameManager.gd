@@ -78,7 +78,7 @@ func _ready():
 		INFORMATION[info_id] = {
 			"description": texts["info"][InfoIDs.keys()[info_id]]["description"],
 		}
-	learn_info(InfoIDs["NOINFO"])
+	learn_info(InfoIDs.NOINFO)
 	events = texts["events"]  # Auto-connect your JSON events
 	insanity = texts["insanity"]  # Auto-connect your JSON insanity
 	endings = texts["endings"]  # Auto-connect your JSON endings
@@ -109,8 +109,8 @@ func change_room(new_room: String):
 	room_changed.emit(new_room)
 
 func learn_info(info_id: InfoIDs) -> void:
-	if(knows_info(InfoIDs["NOINFO"])):
-		forget_info(InfoIDs["NOINFO"])
+	if(knows_info(InfoIDs.NOINFO)):
+		forget_info(InfoIDs.NOINFO)
 	discovered_info[info_id] = true
 	knowledge_updated.emit(info_id)
 	info_full_refresh.emit()

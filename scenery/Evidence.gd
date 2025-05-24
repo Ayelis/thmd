@@ -20,6 +20,8 @@ func _on_window_pressed():
 	GameManager.display_dialog(GameManager.events["window"])
 	$Window.hide()
 func _on_chair_pressed():
-	GameManager.change_room("Transit")
+	GameManager.change_room("Police")
+	GameManager.initiate_dialogue("assistant3")
 func _on_leave_pressed():
-	GameManager.change_room("Transit")
+	GameManager.change_room("Police")
+	GameManager.initiate_dialogue("assistant3")

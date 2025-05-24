@@ -27,7 +27,17 @@ func _on_balcony_pressed():
 	else:
 		GameManager.display_dialog(GameManager.events["balcony"])
 func _on_cultist_pressed():
-	GameManager.display_dialog(GameManager.events["cultist"])
+	if(GameManager.inventory[GameManager.ItemIDs.GUN]):
+		GameManager.display_dialog(GameManager.events["cultist-scared"])
+		var cult = get_parent().get_node("Mansion")
+		cult.texture = load("res://assets/Scenes/5a mansionb.jpg")
+		cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)
+		cult.get_node("Tunnels").pressed.connect(cult._on_tunnel_pressed)
+		cult.get_node("Balcony").pressed.connect(cult._on_balcony_pressed)
+		cult.get_node("Door").pressed.connect(cult._on_door_pressed)
+		cult.get_node("Cultist").hide()
+	else:
+		GameManager.display_dialog(GameManager.events["cultist"])
 	GameManager.learn_info(GameManager.InfoIDs.CULTISTS)
 func _on_leave_pressed():
 	GameManager.change_room("Transit")
