@@ -52,18 +52,12 @@ func _show_details_panel(item_data):
 		item_data.description
 	)
 	details_panel.visible = true
-	
 	# Position the panel near the clicked slot
 	var slot = grid.get_child(selected_slot_index)
 	var slot_rect = slot.get_global_rect()
-	
 	# Adjust position based on available space
 	var viewport_size = get_viewport_rect().size
-	if slot_rect.position.x + details_panel.size.x > viewport_size.x:
-		details_panel.position.x = viewport_size.x - details_panel.size.x
-	else:
-		details_panel.position.x = slot_rect.position.x
-		
+	details_panel.position.x = 0
 	if slot_rect.position.y + slot_rect.size.y + details_panel.size.y > viewport_size.y:
 		details_panel.position.y = slot_rect.position.y - details_panel.size.y
 	else:
@@ -132,12 +126,12 @@ func position_panel_near_slot(slot_index: int):
 	# Position logic (example - adjust as needed)
 	if(slot_rect.end.y < 300):
 		details_panel.position = Vector2(
-			clamp(slot_rect.position.x, 0, get_viewport_rect().size.x - panel_size.x),
+			0,
 			clamp(slot_rect.end.y + 20, 0, get_viewport_rect().size.y - panel_size.y)
 		)
 	else:
 		details_panel.position = Vector2(
-			clamp(slot_rect.position.x, 0, get_viewport_rect().size.x - panel_size.x),
+			0,
 			clamp(slot_rect.end.y - 375, 0, get_viewport_rect().size.y - panel_size.y)
 		)
 

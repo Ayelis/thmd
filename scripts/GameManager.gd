@@ -30,26 +30,11 @@ enum ItemIDs {
 	TRANSPASS, LIBCARD, LETTER, DAGGER, ROBE, ROPE, LADDER, 
 	BULLHORN, KEY, FLYER, DETECTOR, GUN 
 }
-var texts := {}
-var ITEMS := {}
-var inventory := {
-	ItemIDs.TRANSPASS: false,
-	ItemIDs.LIBCARD: false,
-	ItemIDs.LETTER: false,
-	ItemIDs.DAGGER: false, 
-	ItemIDs.ROBE: false,
-	ItemIDs.ROPE: false,
-	ItemIDs.LADDER: false,
-	ItemIDs.BULLHORN: false,
-	ItemIDs.KEY: false,
-	ItemIDs.FLYER: false,
-	ItemIDs.DETECTOR: false,
-	ItemIDs.GUN: false
-}
-
 # Knowledge
-enum InfoIDs { NOINFO, DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY,
-				ABDUCTOR, DOGGO, FBI, PUBLIC }
+enum InfoIDs {
+	NOINFO, DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY,
+	ABDUCTOR, DOGGO, FBI, PUBLIC
+}
 var INFORMATION := {}
 var discovered_info := {}
 var events := {}
@@ -57,6 +42,16 @@ var insanity := {}
 var endings := {}
 var dialogs := {}
 var rooms := {}
+var texts := {}
+var ITEMS := {}
+
+var inventory: Dictionary = generate_inventory()
+
+func generate_inventory() -> Dictionary:
+	var dict = {}
+	for item in ItemIDs.values():
+		dict[item] = false
+	return dict
 
 func apply_theme_to_buttons(theme: Theme):
 	for button in get_tree().get_nodes_in_group("ui_button"):
@@ -159,15 +154,4 @@ func increase_insanity():
 	sanity=sanity-1
 
 func restore_sanity():
-	sanity=5
-
-#func hard_reset():
-	## Clear all persistent state
-	#get_tree().paused = false
-	## Full engine restart
-	## 1. Delete everything
-	#get_tree().root.propagate_call("queue_free")
-	## 2. Reload main scene (adjust path)
-	#var err = get_tree().change_scene_to_file("res://TitleScreen.tscn")
-	#if err != OK:
-		#get_tree().quit()
+	sanity=baseSanity
