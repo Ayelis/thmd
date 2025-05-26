@@ -1,14 +1,12 @@
-Coding:
+Coding/Arrangement:
 	SM
 
 Special thanks to:
 	Buttons: Prinbles
 	Nav Icons: Game-icons.net
-	Atmospheric audio: \
-	 / Pixabay
+	Atmospheric audio: Tabletop Audio / Pixabay
 	Sound Effects: Kenney.nl / Freesound
-
-Special AI thanks:
+AI:
 	Background Graphics: Leonardo AI, Craiyon, Perchance, MS Designer
 	Title Screen: DeepAI Text2Img
 	Some Graphic Prompts: Deepseek
