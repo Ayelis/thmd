@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://brxjb3ix2u1mq" path="res://assets/Scenes/3a policea.jpg" id="12_3h3yf"]
 [ext_resource type="Script" uid="uid://p001hdfinq5p" path="res://scripts/Info.gd" id="12_7ged1"]
 [ext_resource type="Script" uid="uid://0wp0w7of40iv" path="res://scenery/Police.gd" id="12_fj2yu"]
-[ext_resource type="Script" uid="uid://cldgf68acf0e1" path="res://scenery/Police2.gd" id="12_nyc7o"]
+[ext_resource type="Script" uid="uid://cldgf68acf0e1" path="res://scenery/Detective.gd" id="12_nyc7o"]
 [ext_resource type="Script" uid="uid://bungdh76uon2c" path="res://scripts/Settings.gd" id="12_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://dmhl27txb0r03" path="res://assets/Scenes/5a mansion.jpg" id="13_8576b"]
 [ext_resource type="Texture2D" uid="uid://ocxwo7hsgywc" path="res://assets/UI/dark_paper.png" id="13_elkpi"]
@@ -210,7 +210,6 @@ focus_mode = 0
 flat = true
 
 [node name="Transit" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
-visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -258,17 +257,6 @@ theme = ExtResource("9_ds8mp")
 text = "Library"
 
 [node name="PolButton" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
-visible = false
-layout_mode = 0
-offset_left = 200.0
-offset_top = 235.0
-offset_right = 254.0
-offset_bottom = 266.0
-focus_mode = 0
-theme = ExtResource("9_ds8mp")
-text = "Police"
-
-[node name="PolButton2" type="Button" parent="CanvasLayer/UI/Rooms/Transit" groups=["ui_button"]]
 visible = false
 layout_mode = 0
 offset_left = 200.0
@@ -339,6 +327,7 @@ focus_mode = 0
 flat = true
 
 [node name="Police" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
+visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 360.0
@@ -367,7 +356,7 @@ scale = Vector2(2.12088, 0.452698)
 focus_mode = 0
 flat = true
 
-[node name="Police2" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
+[node name="Detective" type="TextureRect" parent="CanvasLayer/UI/Rooms"]
 visible = false
 layout_mode = 0
 offset_top = 45.0
@@ -377,7 +366,7 @@ texture = ExtResource("12_3h3yf")
 expand_mode = 1
 script = ExtResource("12_nyc7o")
 
-[node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Police2"]
+[node name="Leave" type="Button" parent="CanvasLayer/UI/Rooms/Detective"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 437.0
@@ -387,7 +376,7 @@ scale = Vector2(2.12088, 0.452698)
 focus_mode = 0
 flat = true
 
-[node name="Detective" type="Button" parent="CanvasLayer/UI/Rooms/Police2"]
+[node name="Detective" type="Button" parent="CanvasLayer/UI/Rooms/Detective"]
 layout_mode = 0
 offset_left = 226.0
 offset_top = 81.0
@@ -396,7 +385,7 @@ offset_bottom = 250.0
 focus_mode = 0
 flat = true
 
-[node name="Papers" type="Button" parent="CanvasLayer/UI/Rooms/Police2"]
+[node name="Papers" type="Button" parent="CanvasLayer/UI/Rooms/Detective"]
 layout_mode = 0
 offset_left = 163.0
 offset_top = 125.0
@@ -406,7 +395,7 @@ rotation = 0.809833
 focus_mode = 0
 flat = true
 
-[node name="Computer" type="Button" parent="CanvasLayer/UI/Rooms/Police2"]
+[node name="Computer" type="Button" parent="CanvasLayer/UI/Rooms/Detective"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 75.0
@@ -415,7 +404,7 @@ offset_bottom = 247.0
 focus_mode = 0
 flat = true
 
-[node name="Drawers" type="Button" parent="CanvasLayer/UI/Rooms/Police2"]
+[node name="Drawers" type="Button" parent="CanvasLayer/UI/Rooms/Detective"]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 272.0
@@ -1329,11 +1318,11 @@ stretch_mode = 0
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Library/Computers" to="CanvasLayer/UI/Rooms/Library/Computers" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police/Assistant" to="CanvasLayer/UI/Rooms/Police/Assistant" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Police/Leave" to="CanvasLayer/UI/Rooms/Police/Leave" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Leave" to="CanvasLayer/UI/Rooms/Police2/Leave" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Detective" to="CanvasLayer/UI/Rooms/Police2/Detective" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Papers" to="CanvasLayer/UI/Rooms/Police2/Papers" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Computer" to="CanvasLayer/UI/Rooms/Police2/Computer" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Police2/Drawers" to="CanvasLayer/UI/Rooms/Police2/Drawers" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Detective/Leave" to="CanvasLayer/UI/Rooms/Detective/Leave" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Detective/Detective" to="CanvasLayer/UI/Rooms/Detective/Detective" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Detective/Papers" to="CanvasLayer/UI/Rooms/Detective/Papers" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Detective/Computer" to="CanvasLayer/UI/Rooms/Detective/Computer" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Rooms/Detective/Drawers" to="CanvasLayer/UI/Rooms/Detective/Drawers" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Evidence/Leave" to="CanvasLayer/UI/Rooms/Evidence/Leave" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Evidence/Paperwork" to="CanvasLayer/UI/Rooms/Evidence/Paperwork" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Evidence/Drawers" to="CanvasLayer/UI/Rooms/Evidence/Drawers" method="_on_pressed"]

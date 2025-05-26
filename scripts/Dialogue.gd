@@ -38,7 +38,6 @@ func _show():
 func _hide():
 	visible = false
 	emit_signal("dialogue_closed")
-	GameManager.emit_signal("dialogue_closed")  # Notify GameManager
 
 func _input(event):
 	# only care about key events

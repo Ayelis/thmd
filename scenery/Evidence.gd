@@ -1,5 +1,7 @@
 # Evidence.gd
 extends TextureRect
+var this_room = "Evidence"
+var here_before = false
 
 func _ready():
 	$Paperwork.pressed.connect(_on_papers_pressed)
@@ -7,6 +9,13 @@ func _ready():
 	$Chair.pressed.connect(_on_chair_pressed)
 	$Window.pressed.connect(_on_window_pressed)
 	$Leave.pressed.connect(_on_leave_pressed)
+	GameManager.room_changed.connect(_on_room_changed)
+
+func _on_room_changed(room_name: String):
+	if(room_name == this_room && !here_before):
+		GameManager.display_dialog(GameManager.events["evidence"])
+		here_before = true
+
 func _on_papers_pressed():
 	GameManager.learn_info(GameManager.InfoIDs.MANSION)
 	GameManager.learn_info(GameManager.InfoIDs.TUNNEL)

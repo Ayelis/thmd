@@ -93,7 +93,7 @@
 			"description": "I've stirred up public opinion regarding the cult activity..."
 		},
 		"EMAIL": {
-			"description": "I know the e-mail address for the detective... Rook@HfPD... simple."
+			"description": "I know the e-mail address for the detective... Rook@HFPD... simple."
 		},
 	},
 	"events": {
@@ -111,7 +111,7 @@
 		"nopass": "The turnstile light blares red. My transit pass is still at home.",
 		"transit": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
 		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones, nasally.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
-		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: police blotters, tide charts, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
+		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: weather news, tide charts, arrest reports, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
 		"left-library": "Fluorescents buzz weakly like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
 		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 chemical spill was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '6-20-25, high tide on the solstice.' The numbers itch at my brain. Is it a date?",
 		"stacks2": "I go over what I've found. In old microfiche articles, there are headlines about local disappearances.\n\nIn '86, a cult called 'The Tide' was found responsible for numerous abductions. Faded photos relate the shack on the beach to this cult.\n\nThere are also numbers scrawled in the margins that seem important somehow: '6-20-25'.",
@@ -130,7 +130,8 @@
 		"dog": "A massive dog blocks the path—muscle and matted fur. Its growl vibrates in my chest. Every childhood fear of dark basements and bad dogs surges up. Run. Now.",
 		"pet-dog": "Good doggo! The beast's tail wags as I scratch behind its ears. A wet tongue drags across my wrist.\n\n[Sanity Restored!]",
 		"shack1": "This is the same rusty old padlock I've seen in the photos. I try the numbers I saw earlier, 6-20-25, and the lock resists a moment before yielding. The door groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold.",
-		"shack2": "Tide charts paper the walls, their symbols playing tricks on my eyes. The floorboards warp unnaturally into stone. The air hums—not with wind, but voices. Chanting. Or maybe that's just the blood roaring in my ears.",
+		"shack2": "The lock explodes and metal flies. My hands still shaking from the vibration of the shot, I push against the door and it groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold.",
+		"shack3": "Tide charts cover the walls, their symbols playing tricks on my eyes. The floorboards warp unnaturally into stone. The air hums—not with wind, but voices. Chanting. Or maybe that's just the blood roaring in my ears.",
 		"get-ladder": "I pick up the old metal stepladder from the corner, and carry it with me.",
 		"shack-desk": "The drawer reveals a map—recruitment targets circled in red ink. The hilltop mansion dominates the center, while outward arrows seem to indicate this is a sort of headquarters.\n\nRecent coffee stains suggest this is still an active plan.",
 		"shack-drawers": "Rope loops tangle in the drawer. Not a single length but dozens of pre-made hoops and nooses. They stack neatly despite their apparent grim purpose.",
@@ -197,6 +198,30 @@
 		"magic": "The circle isn’t just glowing—it’s breathing.\n\nThe violet light pulses in time with some distant, depthless heartbeat. The symbols twist if I stare too long, their edges writhing like worms in wet soil.\n\nI step closer. The light doesn’t cast shadows—it eats them, leaving only stark, fever-bright outlines. One rune flickers.\n\nThe light hums. It’s not a sound. It’s the vibration of a throat before it screams.\n[SANITY REDUCED]"
 	},
 	"dialogs": {
+		"shoot-lock": {
+			"root": {
+				"prompt": "I still haven't found the combination, but then I recall that I may not need it:",
+				"options": [
+					{
+						"text": "Shoot the Lock",
+						"tooltip": "A bold strategy. Let's see if it works out.",
+						"next": "fire",
+					},
+					{
+						"text": "Find another way",
+						"tooltip": "Maybe we don't need violence for this.",
+						"next": null,
+					},
+				],
+			},
+			"fire": {
+				"result": "I carefully aim the gun at the rusty padlock and exhale, slowly pulling the trigger.",
+				"newscene": "Shack",
+				"room": "shack2",
+				"nextsfx": "shot",
+				"next": null
+			},
+		},
 		"computer": {
 			"root": {
 				"prompt": "I've logged in on the library computer system. Select an action:",
@@ -205,7 +230,8 @@
 						"text": "Email Police",
 						"tooltip": "Request an interview about\nmy missing persons case.",
 						"ifnot": "APPOINTMENT",
-						"next": "email_police"
+						"next": "email_police",
+						"condition": "EMAIL"
 					},
 					{
 						"text": "FBI Tip Line",
@@ -222,7 +248,7 @@
 						"condition": "FLYER"
 					},
 					{
-						"text": "Search for Cult",
+						"text": "Search Internet",
 						"tooltip": "Scan through old articles and photos.",
 						"ifnot": "SHACK",
 						"next": "search_results"
@@ -241,8 +267,9 @@
 				]
 			},
 			"email_police": {
-				"result": "TO: rook@hfpd.gov ...\n\nYou send off your email to the department with everything you know so far. A detective replies almost immediately:\n\n'Come in today. ASAP.\nMake sure you aren't followed.\n--Rook'",
+				"result": "TO: rook@hfpd.gov ...\n\nI send off my email to the Hatchetfield police department with everything I know so far. The detective replies almost immediately:\n\n'Come in today. ASAP.\nMake sure you aren't followed.\n--Rook'",
 				"learn": "APPOINTMENT",
+				"forget": "EMAIL",
 				"next": "root"
 			},
 			"fbi_upload": {
@@ -256,12 +283,12 @@
 				"next": "root"
 			},
 			"search_results": {
-				"result": "An article appears about a '1986 Beach Accident' but scanning the fine print shows this headline to be misleading.\nTown members were abducted by cultists who left similar letters. The article also shows info about a related shack on the north beach owned by this same cult.",
+				"result": "An article appears about a '1986 Beach Accident' but scanning the fine print shows this headline to be misleading.\nTown members were abducted by cultists who left similar letters to the one I got. The article also shows info about a related shack on the north beach owned by this same cult.",
 				"learn": "SHACK",
 				"next": "root"
 			},
 			"view_cams": {
-				"result": "Last footage: 11:47 PM. Two shadows moving through her room. Two figures leave. She's been gone since last night!",
+				"result": "I log in to my DVR camera system's website. Last footage: 11:47 PM. Two shadows moving through her room. Two figures leave. She's been gone since last night!",
 				"learn": "ABDUCTOR",
 				"next": "root"
 			},
@@ -273,6 +300,7 @@
 		"assistant": {
 			"root": {
 				"prompt": "The assistant's nails click against her keyboard.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nI just know I can't wait that long. She offers me a card with the detective's email address on it.",
+				"learn": "EMAIL",
 				"options": [
 					{
 						"text": "Leave",
@@ -304,7 +332,9 @@
 		},
 		"assistant3": {
 			"root": {
-				"prompt": "The assistant eyes you wearily.\n\n“Detective Rook says you've been deputized.” She sighs. “Look, I’m sorry about your kid. But if you start waving a gun around, I [i][b]will[/b][/i] tase you.”",
+				"random": 2,
+				"prompt": "The assistant eyes me wearily.\n\n“Detective Rook says you've been deputized.” She sighs. “Look, I’m sorry about your kid. But if you start waving a gun around, I [i][b]will[/b][/i] tase you.”",
+				"prompt2": "The assistant eyes me wearily.\n\n“So, you've been deputized...” She leans in, lowering her voice. “That’s cop-speak for 'we have no leads'.”",
 				"options": [
 					{
 						"text": "Detective's Office",
@@ -341,6 +371,7 @@
 			},
 			"be_open": {
 				"result": "I tell the detective everything I know. We played Scrabble until 9, said goodnight—she’s too old for bedtime stories. I ramble about the strange note, the argument we had over the boardgame, the sets of footprints in the sand outside my house.",
+				"forget": "APPOINTMENT",
 				"next": "detective_response"
 			},
 			"detective_response": {
@@ -349,12 +380,12 @@
 				"next": "detective_response2"
 			},
 			"detective_response2": {
-				"result": "“And in addition to the shack, they've got a clifftop mansion on a island to the west. Both seemingly empty at high tide. I'd take you there, but it gets… unwelcoming after dark.”",
+				"result": "“And in addition to the shack, they've got a clifftop mansion on a island to the west. Both seemingly empty at high tide. I'd take you there myself, but it gets… unwelcoming after dark.”",
 				"learn": "MANSION",
 				"next": "offer_help"
 			},
 			"offer_help": {
-				"prompt": "He sighs, stands up, and shows me around the station.\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. Hell, I find the place comforting. You’ll have free reign. Just—be careful out there.”",
+				"prompt": "He sighs, stands up, and shows me around the station.\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. You’ll have free reign. Hell, I find the place comforting. Just—be careful out there.”",
 				"options": [
 					{
 						"text": "Thank him",
@@ -382,7 +413,7 @@
 				"ending": { "text": "rescue", "title": "Congratulations!", "texture": "daughter", "timbre": "42_Rise_of_the_Ancients" }
 			},
 			"cult_master": {
-				"prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you...”",
+				"prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”",
 				"options": [
 					{ "text": "If this is what you want", "tooltip": "Step back and let her choose.", "next": "run" },
 					{ "text": "Volunteer as Tribute", "tooltip": "Offer myself instead.", "next": "sacrifice" }

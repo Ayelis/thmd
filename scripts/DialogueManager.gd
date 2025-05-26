@@ -1,7 +1,6 @@
 extends Node
 
 signal simple_message(text:String)
-signal dialogue_closed
 signal line_ready(text:String)
 
 var dialogs_data := {}                # loaded JSON
@@ -45,7 +44,11 @@ func set_dialogue_node(panel:Control) -> void:
 		GameManager.dialog_updated.connect(_on_simple_message)  # Godot 4 style :contentReference[oaicite:3]{index=3}
 
 func _on_simple_message(text:String) -> void:
-	dialogue_node.show()                      # reveal panel
+	await get_tree().process_frame  
+	if is_instance_valid(dialogue_node):  # Critical check
+		dialogue_node.show()
+	else:
+		printerr("Dialogue node is freed! Re-initializing...")
 	emit_signal("line_ready", text)           # pump into UI
 	exit_button.show()                        # let player close
 	if not GameManager.is_connected("dialog_updated", Callable(self, "emit_simple_message")):
@@ -94,6 +97,12 @@ func _process_block(block: Dictionary) -> void:
 	elif block.has("result"):
 		emit_signal("line_ready", block.result)
 		if block.has("next") and block.get("next") != null:
+			if block.has("learn"):
+				GameManager.learn_info(GameManager.InfoIDs[block.learn])
+			if block.has("forget"):
+				GameManager.forget_info(GameManager.InfoIDs[block.forget])
+			if block.has("give"):
+				GameManager.obtain_item(GameManager.ItemIDs[block.give])
 			_post_result_next = block.get("next")
 			continue_button.show()
 			return
@@ -137,7 +146,7 @@ func _process_block(block: Dictionary) -> void:
 	elif block.has("newscene") and block.has("room"):
 		GameManager.change_room(block.newscene)
 		_on_exit()
-		GameManager.display_dialog(GameManager.events[block.room])
+		#GameManager.display_dialog(GameManager.events[block.room])
 	elif block.has("newscene"):
 		GameManager.change_room(block.newscene)
 		_on_exit()
@@ -167,8 +176,8 @@ func _on_exit() -> void:
 	continue_button.hide()
 	exit_button.show()
 	dialogue_node.hide()
-	emit_signal("dialogue_closed")
-	GameManager.emit_signal("dialogue_closed")
+	var dialogue = get_node("../Dialogue")
+	dialogue.emit_signal("dialogue_closed")
 	_finish()
 
 func _update_text(t:String) -> void:
@@ -177,6 +186,8 @@ func _update_text(t:String) -> void:
 func _check_condition(cond) -> bool:
 	if typeof(cond)==TYPE_STRING and GameManager.ItemIDs.has(cond):
 		return GameManager.has_item(GameManager.ItemIDs[cond])
+	if typeof(cond)==TYPE_STRING and GameManager.InfoIDs.has(cond):
+		return GameManager.knows_info(GameManager.InfoIDs[cond])
 	return GameManager.player_state.get(cond,false)
 
 func _clear_options() -> void:

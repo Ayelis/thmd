@@ -28,7 +28,6 @@ func _ready():
 		slot.pressed.connect(_on_slot_clicked.bind(i))
 		grid.add_child(slot)
 	update_inventory()
-	GameManager.display_dialog(GameManager.events["home1"])
 
 func _on_slot_clicked(slot_index):
 	var owned_items = []

@@ -1,5 +1,6 @@
 # Shack.gd
 extends TextureRect
+var this_room = "Shack"
 
 func _ready():
 	$Ladder.pressed.connect(_on_ladder_pressed)
@@ -9,12 +10,18 @@ func _ready():
 	$Desk.pressed.connect(_on_desk_pressed)
 	$Walls.pressed.connect(_on_walls_pressed)
 	$Ceiling.pressed.connect(_on_ceiling_pressed)
+	GameManager.room_changed.connect(_on_room_changed)
+
+func _on_room_changed(room_name: String):
+	if(room_name == this_room):
+		GameManager.display_dialog(GameManager.events["shack1"])
+
 func _on_desk_pressed():
 	GameManager.learn_info(GameManager.InfoIDs.MANSION)
 	GameManager.display_dialog(GameManager.events["shack-desk"])
 	$Desk.hide()
 func _on_walls_pressed():
-	GameManager.display_dialog(GameManager.events["shack2"])
+	GameManager.display_dialog(GameManager.events["shack3"])
 	$Walls.hide()
 func _on_drawers_pressed():
 	GameManager.display_dialog(GameManager.events["shack-drawers"])

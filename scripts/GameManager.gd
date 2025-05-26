@@ -10,7 +10,7 @@ var tact := 0
 var ideology := 0
 var baseSanity := 5
 var sanity := baseSanity
-var returned_home := false
+var left_home := false
 
 # Signals
 signal room_changed(room_name)
@@ -20,7 +20,6 @@ signal knowledge_updated(info_id)
 signal info_full_refresh()
 signal dialog_updated(text)
 signal ending_updated(texture_path, text_key)
-signal dialogue_closed
 
 # Game state
 var current_room := "home"
@@ -33,7 +32,7 @@ enum ItemIDs {
 # Knowledge
 enum InfoIDs {
 	NOINFO, DAUGHTER, APPOINTMENT, SHACK, MANSION, CULTISTS, POLICE, TUNNEL, COMBO, FAMILY,
-	ABDUCTOR, DOGGO, FBI, PUBLIC
+	ABDUCTOR, DOGGO, FBI, PUBLIC, EMAIL
 }
 var INFORMATION := {}
 var discovered_info := {}

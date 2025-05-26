@@ -1,5 +1,7 @@
 # Beach.gd
 extends TextureRect
+var this_room = "Beach"
+var here_before
 
 func _ready():
 	$CloseBird.pressed.connect(_on_birds_pressed)
@@ -12,6 +14,13 @@ func _ready():
 	$Shack.pressed.connect(_on_shack_pressed)
 	$Door.pressed.connect(_on_door_pressed)
 	$Leave.pressed.connect(_on_leave_pressed)
+	GameManager.room_changed.connect(_on_room_changed)
+	here_before = false
+
+func _on_room_changed(room_name: String):
+	if(room_name == this_room && !here_before):
+		GameManager.display_dialog(GameManager.events["beach"])
+		here_before = true
 
 func _on_birds_pressed():
 	GameManager.insane(GameManager.insanity["birds"])
@@ -42,7 +51,8 @@ func _on_shack_pressed():
 func _on_door_pressed():
 	if(GameManager.knows_info(GameManager.InfoIDs.COMBO)):
 		GameManager.change_room("Shack")
-		GameManager.display_dialog(GameManager.events["shack1"])
+	elif(GameManager.has_item(GameManager.ItemIDs.GUN)):
+		GameManager.initiate_dialogue("shoot-lock")
 	else:
 		GameManager.display_dialog(GameManager.events["door"])
 func _on_leave_pressed():

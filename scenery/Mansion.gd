@@ -1,9 +1,28 @@
 # Mansion.gd
 extends TextureRect
+var this_room = "Mansion"
 
 func _ready():
 	$Cultist.pressed.connect(_on_cultist_pressed)
 	$Leave.pressed.connect(_on_leave_pressed)
+	GameManager.room_changed.connect(_on_room_changed)
+
+func _on_room_changed(room_name: String):
+	# Show FBI or Police or Public or Cultist or Nothing
+	if(room_name == this_room):
+		if(!GameManager.inventory[GameManager.ItemIDs.FLYER]):
+			GameManager.obtain_item(GameManager.ItemIDs.FLYER)
+			GameManager.display_dialog(GameManager.events["mansion"])
+		else:
+			var cult = get_parent().get_node("Mansion")
+			cult.texture = load("res://assets/Scenes/5a mansionb.jpg")
+			if !cult.get_node("Tunnel").is_connected("pressed", cult._on_tunnel_pressed):
+				cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)
+				cult.get_node("Tunnels").pressed.connect(cult._on_tunnel_pressed)
+				cult.get_node("Balcony").pressed.connect(cult._on_balcony_pressed)
+				cult.get_node("Door").pressed.connect(cult._on_door_pressed)
+			cult.get_node("Cultist").hide()
+
 func _on_tunnel_pressed():
 	if(GameManager.knows_info(GameManager.InfoIDs.TUNNEL)):
 		GameManager.display_dialog(GameManager.events["tunnels"])

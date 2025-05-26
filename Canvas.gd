@@ -23,11 +23,9 @@ func _on_game_reset():
 	#Reset stats
 	GameManager.restore_sanity()
 	#Reset Rooms
-	$CanvasLayer/UI/Rooms/Police.texture = load("res://assets/Scenes/3a police.jpg")
 	$CanvasLayer/UI/Rooms/Beach.texture = load("res://assets/Scenes/4a beach.jpg")
 	$CanvasLayer/UI/Rooms/Shack.texture = load("res://assets/Scenes/4b shack.jpg")
 	$CanvasLayer/UI/Rooms/Mansion.texture = load("res://assets/Scenes/5a mansion.jpg")
-	$CanvasLayer/UI/Rooms/Rotunda.texture = load("res://assets/Scenes/5b rotunda.jpg")
 	#Reset clickable regions
 	$CanvasLayer/UI/Rooms/Home/Dressers.show()
 	$CanvasLayer/UI/Rooms/Home/Hall.show()
@@ -40,12 +38,11 @@ func _on_game_reset():
 	$CanvasLayer/UI/Rooms/Transit/Tracks.show()
 	$CanvasLayer/UI/Rooms/Transit/LibButton.hide()
 	$CanvasLayer/UI/Rooms/Transit/PolButton.hide()
-	$CanvasLayer/UI/Rooms/Transit/PolButton2.hide()
 	$CanvasLayer/UI/Rooms/Transit/BeaButton.hide()
 	$CanvasLayer/UI/Rooms/Transit/ManButton.hide()
 	$CanvasLayer/UI/Rooms/Library/Shelves.show()
-	$CanvasLayer/UI/Rooms/Police2/Drawers.show()
-	$CanvasLayer/UI/Rooms/Police2/Papers.show()
+	$CanvasLayer/UI/Rooms/Detective/Drawers.show()
+	$CanvasLayer/UI/Rooms/Detective/Papers.show()
 	$CanvasLayer/UI/Rooms/Evidence/Paperwork.show()
 	$CanvasLayer/UI/Rooms/Evidence/Drawers.show()
 	$CanvasLayer/UI/Rooms/Evidence/Window.show()
@@ -66,5 +63,6 @@ func _on_game_reset():
 	$CanvasLayer/UI/Rooms/Rotunda/Circle.show()
 	#Reset Player POV
 	GameManager.change_room("Home")
-	GameManager.display_dialog(GameManager.events["home1"])
 	$CanvasLayer/Insanity.hide()
+	GameManager.left_home = false
+	get_tree().change_scene_to_file("res://TitleScreen.tscn")
