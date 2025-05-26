@@ -2,7 +2,7 @@
 	"items": {
 		"TRANSPASS": {
 			"name": "Transit Pass",
-			"description": "The plastic is warm, as if recently held by someone else. The expiration date is smudged, either by rain or something stickier."
+			"description": "Trusty old transit pass. The expiration date is smudged, but I don't recall it being that way."
 		},
 		"LIBCARD": {
 			"name": "Library Card",
@@ -25,7 +25,7 @@
 			"description": "The fibers are stained in uneven patches. It smells of salt and wet earth, though it hasn't left the attic in years."
 		},
 		"LADDER": {
-			"name": "Steel Stepladder",
+			"name": "Metal Stepladder",
 			"description": "The metal is pocked with rust, except for the steps, which are polished smooth from use. The bottom is caked in a dried, flaking residue."
 		},
 		"BULLHORN": {
@@ -75,7 +75,7 @@
 			"description": "I found out tunnels on the mansion grounds lead inside."
 		},
 		"COMBO": {
-			"description": "A number I found. 16-2-18. Seems important."
+			"description": "A number sequence I found. 6-20-25. Seems important."
 		},
 		"FAMILY": {
 			"description": "My family history may be... darker... than I thought..."
@@ -92,43 +92,46 @@
 		"PUBLIC": {
 			"description": "I've stirred up public opinion regarding the cult activity..."
 		},
+		"EMAIL": {
+			"description": "I know the e-mail address for the detective... Rook@HfPD... simple."
+		},
 	},
 	"events": {
-		"home1": "I wake up at home. The silence of the house is first thing that feels wrong. No breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the refrigerator.\n\n'Hey, kiddo?'\n\nNo answer. Her door sits open, revealing an already-made bed and an untouched backpack. The house is too still. No messages on my phone. The air feels thick with waiting.",
-		"home2": "Inside my house, the air tastes stale with absence. Her room remains frozen—the same already-made bed, the same open backpack.\n\nI tell myself she's just forgotten to text. I almost believe it. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
-		"dresser": "Beneath unpaid bills, the wax-sealed letter waits. Torn edges. Words cut from magazines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN FOR THIS FATE.\nGO FOLLOW THE TIDE.'\n\nThe glue reeks of saltwater and something faintly metallic.\n\nOh, and my pass! The dresser drawer creaks open. My transit pass stares up at me.\n'At least you didn't vanish,' I mutter, pocketing the little plastic lifeline.",
+		"home1": "I wake up at home. The silence of the house is first thing that feels wrong. No breakfast sounds, no cartoons, no laughter. Just the groan of the water heater and the hum of the refrigerator.\n\n'Hey, kiddo?'\n\nNo answer. Down the hall, her door sits open, revealing an unmade bed and an untouched backpack. The house is too still. The air feels thick with waiting.",
+		"home2": "Inside my house, the air tastes stale with absence. I tell myself she's just forgotten to text. I almost believe it. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
+		"dresser": "Beneath unpaid bills, the wax-sealed letter waits. Torn edges. Words cut from magazines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN FOR THIS FATE.\nGO FOLLOW THE TIDE.'\n\nThe glue reeks of saltwater and something faintly metallic.\n\nOh, and my pass! The drawer creaks open. My transit pass stares up at me.\n'At least you didn't vanish,' I mutter, pocketing the little plastic lifeline.",
 		"hall": "The hall closet yields a collapsible metal detector... It's odd, but potentially useful. I stash it in my bag, wondering when or why I even bought this.",
+		"hall2": "Her room remains frozen—the same unmade bed, the same forgotten backpack. No clues about where she's gone.",
 		"hatch": "A square hatch of wood graces the ceiling. How'd I forget about the attic? The pull-down ladder's been broken since childhood. Getting up there won't be easy.",
 		"street": "I peer out my front window. A shadow by the telephone pole stands too tall, too still. My DVR security camera system would probably show grainy evidence, if I could get online to check it... but I haven't had internet for months.",
 		"attic": "I place down the stepladder and use it to boost myself to the attic hatch, pulling myself up and through. I'm not sure how long it's been since I've been in here. Forever ago.",
 		"get-robe": "The drawer reveals a blood-red robe with gold trim, nestled between mothballs. Why did Grandpa own this ceremonial-looking thing? The fabric smells of camphor and something earthier, but it might prove useful.",
 		"windowgaze": "The window's grime distorts the world like a funhouse mirror. Vines slither through cracks, their stems unnaturally thick and glistening like oil-slicked flesh.",
 		"get-rope": "Rope coils in heaps—some strands knotted into crude symbols. A few twitch when the wind rattles the pane. I gather them quickly, my skin prickling as the knots brush my palms.",
-		"nopass": "The turnstile light blares red. My transit pass is still at home in the dresser.",
-		"transit": "I leave the police station and head back to the transit center...",
-		"transit2": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
+		"nopass": "The turnstile light blares red. My transit pass is still at home.",
+		"transit": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
 		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones, nasally.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
 		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: police blotters, tide charts, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
 		"left-library": "Fluorescents buzz weakly like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
-		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 chemical spill was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '16-2-18, high tide on the solstice.' The numbers itch at my brain.",
-		"stacks2": "I go over what I've found. In old microfiche articles, there are headlines about local disappearances.\n\nIn '86, a cult called 'The Tide' was found responsible for numerous abductions. Faded photos relate the shack on the beach to this cult.\n\nThere are also numbers scrawled in the margins that seem important somehow: '16-2-18'.",
-		"police2": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.",
-		"police3": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
+		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 chemical spill was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '6-20-25, high tide on the solstice.' The numbers itch at my brain. Is it a date?",
+		"stacks2": "I go over what I've found. In old microfiche articles, there are headlines about local disappearances.\n\nIn '86, a cult called 'The Tide' was found responsible for numerous abductions. Faded photos relate the shack on the beach to this cult.\n\nThere are also numbers scrawled in the margins that seem important somehow: '6-20-25'.",
+		"detective": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where perhaps gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.",
+		"detective2": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
 		"evidence": "A red vinyl chair stands out against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
-		"paperwork": "Blueprints reveal a network of tunnels beneath the hilltop mansion. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the property.",
+		"paperwork": "A detailed site-plan map reveals a network of tunnels beneath the island mansion. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the property.",
 		"window": "Through wire-reinforced glass, the precinct buzzes with muted activity. I notice the receptionist looking at me looking out, and close the shutters again.",
-		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new.\n\nA weathered notice flaps:\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest is scribbled into illegibility.",
-		"dagger": "The metal detector shrieks after I wave it around here a few times. Buried deep: a ritual knife with a serrated edge. I nearly slice my finger digging it up.",
+		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new.\n\nA weathered notice flaps:\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest is worn into illegibility.",
+		"dagger": "The metal detector shrieks after I wave it around here a few times. Buried under a foot of sand: a ritual knife with a serrated edge. I nearly slice my finger digging it up.",
 		"sand": "Hot grit slips through my fingers. Each handful feels heavier than it should. There's probably nothing here. Probably.",
 		"sky": "The clouds hang like damp gauze—translucent and stubborn. They don’t move so much as peel, slow and grudging, as if the sky can’t decide whether to heal or scar. The sun bleeds through in patches, hot and uneven, like a fever pressing against glass.",
-		"shack": "The blue shack from the articles. My only real lead. The padlock stares back, daring me to try its combination.",
+		"shack": "The blue shack from the articles. My only real lead. The rusty old padlock stares back, daring me to try its combination.",
 		"door": "Heavy-duty combination lock. The dials turn stiffly but aren't frozen. Someone's been here recently enough to keep it from rusting shut.",
 		"dog": "A massive dog blocks the path—muscle and matted fur. Its growl vibrates in my chest. Every childhood fear of dark basements and bad dogs surges up. Run. Now.",
 		"pet-dog": "Good doggo! The beast's tail wags as I scratch behind its ears. A wet tongue drags across my wrist.\n\n[Sanity Restored!]",
-		"shack1": "I try the numbers I saw earlier, 16-2-18, and the lock resists a moment before yielding. The door groans on its rusty hinges. The smell hits first—mildew undercut by incense and wet stone. The walls stretch backward farther than possible. The ceiling vanishes into shadow. It feels different now, as if this stopped being a shack the moment I crossed the threshold.",
+		"shack1": "This is the same rusty old padlock I've seen in the photos. I try the numbers I saw earlier, 6-20-25, and the lock resists a moment before yielding. The door groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold.",
 		"shack2": "Tide charts paper the walls, their symbols playing tricks on my eyes. The floorboards warp unnaturally into stone. The air hums—not with wind, but voices. Chanting. Or maybe that's just the blood roaring in my ears.",
-		"get-ladder": "I pick up the old steel stepladder from the corner, and carry it with me. I hope we're not going far...",
+		"get-ladder": "I pick up the old metal stepladder from the corner, and carry it with me.",
 		"shack-desk": "The drawer reveals a map—recruitment targets circled in red ink. The hilltop mansion dominates the center, while outward arrows seem to indicate this is a sort of headquarters.\n\nRecent coffee stains suggest this is still an active plan.",
 		"shack-drawers": "Rope loops tangle in the drawer. Not a single length but dozens of pre-made hoops and nooses. They stack neatly despite their apparent grim purpose.",
 		"shack-empty": "The drawers are mysteriously empty. Not counting the cobwebs...",
@@ -136,7 +139,7 @@
 		"cultist": "The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
 		"cultist-scared": "The robed figure looms closer. I wave my new gun in his face and he scampers off back into the mansion...",
 		"balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
-		"tunnels": "Hours of stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
+		"tunnels": "I spend what feels like hours stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
 		"has-rope": "The rope snakes around the balcony post. One tug to test it, then I haul myself up, muscles screaming.",
 		"has-ladder": "I set my ladder down against the balcony and easily climb over the rail. An empty room awaits me inside the mansion. I find my way to the altar...",
 		"need-key": "The ornate lock stares back. No picking this—I'll need to find another way in.",
@@ -164,8 +167,8 @@
 		"POLICE": {
 			"name": "Police Station"
 		},
-		"POLICE2": {
-			"name": "Police Station"
+		"DETECTIVE": {
+			"name": "Detective's Office"
 		},
 		"EVIDENCE": {
 			"name": "Evidence Lockup"
@@ -196,7 +199,7 @@
 	"dialogs": {
 		"computer": {
 			"root": {
-				"prompt": "Select an action:",
+				"prompt": "I've logged in on the library computer system. Select an action:",
 				"options": [
 					{
 						"text": "Email Police",
@@ -238,7 +241,7 @@
 				]
 			},
 			"email_police": {
-				"result": "You send off your email to the department with everything you know so far. A detective replies almost immediately:\n\n'Come in today. ASAP.\nMake sure you aren't followed.\n--Rook'",
+				"result": "TO: rook@hfpd.gov ...\n\nYou send off your email to the department with everything you know so far. A detective replies almost immediately:\n\n'Come in today. ASAP.\nMake sure you aren't followed.\n--Rook'",
 				"learn": "APPOINTMENT",
 				"next": "root"
 			},
@@ -269,7 +272,7 @@
 		},
 		"assistant": {
 			"root": {
-				"prompt": "The assistant's nails click against her keyboard.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nI just know I can't wait that long.",
+				"prompt": "The assistant's nails click against her keyboard.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nI just know I can't wait that long. She offers me a card with the detective's email address on it.",
 				"options": [
 					{
 						"text": "Leave",
@@ -287,7 +290,7 @@
 					{
 						"text": "See Detective",
 						"tooltip": "I do, in fact, have an appointment...",
-						"newscene": "Police2",
+						"newscene": "Detective",
 						"chain": "detective"
 					},
 					{
@@ -306,8 +309,8 @@
 					{
 						"text": "Detective's Office",
 						"tooltip": "Revisit Rook's Office...",
-						"newscene": "Police2",
-						"room": "police3"
+						"newscene": "Detective",
+						"room": "detective2"
 					},
 					{
 						"text": "Evidence Lockup",
@@ -337,7 +340,7 @@
 				]
 			},
 			"be_open": {
-				"result": "I tell the detective everything I know. I played Scrabble until 9, tucked her in—she’s too old for bedtime stories. I ramble about the strange note, the argument over scrabble, the sets of footprints in the sand.",
+				"result": "I tell the detective everything I know. We played Scrabble until 9, said goodnight—she’s too old for bedtime stories. I ramble about the strange note, the argument we had over the boardgame, the sets of footprints in the sand outside my house.",
 				"next": "detective_response"
 			},
 			"detective_response": {

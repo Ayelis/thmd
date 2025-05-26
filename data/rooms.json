@@ -14,13 +14,8 @@
 		"music": "229_Interrogation_Room",
 		"texture": "3a_police"
 	},
-	"Police1": {
-		"display": "POLICE.name",
-		"music": "229_Interrogation_Room",
-		"texture": "3a_police"
-	},
-	"Police2": {
-		"display": "POLICE.name",
+	"Detective": {
+		"display": "DETECTIVE.name",
 		"music": "229_Interrogation_Room",
 		"texture": "3a_policea"
 	},
