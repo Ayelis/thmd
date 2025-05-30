@@ -1,6 +1,7 @@
 # Shack.gd
 extends TextureRect
 var this_room = "Shack"
+var here_before
 
 func _ready():
 	$Ladder.pressed.connect(_on_ladder_pressed)
@@ -13,8 +14,9 @@ func _ready():
 	GameManager.room_changed.connect(_on_room_changed)
 
 func _on_room_changed(room_name: String):
-	if(room_name == this_room):
+	if(room_name == this_room && !here_before):
 		GameManager.display_dialog(GameManager.events["shack1"])
+		here_before = true
 
 func _on_desk_pressed():
 	GameManager.learn_info(GameManager.InfoIDs.MANSION)

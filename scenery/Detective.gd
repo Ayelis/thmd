@@ -18,14 +18,13 @@ func _on_room_changed(room_name: String):
 				police.get_node("Drawers").pressed.connect(police._on_drawers_pressed)
 			GameManager.display_dialog(GameManager.events["detective2"])
 		else:
-			GameManager.display_dialog(GameManager.events["detective"])
+			GameManager.initiate_dialogue("detective")
 
 func _on_computer_pressed():
 	GameManager.display_dialog(GameManager.events["police-computer"])
 func _on_drawers_pressed():
 	if(!GameManager.has_item(GameManager.ItemIDs.BULLHORN)):
 		GameManager.initiate_dialogue("police-drawer")
-		$Drawers.hide()
 func _on_papers_pressed():
 	if(!GameManager.has_item(GameManager.ItemIDs.KEY)):
 		GameManager.initiate_dialogue("police-papers")

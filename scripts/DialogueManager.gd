@@ -176,8 +176,7 @@ func _on_exit() -> void:
 	continue_button.hide()
 	exit_button.show()
 	dialogue_node.hide()
-	var dialogue = get_node("../Dialogue")
-	dialogue.emit_signal("dialogue_closed")
+	GameManager.emit_signal("dialogue_closed")
 	_finish()
 
 func _update_text(t:String) -> void:

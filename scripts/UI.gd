@@ -5,9 +5,8 @@ extends Control
 @onready var sfx_ui = $SFX_UI
 
 func _ready():
-	var dialogue = get_node("../Dialogue") # Adjust path as needed
-	dialogue.connect("dialogue_opened", Callable(self, "_on_dialogue_opened"))
-	dialogue.connect("dialogue_closed", Callable(self, "_on_dialogue_closed"))
+	GameManager.connect("dialogue_opened", Callable(self, "_on_dialogue_opened"))
+	GameManager.connect("dialogue_closed", Callable(self, "_on_dialogue_closed"))
 	GameManager.room_changed.connect(_on_room_changed)
 	# Initialize UI
 	update_ui()

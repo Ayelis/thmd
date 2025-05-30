@@ -25,21 +25,9 @@ func _ready():
 		slot.texture_normal = empty_slot_texture
 		slot.mouse_entered.connect(_on_slot_hover.bind(i))
 		slot.mouse_exited.connect(_on_slot_exit)
-		slot.pressed.connect(_on_slot_clicked.bind(i))
+		slot.pressed.connect(_on_slot_hover.bind(i))
 		grid.add_child(slot)
 	update_inventory()
-
-func _on_slot_clicked(slot_index):
-	var owned_items = []
-	for item_id in GameManager.inventory:
-		if GameManager.inventory[item_id]:
-			owned_items.append(item_id)
-	
-	if slot_index < owned_items.size():
-		selected_slot_index = slot_index
-		var item_id = owned_items[slot_index]
-		var item_data = GameManager.ITEMS[item_id]
-		_show_details_panel(item_data)
 
 func is_mobile() -> bool:
 	return OS.has_feature("mobile") or OS.has_feature("web_mobile")
@@ -86,15 +74,17 @@ func update_inventory():
 			#slot.tooltip_text = ""
 
 func _on_slot_hover(slot_index):
+	print("hovered")
+	_on_slot_exit()
+	await get_tree().process_frame
 	grid.get_child(slot_index).modulate = Color(1.2, 1.2, 1.2)
-	if not is_mobile():
-		show_item_details(slot_index)
+	show_item_details(slot_index)
 
 func _on_slot_exit():
+	print("exited")
 	for slot in grid.get_children():
 		slot.modulate = Color.WHITE
-	if not is_mobile():
-		hide_item_details()
+	hide_item_details()
 
 func show_item_details(slot_index: int):
 	var owned_items = get_owned_items()

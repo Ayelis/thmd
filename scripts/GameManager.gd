@@ -20,6 +20,8 @@ signal knowledge_updated(info_id)
 signal info_full_refresh()
 signal dialog_updated(text)
 signal ending_updated(texture_path, text_key)
+signal dialogue_opened
+signal dialogue_closed
 
 # Game state
 var current_room := "home"

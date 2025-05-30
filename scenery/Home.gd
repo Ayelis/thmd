@@ -24,11 +24,15 @@ func _on_room_changed(room_name: String):
 func _on_door_pressed():
 	GameManager.change_room("Transit")
 
-func _on_dresser_pressed():
+func _on_dresser1_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
 		GameManager.obtain_item(GameManager.ItemIDs.LETTER)
 		GameManager.learn_info(GameManager.InfoIDs.DAUGHTER)
 		GameManager.obtain_item(GameManager.ItemIDs.TRANSPASS)
+		GameManager.display_dialog(GameManager.events["dresser"])
+		$Dressers.hide()
+
+func _on_dresser2_pressed():
 		GameManager.display_dialog(GameManager.events["dresser"])
 		$Dressers.hide()
 

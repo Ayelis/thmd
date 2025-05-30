@@ -1,8 +1,5 @@
 extends Control
 
-signal dialogue_opened
-signal dialogue_closed
-
 func _ready():
 	DialogueManager.set_dialogue_node(self)
 	
@@ -33,11 +30,11 @@ func _update_theme(is_dark_mode: bool):
 
 func _show():
 	visible = true
-	emit_signal("dialogue_opened")
+	GameManager.emit_signal("dialogue_opened")
 
 func _hide():
 	visible = false
-	emit_signal("dialogue_closed")
+	GameManager.emit_signal("dialogue_closed")  # Notify GameManager
 
 func _input(event):
 	# only care about key events

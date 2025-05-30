@@ -1,6 +1,7 @@
 # Attic.gd
 extends TextureRect
 var this_room = "Attic"
+var here_before
 
 func _ready():
 	$Rope.pressed.connect(_on_rope_pressed)
@@ -11,8 +12,9 @@ func _ready():
 	GameManager.room_changed.connect(_on_room_changed)
 
 func _on_room_changed(room_name: String):
-	if(room_name == this_room):
+	if(room_name == this_room && !here_before):
 		GameManager.display_dialog(GameManager.events["attic"])
+		here_before = true
 
 func _on_rope_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.ROPE]):

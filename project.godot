@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="They Have My Daughter"
-config/version="0.7"
+config/version="0.8"
 run/main_scene="uid://by043omwqjgg1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://c78x2govd5r7f"
