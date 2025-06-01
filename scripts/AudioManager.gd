@@ -10,7 +10,6 @@ var sfx_muted := false
 var SFX_BUS_ID := AudioServer.get_bus_index("SFX")
 var MUS_BUS_ID := AudioServer.get_bus_index("Music")
 
-# Add to AudioManager.gd
 func _ready():
 	# Initialize with default values matching Global
 	music_muted = Global.silenced
@@ -32,3 +31,9 @@ func play_music(track: AudioStream):
 	music_player.volume_db = 0.0 if !music_muted else -80.0
 	music_player.play()
 	music_player.finished.connect(music_player.play)
+
+func stop_music():
+	music_player.stop()
+
+func restart_music():
+	music_player.play()

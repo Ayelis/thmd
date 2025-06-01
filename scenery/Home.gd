@@ -5,7 +5,7 @@ var returned_home
 
 func _ready():
 	$Door.pressed.connect(_on_door_pressed)
-	$Dressers.pressed.connect(_on_dresser_pressed)
+	$Dressers.pressed.connect(_on_dressers_pressed)
 	$Hall.pressed.connect(_on_hall_pressed)
 	$Hatch.pressed.connect(_on_hatch_pressed)
 	$Window.pressed.connect(_on_window_pressed)
@@ -20,19 +20,17 @@ func _on_room_changed(room_name: String):
 	elif(room_name == this_room && !GameManager.left_home):
 		await get_tree().process_frame  
 		GameManager.display_dialog(GameManager.events["home1"])
+		await get_tree().process_frame  
+		AudioManager.restart_music()
 
 func _on_door_pressed():
 	GameManager.change_room("Transit")
 
-func _on_dresser1_pressed():
+func _on_dressers_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.TRANSPASS]):
 		GameManager.obtain_item(GameManager.ItemIDs.LETTER)
 		GameManager.learn_info(GameManager.InfoIDs.DAUGHTER)
 		GameManager.obtain_item(GameManager.ItemIDs.TRANSPASS)
-		GameManager.display_dialog(GameManager.events["dresser"])
-		$Dressers.hide()
-
-func _on_dresser2_pressed():
 		GameManager.display_dialog(GameManager.events["dresser"])
 		$Dressers.hide()
 

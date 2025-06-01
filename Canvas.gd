@@ -62,6 +62,7 @@ func _on_game_reset():
 	$CanvasLayer/UI/Rooms/Rotunda/Blood.show()
 	$CanvasLayer/UI/Rooms/Rotunda/Circle.show()
 	#Reset Player POV
-	$CanvasLayer/Insanity.hide()
+	$CanvasLayer/Ending.hide()
 	GameManager.left_home = false
+	AudioManager.stop_music()
 	get_tree().change_scene_to_file("res://TitleScreen.tscn")

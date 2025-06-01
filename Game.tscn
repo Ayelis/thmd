@@ -867,7 +867,7 @@ stretch_mode = 5
 stream = ExtResource("34_ndmee")
 bus = &"SFX"
 
-[node name="Insanity" type="Control" parent="CanvasLayer"]
+[node name="Ending" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -877,7 +877,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("30_v5dxo")
 
-[node name="Padding" type="TextureRect" parent="CanvasLayer/Insanity"]
+[node name="Padding" type="TextureRect" parent="CanvasLayer/Ending"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -892,7 +892,7 @@ grow_vertical = 0
 texture = ExtResource("34_nyc7o")
 expand_mode = 1
 
-[node name="TheEndLabel" type="Label" parent="CanvasLayer/Insanity"]
+[node name="TheEndLabel" type="Label" parent="CanvasLayer/Ending"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -910,7 +910,7 @@ theme_override_fonts/font = ExtResource("32_xc54d")
 theme_override_font_sizes/font_size = 72
 text = "The End"
 
-[node name="Button" type="Button" parent="CanvasLayer/Insanity" groups=["ui_button"]]
+[node name="Button" type="Button" parent="CanvasLayer/Ending" groups=["ui_button"]]
 visible = false
 layout_mode = 1
 anchors_preset = 7

@@ -30,7 +30,10 @@ func _on_room_changed(room_name: String):
 	$Rooms.get_node(room_name).visible = true
 	$TopBar/Scene.text = resolve_text_reference(GameManager.rooms[room_name].display)
 	GameManager.current_room = room_name
-	AudioManager.play_music(load("res://assets/audio/"+GameManager.rooms[room_name].music+".ogg"))
+	await get_tree().process_frame
+	var track = "res://assets/audio/"+GameManager.rooms[room_name].music+".ogg"
+	AudioManager.play_music(load(track))
+	print("Playing "+track)
 
 func resolve_text_reference(ref: String) -> String:
 	var path = ref.split(".")
