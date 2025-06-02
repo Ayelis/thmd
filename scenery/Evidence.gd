@@ -16,7 +16,6 @@ func _on_room_changed(room_name: String):
 		GameManager.display_dialog(GameManager.events["evidence"])
 		here_before = true
 func _on_papers_pressed():
-	GameManager.learn_info(GameManager.InfoIDs.MANSION)
 	GameManager.learn_info(GameManager.InfoIDs.TUNNEL)
 	GameManager.display_dialog(GameManager.events["paperwork"])
 	$Paperwork.hide()

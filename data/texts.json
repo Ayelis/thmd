@@ -38,7 +38,7 @@
 		},
 		"FLYER": {
 			"name": "Recruitment Flyer",
-			"description": "The paper crackles in my hand. An open eye gazes from a circle of waves, printed in deep navy blue. Beneath it, bold words: 'The Tide is rising. Be cleansed. Be claimed.' No contact info. Just coordinates."
+			"description": "The paper crackles in my hand. An open eye gazes from a circle of waves, printed in deep navy blue. Beneath it, bold words: 'The Tide is rising. Be cleansed. Be claimed.' No contact info. Just some code. Or maybe coordinates..."
 		},
 		"DETECTOR": {
 			"name": "Metal Detector",
@@ -95,6 +95,11 @@
 		"EMAIL": {
 			"description": "I know the e-mail address for the detective... Rook@HFPD... simple."
 		},
+		"A": {"description": ""},
+		"B": {"description": ""},
+		"C": {"description": ""},
+		"D": {"description": ""},
+		"E": {"description": ""}
 	},
 	"events": {
 		"home1": "I wake up at home. The silence is first thing that feels wrong. No breakfast sounds. No cartoons. No laughter. Just the groan of the water heater and the hum of the refrigerator.\n\n'Hey, kiddo?'\n\nNo answer. Down the hall her door sits open, revealing an unmade bed and an untouched backpack. The house is too still.",
@@ -105,7 +110,6 @@
 		"hatch": "A square hatch of wood graces the ceiling. How'd I forget about the attic? The pull-down ladder's been broken since childhood. Getting up there won't be easy.",
 		"street": "I peer out my front window. A shadow by the telephone pole stands too tall, too still. My DVR security camera system would probably show grainy evidence, if I could get online to check it... but I haven't had internet for months.",
 		"attic": "I place down the stepladder and use it to boost myself to the attic hatch, pulling myself up and through. I'm not sure how long it's been since I've been in here. Forever ago.",
-		"get-robe": "The drawer reveals a blood-red robe with gold trim, nestled between mothballs. Why did Grandpa own this ceremonial-looking thing? The fabric smells of camphor and something earthier, but it might prove useful.",
 		"windowgaze": "The window's grime distorts the world like a funhouse mirror. Vines slither through cracks, their stems unnaturally thick and glistening like oil-slicked flesh.",
 		"get-rope": "Rope coils in heaps—some strands knotted into crude symbols. A few twitch when the wind rattles the pane. I gather them quickly, my skin prickling as the knots brush my palms.",
 		"nopass": "The turnstile light blares red. My transit pass is still at home.",
@@ -118,7 +122,7 @@
 		"detective2": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
 		"evidence": "A red vinyl chair stands out against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
-		"paperwork": "A detailed site-plan reveals a network of tunnels beneath the island mansion. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the property.",
+		"paperwork": "A detailed site-plan reveals a network of tunnels beneath the mansion on island to the northwest. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the name. Waylon Hall.",
 		"window": "I tilt the blinds open further. Through wire-reinforced glass, the precinct buzzes with muted activity. I notice the assistant watching me, and I close the shutters again.",
 		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new.\n\nA weathered notice flaps:\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest is worn into illegibility.",
 		"dagger": "The metal detector shrieks after I wave it around here a few times. Buried under a foot of sand: a ritual knife with a serrated edge. I nearly slice my finger digging it up.",
@@ -128,16 +132,16 @@
 		"door": "Heavy-duty combination lock. The dials turn stiffly but aren't frozen. Someone's been here recently enough to keep it from rusting shut.",
 		"dog": "A massive dog blocks the path—muscle and matted fur. Its growl vibrates in my chest. Every childhood fear of dark basements and bad dogs surges up. Run. Now.",
 		"pet-dog": "Good doggo! The beast's tail wags as I scratch behind its ears. A wet tongue drags across my wrist.\n\n[Sanity Restored!]",
-		"shack1": "This is the same rusty old padlock I've seen in the photos. I try the numbers I saw earlier, 6-20-25, and the lock resists a moment before yielding. The door groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold.",
-		"shack2": "The lock explodes and metal flies. My hands still shaking from the vibration of the shot, I push against the door and it groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold.",
+		"shack1": "This is the same rusty old padlock I've seen in the photos. I try the numbers I saw earlier, 6-20-25, and the lock resists a moment before yielding. The door groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold. A set of chains are anchored to the far wall. I shudder.",
+		"shack2": "The lock explodes and metal flies. My hands still shaking from the vibration of the shot, I push against the door and it groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold. A set of chains are anchored to the far wall. I shudder.",
 		"shack3": "Tide charts cover the walls, their symbols playing tricks on my eyes. The floorboards warp unnaturally into stone. The air hums—not with wind, but voices. Chanting. Or maybe that's just the blood roaring in my ears.",
 		"get-ladder": "I pick up the old metal stepladder from the corner, and carry it with me.",
 		"shack-desk": "The drawer reveals a map—recruitment targets circled in red ink. The hilltop mansion dominates the center, while outward arrows seem to indicate this is a sort of headquarters.\n\nRecent coffee stains suggest this is still an active plan.",
 		"shack-drawers": "Rope loops tangle in the drawer. Not a single length but dozens of pre-made hoops and nooses. They stack neatly despite their apparent grim purpose.",
 		"shack-empty": "The drawers are mysteriously empty. Not counting the cobwebs...",
 		"mansion": "A robed figure materializes from the shadows, pressing a flyer into my palm. His fingers stretch too long, his nails ridged with old blood. 'The Tide doesn't need you yet,' he rasps. Behind him, the mansion's windows pulse—not with light, but with movement.",
-		"cultist": "The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
-		"cultist-scared": "The robed figure looms closer. I wave my new gun in his face and he scampers off back into the mansion...",
+		"cultist": "The cultist glares at me. “Everything you need to know is in the flyer,” he states. The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
+		"cultist-scared": "The robed glares at me, gesturing to the flyer he just handed me. I wave my new gun in his face and he scampers off back into the mansion...",
 		"balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
 		"tunnels": "I spend what feels like hours stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
 		"has-rope": "The rope snakes around the balcony post. One tug to test it, then I haul myself up, muscles screaming.",
@@ -204,14 +208,14 @@
 					{
 						"text": "Shoot the Lock",
 						"tooltip": "A bold strategy. Let's see if it works out.",
-						"next": "fire",
+						"next": "fire"
 					},
 					{
 						"text": "Find another way",
 						"tooltip": "Maybe we don't need violence for this.",
-						"next": null,
-					},
-				],
+						"next": null
+					}
+				]
 			},
 			"fire": {
 				"result": "I carefully aim the gun at the rusty padlock and exhale, slowly pulling the trigger...\n\nClick.\n\nOh...",
@@ -219,7 +223,7 @@
 				"room": "shack2",
 				"nextsfx": "shot",
 				"next": null
-			},
+			}
 		},
 		"computer": {
 			"root": {
@@ -306,7 +310,7 @@
 						"tooltip": "I guess I need an appointment...",
 						"newscene": "Transit",
 						"room": "transit"
-					},
+					}
 				]
 			}
 		},
@@ -325,7 +329,7 @@
 						"tooltip": "Not much else to do here...",
 						"newscene": "Transit",
 						"room": "transit"
-					},
+					}
 				]
 			}
 		},
@@ -353,7 +357,7 @@
 						"tooltip": "Not much else to do here...",
 						"newscene": "Transit",
 						"room": "transit"
-					},
+					}
 				]
 			}
 		},
@@ -362,29 +366,113 @@
 				"prompt": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where perhaps gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.\n\n“About your daughter. Where’d you last see her?”",
 				"options": [
 					{
-						"text": "Tell him everything",
-						"tooltip": "Honest. Truthful. Why wouldn't I be? She's my daughter!",
+						"text": "Where do I start...",
+						"tooltip": "Honest? Truthful? Why wouldn't I be? She's my daughter!",
 						"next": "be_open"
 					}
 				]
 			},
 			"be_open": {
-				"result": "I tell the detective everything I know. We played Scrabble until 9, said goodnight—she’s too old for bedtime stories. I ramble about the strange note, the argument we had over the boardgame, the sets of footprints in the sand outside my house.",
-				"forget": "APPOINTMENT",
-				"next": "detective_response"
+				"prompt": "I tell the detective what I know...",
+				"options": [
+					{
+						"text": "The Basics",
+						"tooltip": "Tell him about last night's argument.",
+						"ifnot": "A",
+						"next": "show_note"
+					},
+					{
+						"text": "Video Footage",
+						"tooltip": "Give him the security camera details.",
+						"ifnot": "B",
+						"next": "video_footage",
+						"condition": "ABDUCTOR"
+					},
+					{
+						"text": "The Shack",
+						"tooltip": "Tell him about the shack I found.",
+						"ifnot": "C",
+						"next": "tell_shack",
+						"condition": "SHACK"
+					},
+					{
+						"text": "The Mansion",
+						"tooltip": "Tell him about the mansion I discovered.",
+						"ifnot": "D",
+						"next": "tell_mansion",
+						"condition": "MANSION"
+					},
+					{
+						"text": "The Flyer",
+						"tooltip": "Show him the cultist's flyer.",
+						"ifnot": "E",
+						"next": "show_flyer",
+						"condition": "FLYER"
+					},
+					{
+						"text": "That's all",
+						"tooltip": "I play my cards close...",
+						"condition": "A",
+						"ifnot": "B",
+						"next": "detective_response"
+					},
+					{
+						"text": "That's all",
+						"tooltip": "Maybe I shouldn't say too much...",
+						"condition": "B",
+						"ifnot_all": ["C", "D", "E"],
+						"next": "detective_response2"
+					},
+					{
+						"text": "That's all",
+						"tooltip": "I really can't think of anything else",
+						"conditions_all": ["A", "B", "C", "D", "E"],
+						"next": "detective_response_final"
+					}
+				]
+			},
+			"show_note": {
+				"result": "I tell him we played Scrabble until 9, then went to our rooms.\n\n[i]“So. She just… went to her room?”[/i]\n“Yeah. I—I mean, we argued. She tried to play ‘Cthulhu’ as a word. I told her it was a proper noun. She said I always ‘rig the rules’—”\n[i]“Rig the rules, huh? You a sore winner?”[/i]\n\n“It’s a game. She’s a [i]kid[/i]. They get mad.”\n[i]“And the note?”[/i]\n\n“Some sicko’s idea of a—”\n[i]“Third one this month. All young women. All notes like this. And I don’t like coincidences.”[/i]",
+				"learn": "A",
+				"next": "be_open"
+			},
+			"video_footage": {
+				"result": "I give him my login for the security cam site. He logs in and pans through the video for a bit. Leaning in, eyes narrowing. His voice is too casual.\n\n“You found this fast. Real fast. Like you knew what to look for.”\nI don’t answer.\n“Funny thing. Most parents, they’re crying. Screaming. Begging. You?”\nHe shrugs.\n“You’re helpful. Almost like you’ve done this before.”\n\nHe's blaming ME?! Why would-\n“I'm gonna follow this lead. If you know anything else, now's the time to say it.”",
+				"learn": "B",
+				"next": "be_open"
+			},
+			"tell_shack": {
+				"result": "I tell him about the shack on the beach. Rook’s pen pauses mid-note.\n\n“You found that place alone? Christ. We’ve had it under surveillance for months.”\n\nHe leans in, close enough that you catch the stale nicotine on his breath.\n\n“Those chains on the wall aren’t for dogs, you know. Tell me you didn’t touch anything.”\n\nI mean...\n\n“Yeah. That’s what I thought.”",
+				"learn": "C",
+				"next": "be_open"
+			},
+			"tell_mansion": {
+				"result": "Rook exhales through his nose like a bull about to charge. “The Waylon estate.” He drags a hand down his face. “Of course it is. Rich folks ‘donate’ to the ‘society’ for ‘tax reasons.’” Every word drips with air-quotes. “They swear it’s just to maintain the grounds. Pay no attention to the bloodstains on the gazebo.”\n\nHe stabs a finger at me.\n\n“You’re NOT going in there alone.”\n\nI don’t answer. The silence stretches. Rook’s eyes narrow. Then, with the grim certainty of a man who’s seen this movie before:\n“You’re gonna go in there alone, aren’t you?”",
+				"learn": "D",
+				"next": "be_open"
+			},
+			"show_flyer": {
+				"result": "Rook stares at the dates, times, and GPS coordinates on the cult’s flyer. His jaw works like he’s chewing on a curse.\n“Well, heck.” He taps a few keys, pulls up something on his computer. “That’s their whole damn recruitment pipeline.”\nHe grabs the landline, punches in numbers with the ease of someone who’s done it too many times.\n“Yeah, it’s Rook.” A pause. “Class III escalation. Waylon house.” Another pause. His eyes flick to me. “Yeah, some civilian just did our jobs for us.”\nA voice crackles through the receiver—too loud, too sharp. Rook winces, holds the phone an inch from his ear. The call ends with a click.\n“Guy’s got a pair of lungs on him,” he mutters, rubbing his temple. “Congrats. You just pissed off the FBI.”",
+				"learn": "E",
+				"next": "be_open"
 			},
 			"detective_response": {
-				"result": "He leans back, jaw tight. “You’re the fifth parent this month,” he mutters, voice sandpapered by cigarettes and something darker. “Funny how it’s always the same patterns.” The fan creaks overhead.\n\nHe steels himself. “There’s a shack on the beach down by the north shore — cult’s been using it...”",
+				"result": "Rook leans back, the chair protesting with a sound like a dying gull. His fingers tap the case file - once, twice - before he speaks.\n\n“Funny thing about cults,” he says, voice sandpapered by one too many cigarettes and things he won't name.\n\n“They always return to the same rotten places. There's a shack on North Shore beach - the kind that looks abandoned unless you know what to look for. Tide comes in, the chains start rattling. You didn't hear that from me.”",
 				"learn": "SHACK",
 				"next": "detective_response2"
 			},
 			"detective_response2": {
-				"result": "“And in addition to the shack, they've got a clifftop mansion on a island to the west. Both seemingly empty at high tide. I'd take you there myself, but it gets… unwelcoming after dark.”",
+				"result": "Rook rubs at his left wrist absently, where a faded tattoo peeks from under his cuff.\n\n“Look. I don't condone taking this into your own hands, but... I know exactly how you feel. And if you're that determined,” he continues, “there's an island west of here. Cliffside mansion with too many windows and not enough lights outside. Local fishermen say it's empty at high tide.”\n\nHe meets your eyes maybe for the first time.\n\n“Local fishermen lie.”",
 				"learn": "MANSION",
 				"next": "offer_help"
 			},
+			"detective_response_final": {
+				"result": "Rook stares at your notes, then slowly pushes his coffee away like it's personally offended him. The silence is uncomfortable. He finally sighs.\n\n“Let me get this straight,” he says, each word measured. “You found video of their van, hit up their little beachside murder shack, visited their death mansion, and even nabbed some official letterhead... all before thinking to maybe call the professionals? Well, the FBI is scrambling as we speak. And you know what they told me? ‘Stand down, Rook. This is bigger than you.’ So here’s the question,” he says. “You gonna stand down too?”",
+				"learn": "FBI",
+				"next": "offer_help"
+			},
 			"offer_help": {
-				"prompt": "He sighs, stands up, and shows me around the station.\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. You’ll have free reign. Hell, I find the place comforting. Just—be careful out there.”",
+				"prompt": "He sighs, stands up, and shows me around the station.\n\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. You’ll have free reign. Hell, I find the place comforting. Just—be careful out there.”",
 				"options": [
 					{
 						"text": "Thank him",
@@ -395,6 +483,7 @@
 			},
 			"end": {
 				"result": "I nod. For the first time since the note arrived, I feel a sliver of hope. The detective’s office feels less like an interrogation room and more like an ally’s living room.",
+				"forget": "APPOINTMENT",
 				"learn": "POLICE",
 				"next": null
 			}
@@ -552,6 +641,32 @@
 			},
 			"leave_key": {
 				"result": "I put the papers back on top of the key, where they belong.",
+				"next": null
+			}
+		},
+		"get-robe": {
+			"root": {
+				"prompt": "The drawer reveals a blood-red robe with gold trim, nestled between mothballs. Why did my dad own this ceremonial-looking thing? The fabric smells of camphor and something earthier, but it might prove useful.",
+				"options": [
+					{
+						"text": "Put on the robes",
+						"tooltip": "They seem pretty stylish...",
+						"next": "wear_robes",
+					},
+					{
+						"text": "Leave them be",
+						"tooltip": "Let's leave it where it is.",
+						"next": "leave_robes",
+					}
+				]
+			},
+			"wear_robes": {
+				"result": "They seems to fit nicely.",
+				"give": "ROBE",
+				"next": null
+			},
+			"leave_robes": {
+				"result": "I fold the robes and put them back in the drawer, where I found them.",
 				"next": null
 			}
 		},

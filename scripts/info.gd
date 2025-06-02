@@ -40,7 +40,7 @@ func _update_info_display():
 	
 	# Add discovered info as text lines
 	for info_id in GameManager.InfoIDs.values():
-		if GameManager.knows_info(info_id):
+		if GameManager.knows_info(info_id) and not GameManager.INFORMATION[info_id]["description"].is_empty():
 			var desc_label = Label.new()
 			desc_label.text = "- "+GameManager.INFORMATION[info_id]["description"]
 			desc_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART

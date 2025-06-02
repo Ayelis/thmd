@@ -96,13 +96,13 @@ func _process_block(block: Dictionary) -> void:
 
 	elif block.has("result"):
 		emit_signal("line_ready", block.result)
+		if block.has("learn"):
+			GameManager.learn_info(GameManager.InfoIDs[block.learn])
+		if block.has("forget"):
+			GameManager.forget_info(GameManager.InfoIDs[block.forget])
+		if block.has("give"):
+			GameManager.obtain_item(GameManager.ItemIDs[block.give])
 		if block.has("next") and block.get("next") != null:
-			if block.has("learn"):
-				GameManager.learn_info(GameManager.InfoIDs[block.learn])
-			if block.has("forget"):
-				GameManager.forget_info(GameManager.InfoIDs[block.forget])
-			if block.has("give"):
-				GameManager.obtain_item(GameManager.ItemIDs[block.give])
 			_post_result_next = block.get("next")
 			continue_button.show()
 			return
@@ -127,6 +127,23 @@ func _process_block(block: Dictionary) -> void:
 
 	if block.has("options"):
 		for opt in block.options:
+			if opt.has("ifnot_all"):
+				var should_skip = true
+				for info_id in opt.ifnot_all:
+					if not GameManager.knows_info(GameManager.InfoIDs[info_id]):
+						should_skip = false
+						break
+				if should_skip:
+					continue
+			if opt.has("conditions_all"):
+				var all_conditions_met = true
+				for info_id in opt.conditions_all:
+					if not GameManager.knows_info(GameManager.InfoIDs[info_id]):
+						all_conditions_met = false
+						break
+				if not all_conditions_met:
+					continue
+
 			if opt.has("condition") and not _check_condition(opt.condition):
 				continue
 			if opt.has("ifnot") and GameManager.knows_info(GameManager.InfoIDs[opt["ifnot"]]):

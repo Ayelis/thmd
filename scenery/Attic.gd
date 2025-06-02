@@ -28,8 +28,7 @@ func _on_rope_pressed():
 
 func _on_drawers_pressed():
 	if(!GameManager.inventory[GameManager.ItemIDs.ROBE]):
-		GameManager.display_dialog(GameManager.events["get-robe"])
-		GameManager.obtain_item(GameManager.ItemIDs.ROBE)
+		GameManager.display_dialog("get-robe")
 		$Drawers.hide()
 
 func _on_window_pressed():
