@@ -117,8 +117,6 @@
 		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones, nasally.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
 		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: weather news, tide charts, arrest reports, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
 		"left-library": "Fluorescents buzz weakly like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
-		"stacks": "Looking through old microfiche newspapers isn't my idea of fun, but what else can I do? I scan quickly for headlines about disappearances in town.\n\nHere's one. Apparently the '86 chemical spill was a cover-up for cult activity, and hostages were rescued. A faded photo shows the sheriff padlocking that blue shack on the beach.\n\nSomehow scribbled in the margin: '6-20-25, high tide on the solstice.' The numbers itch at my brain. Is it a date?",
-		"stacks2": "I go over what I've found. In old microfiche articles, there are headlines about local disappearances.\n\nIn '86, a cult called 'The Tide' was found responsible for numerous abductions. Faded photos relate the shack on the beach to this cult.\n\nThere are also numbers scrawled in the margins that seem important somehow: '6-20-25'.",
 		"detective2": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
 		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
 		"evidence": "A red vinyl chair stands out against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
@@ -223,6 +221,65 @@
 				"room": "shack2",
 				"nextsfx": "shot",
 				"next": null
+			}
+		},
+		"stacks":{
+			"root":{
+				"prompt":"Doing research in a dusty old library and looking through old microfiche newspapers isn't my idea of fun, but what else can I do?",
+				"options": [
+					{
+						"text": "000-199 Local",
+						"tooltip": "Look in the General Local Information section.",
+						"next": "general"
+					},
+					{
+						"text": "100-299 Supernatural",
+						"tooltip": "Look in the Supernatural and Religion section.",
+						"next": "supernatural"
+					},
+					{
+						"text": "300-499 Society",
+						"tooltip": "Look in the Social and Language section.",
+						"next": "society"
+					},
+					{
+						"text": "500-699 Sciences",
+						"tooltip": "Look in the Natural/Applied Sciences section.",
+						"next": "sciences"
+					},
+					{
+						"text": "700-999 Arts & History",
+						"tooltip": "Look in the Arts & History section.",
+						"next": "history"
+					},
+					{
+						"text": "Leave Stacks",
+						"tooltip": "Let's do something else...",
+						"next": null
+					}
+				]
+			},
+			"general": {
+				"result":"I load up some old microfiche articles from decades ago, scanning quickly for headlines about disappearances. It's not long before 'LOCAL TEENS VANISH AFTER BEACH PARTY'.\n\nThere's talk of cover stories and text scrawled in margins. A faded photo shows the sheriff padlocking that old shack on the beach I've seen before.\n\nThis could be worth investigating.",
+				"learn":"SHACK",
+				"next":"root"
+			},
+			"supernatural": {
+				"result":"The Occult shelf smells like mildew and guilt. Two books stand out, in a section marked 'Donations':\n\nMalleus Monstrorum, a donation from HHS, last checked out to an R. Lipschitz. Within are graphical illustrations of monstrous tentacled 'gods' that seem to leap off the page. Oh, this is for a game.\n\nSpeaking of games, I can still hear my daughter scream-laughing over the board game last night: [i]“Cthulhu IS a word, you just hate fun!”[/i] The memory stings.",
+				"next":"root"
+			},
+			"society": {
+				"result":"Dusty linguistics textbooks. Useless—until I flip one open and a cipher key flutters out.\n\nI'm not really big on codes, so I put it back. Maybe someone else could use it. Maybe I had the patience my daughter always begged me to show...\n\nMaybe I just don't have time right now! But then, excuses are like...",
+				"next":"root"
+			},
+			"sciences": {
+				"result":"Books on rocks from space and water-stained tide charts, among many other things. I skim solstice dates, and see scrawled in the margin— “HIGH TIDE = WEAKEST BARRIER”...\n\nNo idea what that's about. There's no need for breakwater walls out here. Also scribbled beside the article: '6-20-25, high Tide on the SOULstice.' The numbers itch at my brain. If this is a date... That's this year. This month!",
+				"learn":"COMBO",
+				"next":"root"
+			},
+			"history": {
+				"result":"Empty. Just like my promises to “help with her project later.” Pangs of regret. When this is all over, I'll make the time. Like Lydia. I make a note to look for that book in children's fiction later.",
+				"next":"root"
 			}
 		},
 		"computer": {
@@ -492,29 +549,35 @@
 			"root": {
 				"prompt": "She sits in shadows, arms crossed, uncertainty in her eyes.",
 				"options": [
-					{ "text": "Take her hand", "tooltip": "Reach out gently.", "next": "rescue" },
-					{ "text": "I won’t leave without you", "tooltip": "Plead my case.", "next": "cult_master" }
+					{ "text": "Stop the cult", "tooltip": "Reach out gently.", "next": "rescue" },
+					{ "text": "Don't save her", "tooltip": "Step back and let her choose.", "next": "run" },
+					{ "text": "Kill the cult", "tooltip": "Burn them all!", "next": "mardar" },
+					{ "text": "Sacrifice yourself", "tooltip": "Offer myself instead.", "next": "sacrifice" },
+					{ "text": "Go CrAzY", "tooltip": "Embrace the madness.", "next": "crazy" }
 				]
 			},
 			"rescue": {
 				"result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
 				"ending": { "text": "rescue", "title": "Congratulations!", "texture": "daughter", "timbre": "42_Rise_of_the_Ancients" }
 			},
+			"crazy": {
+				"result": "[SANITY REDUCED]",
+				"ending": { "text": "sanity", "title": "Insanity", "texture": "padded", "timbre": "67_Asylum" }
+			},
 			"cult_master": {
-				"prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”",
-				"options": [
-					{ "text": "If this is what you want", "tooltip": "Step back and let her choose.", "next": "run" },
-					{ "text": "Volunteer as Tribute", "tooltip": "Offer myself instead.", "next": "sacrifice" }
-				]
+				"prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”"
 			},
 			"run": {
 				"result": "She steps forward, voice trembling steel: “If you leave, I’ll have to do it myself. The eternal ones won’t wait.”\n\nMy heart breaks. “You don’t have to—”\n\nShe presses a hand to my chest. “Go. A new world awaits us both.”\n\nI slip into the night. Behind me, her silhouette holds the dagger steady.",
-				"action": "increase_insanity",
 				"ending": { "text": "left", "title": "Abandonment", "texture": "endgame", "timbre": "267_Court_of_the_Count" }
+			},
+			"mardar": {
+				"result": "I carve through robed figures like a storm through deadwood.\n\nThe crowd surges behind me, cellphones catching every swing—every spray of blackened blood. Then… her.\n\nMy daughter blinks at me, hollow-eyed. “Do I… know you?”",
+				"ending": { "text": "arrest", "title": "Arrested", "texture": "arrest", "timbre": "267_Court_of_the_Count" }
 			},
 			"sacrifice": {
 				"result": "I step into the circle, heart steady. “Take me instead,” I whisper. “Let them sleep.”\n\nShe nods, eyes bright. “This will stave off the end—give dawn one more chance.”\n\nShe lays her hand on mine, guiding the blade’s hilt. “Thank you. I’ll carry you in every sunrise.”",
-				"ending": { "text": "sacrifice", "title": "Self‑Sacrifice", "texture": "daughter2", "timbre": "357_Promontory" }
+				"ending": { "text": "sacrifice", "title": "Self‑Sacrifice", "texture": "grave", "timbre": "357_Promontory" }
 			}
 		},
 		"daughter2": {
@@ -661,7 +724,7 @@
 				]
 			},
 			"wear_robes": {
-				"result": "They seems to fit nicely.",
+				"result": "They seems to fit nicely. In fact, I can't seem to take them off. Well, that shouldn't matter. They're cozy enough.",
 				"give": "ROBE",
 				"next": null
 			},
@@ -700,6 +763,7 @@
 	"endings": {
 		"sanity": "Reality fractures into static—\na television left screaming in an empty room.\n\nI blink up at a fluorescent sun, its sterile light peeling back the delusion: no missing daughter, no tide cult, just these four stained walls.\nThe horror isn’t that it wasn’t real. The horror is that I clawed my way back anyway.\n\nThe attic hatch still yawns above me. The abduction letter still whispers. Sanity is the cruelest prison. I close my eyes. Let the tide pull me under again.",
 		"left": "I walk away down the salt‑slick road—\na lone siren wailing in the distance.\n\nHer silhouette lingers in memory’s corner: \nrefusing my hand, choosing shadows over safety.\n\nThe ocean’s whisper follows me:\na promise broken, a heart left behind.\n\nSome doors never close; some echoes never fade.\n\nWhen the eternal nightmares descend, I am not among the first to be taken...",
+		"arrest": "The riot cops tackle me before I can answer. Cuffs bite my wrists. The detective snarls, “You knew. The whole damn time.”\n\nCameras flash. The world watches. Nobody wins.",
 		"sacrifice": "Darkness blooms behind her smile—\na crown of tide‑etched bone.\n\nShe steps through the cell bars,\npulling me into the cult’s embrace.\n\nMy final breath tastes of brine and regret.\n\nHer laughter drifts back to me,\ncalling me deeper into the endless tide.",
         "rescue": "We slip beyond the cult’s reach—\na pair of footprints side by side.\n\nHer hand in mine feels warm and real,\na promise kept beneath a rising moon.\n\nBehind us, the mansion lies silent.\n\nAhead, the night hums with fresh possibility.",
 		"100": "I linger in shadows, trading loyalty for time. She is extracted with surgical precision. The others remain unaware until long after I’m gone.",

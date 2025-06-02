@@ -23,14 +23,7 @@ func _on_chair_pressed():
 	GameManager.change_room("Transit")
 
 func _on_shelves_pressed():
-	if(!GameManager.knows_info(GameManager.InfoIDs.COMBO)):
-		GameManager.learn_info(GameManager.InfoIDs.SHACK)
-		GameManager.learn_info(GameManager.InfoIDs.COMBO)
-		GameManager.display_dialog(GameManager.events["stacks"])
-	else:
-		GameManager.display_dialog(GameManager.events["stacks2"])
-		GameManager.learn_info(GameManager.InfoIDs.COMBO)
-		GameManager.learn_info(GameManager.InfoIDs.SHACK)
+	GameManager.initiate_dialogue("stacks")
 
 func _on_computer_pressed():
 	GameManager.initiate_dialogue("computer")
