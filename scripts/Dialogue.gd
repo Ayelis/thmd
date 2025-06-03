@@ -22,7 +22,7 @@ func _on_dialogue_updated(text: String):
 
 func _update_theme(is_dark_mode: bool):
 	var tex_path = "res://assets/UI/%s_panel.png" % ["dark" if is_dark_mode else "light"]
-	$Panel.texture = load(tex_path)
+	$Panel/Texture.texture = load(tex_path)
 	if is_dark_mode:
 		$Panel/Text.add_theme_color_override("default_color", Color(1, 1, 1))
 	else:

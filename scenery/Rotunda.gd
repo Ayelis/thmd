@@ -14,7 +14,7 @@ func _ready():
 
 func _on_room_changed(room_name: String):
 	if(room_name == this_room):
-		GameManager.display_dialog(GameManager.events["rotunda"])
+		GameManager.initiate_dialogue(GameManager.events["rotunda"])
 
 func _on_blood_pressed():
 	GameManager.insane(GameManager.insanity["blood"])

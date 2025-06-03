@@ -1,797 +1,1079 @@
 {
-	"items": {
-		"TRANSPASS": {
-			"name": "Transit Pass",
-			"description": "Trusty old transit pass. The expiration date is smudged, but I don't recall it being that way."
-		},
-		"LIBCARD": {
-			"name": "Library Card",
-			"description": "The edges are frayed, like it’s been chewed on. The barcode is faded, but it still seems to work for now."
-		},
-		"LETTER": {
-			"name": "Letter",
-			"description": "The words are cut from magazines: 'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN FOR THIS FATE. GO FOLLOW THE TIDE' ...A haiku? Really?"
-		},
-		"DAGGER": {
-			"name": "Ritual Dagger",
-			"description": "The blade is etched with symbols that shift under direct light. The hilt is wrapped in hair too coarse to be my daughter’s."
-		},
-		"ROBE": {
-			"name": "Fancy Robes",
-			"description": "The gold embroidery glints like knife-edges in the dark, forming patterns that hurt to focus on. This robe seems fit for a king — or a sacrifice."
-		},
-		"ROPE": {
-			"name": "Length of Rope",
-			"description": "The fibers are stained in uneven patches. It smells of salt and wet earth, though it hasn't left the attic in years."
-		},
-		"LADDER": {
-			"name": "Metal Stepladder",
-			"description": "The metal is pocked with rust, except for the steps, which are polished smooth from use. The bottom is caked in a dried, flaking residue."
-		},
-		"BULLHORN": {
-			"name": "Bullhorn",
-			"description": "The megaphone's speaker grille is dented, as if gripped too tightly. When I turn the bullhorn over, a single word is scratched into the plastic: ‘DON’T.’"
-		},
-		"KEY": {
-			"name": "Steel Key",
-			"description": "It’s cold, even in my pocket. The teeth are jagged, like they were filed to fit a lock that shouldn’t exist."
-		},
-		"FLYER": {
-			"name": "Recruitment Flyer",
-			"description": "The paper crackles in my hand. An open eye gazes from a circle of waves, printed in deep navy blue. Beneath it, bold words: 'The Tide is rising. Be cleansed. Be claimed.' No contact info. Just some code. Or maybe coordinates..."
-		},
-		"DETECTOR": {
-			"name": "Metal Detector",
-			"description": "The LCD pulses, even when the device is turned off. The casing is cracked, revealing wires that also seem to pulse faintly, like veins."
-		},
-		"GUN": {
-			"name": "Revolver",
-			"description": "The grip is sticky. The serial number has been scraped away oddly, as if by metallic fingernails..."
-		}
-	},
-	"info": {
-		"NOINFO": {
-			"description": "I haven't discovered anything yet..."			
-		},
-		"DAUGHTER": {
-			"description": "They Have My Daughter!"
-		},
-		"APPOINTMENT": {
-			"description": "I booked an appointment to speak with a Detective Rook."
-		},
-		"SHACK": {
-			"description": "The cult owns a shack on a private beach north of the pier."
-		},
-		"MANSION": {
-			"description": "I know the location of a mansion that belongs to the cult."
-		},
-		"CULTISTS": {
-			"description": "I know what these cultists wear. I could sneak in if I could find a robe..."
-		},
-		"POLICE": {
-			"description": "I have permission to enter the station without an appointment."
-		},
-		"TUNNEL": {
-			"description": "I found out tunnels on the mansion grounds lead inside."
-		},
-		"COMBO": {
-			"description": "A number sequence I found. 6-20-25. Seems important."
-		},
-		"FAMILY": {
-			"description": "My family history may be... darker... than I thought..."
-		},
-		"ABDUCTOR": {
-			"description": "I have access to video footage showing the cultist taking my daughter."
-		},
-		"DOGGO": {
-			"description": "A very friendly doggo met me on the beach today..."
-		},
-		"FBI": {
-			"description": "I've notified the FBI of the situation in town..."
-		},
-		"PUBLIC": {
-			"description": "I've stirred up public opinion regarding the cult activity..."
-		},
-		"EMAIL": {
-			"description": "I know the e-mail address for the detective... Rook@HFPD... simple."
-		},
-		"A": {"description": ""},
-		"B": {"description": ""},
-		"C": {"description": ""},
-		"D": {"description": ""},
-		"E": {"description": ""}
-	},
-	"events": {
-		"home1": "I wake up at home. The silence is first thing that feels wrong. No breakfast sounds. No cartoons. No laughter. Just the groan of the water heater and the hum of the refrigerator.\n\n'Hey, kiddo?'\n\nNo answer. Down the hall her door sits open, revealing an unmade bed and an untouched backpack. The house is too still.",
-		"home2": "Inside my house the air tastes stale, thick with absence, like a breath held too long. I tell myself she just forgot to leave a note. I almost believe it. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
-		"dresser": "On the table I find my trusty transit pass. But why is it on a stack of takeout menus? I don't remember putting it there. I take it, trying not to think too hard about it. Then pause - there's something else.\n\nA letter. Wax-sealed. Torn edges. Words cut from magazines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN FOR THIS FATE.\nGO FOLLOW THE TIDE.'\n\nIt smells like the ocean. And something rotten.",
-		"hall": "The hall closet yields a collapsible metal detector... It's odd, but potentially useful. I stash it in my bag, wondering when or why I even bought this.",
-		"hall2": "Her room remains frozen—the same unmade bed, the same forgotten backpack. No clues about where she's gone.",
-		"hatch": "A square hatch of wood graces the ceiling. How'd I forget about the attic? The pull-down ladder's been broken since childhood. Getting up there won't be easy.",
-		"street": "I peer out my front window. A shadow by the telephone pole stands too tall, too still. My DVR security camera system would probably show grainy evidence, if I could get online to check it... but I haven't had internet for months.",
-		"attic": "I place down the stepladder and use it to boost myself to the attic hatch, pulling myself up and through. I'm not sure how long it's been since I've been in here. Forever ago.",
-		"windowgaze": "The window's grime distorts the world like a funhouse mirror. Vines slither through cracks, their stems unnaturally thick and glistening like oil-slicked flesh.",
-		"get-rope": "Rope coils in heaps—some strands knotted into crude symbols. A few twitch when the wind rattles the pane. I gather them quickly, my skin prickling as the knots brush my palms.",
-		"nopass": "The turnstile light blares red. My transit pass is still at home.",
-		"transit": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
-		"library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones, nasally.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
-		"library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: weather news, tide charts, arrest reports, notices about missing pets near the shore. The clock above the terminal ticks louder than it should.",
-		"left-library": "Fluorescents buzz weakly like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
-		"detective2": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
-		"police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
-		"evidence": "A red vinyl chair stands out against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
-		"paperwork": "A detailed site-plan reveals a network of tunnels beneath the mansion on island to the northwest. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the name. Waylon Hall.",
-		"window": "I tilt the blinds open further. Through wire-reinforced glass, the precinct buzzes with muted activity. I notice the assistant watching me, and I close the shutters again.",
-		"beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The padlock gleams like new.\n\nA weathered notice flaps:\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest is worn into illegibility.",
-		"dagger": "The metal detector shrieks after I wave it around here a few times. Buried under a foot of sand: a ritual knife with a serrated edge. I nearly slice my finger digging it up.",
-		"sand": "Hot grit slips through my fingers. Each handful feels heavier than it should. There's probably nothing here. Probably.",
-		"sky": "The clouds hang like damp gauze—translucent and stubborn. They don’t move so much as peel, slow and grudging, as if the sky can’t decide whether to heal or scar. The sun bleeds through in patches, hot and uneven, like a fever pressing against glass.",
-		"shack": "The blue shack from the articles. My only real lead. The rusty old padlock stares back, daring me to try its combination.",
-		"door": "Heavy-duty combination lock. The dials turn stiffly but aren't frozen. Someone's been here recently enough to keep it from rusting shut.",
-		"dog": "A massive dog blocks the path—muscle and matted fur. Its growl vibrates in my chest. Every childhood fear of dark basements and bad dogs surges up. Run. Now.",
-		"pet-dog": "Good doggo! The beast's tail wags as I scratch behind its ears. A wet tongue drags across my wrist.\n\n[Sanity Restored!]",
-		"shack1": "This is the same rusty old padlock I've seen in the photos. I try the numbers I saw earlier, 6-20-25, and the lock resists a moment before yielding. The door groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold. A set of chains are anchored to the far wall. I shudder.",
-		"shack2": "The lock explodes and metal flies. My hands still shaking from the vibration of the shot, I push against the door and it groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold. A set of chains are anchored to the far wall. I shudder.",
-		"shack3": "Tide charts cover the walls, their symbols playing tricks on my eyes. The floorboards warp unnaturally into stone. The air hums—not with wind, but voices. Chanting. Or maybe that's just the blood roaring in my ears.",
-		"get-ladder": "I pick up the old metal stepladder from the corner, and carry it with me.",
-		"shack-desk": "The drawer reveals a map—recruitment targets circled in red ink. The hilltop mansion dominates the center, while outward arrows seem to indicate this is a sort of headquarters.\n\nRecent coffee stains suggest this is still an active plan.",
-		"shack-drawers": "Rope loops tangle in the drawer. Not a single length but dozens of pre-made hoops and nooses. They stack neatly despite their apparent grim purpose.",
-		"shack-empty": "The drawers are mysteriously empty. Not counting the cobwebs...",
-		"mansion": "A robed figure materializes from the shadows, pressing a flyer into my palm. His fingers stretch too long, his nails ridged with old blood. 'The Tide doesn't need you yet,' he rasps. Behind him, the mansion's windows pulse—not with light, but with movement.",
-		"cultist": "The cultist glares at me. “Everything you need to know is in the flyer,” he states. The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
-		"cultist-scared": "The robed glares at me, gesturing to the flyer he just handed me. I wave my new gun in his face and he scampers off back into the mansion...",
-		"balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
-		"tunnels": "I spend what feels like hours stumbling through lightless passages. My hands brush damp stone until finally—a door. The wood thrums under my touch.",
-		"has-rope": "The rope snakes around the balcony post. One tug to test it, then I haul myself up, muscles screaming.",
-		"has-ladder": "I set my ladder down against the balcony and easily climb over the rail. An empty room awaits me inside the mansion. I find my way to the altar...",
-		"need-key": "The ornate lock stares back. No picking this—I'll need to find another way in.",
-		"knife": "I knock, flashing the ritual blade. 'Lost my robe,' I lie. The cultists exchange glances before bowing me inside.",
-		"has-robe": "The crimson robe earns me deep bows. They murmur titles—'High Priest'—as I stride past. The charade works better than expected.",
-		"mansion2": "Funeral spices clot the air. Staircases multiply like spider legs. Each step crumbles at the edges. The whispers aren't coming from the walls—they're coming from between them.",
-		"rotunda": "The dome fractures moonlight into living shapes. The seal on the floor pulses—not with light but pressure, its golden runes squirming when I blink. Blood shouldn't smell this sweet. The voices aren't echoes—they're in my jawbone.",
-		"altar": "Names crawl across the altar's surface, each groove dark and damp. Mine sits half-finished. Touching the carvings leaves my fingers stinking of brine and burnt hair.",
-		"skylight": "The stained glass warps the moon into a cataract eye. Below, the seal's runes aren't reflecting light—they're drinking it, pulsing in time with the distant tide.",
-		"leave": "The door shuts with a groan. Wind carries something like my daughter's voice—or just vines scraping stone. The mansion's windows pulse twice as I walk away. Like a heartbeat. Like counting down."
-	},
-	"rooms": {
-		"HOME": {
-			"name": "My Home"
-		},
-		"ATTIC": {
-			"name": "Musty Attic"
-		},
-		"TRANSIT": {
-			"name": "Lightrail Stop"
-		},
-		"LIBRARY": {
-			"name": "City Library"
-		},
-		"POLICE": {
-			"name": "Police Station"
-		},
-		"DETECTIVE": {
-			"name": "Detective's Office"
-		},
-		"EVIDENCE": {
-			"name": "Evidence Lockup"
-		},
-		"BEACH": {
-			"name": "Private Beach"
-		},
-		"SHACK": {
-			"name": "Abandoned Shack"
-		},
-		"MANSION": {
-			"name": "Mansion Path"
-		},
-		"ROTUNDA": {
-			"name": "Rotunda Altar"
-		}
-	},
-	"insanity": {
-		"ceiling-fan": "The fan’s blades carve slow circles into the air, a little louder than it should be. Click. Whir. Click. Like a metronome.\n\nI’m reminded of my daughter’s favorite track — Victim, from that Dead Inside album she played too loud. 'Swinging dead in summer wind…' She’d mouth the words while braiding her hair, grinning like it was just some dumb lyric. But now the fan’s rhythm syncs with it. Click. Swinging. Whir. Dead.\n\n'My parents will go crazy, slowly…'\nI should get up. But the couch holds me like a hand.\n[SANITY REDUCED]",
-		"vines": "Just vines. Normal. Overgrown. Thin, fibrous tendrils creep down from the windowframe, curling like lazy fingers. They don’t move when I look at them. But when I turn away, in the corner of my vision, they twitch.\n\nI reach up. The moment before my fingers touch one, the vine tightens. A shudder runs through the whole mass, like a muscle flexing.\n\nOutside, the wind blows, and the vines go still. But now I can’t stop looking.\nEvery time I glance, they’ve gotten just a little closer to the floor.\n[SANITY REDUCED]",
-		"birds": "The birds hover in the wind. The ones on the sand tilt their heads in unison, black eyes locking onto me.\n\nThen there’s the close one—close enough to touch. Its beak opens. Not a screech. A whisper.\n“She’s right where you left her.”\n\nI reach out. My fingers graze feathers. The gull collapses into a tangle of evaporating seaweed. The others take flight, their wings beating in unison.\n\nClick. Whir. Click.\nJust like the ceiling fan at home.\n[SANITY REDUCED]",
-		"ocean": "The waves don’t crash—they breathe. In. Out. Like the tide is a great, snoozing beast beneath the sand. The water isn’t blue anymore. It’s the color of a fading bruise. Purple. Yellow at the edges.\n\nI count the waves. Their rhythm sings a song. Their shape seems square and digital. The ocean is holding its breath.\n\nAnd then—a sound. Not a gull, not the wind. A voice, half-drowned, calling from the water on the horizon.\n\n“You’re already too late.”\n[SANITY REDUCED]",
-		"tracks": "The rails seem to hum even when no train is coming. A low, metallic vibration, like the tracks are singing to themselves. A tune without a melody. A warning without words.\n\nThe timetable board flickers—departure times melting into gibberish, then into symbols I almost recognize.\nA shadow moves in the nearby train tunnel. Not a train. Something longer. Something that sways.\n\nThe rails go silent. The shadow is gone. But the taste of copper lingers on my tongue.\n[SANITY REDUCED]",
-		"ceiling": "The ceiling isn’t gone.\nIt’s just... farther now.\n\nI crane my neck, expecting rafters, cobwebs, the underside of the roof—but there’s nothing. No. Not nothing. Worse.\n\nThe darkness pulses.\nLike a throat swallowing.\nLike something up there is breathing.\n\nA drop of cold water lands on my cheek. I wipe it away. My fingers come back red.\n[SANITY REDUCED]",
-		"blood": "The blood isn’t dry. It squirms. Thin, glossy tendrils spider outward from the edges of each splash, creeping like liquid veins. The thicker pools ripple, as if stirred by an invisible finger.\n\nI crouch, reaching—and the blood flinches away from me. It doesn't seem red anymore. It’s the same purple-black as the inside of my eyelids when I wake gasping at 3 AM.\n\nI straighten up. The blood goes still. Now it’s just red blood again.\n\nProbably.\n[SANITY REDUCED]",
-		"magic": "The circle isn’t just glowing—it’s breathing.\n\nThe violet light pulses in time with some distant, depthless heartbeat. The symbols twist if I stare too long, their edges writhing like worms in wet soil.\n\nI step closer. The light doesn’t cast shadows—it eats them, leaving only stark, fever-bright outlines. One rune flickers.\n\nThe light hums. It’s not a sound. It’s the vibration of a throat before it screams.\n[SANITY REDUCED]"
-	},
-	"dialogs": {
-		"shoot-lock": {
-			"root": {
-				"prompt": "I still haven't found the combination, but then I recall that I may not need it:",
-				"options": [
-					{
-						"text": "Shoot the Lock",
-						"tooltip": "A bold strategy. Let's see if it works out.",
-						"next": "fire"
-					},
-					{
-						"text": "Find another way",
-						"tooltip": "Maybe we don't need violence for this.",
-						"next": null
-					}
-				]
-			},
-			"fire": {
-				"result": "I carefully aim the gun at the rusty padlock and exhale, slowly pulling the trigger...\n\nClick.\n\nOh...",
-				"newscene": "Shack",
-				"room": "shack2",
-				"nextsfx": "shot",
-				"next": null
-			}
-		},
-		"stacks":{
-			"root":{
-				"prompt":"Doing research in a dusty old library and looking through old microfiche newspapers isn't my idea of fun, but what else can I do?",
-				"options": [
-					{
-						"text": "000-199 Local",
-						"tooltip": "Look in the General Local Information section.",
-						"next": "general"
-					},
-					{
-						"text": "100-299 Supernatural",
-						"tooltip": "Look in the Supernatural and Religion section.",
-						"next": "supernatural"
-					},
-					{
-						"text": "300-499 Society",
-						"tooltip": "Look in the Social and Language section.",
-						"next": "society"
-					},
-					{
-						"text": "500-699 Sciences",
-						"tooltip": "Look in the Natural/Applied Sciences section.",
-						"next": "sciences"
-					},
-					{
-						"text": "700-999 Arts & History",
-						"tooltip": "Look in the Arts & History section.",
-						"next": "history"
-					},
-					{
-						"text": "Leave Stacks",
-						"tooltip": "Let's do something else...",
-						"next": null
-					}
-				]
-			},
-			"general": {
-				"result":"I load up some old microfiche articles from decades ago, scanning quickly for headlines about disappearances. It's not long before 'LOCAL TEENS VANISH AFTER BEACH PARTY'.\n\nThere's talk of cover stories and text scrawled in margins. A faded photo shows the sheriff padlocking that old shack on the beach I've seen before.\n\nThis could be worth investigating.",
-				"learn":"SHACK",
-				"next":"root"
-			},
-			"supernatural": {
-				"result":"The Occult shelf smells like mildew and guilt. Two books stand out, in a section marked 'Donations':\n\nMalleus Monstrorum, a donation from HHS, last checked out to an R. Lipschitz. Within are graphical illustrations of monstrous tentacled 'gods' that seem to leap off the page. Oh, this is for a game.\n\nSpeaking of games, I can still hear my daughter scream-laughing over the board game last night: [i]“Cthulhu IS a word, you just hate fun!”[/i] The memory stings.",
-				"next":"root"
-			},
-			"society": {
-				"result":"Dusty linguistics textbooks. Useless—until I flip one open and a cipher key flutters out.\n\nI'm not really big on codes, so I put it back. Maybe someone else could use it. Maybe I had the patience my daughter always begged me to show...\n\nMaybe I just don't have time right now! But then, excuses are like...",
-				"next":"root"
-			},
-			"sciences": {
-				"result":"Books on rocks from space and water-stained tide charts, among many other things. I skim solstice dates, and see scrawled in the margin— “HIGH TIDE = WEAKEST BARRIER”...\n\nNo idea what that's about. There's no need for breakwater walls out here. Also scribbled beside the article: '6-20-25, high Tide on the SOULstice.' The numbers itch at my brain. If this is a date... That's this year. This month!",
-				"learn":"COMBO",
-				"next":"root"
-			},
-			"history": {
-				"result":"Empty. Just like my promises to “help with her project later.” Pangs of regret. When this is all over, I'll make the time. Like Lydia. I make a note to look for that book in children's fiction later.",
-				"next":"root"
-			}
-		},
-		"computer": {
-			"root": {
-				"prompt": "I've logged in on the library computer system. Select an action:",
-				"options": [
-					{
-						"text": "Email Police",
-						"tooltip": "Request an interview about\nmy missing persons case.",
-						"ifnot": "APPOINTMENT",
-						"next": "email_police",
-						"condition": "EMAIL"
-					},
-					{
-						"text": "FBI Tip Line",
-						"tooltip": "Upload my evidence anonymously\nfor federal review.",
-						"ifnot": "FBI",
-						"next": "fbi_upload",
-						"condition": "FLYER"
-					},
-					{
-						"text": "ThePier Forum",
-						"tooltip": "Post flyer & images to rally townsfolk.",
-						"ifnot": "PUBLIC",
-						"next": "forum_post",
-						"condition": "FLYER"
-					},
-					{
-						"text": "Search Internet",
-						"tooltip": "Scan through old articles and photos.",
-						"ifnot": "SHACK",
-						"next": "search_results"
-					},
-					{
-						"text": "View Cameras",
-						"tooltip": "Log into the Home Camera online portal.",
-						"ifnot": "ABDUCTOR",
-						"next": "view_cams"
-					},
-					{
-						"text": "Log Out",
-						"tooltip": "The screen flickers. A reflection?\nMy face looks... older.",
-						"next": "close_computer"
-					}
-				]
-			},
-			"email_police": {
-				"result": "TO: rook@hfpd.gov ...\n\nI send off my email to the Hatchetfield police department with everything I know so far. The detective replies almost immediately:\n\n'Come in today. ASAP.\nMake sure you aren't followed.\n--Rook'",
-				"learn": "APPOINTMENT",
-				"forget": "EMAIL",
-				"next": "root"
-			},
-			"fbi_upload": {
-				"result": "A confirmation appears: 'Case #KT-118.29 opened. Agents dispatched.'",
-				"learn": "FBI",
-				"next": "root"
-			},
-			"forum_post": {
-				"result": "I upload my pics and plea in a local forum and quickly see reactions. Local protestors are starting to gather even now.",
-				"learn": "PUBLIC",
-				"next": "root"
-			},
-			"search_results": {
-				"result": "An article appears about a '1986 Beach Accident' but scanning the fine print shows this headline to be misleading.\nTown members were abducted by cultists who left similar letters to the one I got. The article also shows info about a related shack on the north beach owned by this same cult.",
-				"learn": "SHACK",
-				"next": "root"
-			},
-			"view_cams": {
-				"result": "I log in to my DVR camera system's website. Last footage: 11:47 PM. Two shadows moving through her room. Two figures leave. She's been gone since last night!",
-				"learn": "ABDUCTOR",
-				"next": "root"
-			},
-			"close_computer": {
-				"result": "I sign out of the computer with plenty of time to spare on my account. The screen flickers and glitches, and returns to the login screen.",
-				"next": null
-			}
-		},
-		"assistant": {
-			"root": {
-				"prompt": "The assistant's nails click against her keyboard.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nI just know I can't wait that long. She offers me a card with the detective's email address on it.",
-				"learn": "EMAIL",
-				"options": [
-					{
-						"text": "Leave",
-						"tooltip": "I guess I need an appointment...",
-						"newscene": "Transit",
-						"room": "transit"
-					}
-				]
-			}
-		},
-		"assistant2": {
-			"root": {
-				"prompt": "The assistant sips her coffee.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'",
-				"options": [
-					{
-						"text": "See Detective",
-						"tooltip": "I do, in fact, have an appointment...",
-						"newscene": "Detective",
-						"chain": "detective"
-					},
-					{
-						"text": "Leave",
-						"tooltip": "Not much else to do here...",
-						"newscene": "Transit",
-						"room": "transit"
-					}
-				]
-			}
-		},
-		"assistant3": {
-			"root": {
-				"random": 2,
-				"prompt": "The assistant eyes me wearily.\n\n“Detective Rook says you've been deputized.” She sighs. “Look, I’m sorry about your kid. But if you start waving a gun around, I [i][b]will[/b][/i] tase you.”",
-				"prompt2": "The assistant eyes me wearily.\n\n“So, you've been deputized...” She leans in, lowering her voice. “That’s cop-speak for 'we have no leads'.”",
-				"options": [
-					{
-						"text": "Detective's Office",
-						"tooltip": "Revisit Rook's Office...",
-						"newscene": "Detective",
-						"room": "detective2"
-					},
-					{
-						"text": "Evidence Lockup",
-						"tooltip": "Sneak into the evidence room...",
-						"condition": "KEY",
-						"newscene": "Evidence",
-						"room": "evidence"
-					},
-					{
-						"text": "Leave",
-						"tooltip": "Not much else to do here...",
-						"newscene": "Transit",
-						"room": "transit"
-					}
-				]
-			}
-		},
-		"detective": {
-			"root": {
-				"prompt": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where perhaps gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.\n\n“About your daughter. Where’d you last see her?”",
-				"options": [
-					{
-						"text": "Where do I start...",
-						"tooltip": "Honest? Truthful? Why wouldn't I be? She's my daughter!",
-						"next": "be_open"
-					}
-				]
-			},
-			"be_open": {
-				"prompt": "I tell the detective what I know...",
-				"options": [
-					{
-						"text": "The Basics",
-						"tooltip": "Tell him about last night's argument.",
-						"ifnot": "A",
-						"next": "show_note"
-					},
-					{
-						"text": "Video Footage",
-						"tooltip": "Give him the security camera details.",
-						"ifnot": "B",
-						"next": "video_footage",
-						"condition": "ABDUCTOR"
-					},
-					{
-						"text": "The Shack",
-						"tooltip": "Tell him about the shack I found.",
-						"ifnot": "C",
-						"next": "tell_shack",
-						"condition": "SHACK"
-					},
-					{
-						"text": "The Mansion",
-						"tooltip": "Tell him about the mansion I discovered.",
-						"ifnot": "D",
-						"next": "tell_mansion",
-						"condition": "MANSION"
-					},
-					{
-						"text": "The Flyer",
-						"tooltip": "Show him the cultist's flyer.",
-						"ifnot": "E",
-						"next": "show_flyer",
-						"condition": "FLYER"
-					},
-					{
-						"text": "That's all",
-						"tooltip": "I play my cards close...",
-						"condition": "A",
-						"ifnot": "B",
-						"next": "detective_response"
-					},
-					{
-						"text": "That's all",
-						"tooltip": "Maybe I shouldn't say too much...",
-						"condition": "B",
-						"ifnot_all": ["C", "D", "E"],
-						"next": "detective_response2"
-					},
-					{
-						"text": "That's all",
-						"tooltip": "I really can't think of anything else",
-						"conditions_all": ["A", "B", "C", "D", "E"],
-						"next": "detective_response_final"
-					}
-				]
-			},
-			"show_note": {
-				"result": "I tell him we played Scrabble until 9, then went to our rooms.\n\n[i]“So. She just… went to her room?”[/i]\n“Yeah. I—I mean, we argued. She tried to play ‘Cthulhu’ as a word. I told her it was a proper noun. She said I always ‘rig the rules’—”\n[i]“Rig the rules, huh? You a sore winner?”[/i]\n\n“It’s a game. She’s a [i]kid[/i]. They get mad.”\n[i]“And the note?”[/i]\n\n“Some sicko’s idea of a—”\n[i]“Third one this month. All young women. All notes like this. And I don’t like coincidences.”[/i]",
-				"learn": "A",
-				"next": "be_open"
-			},
-			"video_footage": {
-				"result": "I give him my login for the security cam site. He logs in and pans through the video for a bit. Leaning in, eyes narrowing. His voice is too casual.\n\n“You found this fast. Real fast. Like you knew what to look for.”\nI don’t answer.\n“Funny thing. Most parents, they’re crying. Screaming. Begging. You?”\nHe shrugs.\n“You’re helpful. Almost like you’ve done this before.”\n\nHe's blaming ME?! Why would-\n“I'm gonna follow this lead. If you know anything else, now's the time to say it.”",
-				"learn": "B",
-				"next": "be_open"
-			},
-			"tell_shack": {
-				"result": "I tell him about the shack on the beach. Rook’s pen pauses mid-note.\n\n“You found that place alone? Christ. We’ve had it under surveillance for months.”\n\nHe leans in, close enough that you catch the stale nicotine on his breath.\n\n“Those chains on the wall aren’t for dogs, you know. Tell me you didn’t touch anything.”\n\nI mean...\n\n“Yeah. That’s what I thought.”",
-				"learn": "C",
-				"next": "be_open"
-			},
-			"tell_mansion": {
-				"result": "Rook exhales through his nose like a bull about to charge. “The Waylon estate.” He drags a hand down his face. “Of course it is. Rich folks ‘donate’ to the ‘society’ for ‘tax reasons.’” Every word drips with air-quotes. “They swear it’s just to maintain the grounds. Pay no attention to the bloodstains on the gazebo.”\n\nHe stabs a finger at me.\n\n“You’re NOT going in there alone.”\n\nI don’t answer. The silence stretches. Rook’s eyes narrow. Then, with the grim certainty of a man who’s seen this movie before:\n“You’re gonna go in there alone, aren’t you?”",
-				"learn": "D",
-				"next": "be_open"
-			},
-			"show_flyer": {
-				"result": "Rook stares at the dates, times, and GPS coordinates on the cult’s flyer. His jaw works like he’s chewing on a curse.\n“Well, heck.” He taps a few keys, pulls up something on his computer. “That’s their whole damn recruitment pipeline.”\nHe grabs the landline, punches in numbers with the ease of someone who’s done it too many times.\n“Yeah, it’s Rook.” A pause. “Class III escalation. Waylon house.” Another pause. His eyes flick to me. “Yeah, some civilian just did our jobs for us.”\nA voice crackles through the receiver—too loud, too sharp. Rook winces, holds the phone an inch from his ear. The call ends with a click.\n“Guy’s got a pair of lungs on him,” he mutters, rubbing his temple. “Congrats. You just pissed off the FBI.”",
-				"learn": "E",
-				"next": "be_open"
-			},
-			"detective_response": {
-				"result": "Rook leans back, the chair protesting with a sound like a dying gull. His fingers tap the case file - once, twice - before he speaks.\n\n“Funny thing about cults,” he says, voice sandpapered by one too many cigarettes and things he won't name.\n\n“They always return to the same rotten places. There's a shack on North Shore beach - the kind that looks abandoned unless you know what to look for. Tide comes in, the chains start rattling. You didn't hear that from me.”",
-				"learn": "SHACK",
-				"next": "detective_response2"
-			},
-			"detective_response2": {
-				"result": "Rook rubs at his left wrist absently, where a faded tattoo peeks from under his cuff.\n\n“Look. I don't condone taking this into your own hands, but... I know exactly how you feel. And if you're that determined,” he continues, “there's an island west of here. Cliffside mansion with too many windows and not enough lights outside. Local fishermen say it's empty at high tide.”\n\nHe meets your eyes maybe for the first time.\n\n“Local fishermen lie.”",
-				"learn": "MANSION",
-				"next": "offer_help"
-			},
-			"detective_response_final": {
-				"result": "Rook stares at your notes, then slowly pushes his coffee away like it's personally offended him. The silence is uncomfortable. He finally sighs.\n\n“Let me get this straight,” he says, each word measured. “You found video of their van, hit up their little beachside murder shack, visited their death mansion, and even nabbed some official letterhead... all before thinking to maybe call the professionals? Well, the FBI is scrambling as we speak. And you know what they told me? ‘Stand down, Rook. This is bigger than you.’ So here’s the question,” he says. “You gonna stand down too?”",
-				"learn": "FBI",
-				"next": "offer_help"
-			},
-			"offer_help": {
-				"prompt": "He sighs, stands up, and shows me around the station.\n\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. You’ll have free reign. Hell, I find the place comforting. Just—be careful out there.”",
-				"options": [
-					{
-						"text": "Thank him",
-						"tooltip": "I appreciate the reprieve.",
-						"next": "end"
-					}
-				]
-			},
-			"end": {
-				"result": "I nod. For the first time since the note arrived, I feel a sliver of hope. The detective’s office feels less like an interrogation room and more like an ally’s living room.",
-				"forget": "APPOINTMENT",
-				"learn": "POLICE",
-				"next": null
-			}
-		},
-		"daughter": {
-			"root": {
-				"prompt": "She sits in shadows, arms crossed, uncertainty in her eyes.",
-				"options": [
-					{ "text": "Stop the cult", "tooltip": "Reach out gently.", "next": "rescue" },
-					{ "text": "Don't save her", "tooltip": "Step back and let her choose.", "next": "run" },
-					{ "text": "Kill the cult", "tooltip": "Burn them all!", "next": "mardar" },
-					{ "text": "Sacrifice yourself", "tooltip": "Offer myself instead.", "next": "sacrifice" },
-					{ "text": "Go CrAzY", "tooltip": "Embrace the madness.", "next": "crazy" }
-				]
-			},
-			"rescue": {
-				"result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
-				"ending": { "text": "rescue", "title": "Congratulations!", "texture": "daughter", "timbre": "42_Rise_of_the_Ancients" }
-			},
-			"crazy": {
-				"result": "[SANITY REDUCED]",
-				"ending": { "text": "sanity", "title": "Insanity", "texture": "padded", "timbre": "67_Asylum" }
-			},
-			"cult_master": {
-				"prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”"
-			},
-			"run": {
-				"result": "She steps forward, voice trembling steel: “If you leave, I’ll have to do it myself. The eternal ones won’t wait.”\n\nMy heart breaks. “You don’t have to—”\n\nShe presses a hand to my chest. “Go. A new world awaits us both.”\n\nI slip into the night. Behind me, her silhouette holds the dagger steady.",
-				"ending": { "text": "left", "title": "Abandonment", "texture": "endgame", "timbre": "267_Court_of_the_Count" }
-			},
-			"mardar": {
-				"result": "I carve through robed figures like a storm through deadwood.\n\nThe crowd surges behind me, cellphones catching every swing—every spray of blackened blood. Then… her.\n\nMy daughter blinks at me, hollow-eyed. “Do I… know you?”",
-				"ending": { "text": "arrest", "title": "Arrested", "texture": "arrest", "timbre": "267_Court_of_the_Count" }
-			},
-			"sacrifice": {
-				"result": "I step into the circle, heart steady. “Take me instead,” I whisper. “Let them sleep.”\n\nShe nods, eyes bright. “This will stave off the end—give dawn one more chance.”\n\nShe lays her hand on mine, guiding the blade’s hilt. “Thank you. I’ll carry you in every sunrise.”",
-				"ending": { "text": "sacrifice", "title": "Self‑Sacrifice", "texture": "grave", "timbre": "357_Promontory" }
-			}
-		},
-		"daughter2": {
-			"root": {
-				"prompt": "I rush into the dim cell where my daughter sits on a cold stone bench. She looks up—eyes red, arms crossed.",
-				"options": [
-					{
-						"text": "I’m so sorry I took so long",
-						"tooltip": "Apologize and explain.",
-						"next": "apology"
-					},
-					{
-						"text": "Come with me now",
-						"tooltip": "Insist she leave immediately.",
-						"next": "insist"
-					}
-				]
-			},
-			"apology": {
-				"result": "Her lip trembles. “You promised we’d finish Scrabble. You left me alone. I was scared.” She pulls the torn tile from her pocket. “I kept this safe. But it’s not enough.”",
-				"next": "ask_fight"
-			},
-			"ask_fight": {
-				"prompt": "She glares. “Don’t change the subject. Last night you chose work over me.”",
-				"options": [
-					{
-						"text": "I was protecting you",
-						"tooltip": "Explain my duty.",
-						"next": "protecting"
-					},
-					{
-						"text": "Can we just go?",
-						"tooltip": "Push to leave now.",
-						"next": "insist"
-					}
-				]
-			},
-			"protecting": {
-				"result": "She softens briefly. “Protecting? I found this note…” She shows the cult’s symbol carved in wood. “They said you’d come back for me. But what if they want you?”",
-				"next": "reveal_cult"
-			},
-			"insist": {
-				"result": "She stands, but shakes her head. “No. I don’t trust you. Not yet.”",
-				"next": "daughter_decides"
-			},
-			"reveal_cult": {
-				"result": "Her eyes go distant. “They chose me. I… I’m one of them now.” Her voice echoes strangely. “You should join me—or be next.”",
-				"next": "daughter_decides"
-			},
-			"daughter_decides": {
-				"prompt": "She steps away from the bars. Will she come with me, or stay as the cult’s heir?",
-				"options": [
-					{
-						"text": "Take her hand",
-						"tooltip": "Reach out emotionally.",
-						"next": "rescue_attempt"
-					},
-					{
-						"text": "Let her decide",
-						"tooltip": "Give her space.",
-						"next": "end_alone"
-					}
-				]
-			},
-			"rescue_attempt": {
-				"result": "She hesitates, then squeezes my hand. The cell door clanks open. “Fine,” she whispers. “But if you fail…”",
-				"next": "end_escape"
-			},
-			"end_alone": {
-				"result": "She watches me go, tears glistening. The door stays shut. I walk away with a broken heart—and the chilling knowledge she leads the cult.",
-				"next": null
-			},
-			"end_escape": {
-				"result": "Together we slip into the night. Behind us, the cult’s chanting fades—and we know they’ll come for both of us.",
-				"next": null
-			}
-		},
-		"police-drawer": {
-			"root": {
-				"prompt": "The drawer squeaks as I pull it open, revealing a small megaphone.",
-				"options": [
-					{
-						"text": "Take the megaphone",
-						"tooltip": "This could potentially be useful.",
-						"next": "take_megaphone",
-					},
-					{
-						"text": "Leave it be",
-						"tooltip": "Too risky. Let's leave it where it is.",
-						"next": "leave_megaphone",
-					}
-				]
-			},
-			"take_megaphone": {
-				"result": "A quick glance toward the door, and into the bag it goes.",
-				"give": "BULLHORN",
-				"next": null
-			},
-			"leave_megaphone": {
-				"result": "I carefully close the drawer again.",
-				"next": null
-			}
-		},
-		"police-papers": {
-			"root": {
-				"prompt": "Rifling through paperwork, my fingers brush cold metal. A key marked 'Evidence' hidden beneath incident reports.",
-				"options": [
-					{
-						"text": "Take the key",
-						"tooltip": "This will probably get me into the evidence room...",
-						"next": "take_key",
-					},
-					{
-						"text": "Leave it be",
-						"tooltip": "Too risky. Let's leave it where it is.",
-						"next": "leave_key",
-					}
-				]
-			},
-			"take_key": {
-				"result": "The teeth look oddly ceremonial.",
-				"give": "KEY",
-				"next": null
-			},
-			"leave_key": {
-				"result": "I put the papers back on top of the key, where they belong.",
-				"next": null
-			}
-		},
-		"get-robe": {
-			"root": {
-				"prompt": "The drawer reveals a blood-red robe with gold trim, nestled between mothballs. Why did my dad own this ceremonial-looking thing? The fabric smells of camphor and something earthier, but it might prove useful.",
-				"options": [
-					{
-						"text": "Put on the robes",
-						"tooltip": "They seem pretty stylish...",
-						"next": "wear_robes",
-					},
-					{
-						"text": "Leave them be",
-						"tooltip": "Let's leave it where it is.",
-						"next": "leave_robes",
-					}
-				]
-			},
-			"wear_robes": {
-				"result": "They seems to fit nicely. In fact, I can't seem to take them off. Well, that shouldn't matter. They're cozy enough.",
-				"give": "ROBE",
-				"next": null
-			},
-			"leave_robes": {
-				"result": "I fold the robes and put them back in the drawer, where I found them.",
-				"next": null
-			}
-		},
-		"evidence-drawers": {
-			"root": {
-				"prompt": "Maybe I shouldn't be digging through drawers, looting through evidence bags, but I don't know what might come in handy.",
-				"options": [
-					{
-						"text": "Take the firearm",
-						"tooltip": "Better to have it and not need it...",
-						"next": "take_gun",
-					},
-					{
-						"text": "Leave it be",
-						"tooltip": "No way. Is this a felony?",
-						"next": "leave_gun",
-					}
-				]
-			},
-			"take_gun": {
-				"result": "The revolver's grip sticks—sweat or old blood? Six chambers. One empty. The serial number's been filed away. I conceal the weapon on my person.",
-				"give": "GUN",
-				"next": null
-			},
-			"leave_gun": {
-				"result": "I carefully close the evidence drawer, leaving the chain of evidence intact.",
-				"next": null
-			}
-		}
-	},
-	"endings": {
-		"sanity": "Reality fractures into static—\na television left screaming in an empty room.\n\nI blink up at a fluorescent sun, its sterile light peeling back the delusion: no missing daughter, no tide cult, just these four stained walls.\nThe horror isn’t that it wasn’t real. The horror is that I clawed my way back anyway.\n\nThe attic hatch still yawns above me. The abduction letter still whispers. Sanity is the cruelest prison. I close my eyes. Let the tide pull me under again.",
-		"left": "I walk away down the salt‑slick road—\na lone siren wailing in the distance.\n\nHer silhouette lingers in memory’s corner: \nrefusing my hand, choosing shadows over safety.\n\nThe ocean’s whisper follows me:\na promise broken, a heart left behind.\n\nSome doors never close; some echoes never fade.\n\nWhen the eternal nightmares descend, I am not among the first to be taken...",
-		"arrest": "The riot cops tackle me before I can answer. Cuffs bite my wrists. The detective snarls, “You knew. The whole damn time.”\n\nCameras flash. The world watches. Nobody wins.",
-		"sacrifice": "Darkness blooms behind her smile—\na crown of tide‑etched bone.\n\nShe steps through the cell bars,\npulling me into the cult’s embrace.\n\nMy final breath tastes of brine and regret.\n\nHer laughter drifts back to me,\ncalling me deeper into the endless tide.",
-        "rescue": "We slip beyond the cult’s reach—\na pair of footprints side by side.\n\nHer hand in mine feels warm and real,\na promise kept beneath a rising moon.\n\nBehind us, the mansion lies silent.\n\nAhead, the night hums with fresh possibility.",
-		"100": "I linger in shadows, trading loyalty for time. She is extracted with surgical precision. The others remain unaware until long after I’m gone.",
-		"101": "I’m the whisper in the wires. The building catches fire from within. She meets me at the rendezvous, wrapped in smoke and silence.",
-		"102": "They call it an inside job. I leave no fingerprints. She thinks I’m a hero. I don’t correct her.",
-		"110": "I offer no allegiance, only calculated mercy. She is my only anchor. The cult is wounded but not destroyed.",
-		"111": "They ask what side I were on. I answer with a name: hers. In the end, that’s all that mattered.",
-		"112": "Her footsteps echo behind me. I didn’t stop them, not really. But I did enough. I hope that’s true.",
-		"120": "I stand in the spotlight, ash coating my shoulders. She walks beside me, stunned but alive. The reporters ask who I am. I lie.",
-		"121": "I turned the world’s attention on them. The cult breaks, screaming. She clings to me as the cameras flash.",
-		"122": "The flood begins with a smile. Mine. Her hand slips into mine like it was always meant to. The crowd parts for us both.",
-		"200": "I silence the guards and whisper old rites. The ritual proceeds. She walks willingly—eyes glazed, heart emptied.",
-		"201": "I hide in plain sight, rising through their ranks. The ritual goes smoothly. She thanks me. I nod.",
-		"202": "I bow with the others as the tide swallows the moon. She is reborn in salt and shadow. I accept the crown.",
-		"210": "The doctrine is mine now. I rewrite it to include her. The others chant. She just watches me.",
-		"211": "I stand above the altar, preaching futures no one wants. The crowd applauds. She weeps, unseen.",
-		"212": "I offer her to The Tide. The storm begins. The crowd chants my name as the world begins to tremble.",
-		"220": "The sky splits. The water answers. We are both quickly consumed—and satisfied.",
-		"221": "She laughs beside me, radiant and awful. Together, we welcome the end.",
-		"222": "The old gods rise, and she rises with them. I kneel. It is done.",
-		"000": "I vanish beneath the fog, unheard and unseen. Her small hand grips mine tightly. The Tide never even knew I was there.",
-		"001": "I ghost through the facility, rescuing her while the ritual crumbles behind me. No one believes what I saw. I disappear before anyone can ask.",
-		"002": "The sirens never sound. The cult falls, but so does something inside me. I walk out with her, white-eyed and trembling, the salt still clinging to her skin.",
-		"010": "I bend with the current but never break. She survives. We are both changed, but the world stays dry—for now.",
-		"011": "Through whispered warnings and double lives, I lead her out. The cult fractures in my wake. I fade back into the city like a rumor.",
-		"012": "Cameras catch my face. News anchors say my name. But she’s safe, and that’s enough. The rest is noise.",
-		"020": "I speak their language, then rewrite it. The cult thinks I'm one of their own—until it’s too late. I walk free, carrying only her.",
-		"021": "I shout above the waves, revealing everything. The building collapses. In the dust and panic, only I walk out with the girl.",
-		"022": "The sky opens, and the ritual completes. She is returned to me—not rescued, but transformed. I embrace her anyway. She smiles with too many teeth."
-	}
+    "items": {
+        "TRANSPASS": {
+            "name": "Transit Pass",
+            "description": "Trusty old transit pass. The expiration date is smudged, but I don't recall it being that way."
+        },
+        "LIBCARD": {
+            "name": "Library Card",
+            "description": "The edges are frayed, like it’s been chewed on. The barcode is faded, but it still seems to work for now."
+        },
+        "LETTER": {
+            "name": "Letter",
+            "description": "The words are cut from magazines: 'WE HAVE YOUR DAUGHTER. SHE WAS CHOSEN FOR THIS FATE. GO FOLLOW THE TIDE' ...A haiku? Really?"
+        },
+        "DAGGER": {
+            "name": "Ritual Dagger",
+            "description": "The blade is etched with symbols that shift under direct light. The hilt is wrapped in hair too coarse to be my daughter’s."
+        },
+        "ROBE": {
+            "name": "Fancy Robes",
+            "description": "The gold embroidery glints like knife-edges in the dark, forming patterns that hurt to focus on. This robe seems fit for a king — or a sacrifice. I can't seem to take it off."
+        },
+        "ROPE": {
+            "name": "Length of Rope",
+            "description": "A length of sturdy rope. Seems solid enough to use for climbing. The fibers are stained in uneven patches."
+        },
+        "LADDER": {
+            "name": "Metal Stepladder",
+            "description": "A small metal ladder with patches of rust. It hasn't seen a lot of use."
+        },
+        "BULLHORN": {
+            "name": "Bullhorn",
+            "description": "This megaphone is fairly new. Looks like a standard issue police department megaphone."
+        },
+        "KEY": {
+            "name": "Steel Key",
+            "description": "It’s cold, even in my pocket. The teeth are jagged, like they were filed to fit a lock that shouldn’t exist."
+        },
+        "FLYER": {
+            "name": "Recruitment Flyer",
+            "description": "The paper crackles in my hand. An open eye gazes from a circle of waves, printed in deep navy blue. Beneath it, bold words: 'The Tide is rising. Be cleansed. Be claimed.' No contact info. Just some code. Or maybe coordinates..."
+        },
+        "DETECTOR": {
+            "name": "Metal Detector",
+            "description": "The LCD pulses, even when the device is turned off. The casing is cracked, revealing wires that also seem to pulse faintly, like veins."
+        },
+        "GUN": {
+            "name": "Revolver",
+            "description": "The grip is sticky. The serial number has been scraped away oddly, as if by metallic fingernails..."
+        }
+    },
+    "info": {
+        "NOINFO": {
+            "description": "I haven't discovered anything yet..."
+        },
+        "DAUGHTER": {
+            "description": "They Have My Daughter!"
+        },
+        "APPOINTMENT": {
+            "description": "I booked an appointment to speak with a Detective Rook."
+        },
+        "SHACK": {
+            "description": "The cult owns a shack on a private beach north of the pier."
+        },
+        "MANSION": {
+            "description": "I know the location of a mansion that belongs to the cult."
+        },
+        "CULTISTS": {
+            "description": "I know what these cultists wear. I could sneak in if I could find a robe..."
+        },
+        "POLICE": {
+            "description": "I have permission to enter the station without an appointment."
+        },
+        "TUNNEL": {
+            "description": "I found out tunnels on the mansion grounds lead inside."
+        },
+        "COMBO": {
+            "description": "A number sequence I found. 6-20-25. Seems important."
+        },
+        "FAMILY": {
+            "description": "My family history may be... darker... than I thought..."
+        },
+        "ABDUCTOR": {
+            "description": "I have video footage showing the cultist taking my daughter."
+        },
+        "DOGGO": {
+            "description": "A very friendly doggo met me on the beach today..."
+        },
+        "FBI": {
+            "description": "The FBI has been notified of the situation..."
+        },
+        "PUBLIC": {
+            "description": "I've stirred up public opinion regarding the cult activity..."
+        },
+        "EMAIL": {
+            "description": "I know the detective's e-mail address... Rook@HFPD... simple."
+        },
+        "A": {
+            "description": ""
+        },
+        "B": {
+            "description": ""
+        },
+        "C": {
+            "description": ""
+        },
+        "D": {
+            "description": ""
+        },
+        "E": {
+            "description": ""
+        }
+    },
+    "events": {
+        "home1": "I wake up at home. The silence is the first thing that feels wrong. No breakfast sounds. No cartoons. No laughter. Just the groan of the water heater and the hum of the refrigerator.\n\n'Hey, kiddo?'\n\nNo answer. Down the hall her door sits open, revealing an unmade bed and an untouched backpack. The house is too still.",
+        "home2": "Inside my house the air tastes stale, thick with absence, like a breath held too long. I tell myself she just forgot to leave a note. I almost believe it. Almost. The house disagrees, its silence screaming what I won't admit: she's been gone longer than I think.",
+        "dresser": "On the table I find my trusty transit pass. But why is it on a stack of takeout menus? I don't remember putting it there. I take it, trying not to think too hard about it. Then pause - there's something else.\n\nA letter. Wax-sealed. Torn edges. Words cut from magazines:\n\n'WE HAVE YOUR DAUGHTER.\nSHE WAS CHOSEN FOR THIS FATE.\nGO FOLLOW THE TIDE.'\n\nIt smells like the ocean. And something rotten.",
+        "hall": "The hall closet yields a collapsible metal detector... It's odd, but potentially useful. I stash it in my bag, wondering when or why I even bought this.",
+        "hall2": "Her room remains frozen—the same unmade bed, the same forgotten backpack. No clues about where she's gone.",
+        "hatch": "A square hatch of wood graces the ceiling. How'd I forget about the attic? The pull-down ladder's been broken since childhood. Getting up there won't be easy.",
+        "street": "I peer out my front window. A shadow by the telephone pole stands too tall, too still. My DVR security camera system would probably show grainy evidence, if I could get online to check it... but I haven't had internet for months.",
+        "attic": "I place down the stepladder and use it to boost myself to the attic hatch, pulling myself up and through. I'm not sure how long it's been since I've been in here. Forever ago.",
+        "windowgaze": "The window's grime distorts the world like a funhouse mirror. Vines slither through cracks, their stems unnaturally thick and glistening like oil-slicked flesh.",
+        "get-rope": "Rope coils in heaps—some strands knotted into crude symbols. A few twitch when the wind rattles the pane. I gather them quickly, my skin prickling as the knots brush my palms.",
+        "nopass": "The turnstile light blares red. My transit pass is still at home.",
+        "transit": "The turnstile clicks open like a tongue. The station hums with bored commuters. A child's laugh is drowned out by crackling static from the speakers. 'Next train: Beach Line. Last departure today.' The clerk nods—like he's seen this play out before.",
+        "library": "The air stinks of ozone and rotting paper. The librarian's fingers tap like a metronome.\n\n'Card?' she drones, nasally.\n\nWhen I shake my head, she slides a signup form across the desk. A few minutes later, I have a new card in hand.\n\n'Terminal three. One hour.'\n\nHer tone suggests books aren't why people come here anymore.",
+        "library2": "The monitor glows sickly. Social media? Blocked. News? Blocked. But local archives load: weather news, tide charts, arrest reports, notices about missing pets near the shore. The clock on the wall ticks louder than it should.",
+        "left-library": "Fluorescents buzz weakly like dying flies as I step outside.\n\nAcross the square, a gargoyle on the library's facade watches me a beat too long. Its stone eyes seem to track my movement.",
+        "detective2": "The detective's desk is a graveyard of files.\n\nThe detective himself, gone. But I'm here by invite. I get myself a coffee.",
+        "police-computer": "The password screen shows his wallpaper—the detective and a woman holding up their wedding rings. He's actually smiling in the photo. The date in the corner is from three weeks ago.",
+        "evidence": "A red vinyl chair stands out against the drab walls. Case labels whisper: 'Missing. Arson. Cult Activity?' Box #17 rustles faintly—like fingernails on cardboard. I step back.",
+        "paperwork": "A detailed site-plan reveals a network of tunnels beneath the mansion on the island to the northwest. The annotations suggest easy access if I approach from the north side. Someone drew a red circle around the name. Waylon Hall.",
+        "window": "I tilt the blinds open further. Through wire-reinforced glass, the precinct buzzes with muted activity. I notice the assistant watching me, and I close the shutters again.",
+        "beach": "The shack shouldn't still be standing. Its blue planks look freshly painted despite decades of salt wind. The door is latched shut with a rusty padlock.\n\nA weathered notice flaps:\n'NO TRESPASSING BY ORDER OF THE SHERIFF'S OFFICE'\n\nThe rest is worn into illegibility.",
+        "dagger": "The metal detector shrieks after I wave it around here a few times. Buried under a foot of sand: a ritual knife with a serrated edge. I nearly slice my finger digging it up.",
+        "sand": "Hot grit slips through my fingers. Each handful feels heavier than it should. There's probably nothing here. Probably.",
+        "sky": "The clouds hang like damp gauze—translucent and stubborn. They don’t move so much as peel, slow and grudging, as if the sky can’t decide whether to heal or scar. The sun bleeds through in patches, hot and uneven, like a fever pressing against glass.",
+        "shack": "The blue shack from the articles. My only real lead. The rusty old padlock stares back, daring me to try its combination.",
+        "door": "Heavy-duty combination lock. The dials turn stiffly but aren't frozen. Someone's been here recently enough to keep it from rusting shut.",
+        "dog": "A massive dog blocks the path—muscle and matted fur. Its growl vibrates in my chest. Every childhood fear of dark basements and bad dogs surges up. Run. Now.",
+        "pet-dog": "Good doggo! The beast's tail wags as I scratch behind its ears. A wet tongue drags across my wrist.\n\n[Sanity Restored!]",
+        "shack1": "This is the same rusty old padlock I've seen in the photos. I try the numbers I saw earlier, 6-20-25, and the lock resists a moment before yielding. The door groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold. A set of chains are anchored to the far wall. I shudder.",
+        "shack2": "The lock explodes and metal flies. My hands still shaking from the vibration of the shot, I push against the door and it groans on its rusty hinges. The mildew smell hits first, then the sheer size of the interior. The building feels different now, as if this stopped being a shack the moment I crossed the threshold. A set of chains are anchored to the far wall. I shudder.",
+        "shack3": "Tide charts cover the walls, their symbols playing tricks on my eyes. The floorboards warp unnaturally into stone. The air hums—not with wind, but voices. Chanting. Or maybe that's just the blood roaring in my ears.",
+        "get-ladder": "I pick up the old metal stepladder from the corner, and carry it with me.",
+        "shack-desk": "The drawer reveals a map—recruitment targets circled in red ink. The hilltop mansion dominates the center, while arrows pointing outward seem to indicate this is a sort of headquarters with a plan of attack.\n\nRecent coffee stains suggest this is still an active plan.",
+        "shack-drawers": "Rope loops tangle in the drawer. Not a single length but dozens of pre-made hoops and nooses. They stack neatly despite their apparent grim purpose.",
+        "shack-empty": "The drawers are mysteriously empty. Not counting the cobwebs...",
+        "mansion": "A robed figure materializes from the shadows, pressing a flyer into my palm. His fingers stretch too long, his nails ridged with old blood. 'The Tide doesn't need you yet,' he rasps. Behind him, the mansion's windows pulse—not with light, but with movement.",
+        "cultist": "The cultist glares at me. “Everything you need to know is in the flyer,” he states. The robed figure looms closer. My skin crawls with the certainty that his hood shadows no human face. Time to go.",
+        "cultist-scared": "The robed glares at me, gesturing to the flyer he just handed me. I wave my new gun in his face and he scampers off back into the mansion...",
+        "public": "The public has really stepped up to show support... Or maybe anger. I can't get close to the front doors or even the front of the building. I'll have to look for another way.",
+        "fbi": "The FBI has set up some sort of mobile command center outside of this place... Impressive. They seem to be very busy. Perhaps I can sneak by... But they're keeping me from getting close to the building.",
+        "balcony": "The balcony hangs just beyond reach. No matter how I jump, my fingers scrape empty air.",
+        "need-key": "The ornate lock stares back. No picking this—I'll need to find another way in.",
+        "knife": "I knock, flashing the ritual blade. 'Lost my robe,' I lie. The cultists exchange glances before bowing me inside and giving me a VERY fancy looking robe! Apparently this is the High Bishop's dagger!",
+        "has-robe": "The cultists recognize your attire and step aside with hushed reverence. They murmur titles—'High Bishop'—as I stride past. Heavy doors creak open, revealing candlelit halls. The charade works better than expected.",
+        "has-ladder": "I set my ladder down against the balcony and easily climb over the rail. Dusty curtains brush my face as I peer through the door into the empty room. Below, chanting echoes—but up here, the only sound is my own breath. I find my way to the altar...",
+        "has-rope": "The rope snakes around the balcony post. One tug to test it, then I haul myself up, muscles burning. Dusty curtains brush my face as I peer through the door into the empty room. Below, chanting echoes—but up here, the only sound is my own breath. I find my way to the altar...",
+        "mansion-tunnel": "The underground path reeks of damp earth and old secrets. I spend what feels like hours stumbling through lightless passages. I can make out symbols scratched on the walls. Somewhere ahead, voices murmur. The air hums with anticipation. My hands brush damp stone until finally—a door. The wood thrums under my touch. I enter the mansion.",
+        "mansion-crowd": "My voice booms through the megaphone, rallying the crowd forward. Shoulders press in as we surge against the mansion doors—once, twice—until the wood groans and gives way. Flashlights slice through the dusty air, catching robed figures retreating into the shadows. ",
+        "mansion2": "Funeral spices clot the air. Staircases multiply like spider legs. Each step crumbles at the edges. The whispers aren't coming from the walls—they're coming from between them.",
+        "altar": "Names crawl across the altar's surface, each groove dark and damp. Mine sits half-finished. Touching the carvings leaves my fingers stinking of brine and burnt hair.",
+        "skylight": "The stained glass warps the moon into a cataract eye. Below, the seal's runes aren't reflecting light—they're drinking it, pulsing in time with the distant tide.",
+        "leave": "The door shuts with a groan. Wind carries something like my daughter's voice—or just vines scraping stone. The mansion's windows pulse twice as I walk away. Like a heartbeat. Like counting down."
+    },
+    "rooms": {
+        "HOME": {
+            "name": "My Home"
+        },
+        "ATTIC": {
+            "name": "Musty Attic"
+        },
+        "TRANSIT": {
+            "name": "Lightrail Stop"
+        },
+        "LIBRARY": {
+            "name": "City Library"
+        },
+        "POLICE": {
+            "name": "Police Station"
+        },
+        "DETECTIVE": {
+            "name": "Detective's Office"
+        },
+        "EVIDENCE": {
+            "name": "Evidence Room"
+        },
+        "BEACH": {
+            "name": "Private Beach"
+        },
+        "SHACK": {
+            "name": "Abandoned Shack"
+        },
+        "MANSION": {
+            "name": "Mansion Path"
+        },
+        "ROTUNDA": {
+            "name": "Rotunda Altar"
+        }
+    },
+    "insanity": {
+        "ceiling-fan": "The fan’s blades carve slow circles into the air, a little louder than it should be. Click. Whir. Click. Like a metronome.\n\nI’m reminded of my daughter’s favorite track — Victim, from that Dead Inside album she played too loud. 'Swinging dead in summer wind…' She’d mouth the words while braiding her hair, grinning like it was just some dumb lyric. But now the fan’s rhythm syncs with it. Click. Swinging. Whir. Dead.\n\n'My parents will go crazy, slowly…'\nI should get up. But the couch holds me like a hand.\n[SANITY REDUCED]",
+        "vines": "Just vines. Normal. Overgrown. Thin, fibrous tendrils creep down from the windowframe, curling like lazy fingers. They don’t move when I look at them. But when I turn away, in the corner of my vision, they twitch.\n\nI reach up. The moment before my fingers touch one, the vine tightens. A shudder runs through the whole mass, like a muscle flexing.\n\nOutside, the wind blows, and the vines go still. But now I can’t stop looking.\nEvery time I glance, they’ve gotten just a little closer to the floor.\n[SANITY REDUCED]",
+        "birds": "The birds hover in the wind. The ones on the sand tilt their heads in unison, black eyes locking onto me.\n\nThen there’s the close one—close enough to touch. Its beak opens. Not a screech. A whisper.\n“She’s right where you left her.”\n\nI reach out. My fingers graze feathers. The gull collapses into a tangle of evaporating seaweed. The others take flight, their wings beating in unison.\n\nClick. Whir. Click.\nJust like the ceiling fan at home.\n[SANITY REDUCED]",
+        "ocean": "The waves don’t crash—they breathe. In. Out. Like the tide is a great, snoozing beast beneath the sand. The water isn’t blue anymore. It’s the color of a fading bruise. Purple. Yellow at the edges.\n\nI count the waves. Their rhythm sings a song. Their shape seems square and digital. The ocean is holding its breath.\n\nAnd then—a sound. Not a gull, not the wind. A voice, half-drowned, calling from the water on the horizon.\n\n“You’re already too late.”\n[SANITY REDUCED]",
+        "tracks": "The rails seem to hum even when no train is coming. A low, metallic vibration, like the tracks are singing to themselves. A tune without a melody. A warning without words.\n\nThe timetable board flickers—departure times melting into gibberish, then into symbols I almost recognize.\nA shadow moves in the nearby train tunnel. Not a train. Something longer. Something that sways.\n\nThe rails go silent. The shadow is gone. But the taste of copper lingers on my tongue.\n[SANITY REDUCED]",
+        "ceiling": "The ceiling isn’t gone.\nIt’s just... farther now.\n\nI crane my neck, expecting rafters, cobwebs, the underside of the roof—but there’s nothing. No. Not nothing. Worse.\n\nThe darkness pulses.\nLike a throat swallowing.\nLike something up there is breathing.\n\nA drop of cold water lands on my cheek. I wipe it away. My fingers come back red.\n[SANITY REDUCED]",
+        "blood": "The blood isn’t dry. It squirms. Thin, glossy tendrils spider outward from the edges of each splash, creeping like liquid veins. The thicker pools ripple, as if stirred by an invisible finger.\n\nI crouch, reaching—and the blood flinches away from me. It doesn't seem red anymore. It’s the same purple-black as the inside of my eyelids when I wake gasping at 3 AM.\n\nI straighten up. The blood goes still. Now it’s just red blood again.\n\nProbably.\n[SANITY REDUCED]",
+        "magic": "The circle isn’t just glowing—it’s breathing.\n\nThe violet light pulses in time with some distant, depthless heartbeat. The symbols twist if I stare too long, their edges writhing like worms in wet soil.\n\nI step closer. The light doesn’t cast shadows—it eats them, leaving only stark, fever-bright outlines. One rune flickers.\n\nThe light hums. It’s not a sound. It’s the vibration of a throat before it screams.\n[SANITY REDUCED]"
+    },
+    "dialogs": {
+        "shoot-lock": {
+            "root": {
+                "prompt": "I still haven't found the combination, but then I recall that I may not need it:",
+                "options": [
+                    {
+                        "text": "Shoot the Lock",
+                        "tooltip": "A bold strategy. Let's see if it works out.",
+                        "next": "fire"
+                    },
+                    {
+                        "text": "Find another way",
+                        "tooltip": "Maybe we don't need violence for this.",
+                        "next": null
+                    }
+                ]
+            },
+            "fire": {
+                "result": "I carefully aim the gun at the rusty padlock and exhale, slowly pulling the trigger...\n\nClick.\n\nOh...",
+                "newscene": "Shack",
+                "room": "shack2",
+                "nextsfx": "shot",
+                "next": null
+            }
+        },
+        "stacks": {
+            "root": {
+                "prompt": "Doing research in a dusty old library and looking through old microfiche newspapers isn't my idea of fun, but what else can I do?",
+                "options": [
+                    {
+                        "text": "000-099 Local Info",
+                        "tooltip": "Research the Local Information section.",
+                        "next": "general"
+                    },
+                    {
+                        "text": "100-299 Supernatural",
+                        "tooltip": "Browse the Supernatural/Religion section.",
+                        "next": "supernatural"
+                    },
+                    {
+                        "text": "300-499 Society",
+                        "tooltip": "Look in the Social and Language section.",
+                        "next": "society"
+                    },
+                    {
+                        "text": "500-699 Sciences",
+                        "tooltip": "Check the Natural/Applied Science section.",
+                        "next": "sciences"
+                    },
+                    {
+                        "text": "700-999 Arts & History",
+                        "tooltip": "Examine the Arts & History section.",
+                        "next": "history"
+                    },
+                    {
+                        "text": "Leave Stacks",
+                        "tooltip": "Let's do something else...",
+                        "next": null
+                    }
+                ]
+            },
+            "general": {
+                "result": "I load up some old microfiche articles from decades ago, scanning quickly for headlines about disappearances. It's not long before 'LOCAL TEENS VANISH AFTER BEACH PARTY'.\n\nThere's talk of cover stories and text scrawled in margins. A faded photo shows the sheriff padlocking that old shack on the beach I've seen before.\n\nThis could be worth investigating.",
+                "learn": "SHACK",
+                "next": "root"
+            },
+            "supernatural": {
+                "result": "The Occult shelf smells like mildew and guilt. Two books stand out, in a section marked 'Donations':\n\nMalleus Monstrorum, a donation from HHS, last checked out to an R. Lipschitz. Within are graphical illustrations of monstrous tentacled 'gods' that seem to leap off the page. Oh, this is for a game.\n\nSpeaking of games, I can still hear my daughter scream-laughing over the board game last night: [i]“Cthulhu IS a word, you just hate fun!”[/i] The memory stings.",
+                "next": "root"
+            },
+            "society": {
+                "result": "Dusty linguistics textbooks. Useless—until I flip one open and a cipher key flutters out.\n\nI'm not really big on codes, so I put it back. Maybe someone else could use it. Maybe if I had the patience my daughter always begged me to show...\n\nMaybe I just don't have time right now! But then, excuses are like...",
+                "next": "root"
+            },
+            "sciences": {
+                "result": "Books on rocks from space and water-stained tide charts, among many other things. I skim solstice dates, and see scrawled in the margin— “HIGH TIDE = WEAKEST BARRIER”...\n\nNo idea what that's about. There's no need for breakwater walls out here. Also scribbled beside the article: '6-20-25, high Tide on the SOULstice.' The numbers itch at my brain. If this is a date... That's this year. This month!",
+                "learn": "COMBO",
+                "next": "root"
+            },
+            "history": {
+                "result": "No clues here. Might as well be empty. Just like my promises to “help with her project later.” Pangs of regret. When this is all over, I'll make the time. Like Lydia. I make a note to look for that book in children's fiction later.",
+                "next": "root"
+            }
+        },
+        "computer": {
+            "root": {
+                "prompt": "I've logged in on the library computer system. Select an action:",
+                "options": [
+                    {
+                        "text": "Email Police",
+                        "tooltip": "Request an interview about\nmy missing persons case.",
+                        "ifnot": "APPOINTMENT",
+                        "next": "email_police",
+                        "condition": "EMAIL"
+                    },
+                    {
+                        "text": "FBI Tip Line",
+                        "tooltip": "Upload my evidence anonymously\nfor federal review.",
+                        "ifnot": "FBI",
+                        "next": "fbi_upload",
+                        "condition": "FLYER"
+                    },
+                    {
+                        "text": "ThePier Forum",
+                        "tooltip": "Post flyer & images to rally townsfolk.",
+                        "ifnot": "PUBLIC",
+                        "next": "forum_post",
+                        "condition": "FLYER"
+                    },
+                    {
+                        "text": "Search Internet",
+                        "tooltip": "Scan through old articles and photos.",
+                        "ifnot": "SHACK",
+                        "next": "search_results"
+                    },
+                    {
+                        "text": "View Cameras",
+                        "tooltip": "Log into the Home Camera online portal.",
+                        "ifnot": "ABDUCTOR",
+                        "next": "view_cams"
+                    },
+                    {
+                        "text": "Log Out",
+                        "tooltip": "The screen flickers. A reflection?\nMy face looks... older.",
+                        "next": "close_computer"
+                    }
+                ]
+            },
+            "email_police": {
+                "result": "TO: rook@hfpd.gov ...\n\nI send off my email to the Hatchetfield police department with everything I know so far. The detective replies almost immediately:\n\n'Come in today. ASAP.\nMake sure you aren't followed.\n--Rook'",
+                "learn": "APPOINTMENT",
+                "forget": "EMAIL",
+                "next": "root"
+            },
+            "fbi_upload": {
+                "result": "A confirmation appears: 'Case #KT-118.29 opened. Agents dispatched.'",
+                "learn": "FBI",
+                "next": "root"
+            },
+            "forum_post": {
+                "result": "I upload my pics and plea in a local forum and quickly see reactions. Local protestors are starting to gather even now.",
+                "learn": "PUBLIC",
+                "next": "root"
+            },
+            "search_results": {
+                "result": "An article appears about a '1986 Beach Accident' but scanning the fine print shows this headline to be misleading.\nTown members were abducted by cultists who left similar letters to the one I got. The article also shows info about a related shack on the north beach owned by this same cult.",
+                "learn": "SHACK",
+                "next": "root"
+            },
+            "view_cams": {
+                "result": "I log in to my DVR camera system's website. Last footage: 11:47 PM. Two shadows moving through her room. Two figures leave in a van with a unique logo. She's been gone since last night!",
+                "learn": "ABDUCTOR",
+                "next": "root"
+            },
+            "close_computer": {
+                "result": "I sign out of the computer with plenty of time to spare on my account. The screen flickers and glitches, and returns to the login screen.",
+                "next": null
+            }
+        },
+        "assistant": {
+            "root": {
+                "prompt": "The assistant's nails click against her keyboard.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'\n\nMy hesitation answers for me.\n\n'Thought so.'\n\nI just know I can't wait that long. She offers me a card with the detective's email address on it.",
+                "learn": "EMAIL",
+                "options": [
+                    {
+                        "text": "Leave",
+                        "tooltip": "I guess I need an appointment...",
+                        "newscene": "Transit",
+                        "room": "transit"
+                    }
+                ]
+            }
+        },
+        "assistant2": {
+            "root": {
+                "prompt": "The assistant sips her coffee.\n\n'Missing persons? Detective's booked till Thursday.'\n\n'Unless you have an appointment?'",
+                "options": [
+                    {
+                        "text": "See Detective",
+                        "tooltip": "I do, in fact, have an appointment...",
+                        "newscene": "Detective",
+                        "chain": "detective"
+                    },
+                    {
+                        "text": "Leave",
+                        "tooltip": "Not much else to do here...",
+                        "newscene": "Transit",
+                        "room": "transit"
+                    }
+                ]
+            }
+        },
+        "assistant3": {
+            "root": {
+                "random": 2,
+                "prompt": "The assistant eyes me wearily.\n\n“Detective Rook says you've been deputized.” She sighs. “Look, I’m sorry about your kid. But if you start waving a gun around, I [i][b]will[/b][/i] tase you.”",
+                "prompt2": "The assistant eyes me wearily.\n\n“So, you've been deputized...” She leans in, lowering her voice. “That’s cop-speak for 'we have no leads'.”",
+                "options": [
+                    {
+                        "text": "Detective's Office",
+                        "tooltip": "Revisit Rook's Office...",
+                        "newscene": "Detective",
+                        "room": "detective2"
+                    },
+                    {
+                        "text": "Evidence Room",
+                        "tooltip": "Sneak into the evidence room...",
+                        "condition": "KEY",
+                        "newscene": "Evidence",
+                        "room": "evidence"
+                    },
+                    {
+                        "text": "Leave",
+                        "tooltip": "Not much else to do here...",
+                        "newscene": "Transit",
+                        "room": "transit"
+                    }
+                ]
+            }
+        },
+        "enter-mansion": {
+            "root": {
+                "prompt": "The High Priestess’ voice booms: *‘The Tide comes! Who will feed it?’* Torchlight flickers. One robed figure stumbles forward.",
+                "options": [
+                    {
+                        "text": "Step forward as Bishop",
+                        "tooltip": "The robes and dagger mark me as one of them.",
+                        "conditions_all": ["ROBE","DAGGER"],
+                        "next": "cult_sacrifice_choice"
+                    },
+                    {
+                        "text": "Pull the gun",
+                        "tooltip": "This ends here.",
+                        "condition": "GUN",
+                        "next": "gun_resolution"
+                    },
+                    {
+                        "text": "Blend in",
+                        "tooltip": "I don't know what's going on!",
+                        "next": "hide_dialogue"
+                    },
+                    {
+                        "text": "Signal the crowd",
+                        "tooltip": "Let them handle this mess.",
+                        "condition": "PUBLIC",
+                        "next": "crowd_sourcing"
+                    },
+                    {
+                        "text": "Approach the cultist",
+                        "tooltip": "Demand some answers!",
+                        "next": "daughter_dialogue"
+                    },
+                    {
+                        "text": "Run",
+                        "tooltip": "Try and escape",
+                        "next": "run_dialogue"
+                    }
+                ]
+            },
+            "cult_sacrifice_choice": {
+                "prompt": "The cult kneels. *‘Your will, Bishop.’* My daughter stiffens. The altar thirsts.",
+                "options": [
+                    {
+                        "text": "Sacrifice myself",
+                        "tooltip": "My ‘unworthy’ blood might break the ritual.",
+                        "ifnot": "FBI",
+                        "next": "ending_self_sacrifice"
+                    },
+                    {
+                        "text": "Name the High Priestess",
+                        "tooltip": "Turn their greed against them.",
+                        "ifnot": "FBI",
+                        "next": "ending_coup"
+                    },
+                    {
+                        "text": "Free your daughter",
+                        "tooltip": "Use your authority to disband this.",
+                        "ifnot": "FBI",
+                        "next": "ending_reform"
+                    },
+                    {
+                        "text": "Sacrifice myself",
+                        "tooltip": "My ‘unworthy’ blood might break the ritual.",
+                        "condition": "FBI",
+                        "next": "ending_fbi"
+                    },
+                    {
+                        "text": "Name the High Priest",
+                        "tooltip": "Turn their greed against them.",
+                        "condition": "FBI",
+                        "next": "ending_fbi"
+                    },
+                    {
+                        "text": "Free your daughter",
+                        "tooltip": "Use your authority to disband this.",
+                        "condition": "FBI",
+                        "next": "ending_fbi"
+                    }
+                ]
+            },
+            "gun_resolution": {
+                "prompt": "I pull back the hammer and the gun’s click echoes. Cultists scatter. My daughter flinches—is that fear or hope?",
+                "options": [
+                    {
+                        "text": "Shoot the Priestess",
+                        "tooltip": "Shatter their focus.",
+                        "next": "ending_unimaginable"
+                    },
+                    {
+                        "text": "Shoot the altar",
+                        "tooltip": "Aim carefully...",
+                        "next": "ending_ritual"
+                    },
+                    {
+                        "text": "Shoot wildly",
+                        "tooltip": "Panic takes over.",
+                        "condition": "PUBLIC",
+                        "next": "ending_arrested"
+                    }
+                ]
+            },
+            "daughter_dialogue": {
+                "prompt": "She looks up at you, the robe they placed her in too large for her face or arms. *‘They said you wouldn’t come...’*",
+                "options": [
+                    {
+                        "text": "Shoot it out",
+                        "tooltip": "Actions over words.",
+                        "ifnot": "PUBLIC",
+                        "condition": "GUN",
+                        "next": "gun_escape"
+                    },
+                    {
+                        "text": "Fight it out",
+                        "tooltip": "Actions over words.",
+                        "ifnot": "PUBLIC",
+                        "condition": "DAGGER",
+                        "next": "dagger_escape"
+                    },
+                    {
+                        "text": "Talk it out",
+                        "tooltip": "Words over actions.",
+                        "next": "ending_escape"
+                    }
+                ]
+            },
+            "daughter_dialogue_runaway": {
+                "prompt": "“I came here on my own,” she says. The thought had crossed my mind. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”",
+                "options": [
+                    {
+                        "text": "Beg forgiveness",
+                        "tooltip": "Admit your mistakes.",
+                        "ifnot_all": [
+                            "BULLHORN",
+                            "GUN"
+                        ],
+                        "next": "ending_rescue"
+                    },
+                    {
+                        "text": "Cut her free",
+                        "tooltip": "Actions over words.",
+                        "condition": "DAGGER",
+                        "next": "ending_escape"
+                    },
+                    {
+                        "text": "Lay on the Altar",
+                        "tooltip": "Perhaps it's the only way.",
+                        "next": "ending_betrayal"
+                    }
+                ]
+            },
+            "run_dialogue": {
+                "result": "A small cultist steps forward, and the priestess brandishes a dagger, but I'm already out the door. I hear a voice that could be hers, but the fear has already got me. This was too much. But what comes next, I couldn't imagine. I slip into the night.",
+                "ending": {
+                    "text": "left",
+                    "title": "Abandonment",
+                    "texture": "endgame",
+                    "timbre": "267_Court_of_the_Count"
+                }
+            },
+            "hide_dialogue": {
+                "result": "I try and blend in as best I can. The high priestess takes up the dagger and begins the ritual. When she raises the dagger, her hood slips off. I step forward to try and stop the ritual and notice... The priestess IS my daughter! And it's far too late to do anything now. The sacrifice has been made. The world trembles...",
+                "ending": {
+                    "text": "left",
+                    "title": "Abandonment",
+                    "texture": "endgame",
+                    "timbre": "267_Court_of_the_Count"
+                }
+            },
+            "ending_rescue": {
+                "result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
+                "ending": {
+                    "text": "rescue",
+                    "title": "Congratulations!",
+                    "texture": "daughter",
+                    "timbre": "42_Rise_of_the_Ancients"
+                }
+            },
+            "ending_fbi": {
+                "result": "At that moment, the FBI breaks in and begins mowing down the cultists. Some brandish daggers. Some surrender. My daughter is rescued. But I'm wearing robes I can't seem to get off in time. At least, not before I take a lethal bullet...",
+                "ending": {
+                    "text": "grave",
+                    "title": "Wrong place, wrong time",
+                    "texture": "grave",
+                    "timbre": "42_Rise_of_the_Ancients"
+                }
+            },
+            "abandonment_dialogue": {
+                "result": "She steps forward, voice trembling steel: “If you leave, I’ll have to do it myself. The eternal ones won’t wait.”\n\nMy heart breaks. “You don’t have to—”\n\nShe presses a hand to my chest. “Go. A new world awaits us both.”\n\nI slip into the night. Behind me, her silhouette holds the dagger steady.",
+                "ending": {
+                    "text": "left",
+                    "title": "Abandonment",
+                    "texture": "endgame",
+                    "timbre": "267_Court_of_the_Count"
+                }
+            },
+            "mardar": {
+                "result": "I carve through robed figures like a storm through deadwood.\n\nThe crowd surges behind me, cellphones catching every swing—every spray of blackened blood. Then… her.\n\nMy daughter blinks at me, hollow-eyed. “Do I… know you?”",
+                "ending": {
+                    "text": "arrest",
+                    "title": "Arrested",
+                    "texture": "arrest",
+                    "timbre": "267_Court_of_the_Count"
+                }
+            },
+            "ending_self_sacrifice": {
+                "result": "I step into the circle, heart steady. “Take me instead,” I whisper. “Let them sleep.”\n\nShe nods, eyes bright. “This will stave off the end—give dawn one more chance.”\n\nShe lays her hand on mine, guiding the blade’s hilt. “Thank you. I’ll carry you in every sunrise.”",
+                "ending": {
+                    "text": "sacrifice",
+                    "title": "Self‑Sacrifice",
+                    "texture": "grave",
+                    "timbre": "357_Promontory"
+                }
+            }
+        },
+        "detective": {
+            "root": {
+                "prompt": "The detective's desk is a graveyard of files.\n\nHis left hand bears the ghost of a wedding ring—pale skin where perhaps gold recently rested. A photo slips from a folder: a dark-haired woman, smiling. Standing with him. Well, him from before.\n\nHe snatches it back before I can look too close.\n\n“About your daughter. Where’d you last see her?”",
+                "options": [
+                    {
+                        "text": "Where do I start...",
+                        "tooltip": "Honest? Truthful? Why wouldn't I be? She's my daughter!",
+                        "next": "be_open"
+                    }
+                ]
+            },
+            "be_open": {
+                "prompt": "I tell the detective what I know...",
+                "options": [
+                    {
+                        "text": "The Basics",
+                        "tooltip": "Tell him about last night's argument.",
+                        "ifnot": "A",
+                        "next": "show_note"
+                    },
+                    {
+                        "text": "Video Footage",
+                        "tooltip": "Give him the security camera details.",
+                        "ifnot": "B",
+                        "next": "video_footage",
+                        "condition": "ABDUCTOR"
+                    },
+                    {
+                        "text": "The Shack",
+                        "tooltip": "Tell him about the shack I found.",
+                        "ifnot": "C",
+                        "next": "tell_shack",
+                        "condition": "SHACK"
+                    },
+                    {
+                        "text": "The Mansion",
+                        "tooltip": "Tell him about the mansion I discovered.",
+                        "ifnot": "D",
+                        "next": "tell_mansion",
+                        "condition": "MANSION"
+                    },
+                    {
+                        "text": "The Flyer",
+                        "tooltip": "Show him the cultist's flyer.",
+                        "ifnot": "E",
+                        "next": "show_flyer",
+                        "condition": "FLYER"
+                    },
+                    {
+                        "text": "That's all",
+                        "tooltip": "I play my cards close...",
+                        "condition": "A",
+                        "ifnot": "B",
+                        "next": "detective_response"
+                    },
+                    {
+                        "text": "That's all",
+                        "tooltip": "Maybe I shouldn't say too much...",
+                        "condition": "B",
+                        "ifnot_all": [
+                            "C",
+                            "D",
+                            "E"
+                        ],
+                        "next": "detective_response2"
+                    },
+                    {
+                        "text": "That's all",
+                        "tooltip": "I really can't think of anything else",
+                        "conditions_all": [
+                            "A",
+                            "B",
+                            "C",
+                            "D",
+                            "E"
+                        ],
+                        "next": "detective_response_final"
+                    }
+                ]
+            },
+            "show_note": {
+                "result": "I tell him we played Scrabble until 9, then went to our rooms.\n\n[i]“So. She just… went to her room?”[/i]\n“Yeah. I—I mean, we argued. She tried to play ‘Cthulhu’ as a word. I told her it was a proper noun. She said I always ‘rig the rules’—”\n[i]“Rig the rules, huh? You a sore winner?”[/i]\n\n“It’s a game. She’s a [i]kid[/i]. They get mad.”\n[i]“And the note?”[/i]\n\n“Some sicko’s idea of a—”\n[i]“Third one this month. All young women. All notes like this. And I don’t like coincidences.”[/i]",
+                "learn": "A",
+                "next": "be_open"
+            },
+            "video_footage": {
+                "result": "I give him my login for the security cam site. He logs in and pans through the video for a bit. Leaning in, eyes narrowing. His voice is too casual.\n\n“You found this fast. Real fast. Like you knew what to look for.”\nI don’t answer.\n“Funny thing. Most parents, they’re crying. Screaming. Begging. You?”\nHe shrugs.\n“You’re helpful. Almost like you’ve done this before.”\n\nHe's blaming ME?! Why would-\n“I'm gonna follow this lead. If you know anything else, now's the time to say it.”",
+                "learn": "B",
+                "next": "be_open"
+            },
+            "tell_shack": {
+                "result": "I tell him about the shack on the beach. Rook’s pen pauses mid-note.\n\n“You found that place alone? Christ. We’ve had it under surveillance for months.”\n\nHe leans in, close enough that you catch the stale nicotine on his breath.\n\n“Those chains on the wall aren’t for dogs, you know. Tell me you didn’t touch anything.”\n\nI mean...\n\n“Yeah. That’s what I thought.”",
+                "learn": "C",
+                "next": "be_open"
+            },
+            "tell_mansion": {
+                "result": "Rook exhales through his nose like a bull about to charge. “The Waylon estate.” He drags a hand down his face. “Of course it is. Rich folks ‘donate’ to the ‘society’ for ‘tax reasons.’” Every word drips with air-quotes. “They swear it’s just to maintain the grounds. Pay no attention to the bloodstains on the gazebo.”\n\nHe stabs a finger at me.\n“You’re NOT going in there alone.”\n\nI don’t answer. The silence stretches. Rook’s eyes narrow. Then, with the grim certainty of a man who’s seen this movie before:\n“You’re gonna go alone, aren’t you?”",
+                "learn": "D",
+                "next": "be_open"
+            },
+            "show_flyer": {
+                "result": "Rook stares at the dates, times, and GPS coordinates on the cult’s flyer.\n“Well, heck.” He taps a few keys, pulls up something on his computer. “That’s their whole damn recruitment pipeline.”\nHe grabs the landline, punches in some numbers he must have memorized.\n“Yeah, it’s Rook.” A pause. “Class III escalation. Waylon house.” Another pause. His eyes flick to me. “Yeah, some civilian just did our jobs for us.”\nA voice crackles through the receiver—too loud, too sharp. Rook winces, responds sheepishly, and hangs up.\n“Guy’s got a pair of lungs on him,” he mutters, rubbing his temple. “Congrats. You just pissed off the FBI.”",
+                "learn": "E",
+                "next": "be_open"
+            },
+            "detective_response": {
+                "result": "Rook leans back, the chair protesting with a sound like a dying gull. His fingers tap the case file - once, twice - before he speaks.\n\n“Funny thing about cults,” he says, voice sandpapered by one too many cigarettes and things he won't name.\n\n“They always return to the same rotten places. There's a shack on North Shore beach - the kind that looks abandoned unless you know what to look for. Tide comes in, the chains start rattling. You didn't hear that from me.”",
+                "learn": "SHACK",
+                "next": "detective_response2"
+            },
+            "detective_response2": {
+                "result": "Rook rubs at his left wrist absently, where a faded tattoo peeks from under his cuff.\n\n“Look. I don't condone taking this into your own hands, but... I know exactly how you feel. And if you're that determined,” he continues, “there's an island west of here. Cliffside mansion with too many windows and not enough lights outside. Local fishermen say it's empty at high tide.”\n\nHe meets your eyes maybe for the first time.\n\n“Local fishermen lie.”",
+                "learn": "MANSION",
+                "next": "offer_help"
+            },
+            "detective_response_final": {
+                "result": "Rook stares at your notes, then slowly pushes his coffee away like it's personally offended him. The silence is uncomfortable. He finally sighs.\n\n“Let me get this straight,” he says, each word measured. “You found video of their van, hit up their little beachside murder shack, visited their death mansion, and even nabbed some official letterhead... all before thinking to maybe call the professionals? Well, the FBI is scrambling as we speak. And you know what they told me? ‘Stand down, Rook. This is bigger than you.’\nSo here’s the question,” he says. “You gonna stand down too?”",
+                "learn": "FBI",
+                "next": "offer_help"
+            },
+            "offer_help": {
+                "prompt": "He sighs, stands up, and shows me around the station.\n\n“Look, you want in—come by anytime. Here. I’m deputizing you as an Auxiliary Officer. That means you’ve got the access, and the responsibility—but none of the arrest powers. You're not here to play cowboy. You’re here to assist, observe, and stay out of the way unless called upon. Understood?\nStation’s open to you now. You’ll have free reign. Hell, I find the place comforting. Just—be careful out there.”",
+                "options": [
+                    {
+                        "text": "Thank him",
+                        "tooltip": "I appreciate the reprieve.",
+                        "next": "end"
+                    }
+                ]
+            },
+            "end": {
+                "result": "I nod. For the first time since the note arrived, I feel a sliver of hope. The detective’s office feels less like an interrogation room and more like an ally’s living room.",
+                "forget": "APPOINTMENT",
+                "learn": "POLICE",
+                "next": null
+            }
+        },
+        "daughter": {
+            "root": {
+                "prompt": "She sits in shadows, arms crossed, uncertainty in her eyes.",
+                "options": [
+                    {
+                        "text": "Stop the cult",
+                        "tooltip": "Reach out gently.",
+                        "next": "rescue"
+                    },
+                    {
+                        "text": "Don't save her",
+                        "tooltip": "Step back and let her choose.",
+                        "next": "run"
+                    },
+                    {
+                        "text": "Kill the cult",
+                        "tooltip": "Burn them all!",
+                        "next": "mardar"
+                    },
+                    {
+                        "text": "Sacrifice yourself",
+                        "tooltip": "Offer myself instead.",
+                        "next": "sacrifice"
+                    },
+                    {
+                        "text": "Go CrAzY",
+                        "tooltip": "Embrace the madness.",
+                        "next": "crazy"
+                    }
+                ]
+            },
+            "rescue": {
+                "result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
+                "ending": {
+                    "text": "rescue",
+                    "title": "Congratulations!",
+                    "texture": "daughter",
+                    "timbre": "42_Rise_of_the_Ancients"
+                }
+            },
+            "crazy": {
+                "result": "[SANITY REDUCED]",
+                "ending": {
+                    "text": "sanity",
+                    "title": "Insanity",
+                    "texture": "padded",
+                    "timbre": "67_Asylum"
+                }
+            },
+            "cult_master": {
+                "prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”"
+            },
+            "run": {
+                "result": "She steps forward, voice trembling steel: “If you leave, I’ll have to do it myself. The eternal ones won’t wait.”\n\nMy heart breaks. “You don’t have to—”\n\nShe presses a hand to my chest. “Go. A new world awaits us both.”\n\nI slip into the night. Behind me, her silhouette holds the dagger steady.",
+                "ending": {
+                    "text": "left",
+                    "title": "Abandonment",
+                    "texture": "endgame",
+                    "timbre": "267_Court_of_the_Count"
+                }
+            },
+            "mardar": {
+                "result": "I carve through robed figures like a storm through deadwood.\n\nThe crowd surges behind me, cellphones catching every swing—every spray of blackened blood. Then… her.\n\nMy daughter blinks at me, hollow-eyed. “Do I… know you?”",
+                "ending": {
+                    "text": "arrest",
+                    "title": "Arrested",
+                    "texture": "arrest",
+                    "timbre": "267_Court_of_the_Count"
+                }
+            },
+            "sacrifice": {
+                "result": "I step into the circle, heart steady. “Take me instead,” I whisper. “Let them sleep.”\n\nShe nods, eyes bright. “This will stave off the end—give dawn one more chance.”\n\nShe lays her hand on mine, guiding the blade’s hilt. “Thank you. I’ll carry you in every sunrise.”",
+                "ending": {
+                    "text": "grave",
+                    "title": "Self‑Sacrifice",
+                    "texture": "grave",
+                    "timbre": "357_Promontory"
+                }
+            }
+        },
+        "daughter2": {
+            "root": {
+                "prompt": "I rush into the dim cell where my daughter sits on a cold stone bench. She looks up—eyes red, arms crossed.",
+                "options": [
+                    {
+                        "text": "I’m so sorry I took so long",
+                        "tooltip": "Apologize and explain.",
+                        "next": "apology"
+                    },
+                    {
+                        "text": "Come with me now",
+                        "tooltip": "Insist she leave immediately.",
+                        "next": "insist"
+                    }
+                ]
+            },
+            "apology": {
+                "result": "Her lip trembles. “You promised we’d finish Scrabble. You left me alone. I was scared.” She pulls the torn tile from her pocket. “I kept this safe. But it’s not enough.”",
+                "next": "ask_fight"
+            },
+            "ask_fight": {
+                "prompt": "She glares. “Don’t change the subject. Last night you chose work over me.”",
+                "options": [
+                    {
+                        "text": "I was protecting you",
+                        "tooltip": "Explain my duty.",
+                        "next": "protecting"
+                    },
+                    {
+                        "text": "Can we just go?",
+                        "tooltip": "Push to leave now.",
+                        "next": "insist"
+                    }
+                ]
+            },
+            "protecting": {
+                "result": "She softens briefly. “Protecting? I found this note…” She shows the cult’s symbol carved in wood. “They said you’d come back for me. But what if they want you?”",
+                "next": "reveal_cult"
+            },
+            "insist": {
+                "result": "She stands, but shakes her head. “No. I don’t trust you. Not yet.”",
+                "next": "daughter_decides"
+            },
+            "reveal_cult": {
+                "result": "Her eyes go distant. “They chose me. I… I’m one of them now.” Her voice echoes strangely. “You should join me—or be next.”",
+                "next": "daughter_decides"
+            },
+            "daughter_decides": {
+                "prompt": "She steps away from the bars. Will she come with me, or stay as the cult’s heir?",
+                "options": [
+                    {
+                        "text": "Take her hand",
+                        "tooltip": "Reach out emotionally.",
+                        "next": "rescue_attempt"
+                    },
+                    {
+                        "text": "Let her decide",
+                        "tooltip": "Give her space.",
+                        "next": "end_alone"
+                    }
+                ]
+            },
+            "rescue_attempt": {
+                "result": "She hesitates, then squeezes my hand. The cell door clanks open. “Fine,” she whispers. “But if you fail…”",
+                "next": "end_escape"
+            },
+            "end_alone": {
+                "result": "She watches me go, tears glistening. The door stays shut. I walk away with a broken heart—and the chilling knowledge she leads the cult.",
+                "next": null
+            },
+            "end_escape": {
+                "result": "Together we slip into the night. Behind us, the cult’s chanting fades—and we know they’ll come for both of us.",
+                "next": null
+            }
+        },
+        "police-drawer": {
+            "root": {
+                "prompt": "The drawer squeaks as I pull it open, revealing a small megaphone.",
+                "options": [
+                    {
+                        "text": "Take the megaphone",
+                        "tooltip": "This could potentially be useful.",
+                        "next": "take_megaphone"
+                    },
+                    {
+                        "text": "Leave it be",
+                        "tooltip": "Too risky. Let's leave it where it is.",
+                        "next": "leave_megaphone"
+                    }
+                ]
+            },
+            "take_megaphone": {
+                "result": "A quick glance toward the door, and into the bag it goes.",
+                "give": "BULLHORN",
+                "next": null
+            },
+            "leave_megaphone": {
+                "result": "I carefully close the drawer again.",
+                "next": null
+            }
+        },
+        "police-papers": {
+            "root": {
+                "prompt": "Rifling through paperwork, my fingers brush cold metal. A key marked 'Evidence' hidden beneath incident reports.",
+                "options": [
+                    {
+                        "text": "Take the key",
+                        "tooltip": "This will probably get me into the evidence room...",
+                        "next": "take_key"
+                    },
+                    {
+                        "text": "Leave it be",
+                        "tooltip": "Too risky. Let's leave it where it is.",
+                        "next": "leave_key"
+                    }
+                ]
+            },
+            "take_key": {
+                "result": "The teeth look oddly ceremonial.",
+                "give": "KEY",
+                "next": null
+            },
+            "leave_key": {
+                "result": "I put the papers back on top of the key, where they belong.",
+                "next": null
+            }
+        },
+        "get-robe": {
+            "root": {
+                "prompt": "The drawer reveals a blood-red robe with gold trim, nestled between mothballs. Why did my dad own this ceremonial-looking thing? The fabric smells of camphor and something earthier, but it might prove useful.",
+                "options": [
+                    {
+                        "text": "Put on the robes",
+                        "tooltip": "They seem pretty stylish...",
+                        "next": "wear_robes"
+                    },
+                    {
+                        "text": "Leave them be",
+                        "tooltip": "Let's leave it where it is.",
+                        "next": "leave_robes"
+                    }
+                ]
+            },
+            "wear_robes": {
+                "result": "They seems to fit nicely. In fact, I can't seem to take them off. Well, that shouldn't matter. They're cozy enough.",
+                "give": "ROBE",
+                "next": null
+            },
+            "leave_robes": {
+                "result": "I fold the robes and put them back in the drawer, where I found them.",
+                "next": null
+            }
+        },
+        "evidence-drawers": {
+            "root": {
+                "prompt": "Maybe I shouldn't be digging through drawers, looting through evidence bags, but I don't know what might come in handy.",
+                "options": [
+                    {
+                        "text": "Take the firearm",
+                        "tooltip": "Better to have it and not need it...",
+                        "next": "take_gun"
+                    },
+                    {
+                        "text": "Leave it be",
+                        "tooltip": "No way. Is this a felony?",
+                        "next": "leave_gun"
+                    }
+                ]
+            },
+            "take_gun": {
+                "result": "The revolver's grip sticks—sweat or old blood? Six chambers. One empty. The serial number's been filed away. I conceal the weapon on my person.",
+                "give": "GUN",
+                "next": null
+            },
+            "leave_gun": {
+                "result": "I carefully close the evidence drawer, leaving the chain of evidence intact.",
+                "next": null
+            }
+        }
+    },
+    "endings": {
+        "100": "I linger in shadows, trading loyalty for time. She is extracted with surgical precision. The others remain unaware until long after I’m gone.",
+        "101": "I’m the whisper in the wires. The building catches fire from within. She meets me at the rendezvous, wrapped in smoke and silence.",
+        "102": "They call it an inside job. I leave no fingerprints. She thinks I’m a hero. I don’t correct her.",
+        "110": "I offer no allegiance, only calculated mercy. She is my only anchor. The cult is wounded but not destroyed.",
+        "111": "They ask what side I were on. I answer with a name: hers. In the end, that’s all that mattered.",
+        "112": "Her footsteps echo behind me. I didn’t stop them, not really. But I did enough. I hope that’s true.",
+        "120": "I stand in the spotlight, ash coating my shoulders. She walks beside me, stunned but alive. The reporters ask who I am. I lie.",
+        "121": "I turned the world’s attention on them. The cult breaks, screaming. She clings to me as the cameras flash.",
+        "122": "The flood begins with a smile. Mine. Her hand slips into mine like it was always meant to. The crowd parts for us both.",
+        "200": "I silence the guards and whisper old rites. The ritual proceeds. She walks willingly—eyes glazed, heart emptied.",
+        "201": "I hide in plain sight, rising through their ranks. The ritual goes smoothly. She thanks me. I nod.",
+        "202": "I bow with the others as the tide swallows the moon. She is reborn in salt and shadow. I accept the crown.",
+        "210": "The doctrine is mine now. I rewrite it to include her. The others chant. She just watches me.",
+        "211": "I stand above the altar, preaching futures no one wants. The crowd applauds. She weeps, unseen.",
+        "212": "I offer her to The Tide. The storm begins. The crowd chants my name as the world begins to tremble.",
+        "220": "The sky splits. The water answers. We are both quickly consumed—and satisfied.",
+        "221": "She laughs beside me, radiant and awful. Together, we welcome the end.",
+        "222": "The old gods rise, and she rises with them. I kneel. It is done.",
+        "sanity": "Reality fractures into static—\na television left screaming in an empty room.\n\nI blink up at a fluorescent sun, its sterile light peeling back the delusion: no missing daughter, no tide cult, just these four stained walls.\nThe horror isn’t that it wasn’t real. The horror is that I clawed my way back anyway.\n\nThe attic hatch still yawns above me. The abduction letter still whispers. Sanity is the cruelest prison. I close my eyes. Let the tide pull me under again.",
+        "left": "I walk away down the salt‑slick road—\na lone siren wailing in the distance.\n\nHer silhouette lingers in memory’s corner: \nrefusing my hand, choosing shadows over safety.\n\nThe ocean’s whisper follows me:\na promise broken, a heart left behind.\n\nSome doors never close; some echoes never fade.\n\nWhen the eternal nightmares descend, I am not among the first to be taken...",
+        "arrest": "The riot cops tackle me before I can answer. Cuffs bite my wrists. The detective snarls, “You knew. The whole damn time.”\n\nCameras flash. The world watches. Nobody wins.",
+        "sacrifice": "Darkness blooms behind her smile—\na crown of tide‑etched bone.\n\nShe steps through the cell bars,\npulling me into the cult’s embrace.\n\nMy final breath tastes of brine and regret.\n\nHer laughter drifts back to me,\ncalling me deeper into the endless tide.",
+        "rescue": "We slip beyond the cult’s reach—\na pair of footprints side by side.\n\nHer hand in mine feels warm and real,\na promise kept beneath a rising moon.\n\nBehind us, the mansion lies silent.\n\nAhead, the evening hums with fresh possibility.",
+        "grave": "The world fades away from me, but at least I know that she is safe. Even if I wasn't able to save her myself.\n\nShe's old enough to take care of herself now, and she knows I came to try and save her. That's what matters, in the end. She'll do great things. And maybe she'll think fondly of me.",
+        "000": "I vanish beneath the fog, unheard and unseen. Her small hand grips mine tightly. The Tide never even knew I was there.",
+        "001": "I ghost through the facility, rescuing her while the ritual crumbles behind me. No one believes what I saw. I disappear before anyone can ask.",
+        "002": "The sirens never sound. The cult falls, but so does something inside me. I walk out with her, white-eyed and trembling, the salt still clinging to her skin.",
+        "010": "I bend with the current but never break. She survives. We are both changed, but the world stays dry—for now.",
+        "011": "Through whispered warnings and double lives, I lead her out. The cult fractures in my wake. I fade back into the city like a rumor.",
+        "012": "Cameras catch my face. News anchors say my name. But she’s safe, and that’s enough. The rest is noise.",
+        "020": "I speak their language, then rewrite it. The cult thinks I'm one of their own—until it’s too late. I walk free, carrying only her.",
+        "021": "I shout above the waves, revealing everything. The building collapses. In the dust and panic, only I walk out with the girl.",
+        "022": "The sky opens, and the ritual completes. She is returned to me—not rescued, but transformed. I embrace her anyway. She smiles with too many teeth."
+    }
 }

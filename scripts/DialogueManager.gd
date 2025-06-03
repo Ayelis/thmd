@@ -137,10 +137,15 @@ func _process_block(block: Dictionary) -> void:
 					continue
 			if opt.has("conditions_all"):
 				var all_conditions_met = true
-				for info_id in opt.conditions_all:
-					if not GameManager.knows_info(GameManager.InfoIDs[info_id]):
-						all_conditions_met = false
-						break
+				for cond_id in opt.conditions_all:
+					if typeof(cond_id)==TYPE_STRING and GameManager.InfoIDs.has(cond_id):
+						if not GameManager.knows_info(GameManager.InfoIDs[cond_id]):
+							all_conditions_met = false
+							break
+					elif typeof(cond_id)==TYPE_STRING and GameManager.ItemIDs.has(cond_id):
+						if not GameManager.has_item(GameManager.ItemIDs[cond_id]):
+							all_conditions_met = false
+							break
 				if not all_conditions_met:
 					continue
 
@@ -152,6 +157,7 @@ func _process_block(block: Dictionary) -> void:
 			btn.text = opt.text
 			btn.tooltip_text = opt.get("tooltip", "")
 			btn.pressed.connect(func(): _on_option(opt))
+			btn.alignment = HORIZONTAL_ALIGNMENT_LEFT #Doesn't work!! D:<
 			options_container.add_child(btn)
 		options_container.show()
 		return

@@ -3,6 +3,8 @@ extends TextureRect
 var this_room = "Beach"
 var here_before
 
+@onready var bark = $Dog/Bark
+
 func _ready():
 	$CloseBird.pressed.connect(_on_birds_pressed)
 	$GroundBirds.pressed.connect(_on_birds_pressed)
@@ -45,6 +47,7 @@ func _on_dog_pressed():
 	GameManager.restore_sanity()
 	GameManager.learn_info(GameManager.InfoIDs.DOGGO)
 	GameManager.display_dialog(GameManager.events["pet-dog"])
+	bark.play()
 func _on_shack_pressed():
 	GameManager.display_dialog(GameManager.events["shack"])
 	$Shack.hide()

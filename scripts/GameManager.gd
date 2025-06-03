@@ -8,7 +8,7 @@ extends Node
 var morality := 0
 var tact := 0
 var ideology := 0
-var baseSanity := 5
+var baseSanity := 4
 var sanity := baseSanity
 var left_home := false
 

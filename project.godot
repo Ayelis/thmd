@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="They Have My Daughter"
-config/version="0.8"
+config/description="When my daughter vanishes, I plunge into a decaying coastal island town that feels like it's rotting from the inside, with codes, cults, and half-remembered whispers. I search rooms, follow signs, decode clues, and try to hold on to the truth while facing impossible choices — each step drawing me deeper into something ancient, and deeply personal."
+config/version="1"
 run/main_scene="uid://by043omwqjgg1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://kpm03imjcny1"
 config/icon="uid://c78x2govd5r7f"
 
 [autoload]

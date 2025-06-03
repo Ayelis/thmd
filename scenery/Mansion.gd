@@ -10,11 +10,25 @@ func _ready():
 func _on_room_changed(room_name: String):
 	# Show FBI or Police or Public or Cultist or Nothing
 	if(room_name == this_room):
+		var cult = get_parent().get_node("Mansion")
 		if(!GameManager.inventory[GameManager.ItemIDs.FLYER]):
 			GameManager.obtain_item(GameManager.ItemIDs.FLYER)
 			GameManager.display_dialog(GameManager.events["mansion"])
+		elif(GameManager.knows_info(GameManager.InfoIDs.FBI)):
+			cult.texture = load("res://assets/Scenes/5a mansiond.jpg")
+			if !cult.get_node("Tunnel").is_connected("pressed", cult._on_tunnel_pressed):
+				cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)
+				cult.get_node("Tunnels").pressed.connect(cult._on_tunnel_pressed)
+			GameManager.display_dialog(GameManager.events["fbi"])
+			cult.get_node("Cultist").hide()
+		elif(GameManager.knows_info(GameManager.InfoIDs.PUBLIC)):
+			cult.texture = load("res://assets/Scenes/5a mansionc.jpg")
+			if !cult.get_node("Tunnel").is_connected("pressed", cult._on_tunnel_pressed):
+				cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)
+				cult.get_node("Tunnels").pressed.connect(cult._on_tunnel_pressed)
+			GameManager.display_dialog(GameManager.events["public"])
+			cult.get_node("Cultist").hide()
 		else:
-			var cult = get_parent().get_node("Mansion")
 			cult.texture = load("res://assets/Scenes/5a mansionb.jpg")
 			if !cult.get_node("Tunnel").is_connected("pressed", cult._on_tunnel_pressed):
 				cult.get_node("Tunnel").pressed.connect(cult._on_tunnel_pressed)

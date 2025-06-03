@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c6cp1fno8pcy3"]
+[gd_scene load_steps=60 format=3 uid="uid://c6cp1fno8pcy3"]
 
 [ext_resource type="Script" uid="uid://d3fh1j87vlq0p" path="res://Canvas.gd" id="1_w250u"]
 [ext_resource type="Script" uid="uid://dfvt84jsqf1i6" path="res://scripts/UI.gd" id="2_elkpi"]
@@ -42,6 +42,7 @@
 [ext_resource type="Script" uid="uid://dsqmf4rjlumov" path="res://scenery/Shack.gd" id="18_o6tbt"]
 [ext_resource type="Texture2D" uid="uid://dpr8ohoste50v" path="res://assets/UI/Square-Dark-Hover/Sound-3@4x.png" id="19_w2501"]
 [ext_resource type="Texture2D" uid="uid://c07ry08ve3xd5" path="res://assets/UI/Square-Dark-Default/Star@4x.png" id="20_jsoai"]
+[ext_resource type="AudioStream" uid="uid://bltif8ompcxos" path="res://assets/audio/dog.mp3" id="20_pnh27"]
 [ext_resource type="Script" uid="uid://dwvl3vbmqwx3k" path="res://scenery/Mansion.gd" id="20_v5dxo"]
 [ext_resource type="Texture2D" uid="uid://t0yx7f7nsa4w" path="res://assets/UI/Square-Dark-Hover/Star@4x.png" id="21_bisgb"]
 [ext_resource type="Script" uid="uid://b1w3hmrykfrfj" path="res://scenery/Rotunda.gd" id="22_7vltt"]
@@ -512,6 +513,10 @@ offset_bottom = 448.0
 focus_mode = 0
 flat = true
 
+[node name="Bark" type="AudioStreamPlayer" parent="CanvasLayer/UI/Rooms/Beach/Dog"]
+stream = ExtResource("20_pnh27")
+bus = &"SFX"
+
 [node name="Ocean" type="Button" parent="CanvasLayer/UI/Rooms/Beach"]
 layout_mode = 0
 offset_top = 282.0
@@ -938,53 +943,62 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("31_v5dxo")
 
-[node name="Panel" type="TextureRect" parent="CanvasLayer/Dialogue"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Dialogue"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -174.0
+offset_left = -180.0
 offset_top = -266.0
-offset_right = 532.0
-offset_bottom = 770.0
+offset_right = 181.0
+offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+
+[node name="Texture" type="TextureRect" parent="CanvasLayer/Dialogue/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("32_dyvha")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="Text" type="RichTextLabel" parent="CanvasLayer/Dialogue/Panel"]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 64.0
-offset_right = 353.0
-offset_bottom = 462.0
-scale = Vector2(2, 2)
+layout_mode = 1
+offset_left = 20.0
+offset_top = 33.0
+offset_right = 349.0
+offset_bottom = 434.0
 bbcode_enabled = true
+text = "I wake up at home. The silence is the first thing that feels wrong. No breakfast sounds. No cartoons. No laughter. Just the groan of the water heater and the hum of the refrigerator.
+
+'Hey, kiddo?'
+
+No answer. Down the hall her door sits open, revealing an unmade bed and an untouched backpack. The house is too still."
 
 [node name="Options" type="VBoxContainer" parent="CanvasLayer/Dialogue/Panel"]
-visible = false
 layout_mode = 0
-offset_left = 50.0
-offset_top = 360.0
-offset_right = 203.0
-offset_bottom = 566.0
-scale = Vector2(2.88, 3)
+offset_left = 40.0
+offset_top = 213.0
+offset_right = 236.0
+offset_bottom = 487.0
+scale = Vector2(1, 1.042)
 alignment = 2
 
 [node name="Continue" type="TextureButton" parent="CanvasLayer/Dialogue/Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -210.0
-offset_top = -184.0
-offset_right = -70.0
-offset_bottom = -56.0
+offset_left = -86.0
+offset_top = -83.0
+offset_right = -23.0
+offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("32_v5dxo")
@@ -999,10 +1013,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -210.0
-offset_top = -184.0
-offset_right = -70.0
-offset_bottom = -56.0
+offset_left = -86.0
+offset_top = -83.0
+offset_right = -23.0
+offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("32_v5dxo")
@@ -1075,7 +1089,6 @@ layout_mode = 1
 script = ExtResource("48_pnh27")
 
 [node name="Info" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -1120,9 +1133,9 @@ stretch_mode = 0
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Info/Panel"]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 64.0
+offset_top = 54.0
 offset_right = 352.0
-offset_bottom = 552.0
+offset_bottom = 557.0
 horizontal_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Info/Panel/ScrollContainer"]
