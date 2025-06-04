@@ -33,7 +33,7 @@ func _on_room_changed(room_name: String):
 	await get_tree().process_frame
 	var track = "res://assets/audio/"+GameManager.rooms[room_name].music+".ogg"
 	AudioManager.play_music(load(track))
-	print("Playing "+track)
+	#print("Playing "+track)
 
 func resolve_text_reference(ref: String) -> String:
 	var path = ref.split(".")

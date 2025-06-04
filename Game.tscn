@@ -1089,6 +1089,7 @@ layout_mode = 1
 script = ExtResource("48_pnh27")
 
 [node name="Info" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

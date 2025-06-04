@@ -19,6 +19,25 @@ var current_topic = ""
 var current_node = ""
 var current_callback = ""
 var _post_result_next: String = ""
+var _pending_ending: Dictionary = {}
+
+func _on_continue_ending() -> void:
+	if _pending_ending.is_empty():
+		return
+	
+	var e = _pending_ending
+	_pending_ending = {}
+	
+	# Trigger the actual ending
+	GameManager.ending(
+		e.text, 
+		e.title if e.has("title") else "", 
+		e.texture, 
+		e.timbre if e.has("timbre") else ""
+	)
+	
+	# Clean up
+	_on_exit()
 
 func load_dialogs(json:Dictionary) -> void:
 	dialogs_data = json.get("dialogs", {})
@@ -106,10 +125,22 @@ func _process_block(block: Dictionary) -> void:
 			_post_result_next = block.get("next")
 			continue_button.show()
 			return
+#		elif block.has("ending"):
+#			emit_signal("line_ready", block.result)  # Make sure text shows first
+#			await get_tree().create_timer(0.1).timeout
+#			await get_tree().process_frame  
+#			var e = block.ending
+#			GameManager.ending(e.text, e.title if e.has("title") else "", e.texture, e.timbre if e.has("timbre") else "")
+#			finish_prompt = true
+#			return  # Skip further processing
 		elif block.has("ending"):
-			var e = block.ending
-			GameManager.ending(e.text, e.title if e.has("title") else "", e.texture, e.timbre if e.has("timbre") else "")
-			finish_prompt = true
+			emit_signal("line_ready", block.result)
+			continue_button.show()
+			exit_button.hide()
+			_pending_ending = block.ending
+			if not continue_button.pressed.is_connected(_on_continue_ending):
+				continue_button.pressed.connect(_on_continue_ending, CONNECT_ONE_SHOT)
+			return  # Skip further processing
 		else:
 			exit_button.show()
 			finish_prompt = true
@@ -197,7 +228,7 @@ func _on_continue() -> void:
 
 func _on_exit() -> void:
 	continue_button.hide()
-	exit_button.show()
+	exit_button.hide()
 	dialogue_node.hide()
 	GameManager.emit_signal("dialogue_closed")
 	_finish()

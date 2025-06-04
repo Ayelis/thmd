@@ -432,10 +432,10 @@
         },
         "enter-mansion": {
             "root": {
-                "prompt": "The High Priestess’ voice booms: *‘The Tide comes! Who will feed it?’* Torchlight flickers. One robed figure stumbles forward.",
+                "prompt": "The High Priestess’ voice booms: ‘The Tide comes! Who will feed it?’ Torchlight flickers. One robed figure stumbles forward.",
                 "options": [
                     {
-                        "text": "Step forward as Bishop",
+                        "text": "Step forward",
                         "tooltip": "The robes and dagger mark me as one of them.",
                         "conditions_all": ["ROBE","DAGGER"],
                         "next": "cult_sacrifice_choice"
@@ -458,7 +458,7 @@
                         "next": "crowd_sourcing"
                     },
                     {
-                        "text": "Approach the cultist",
+                        "text": "Approach the volunteer",
                         "tooltip": "Demand some answers!",
                         "next": "daughter_dialogue"
                     },
@@ -470,7 +470,11 @@
                 ]
             },
             "cult_sacrifice_choice": {
-                "prompt": "The cult kneels. *‘Your will, Bishop.’* My daughter stiffens. The altar thirsts.",
+                "result": "The cult kneels. ‘Your will, Bishop.’ The sacrifice stiffens. The altar thirsts. I don't know where she is. I don't know how to get them to tell me. But they seem to need the blood of the innocent to complete their ritual... And I know how I can sabotage it.",
+                "next": "ending_self_sacrifice"
+            },
+            "cult_sacrifice_choicex": {
+                "prompt": "The cult kneels. ‘Your will, Bishop.’ The sacrifice stiffens. The altar thirsts.",
                 "options": [
                     {
                         "text": "Sacrifice myself",
@@ -511,7 +515,11 @@
                 ]
             },
             "gun_resolution": {
-                "prompt": "I pull back the hammer and the gun’s click echoes. Cultists scatter. My daughter flinches—is that fear or hope?",
+                "result": "I pull back the hammer and the gun’s click echoes. Cultists scatter. I start firing wildly into the crowd.",
+                "next": "ending_arrested"
+            },
+            "gun_resolutionx": {
+                "prompt": "I pull back the hammer and the gun’s click echoes. Cultists scatter. The sacrifice flinches—is that fear or hope?",
                 "options": [
                     {
                         "text": "Shoot the Priestess",
@@ -532,7 +540,11 @@
                 ]
             },
             "daughter_dialogue": {
-                "prompt": "She looks up at you, the robe they placed her in too large for her face or arms. *‘They said you wouldn’t come...’*",
+                "result": "The girl looks up at you, the robe they placed her in too large for her face or arms. ‘They said you wouldn’t come...’ It's your daughter's voice. You've found her! Maybe you can still sneak out of this mess without too many of them noticing.",
+                "next": "ending_escape"
+            },
+            "daughter_dialoguex": {
+                "prompt": "The girl looks up at you, the robe they placed her in too large for her face or arms. ‘They said you wouldn’t come...’ It's your daughter's voice. You've found her!",
                 "options": [
                     {
                         "text": "Shoot it out",
@@ -592,14 +604,14 @@
             "hide_dialogue": {
                 "result": "I try and blend in as best I can. The high priestess takes up the dagger and begins the ritual. When she raises the dagger, her hood slips off. I step forward to try and stop the ritual and notice... The priestess IS my daughter! And it's far too late to do anything now. The sacrifice has been made. The world trembles...",
                 "ending": {
-                    "text": "left",
-                    "title": "Abandonment",
+                    "text": "lost",
+                    "title": "Bewilderment",
                     "texture": "endgame",
                     "timbre": "267_Court_of_the_Count"
                 }
             },
             "ending_rescue": {
-                "result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
+                "result": "Her hand trembles in mine. “Alright, let’s get out of here together.”",
                 "ending": {
                     "text": "rescue",
                     "title": "Congratulations!",
@@ -781,161 +793,6 @@
                 "next": null
             }
         },
-        "daughter": {
-            "root": {
-                "prompt": "She sits in shadows, arms crossed, uncertainty in her eyes.",
-                "options": [
-                    {
-                        "text": "Stop the cult",
-                        "tooltip": "Reach out gently.",
-                        "next": "rescue"
-                    },
-                    {
-                        "text": "Don't save her",
-                        "tooltip": "Step back and let her choose.",
-                        "next": "run"
-                    },
-                    {
-                        "text": "Kill the cult",
-                        "tooltip": "Burn them all!",
-                        "next": "mardar"
-                    },
-                    {
-                        "text": "Sacrifice yourself",
-                        "tooltip": "Offer myself instead.",
-                        "next": "sacrifice"
-                    },
-                    {
-                        "text": "Go CrAzY",
-                        "tooltip": "Embrace the madness.",
-                        "next": "crazy"
-                    }
-                ]
-            },
-            "rescue": {
-                "result": "Her hand trembles in mine. The cell door swings open. “Alright, let’s get out of here together.”",
-                "ending": {
-                    "text": "rescue",
-                    "title": "Congratulations!",
-                    "texture": "daughter",
-                    "timbre": "42_Rise_of_the_Ancients"
-                }
-            },
-            "crazy": {
-                "result": "[SANITY REDUCED]",
-                "ending": {
-                    "text": "sanity",
-                    "title": "Insanity",
-                    "texture": "padded",
-                    "timbre": "67_Asylum"
-                }
-            },
-            "cult_master": {
-                "prompt": "I pause at the threshold of the sigil‑lit chamber. She watches me, calm as the tide. “I came here on my own,” she says. “Had a friend pick me up. I... I know what this place is. A new beginning. If not me, they'll find someone else. Either way, this world ends. But...” tears well up in her eyes. “You can stop it. The gods will sleep, if you only...”"
-            },
-            "run": {
-                "result": "She steps forward, voice trembling steel: “If you leave, I’ll have to do it myself. The eternal ones won’t wait.”\n\nMy heart breaks. “You don’t have to—”\n\nShe presses a hand to my chest. “Go. A new world awaits us both.”\n\nI slip into the night. Behind me, her silhouette holds the dagger steady.",
-                "ending": {
-                    "text": "left",
-                    "title": "Abandonment",
-                    "texture": "endgame",
-                    "timbre": "267_Court_of_the_Count"
-                }
-            },
-            "mardar": {
-                "result": "I carve through robed figures like a storm through deadwood.\n\nThe crowd surges behind me, cellphones catching every swing—every spray of blackened blood. Then… her.\n\nMy daughter blinks at me, hollow-eyed. “Do I… know you?”",
-                "ending": {
-                    "text": "arrest",
-                    "title": "Arrested",
-                    "texture": "arrest",
-                    "timbre": "267_Court_of_the_Count"
-                }
-            },
-            "sacrifice": {
-                "result": "I step into the circle, heart steady. “Take me instead,” I whisper. “Let them sleep.”\n\nShe nods, eyes bright. “This will stave off the end—give dawn one more chance.”\n\nShe lays her hand on mine, guiding the blade’s hilt. “Thank you. I’ll carry you in every sunrise.”",
-                "ending": {
-                    "text": "grave",
-                    "title": "Self‑Sacrifice",
-                    "texture": "grave",
-                    "timbre": "357_Promontory"
-                }
-            }
-        },
-        "daughter2": {
-            "root": {
-                "prompt": "I rush into the dim cell where my daughter sits on a cold stone bench. She looks up—eyes red, arms crossed.",
-                "options": [
-                    {
-                        "text": "I’m so sorry I took so long",
-                        "tooltip": "Apologize and explain.",
-                        "next": "apology"
-                    },
-                    {
-                        "text": "Come with me now",
-                        "tooltip": "Insist she leave immediately.",
-                        "next": "insist"
-                    }
-                ]
-            },
-            "apology": {
-                "result": "Her lip trembles. “You promised we’d finish Scrabble. You left me alone. I was scared.” She pulls the torn tile from her pocket. “I kept this safe. But it’s not enough.”",
-                "next": "ask_fight"
-            },
-            "ask_fight": {
-                "prompt": "She glares. “Don’t change the subject. Last night you chose work over me.”",
-                "options": [
-                    {
-                        "text": "I was protecting you",
-                        "tooltip": "Explain my duty.",
-                        "next": "protecting"
-                    },
-                    {
-                        "text": "Can we just go?",
-                        "tooltip": "Push to leave now.",
-                        "next": "insist"
-                    }
-                ]
-            },
-            "protecting": {
-                "result": "She softens briefly. “Protecting? I found this note…” She shows the cult’s symbol carved in wood. “They said you’d come back for me. But what if they want you?”",
-                "next": "reveal_cult"
-            },
-            "insist": {
-                "result": "She stands, but shakes her head. “No. I don’t trust you. Not yet.”",
-                "next": "daughter_decides"
-            },
-            "reveal_cult": {
-                "result": "Her eyes go distant. “They chose me. I… I’m one of them now.” Her voice echoes strangely. “You should join me—or be next.”",
-                "next": "daughter_decides"
-            },
-            "daughter_decides": {
-                "prompt": "She steps away from the bars. Will she come with me, or stay as the cult’s heir?",
-                "options": [
-                    {
-                        "text": "Take her hand",
-                        "tooltip": "Reach out emotionally.",
-                        "next": "rescue_attempt"
-                    },
-                    {
-                        "text": "Let her decide",
-                        "tooltip": "Give her space.",
-                        "next": "end_alone"
-                    }
-                ]
-            },
-            "rescue_attempt": {
-                "result": "She hesitates, then squeezes my hand. The cell door clanks open. “Fine,” she whispers. “But if you fail…”",
-                "next": "end_escape"
-            },
-            "end_alone": {
-                "result": "She watches me go, tears glistening. The door stays shut. I walk away with a broken heart—and the chilling knowledge she leads the cult.",
-                "next": null
-            },
-            "end_escape": {
-                "result": "Together we slip into the night. Behind us, the cult’s chanting fades—and we know they’ll come for both of us.",
-                "next": null
-            }
-        },
         "police-drawer": {
             "root": {
                 "prompt": "The drawer squeaks as I pull it open, revealing a small megaphone.",
@@ -1042,38 +899,11 @@
         }
     },
     "endings": {
-        "100": "I linger in shadows, trading loyalty for time. She is extracted with surgical precision. The others remain unaware until long after I’m gone.",
-        "101": "I’m the whisper in the wires. The building catches fire from within. She meets me at the rendezvous, wrapped in smoke and silence.",
-        "102": "They call it an inside job. I leave no fingerprints. She thinks I’m a hero. I don’t correct her.",
-        "110": "I offer no allegiance, only calculated mercy. She is my only anchor. The cult is wounded but not destroyed.",
-        "111": "They ask what side I were on. I answer with a name: hers. In the end, that’s all that mattered.",
-        "112": "Her footsteps echo behind me. I didn’t stop them, not really. But I did enough. I hope that’s true.",
-        "120": "I stand in the spotlight, ash coating my shoulders. She walks beside me, stunned but alive. The reporters ask who I am. I lie.",
-        "121": "I turned the world’s attention on them. The cult breaks, screaming. She clings to me as the cameras flash.",
-        "122": "The flood begins with a smile. Mine. Her hand slips into mine like it was always meant to. The crowd parts for us both.",
-        "200": "I silence the guards and whisper old rites. The ritual proceeds. She walks willingly—eyes glazed, heart emptied.",
-        "201": "I hide in plain sight, rising through their ranks. The ritual goes smoothly. She thanks me. I nod.",
-        "202": "I bow with the others as the tide swallows the moon. She is reborn in salt and shadow. I accept the crown.",
-        "210": "The doctrine is mine now. I rewrite it to include her. The others chant. She just watches me.",
-        "211": "I stand above the altar, preaching futures no one wants. The crowd applauds. She weeps, unseen.",
-        "212": "I offer her to The Tide. The storm begins. The crowd chants my name as the world begins to tremble.",
-        "220": "The sky splits. The water answers. We are both quickly consumed—and satisfied.",
-        "221": "She laughs beside me, radiant and awful. Together, we welcome the end.",
-        "222": "The old gods rise, and she rises with them. I kneel. It is done.",
         "sanity": "Reality fractures into static—\na television left screaming in an empty room.\n\nI blink up at a fluorescent sun, its sterile light peeling back the delusion: no missing daughter, no tide cult, just these four stained walls.\nThe horror isn’t that it wasn’t real. The horror is that I clawed my way back anyway.\n\nThe attic hatch still yawns above me. The abduction letter still whispers. Sanity is the cruelest prison. I close my eyes. Let the tide pull me under again.",
         "left": "I walk away down the salt‑slick road—\na lone siren wailing in the distance.\n\nHer silhouette lingers in memory’s corner: \nrefusing my hand, choosing shadows over safety.\n\nThe ocean’s whisper follows me:\na promise broken, a heart left behind.\n\nSome doors never close; some echoes never fade.\n\nWhen the eternal nightmares descend, I am not among the first to be taken...",
         "arrest": "The riot cops tackle me before I can answer. Cuffs bite my wrists. The detective snarls, “You knew. The whole damn time.”\n\nCameras flash. The world watches. Nobody wins.",
         "sacrifice": "Darkness blooms behind her smile—\na crown of tide‑etched bone.\n\nShe steps through the cell bars,\npulling me into the cult’s embrace.\n\nMy final breath tastes of brine and regret.\n\nHer laughter drifts back to me,\ncalling me deeper into the endless tide.",
         "rescue": "We slip beyond the cult’s reach—\na pair of footprints side by side.\n\nHer hand in mine feels warm and real,\na promise kept beneath a rising moon.\n\nBehind us, the mansion lies silent.\n\nAhead, the evening hums with fresh possibility.",
-        "grave": "The world fades away from me, but at least I know that she is safe. Even if I wasn't able to save her myself.\n\nShe's old enough to take care of herself now, and she knows I came to try and save her. That's what matters, in the end. She'll do great things. And maybe she'll think fondly of me.",
-        "000": "I vanish beneath the fog, unheard and unseen. Her small hand grips mine tightly. The Tide never even knew I was there.",
-        "001": "I ghost through the facility, rescuing her while the ritual crumbles behind me. No one believes what I saw. I disappear before anyone can ask.",
-        "002": "The sirens never sound. The cult falls, but so does something inside me. I walk out with her, white-eyed and trembling, the salt still clinging to her skin.",
-        "010": "I bend with the current but never break. She survives. We are both changed, but the world stays dry—for now.",
-        "011": "Through whispered warnings and double lives, I lead her out. The cult fractures in my wake. I fade back into the city like a rumor.",
-        "012": "Cameras catch my face. News anchors say my name. But she’s safe, and that’s enough. The rest is noise.",
-        "020": "I speak their language, then rewrite it. The cult thinks I'm one of their own—until it’s too late. I walk free, carrying only her.",
-        "021": "I shout above the waves, revealing everything. The building collapses. In the dust and panic, only I walk out with the girl.",
-        "022": "The sky opens, and the ritual completes. She is returned to me—not rescued, but transformed. I embrace her anyway. She smiles with too many teeth."
+        "grave": "The world fades away from me, but at least I know that she is safe. Even if I wasn't able to save her myself.\n\nShe's old enough to take care of herself now, and she knows I came to try and save her. That's what matters, in the end. She'll do great things. And maybe she'll think fondly of me."
     }
 }
