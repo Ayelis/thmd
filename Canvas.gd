@@ -23,6 +23,8 @@ func _on_game_reset():
 	#Reset stats
 	GameManager.restore_sanity()
 	#Reset Rooms
+	$CanvasLayer/UI/Rooms/Attic.texture = load("res://assets/Scenes/1b attic.jpg")
+	$CanvasLayer/UI/Rooms/Detective.texture = load("res://assets/Scenes/3a policea.jpg")
 	$CanvasLayer/UI/Rooms/Beach.texture = load("res://assets/Scenes/4a beach.jpg")
 	$CanvasLayer/UI/Rooms/Shack.texture = load("res://assets/Scenes/4b shack.jpg")
 	$CanvasLayer/UI/Rooms/Mansion.texture = load("res://assets/Scenes/5a mansion.jpg")

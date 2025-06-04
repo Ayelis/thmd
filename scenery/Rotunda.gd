@@ -9,7 +9,6 @@ func _ready():
 	$Skylights.pressed.connect(_on_skylights_pressed)
 	#$Door1.pressed.connect(_on_door_pressed)
 	#$Door2.pressed.connect(_on_door_pressed)
-	$Daughter.pressed.connect(_on_daughter_pressed)
 	GameManager.room_changed.connect(_on_room_changed)
 
 func _on_room_changed(room_name: String):	
@@ -18,6 +17,8 @@ func _on_room_changed(room_name: String):
 			GameManager.initiate_dialogue("crowdsource-mansion")
 		else:
 			GameManager.initiate_dialogue("enter-mansion")
+
+#Run -> "ifnot_all": ["FBI","PUBLIC"],
 
 func _on_blood_pressed():
 	GameManager.insane(GameManager.insanity["blood"])
@@ -30,5 +31,3 @@ func _on_skylights_pressed():
 	GameManager.display_dialog(GameManager.events["skylight"])
 func _on_door_pressed():
 	GameManager.display_dialog(GameManager.events["leave"])
-func _on_daughter_pressed():
-	GameManager.initiate_dialogue("daughter")

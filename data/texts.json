@@ -530,7 +530,6 @@
                     {
                         "text": "Run",
                         "tooltip": "Try and escape",
-                        "ifnot_all": ["FBI","PUBLIC"],
                         "next": "run_dialogue"
                     }
                 ]

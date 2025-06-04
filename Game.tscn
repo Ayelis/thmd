@@ -781,15 +781,6 @@ offset_bottom = 355.0
 focus_mode = 0
 flat = true
 
-[node name="Daughter" type="Button" parent="CanvasLayer/UI/Rooms/Rotunda"]
-layout_mode = 0
-offset_left = 175.0
-offset_top = 292.0
-offset_right = 340.0
-offset_bottom = 516.0
-focus_mode = 0
-flat = true
-
 [node name="TopBar" type="ColorRect" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 10
@@ -1401,4 +1392,3 @@ stretch_mode = 0
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Rotunda/Skylights" to="CanvasLayer/UI/Rooms/Rotunda/Skylights" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Rotunda/Door1" to="CanvasLayer/UI/Rooms/Rotunda/Door1" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Rooms/Rotunda/Door2" to="CanvasLayer/UI/Rooms/Rotunda/Door2" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/UI/Rooms/Rotunda/Daughter" to="CanvasLayer/UI/Rooms/Rotunda/Daughter" method="_on_pressed"]
