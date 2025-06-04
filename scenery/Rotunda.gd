@@ -12,9 +12,12 @@ func _ready():
 	$Daughter.pressed.connect(_on_daughter_pressed)
 	GameManager.room_changed.connect(_on_room_changed)
 
-func _on_room_changed(room_name: String):
+func _on_room_changed(room_name: String):	
 	if(room_name == this_room):
-		GameManager.initiate_dialogue(GameManager.events["rotunda"])
+		if(GameManager.knows_info(GameManager.InfoIDs.SMASH)):
+			GameManager.initiate_dialogue("crowdsource-mansion")
+		else:
+			GameManager.initiate_dialogue("enter-mansion")
 
 func _on_blood_pressed():
 	GameManager.insane(GameManager.insanity["blood"])

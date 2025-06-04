@@ -55,5 +55,4 @@ func _on_window_pressed():
 func _on_fan_pressed():
 	await GameManager.insane(GameManager.insanity["ceiling-fan"])
 	await get_tree().process_frame
-	#GameManager.initiate_dialogue("enter-mansion")
-	#$Fan.hide()
+	$Fan.hide()

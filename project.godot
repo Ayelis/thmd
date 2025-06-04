@@ -17,7 +17,8 @@ run/main_scene="uid://by043omwqjgg1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://kpm03imjcny1"
-config/icon="uid://c78x2govd5r7f"
+config/icon="uid://cw2bcyh2krfvr"
+config/windows_native_icon="res://assets/thmd.ico"
 
 [autoload]
 

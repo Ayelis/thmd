@@ -157,14 +157,35 @@ func _process_block(block: Dictionary) -> void:
 		return
 
 	if block.has("options"):
+		var only = false
 		for opt in block.options:
 			if opt.has("ifnot_all"):
-				var should_skip = true
-				for info_id in opt.ifnot_all:
-					if not GameManager.knows_info(GameManager.InfoIDs[info_id]):
-						should_skip = false
-						break
+				var should_skip = false
+				for cond_id in opt.ifnot_all:
+					if typeof(cond_id)==TYPE_STRING and GameManager.InfoIDs.has(cond_id):
+						if GameManager.knows_info(GameManager.InfoIDs[cond_id]):
+							should_skip = true  # Skip if ALL conditions fail
+							break
+					elif typeof(cond_id)==TYPE_STRING and GameManager.ItemIDs.has(cond_id):
+						if GameManager.has_item(GameManager.ItemIDs[cond_id]):
+							should_skip = true  # Skip if ALL conditions fail
+							break
 				if should_skip:
+					print("skipped by ifnotall")
+					continue
+			if opt.has("ifnot_any"):
+				var should_skip = false  # Default: Don't skip unless a condition fails
+				for cond_id in opt.ifnot_any:
+					if typeof(cond_id)==TYPE_STRING and GameManager.InfoIDs.has(cond_id):
+						if not GameManager.knows_info(GameManager.InfoIDs[cond_id]):
+							should_skip = true  # Skip if ANY condition fails
+							break
+					elif typeof(cond_id)==TYPE_STRING and GameManager.ItemIDs.has(cond_id):
+						if not GameManager.has_item(GameManager.ItemIDs[cond_id]):
+							should_skip = true  # Skip if ANY condition fails
+							break
+				if should_skip:
+					print("skipped by ifnotany")
 					continue
 			if opt.has("conditions_all"):
 				var all_conditions_met = true
@@ -178,18 +199,29 @@ func _process_block(block: Dictionary) -> void:
 							all_conditions_met = false
 							break
 				if not all_conditions_met:
+					print("not all_conditions met")
 					continue
 
 			if opt.has("condition") and not _check_condition(opt.condition):
 				continue
-			if opt.has("ifnot") and GameManager.knows_info(GameManager.InfoIDs[opt["ifnot"]]):
-				continue
+			if opt.has("ifnot"):
+				var cond_id = opt["ifnot"]
+				if typeof(cond_id)==TYPE_STRING and GameManager.InfoIDs.has(cond_id):
+					if(GameManager.knows_info(GameManager.InfoIDs[opt["ifnot"]])):
+						continue
+				elif typeof(cond_id)==TYPE_STRING and GameManager.ItemIDs.has(cond_id):
+					if(GameManager.has_item(GameManager.ItemIDs[opt["ifnot"]])):
+						continue
+			if opt.has("only_option"):
+				only = true
 			var btn = Button.new()
 			btn.text = opt.text
 			btn.tooltip_text = opt.get("tooltip", "")
 			btn.pressed.connect(func(): _on_option(opt))
 			btn.alignment = HORIZONTAL_ALIGNMENT_LEFT #Doesn't work!! D:<
 			options_container.add_child(btn)
+			if(only):
+				break
 		options_container.show()
 		return
 

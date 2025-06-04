@@ -1,8 +1,12 @@
 extends Control
 
 func _ready():
+	var style:StyleBoxFlat = StyleBoxFlat.new()
+	style.bg_color.a = 0.0
+	add_theme_stylebox_override ("Panel", style)
+
 	DialogueManager.set_dialogue_node(self)
-	
+
 	# Connect to both systems
 	DialogueManager.line_ready.connect(_on_dialogue_updated)  # Structured
 	DialogueManager.simple_message.connect(_on_dialogue_updated)  # Simple

@@ -9,7 +9,10 @@ func _ready():
 
 func _on_room_changed(room_name: String):
 	if(room_name == this_room):
-		if GameManager.knows_info(GameManager.InfoIDs.APPOINTMENT):
+		if GameManager.has_item(GameManager.ItemIDs.ROBE):
+			GameManager.display_dialog(GameManager.events["assistant4"])
+			$Assistant.hide()
+		elif GameManager.knows_info(GameManager.InfoIDs.APPOINTMENT):
 			GameManager.initiate_dialogue("assistant2")
 		elif GameManager.knows_info(GameManager.InfoIDs.POLICE):
 			GameManager.initiate_dialogue("assistant3")
